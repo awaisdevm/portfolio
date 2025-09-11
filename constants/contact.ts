@@ -4,10 +4,10 @@ export const socialMediaNames = [
     {label: "LinkedIn", },
   ]
 
-export const githubUrl = "https://github.com/awais963"
- export const linkedinUrl = "https://linkedin.com/in/awais963"
+export const githubUrl = "https://github.com/awaisdevm"
+ export const linkedinUrl = "https://linkedin.com/in/awaisdevm"
   const userEmail = "mughal963@gmail.com"
- const phoneNumber = "+92 301 4267966"
+ const phoneNumber = "+92 301 0789555"
  const location = "Pakistan, Lahore Punjab"
  const fiverrUrl = ""
  const upworkUrl = ""
