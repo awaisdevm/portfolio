@@ -1,14 +1,15 @@
 import { Button } from "@/components/ui/button"
 import { Code, ExternalLink, Mail, Palette, Smartphone, } from "lucide-react"
-import { useRouter } from "next/navigation"
+import { useNav } from "@/app/nav-context"
 import { LiaHackerrank } from "react-icons/lia"
 import { TypewriterEffect } from "../typewriter-effect"
+import siteData from '@/data/site.json'
 
 export function HeroSection() {
-  const router = useRouter()
+  const { scrollToSection } = useNav()
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col pt-12 sm:pt-20 lg:pt-24 space-y-12 sm:space-y-16 lg:space-y-20">
+    <section id="home" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col pt-12 sm:pt-20 lg:pt-24 space-y-12 sm:space-y-16 lg:space-y-20">
       {/* HERO CONTENT */}
       <div className="relative z-10 w-full grid lg:grid-cols-2 gap-4 lg:gap-8 xl:gap-12 items-center">
         {/* LEFT CONTENT */}
@@ -17,18 +18,18 @@ export function HeroSection() {
             {/* Heading */}
             <div className="space-y-4 sm:space-y-6 text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">
-                <span className="text-[#BDD8E9]">I'm Muhammad Awais</span>
+                <span className="text-[#BDD8E9]">I&apos;m {siteData.name}</span>
                 <br />
                 <TypewriterEffect
-                  words={["a Mobile Engineer", "a Flutter Developer", "a Kotlin Expert"]}
+                  words={siteData.roles}
                   className="bg-gradient-to-r from-[#4E8EA2] via-[#6EA2B3] to-[#7BBDE8] bg-clip-text text-transparent"
                 />
 
                 <br />
-                <span className="text-[#BDD8E9]">based in Pakistan.</span>
+                <span className="text-[#BDD8E9]">based in {siteData.location.split('(')[0].trim()}.</span>
               </h1>
               <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-[#BDD8E9] max-w-2xl mx-auto lg:mx-0">
-                Discover the artistry Behind a Portfolio that Echoes Innovation and Creativity
+                {siteData.tagline}
               </p>
             </div>
 
@@ -45,14 +46,14 @@ export function HeroSection() {
               <Button
                 className="bg-gradient-to-r from-blue-300/20 to-cyan-300/20  border border-blue-300/30 text-blue-200 hover:bg-blue-300/30 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl transition-all duration-300"
                 // className="bg-gradient-to-r from-blue-300/20 to-cyan-300/20 backdrop-blur-xl border border-blue-300/30 text-blue-200 hover:bg-blue-300/30 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl transition-all duration-300"
-                onClick={() => router.push("/about")}
+                onClick={() => scrollToSection("projects")}
               >
                 <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 View My Work
               </Button>
               <Button className="bg-white/10  border border-white/20 text-white hover:bg-white/20 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl transition-all duration-300"
               // <Button className="bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:bg-white/20 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl transition-all duration-300"
-                onClick={() => router.push("/contact")}>
+                onClick={() => scrollToSection("contact")}>
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Get in Touch
               </Button>
@@ -79,8 +80,8 @@ export function HeroSection() {
                 <div className="absolute rounded-full overflow-hidden bg-gradient-to-b from-slate-700/30 via-slate-800/30 to-slate-900/30">
                   {/* Profile image */}
                   <img
-                    src="/images/dev-hero.png"
-                    alt="Muhammad Awais - Mobile Engineer"
+                    src={siteData.heroImage}
+                    alt={`${siteData.name} - Mobile Engineer`}
                     className="w-full h-full object-cover object-center"
                   />
 

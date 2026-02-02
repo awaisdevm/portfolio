@@ -2,27 +2,26 @@ import { OrbitingCircles } from "@/components/orbiting-circle";
 
 export function Frameworks() {
   const skills = [
-    "javascript",
-    "html5",
-    "css3",
-    "tailwindcss",
-    "mysql",
-    "nextjs",
-    "php",
+    "Android Studio",
+    "Flutter",
+    "git",
+    "github",
     "java",
-    "springboot",
-    "react",
-    "expressjs",
+    "Kotlin",
     "nodejs",
+    "sqlite",
+    "tailwindcss",
+    "visualstudiocode",
+    "xcode",
   ];
   return (
     <div className="relative flex h-[15rem] w-full flex-col items-center justify-center">
-      <OrbitingCircles iconSize={40}>
+      <OrbitingCircles iconSize={36} radius={120}>
         {skills.map((skill, index) => (
           <Icon key={index} src={`assets/logos/${skill}.svg`} />
         ))}
       </OrbitingCircles>
-      <OrbitingCircles iconSize={25} radius={100} reverse speed={2}>
+      <OrbitingCircles iconSize={24} radius={80} reverse speed={2}>
         {skills.reverse().map((skill, index) => (
           <Icon key={index} src={`assets/logos/${skill}.svg`} />
         ))}

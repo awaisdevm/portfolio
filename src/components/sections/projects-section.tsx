@@ -1,18 +1,14 @@
 
 import { useState } from "react";
 
-import Image from "next/image";
+// removed unused Image import
 
 import { SectionWrapper } from "../ui/section-wrapper";
 import { sectionContent } from "@/constants/section-content";
 
 import { RecentProjects } from "./recent-projects"; 
 
-interface FeatureProjectsSectionProps {
-}
-
-
-export const FeatureProjectsSection: React.FC<FeatureProjectsSectionProps> = ({  }) => {
+export const FeatureProjectsSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState("All")
   const currentSection = sectionContent.projects
   const tabs = ["All", "Mobile", "Flutter", "iOS",]

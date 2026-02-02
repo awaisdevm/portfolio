@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, type MouseEvent } from "react"
+import { useState } from "react"
 
 import { PinContainer } from "@/components/ui/Pin"; 
 import Image from "next/image";
@@ -8,7 +8,7 @@ import { projects } from "@/constants/featuredProjects";
 
 
 export const RecentProjects = () => {
-    const [isHovered, setIsHovered] = useState(false)
+    const [isHovered] = useState(false)
   
   return (
 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 px-4">

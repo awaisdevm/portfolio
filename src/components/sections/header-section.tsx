@@ -9,20 +9,16 @@ import { AnimatePresence, motion, useScroll } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import type React from "react"
 import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
 
 const headerIconFont = Protest_Guerrilla({
   subsets: ["latin"],
   weight: ["400"],
 })
-type HeaderProps = {}
-
-export const Header: React.FC<HeaderProps> = ({}) => {
+export const Header: React.FC = () => {
   const { socialLinks } = headerContent
   const { scrollYProgress } = useScroll()
-  const { navItems, mobileMenuOpen, setMobileMenuOpen, activeSection } = useNav()
+  const { navItems, mobileMenuOpen, setMobileMenuOpen, activeSection, scrollToSection } = useNav()
   const [visible, setVisible] = useState(true)
-  const router = useRouter()
 
   const populatedSocialLinks = socialLinks.map((link) => ({
     ...link,
@@ -32,10 +28,10 @@ export const Header: React.FC<HeaderProps> = ({}) => {
     const current = scrollYProgress.get()
     const direction = current - (scrollYProgress.getPrevious() ?? 0)
     setVisible(current < 0.05 || direction < 0)
-  }, [])
+  }, [scrollYProgress])
 
   const handleNavClick = (id: string) => {
-    router.push(id)
+    scrollToSection(id)
     setMobileMenuOpen(false)
   }
 

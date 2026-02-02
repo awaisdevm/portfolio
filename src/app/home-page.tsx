@@ -14,65 +14,14 @@ import { Rocket, Target, Users, Lightbulb, Briefcase, GraduationCap, Heart, Gith
 import { Button } from '@/components/ui/button';
 import { Frameworks } from "@/components/framework";
 import {Globe} from "@/components/globe";
+import siteData from '@/data/site.json'
 
-interface MainContentProps {
-}
-
-export const MainContent: React.FC<MainContentProps> = ({
-
-}) => {
+export const MainContent: React.FC = () => {
   const currentSection = sectionContent.services
   const contactSection = sectionContent.contact
   const aboutSection = sectionContent.about
 
-  const values = [
-    {
-      icon: Rocket,
-      title: "Innovation",
-      description: "Always pushing boundaries and exploring new technologies",
-    },
-    {
-      icon: Target,
-      title: "Precision",
-      description: "Attention to detail in every line of code and design decision",
-    },
-    {
-      icon: Users,
-      title: "Collaboration",
-      description: "Believing that the best solutions come from working together",
-    },
-    {
-      icon: Lightbulb,
-      title: "Creativity",
-      description: "Finding unique solutions to complex problems",
-    },
-  ]
-  const timeline = [
-    {
-      year: "2024 - Present",
-      title: "Senior Mobile App Developer",
-      company: "Egora Pvt Ltd",
-      description: "Leading development of CrossPlatform applications",
-    },
-    {
-      year: "2022",
-      title: "Software Engineer Android Developer",
-      company: "Healthwire Pvt Ltd",
-      description: "Built MVP and scaled to 10k+ users",
-    },
-    {
-      year: "2020",
-      title: "Senior Android Developer",
-      company: "Dongamers Pvt Ltd",
-      description: "Created responsive websites for various clients",
-    },
-    {
-      year: "2019",
-      title: "Android Developer Intern",
-      company: "Netroots Technologies LLC",
-      description: "Graduated with honors, specialized in software engineering",
-    },
-  ]
+  // content moved to src/data/site.json (siteData)
   return (
 
     <div >
@@ -95,12 +44,7 @@ export const MainContent: React.FC<MainContentProps> = ({
                 <div className="glass rounded-2xl p-6 glass-hover">
                   <h3 className="text-xl font-bold mb-4">Quick Facts</h3>
                   <div className="space-y-3">
-                    {[
-                      { label: "Location", value: "Pakistan, Lahore PK" },
-                      { label: "Experience", value: "5+ Years" },
-                      { label: "Specialization", value: "Mobile Applications" },
-                      { label: "Favorite Language", value: "Flutter,Kotlin" },
-                    ].map((fact) => (
+                    {siteData.quickFacts.map((fact) => (
                       <div key={fact.label} className="flex justify-between">
                         <span className="text-muted-foreground">{fact.label}</span>
                         <span className="font-semibold text-sky-400">{fact.value}</span>
@@ -112,7 +56,7 @@ export const MainContent: React.FC<MainContentProps> = ({
                 <div className="glass rounded-2xl p-6 glass-hover">
                   <h3 className="text-xl font-bold mb-4">Current Focus</h3>
                   <div className="space-y-3">
-                    {["iOS Swift Programming", "Backend Technologies", "Performance Optimization"].map((focus) => (
+                    {siteData.currentFocus.map((focus) => (
                       <div key={focus} className="glass-subtle rounded-lg p-3">
                         <span className="text-sm">{focus}</span>
                       </div>
@@ -121,7 +65,7 @@ export const MainContent: React.FC<MainContentProps> = ({
                   <h3 className="text-xl font-bold mb-4 mt-4">Specialization</h3>
 
                   <div className="space-y-3">
-                    {["Cross Platform Apps", "Android Mobile Tv/Apps", "Performance Optimization"].map((focus) => (
+                    {siteData.specialization.map((focus) => (
                       <div key={focus} className="glass-subtle rounded-lg p-3">
                         <span className="text-sm">{focus}</span>
                       </div>
@@ -136,15 +80,15 @@ export const MainContent: React.FC<MainContentProps> = ({
                   <h3 className="text-2xl font-bold mb-6">My Story</h3>
                   <div className="space-y-4 text-muted-foreground">
                     <p>
-                      Started my journey as a curious kid who loved taking apart electronics. Fast forward to today, and I'm
+                      Started my journey as a curious kid who loved taking apart electronics. Fast forward to today, and I&apos;m
                       building digital products that impact thousands of users daily.
                     </p>
                     <p>
-                      I believe in writing code that's not just functional, but elegant and maintainable. Every project is
-                      an opportunity to learn something new and push the boundaries of what's possible.
+                      I believe in writing code that&apos;s not just functional, but elegant and maintainable. Every project is
+                      an opportunity to learn something new and push the boundaries of what&apos;s possible.
                     </p>
                     <p>
-                      When I'm not coding, you'll find me hiking, experimenting with new recipes, or contributing to open
+                      When I&apos;m not coding, you&apos;ll find me hiking, experimenting with new recipes, or contributing to open
                       source projects.
                     </p>
                   </div>
@@ -153,13 +97,11 @@ export const MainContent: React.FC<MainContentProps> = ({
                 <div className="glass rounded-2xl p-6 glass-hover">
                   <h3 className="text-xl font-bold mb-4">Tech Arsenal</h3>
                   <div className="grid grid-cols-3 gap-3">
-                    {["Kotlin", "Flutter (Dart)", "Java", "Code Optimization", "Android Tv", "Firebase", "Payment Gateways", "Analytics Tools", "Bloc","LiveData","Flows","Coroutines","State Management","Dagger/Hilt","Flutter DI","Socket.IO","Android VPN","Twilio"].map(
-                      (tech) => (
-                        <div key={tech} className="glass-subtle rounded-lg p-2 text-center text-sm">
-                          {tech}
-                        </div>
-                      ),
-                    )}
+                    {siteData.techArsenal.map((tech) => (
+                      <div key={tech} className="glass-subtle rounded-lg p-2 text-center text-sm">
+                        {tech}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -170,10 +112,10 @@ export const MainContent: React.FC<MainContentProps> = ({
                   <h3 className="text-xl font-bold mb-4">Achievements</h3>
                   <div className="space-y-4">
                     {[
-                       { metric: "10+", label: "Projects" },
-                      { metric: "10+", label: "Happy Clients" },
-                      { metric: "3300+", label: "Linkedin Followers" },
-                      { metric: "5+", label: "Certifications" },
+                       { metric: siteData.achievements.projects, label: "Projects" },
+                      { metric: siteData.achievements.clients, label: "Happy Clients" },
+                      { metric: siteData.achievements.followers, label: "Linkedin Followers" },
+                      { metric: siteData.achievements.certifications, label: "Certifications" },
                     ].map((achievement) => (
                       <div key={achievement.label} className="text-center glass-subtle rounded-lg p-3">
                         <div className="text-2xl font-bold text-sky-400">{achievement.metric}</div>
@@ -187,16 +129,14 @@ export const MainContent: React.FC<MainContentProps> = ({
 
                   <h3 className="text-xl font-bold mb-4 text-sky-400">Creative Process</h3>
                   <div className="space-y-3">
-                    {["Ideation & Research", "Design & Prototyping", "Development & Testing", "Launch & Iterate"].map(
-                      (step, index) => (
-                        <div key={step} className="flex items-center gap-3">
-                          <div className="w-8 h-8 glass-strong rounded-full flex items-center justify-center text-sm font-bold">
-                            {index + 1}
-                          </div>
-                          <span className="text-muted-foreground">{step}</span>
+                    {siteData.creativeProcess.map((step, index) => (
+                      <div key={step} className="flex items-center gap-3">
+                        <div className="w-8 h-8 glass-strong rounded-full flex items-center justify-center text-sm font-bold">
+                          {index + 1}
                         </div>
-                      ),
-                    )}
+                        <span className="text-muted-foreground">{step}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -212,12 +152,12 @@ export const MainContent: React.FC<MainContentProps> = ({
     
     {/* Content */}
     <div className="grid-content relative z-10 p-6 md:p-8 h-full flex flex-col justify-center">
-      <div className="w-[60%] md:w-[50%]">
+          <div className="w-[60%] md:w-[50%]">
         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
           <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">Time Zone</span>
         </h3>
         <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-          I'm based in Asia GMT+5 (Lahore, Pakistan), and open to work remotely.
+          {siteData.location}, and open to work remotely.
         </p>
       </div>
     </div>
@@ -242,8 +182,8 @@ export const MainContent: React.FC<MainContentProps> = ({
       <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight max-w-sm">
         Ready to start a project together?
       </h3>
-      <p className="text-purple-200 text-sm md:text-base max-w-xs">
-        Let's collaborate and build something amazing
+        <p className="text-purple-200 text-sm md:text-base max-w-xs">
+        Let&apos;s collaborate and build something amazing
       </p>
       {/* <CopyEmailButton /> */}
     </div>
@@ -289,10 +229,8 @@ export const MainContent: React.FC<MainContentProps> = ({
                     </div>
                     <h3 className="text-2xl font-semibold text-white">Professional</h3>
                   </div>
-                  <p className="text-gray-300 leading-relaxed">
-                    With 5+ years in the industry, I've worked with startups and enterprises, building everything from MVPs
-                    to large-scale applications. I specialize in React, Node.js, and cloud technologies.
-                  </p>
+                    <p className="text-gray-300 leading-relaxed">
+As a <strong>Senior Software Engineer</strong> with over 6 years of expertise, I specialize in engineering high-performance ecosystems across <strong>Android, Android TV, and Flutter</strong>. My architectural approach leverages <strong>MVVM, Jetpack Compose, and BLoC/Flow</strong> to build scalable products. I have a proven track record of driving technical excellence, including <strong>reducing APK sizes by 30%</strong> and maintaining <strong>95% crash-free sessions</strong> for global platforms.                  </p>
                 </div>
                 <div className="bg-white/5  rounded-2xl p-8 border border-white/10">
 
@@ -304,10 +242,7 @@ export const MainContent: React.FC<MainContentProps> = ({
                     <h3 className="text-2xl font-semibold text-white">Education</h3>
                   </div>
                   <p className="text-gray-300 leading-relaxed">
-                    Computer Science graduate with a focus on software engineering. Continuously learning through online
-                    courses, conferences, and hands-on projects. Certified in AWS and Google Cloud Platform.
-                  </p>
-                </div>
+I hold a <strong>Bachelor of Science in Computer Science</strong> with a <strong>CGPA of 3.8/4.0</strong>, providing a rigorous foundation in Software Engineering principles. My academic background is bolstered by industry-recognized credentials, including a <strong>HackerRank Software Engineer Certification</strong> and a <strong>Google Digital Garage</strong> certification, reflecting a lifelong commitment to mastering evolving mobile technologies.</p>                </div>
                 <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
 
                 {/* <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"> */}
@@ -318,20 +253,17 @@ export const MainContent: React.FC<MainContentProps> = ({
                     <h3 className="text-2xl font-semibold text-white">Personal</h3>
                   </div>
                   <p className="text-gray-300 leading-relaxed">
-                    Outside of coding, I enjoy hiking, photography, and playing guitar. I'm passionate about mentoring
-                    junior developers and contributing to open-source projects that make a positive impact.
-                  </p>
-                </div>
+When I’m not architecting mobile solutions, I am an avid explorer of both digital and physical worlds. I have a deep-seated passion for <strong>gaming</strong>, where I enjoy analyzing complex mechanics and strategy. My curiosity extends to the outdoors, where I spend my time <strong>hiking</strong> through rugged trails and <strong>exploring hill stations</strong> to find fresh perspectives. I bring this same spirit of adventure and tactical thinking to my work, constantly seeking new challenges in <strong>mobile engineering</strong>.          </p>      </div>
               </div>
 
               <div>
                 <h3 className="text-2xl font-semibold text-white mb-8">My Journey</h3>
                 <div className="space-y-8">
-                  {timeline.map((item, index) => (
+                  {siteData.timeline.map((item, index) => (
                     <div key={index} className="flex gap-6">
                       <div className="flex flex-col items-center">
                         <div className="w-4 h-4 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full"></div>
-                        {index < timeline.length - 1 && (
+                        {index < siteData.timeline.length - 1 && (
                           <div className="w-0.5 h-16 bg-gradient-to-b from-blue-400/50 to-transparent mt-2"></div>
                         )}
                       </div>
@@ -347,12 +279,10 @@ export const MainContent: React.FC<MainContentProps> = ({
               </div>
             </div>
             <div className="grid md:grid-cols-4 gap-6 mt-6">
-              {values.map((value, index) => (
+              {siteData.values.map((value, index) => (
                                 <div key={index} className="bg-white/5 rounded-xl p-6 border border-white/10 text-center">
-
-                {/* <div key={index} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 text-center"> */}
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <value.icon className="w-6 h-6 text-white" />
+                    <span className="text-white font-semibold">{value.title.charAt(0)}</span>
                   </div>
                   <h4 className="text-lg font-semibold text-white mb-2">{value.title}</h4>
                   <p className="text-gray-400 text-sm">{value.description}</p>
@@ -393,13 +323,13 @@ export const MainContent: React.FC<MainContentProps> = ({
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
-         <Button
+              <Button
                 className="bg-white/10  border border-white/20 text-white hover:bg-white/20 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl transition-all duration-300"
                 // className="bg-white/10 backdrop-blur-xl border border-white/20 text-white hover:bg-white/20 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl transition-all duration-300"
                 onClick={() => window.open("https://www.hackerrank.com/certificates/794ccb84d359", "_blank")}
               >
                 
-                Let's get in touch
+                Let&apos;s get in touch
               </Button>
       
       </div>
@@ -422,7 +352,7 @@ export const MainContent: React.FC<MainContentProps> = ({
                   {/* <div className="w-20 h-20 bg-white/15 backdrop-blur-xl border border-white/25 rounded-2xl flex items-center justify-center mb-8"> */}
                     <Wind className="w-10 h-10 text-blue-300" />
                   </div>
-                  <h2 className="text-5xl font-light text-white mb-6">Let's Talk</h2>
+                  <h2 className="text-5xl font-light text-white mb-6">Let&apos;s Talk</h2>
                   <p className="text-white/70 text-lg mb-12">
                     Transform your ideas into reality with ethereal design
                   </p>
@@ -448,7 +378,7 @@ export const MainContent: React.FC<MainContentProps> = ({
                       gradient: "from-purple-500/20 to-pink-500/20",
                       icon: Mail,
                       label: "Email",
-                      value: "mughal963@gmail.com",
+                      value: siteData.contact.email,
                       color: "text-blue-300",
                       shape: "rounded-tl-[3rem] rounded-br-[3rem]", // top card
                     },
@@ -456,7 +386,7 @@ export const MainContent: React.FC<MainContentProps> = ({
                       gradient: "from-blue-500/20 to-cyan-500/20",
                       icon: Linkedin,
                       label: "LinkedIn",
-                      value: "@awais963",
+                      value: siteData.contact.linkedin,
                       color: "text-purple-300",
                       shape: "rounded-[2rem]", // middle card
                     },
@@ -464,7 +394,7 @@ export const MainContent: React.FC<MainContentProps> = ({
                       gradient: "from-green-500/20 to-teal-500/20",
                       icon: Github,
                       label: "GitHub",
-                      value: "@awais963",
+                      value: siteData.contact.github,
                       color: "text-green-300",
                       shape: "rounded-bl-[3rem] rounded-tr-[3rem]", // bottom card
                     },

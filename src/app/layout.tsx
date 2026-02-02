@@ -33,12 +33,39 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <head>
         <meta name="color-scheme" content="light dark" />
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org/",
+      "@type": "Person",
+      "name": "Muhammad Awais",
+      "jobTitle": "Senior Software Engineer",
+      "url": "https://devawais.com",
+      "sameAs": [
+        "https://linkedin.com/in/awaisdevm",
+        "https://github.com/awaisdevm" 
+      ],
+      "knowsAbout": [
+        "Android Development",
+        "Mobile Application Development",
+        "iOS Development",
+        "Flutter",
+        "Kotlin",
+        "Dart",
+        "Jetpack Compose",
+        "Hilt",
+        
+      ]
+    }),
+  }}
+/>
       </head>
       <body suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div
-          className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950"
+          className="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-blue-950"
         >
 
           <NavProvider>

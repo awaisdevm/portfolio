@@ -1,4 +1,4 @@
-import { Smartphone, Tv, Brain, Globe, Server, ArrowRight, Code2, Zap, Shield, Layers } from "lucide-react"
+import { Smartphone, Tv, Brain, Globe, Server } from "lucide-react"
 
 export const services = [
   {

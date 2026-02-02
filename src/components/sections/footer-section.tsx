@@ -1,20 +1,7 @@
-import { Github, Linkedin, Mail, Twitter, Instagram, Youtube, GithubIcon } from "lucide-react"
+import { Linkedin, Mail, Twitter, GithubIcon } from "lucide-react"
+import { githubUrl,linkedinUrl ,contactInfo} from "@/constants/contact" 
 
-interface FooterProps {
-
-}
-export const Footer: React.FC<FooterProps> = ({
-   
-
-}) => {
-    const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: Mail, href: "#", label: "Email" },
-  ]
+export const Footer: React.FC = () => {
     return (
 
      <footer className="border-t border-blue-800 relative overflow-hidden py-8 px-4 md:px-6">
@@ -39,21 +26,21 @@ export const Footer: React.FC<FooterProps> = ({
 </div>
       {/* Right: Let's Connect & Social Icons */}
       <div className="flex flex-col items-center md:items-end">
-        <h3 className="text-xl font-bold text-white mb-2">Let's Connect</h3>
+        <h3 className="text-xl font-bold text-white mb-2">Let&apos;s Connect</h3>
         <p className="text-gray-400 mb-4 max-w-xs text-sm text-center md:text-right">
           Follow me on social media for updates and insights.
         </p>
         <div className="flex space-x-6">
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">
+          <a href={githubUrl} className="text-gray-400 hover:text-white transition-colors">
             <GithubIcon className="w-5 h-5" />
           </a>
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">
+          <a href={linkedinUrl} className="text-gray-400 hover:text-white transition-colors">
             <Linkedin className="w-5 h-5" />
           </a>
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">
+          {/* <a href="#" className="text-gray-400 hover:text-white transition-colors">
             <Twitter className="w-5 h-5" />
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">
+          </a> */}
+          <a href={`mailto:${contactInfo.email}`} className="text-gray-400 hover:text-white transition-colors">
             <Mail className="w-5 h-5" />
           </a>
         </div>

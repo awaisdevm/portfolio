@@ -1,0 +1,85 @@
+{
+  "name": "Muhammad Awais",
+  "roles": [
+    "a Mobile Engineer",
+    "a Flutter Developer",
+    "an Android Developer"
+  ],
+  "location": "Lahore, Pakistan",
+  "tagline": "Discover the artistry Behind a Portfolio that Echoes Innovation and Creativity",
+  "heroImage": "/images/dev-pic.png",
+  "quickFacts": [
+    { "label": "Location", "value": "Pakistan, Lahore PK" },
+    { "label": "Experience", "value": "6+ Years" },
+    { "label": "Specialization", "value": "Mobile Applications" },
+    { "label": "Favorite Language", "value": "Flutter,Kotlin" }
+  ],
+  "techArsenal": [
+    "Kotlin",
+    "Flutter (Dart)",
+    "Java",
+    "Code Optimization",
+    "Android Tv",
+    "Firebase",
+    "Payment Gateways",
+    "Analytics Tools",
+    "Bloc",
+    "LiveData",
+    "Flows",
+    "Coroutines",
+    "State Management",
+    "Dagger/Hilt",
+    "Flutter DI",
+    "Socket.IO",
+    "Android VPN",
+    "Twilio"
+  ],
+  "achievements": {
+    "projects": "10+",
+    "clients": "10+",
+    "followers": "3300+",
+    "certifications": "5+"
+  },
+  "contact": {
+    "email": "mughal963@gmail.com",
+    "linkedin": "@awaisdevm",
+    "github": "@awaisdevm",
+    "phone": "+923010789555",
+    "portfolio": "https://www.hackerrank.com/certificates/794ccb84d359"
+  },
+  "values": [
+    { "icon": "Rocket", "title": "Innovation", "description": "Always pushing boundaries and exploring new technologies" },
+    { "icon": "Target", "title": "Precision", "description": "Attention to detail in every line of code and design decision" },
+    { "icon": "Users", "title": "Collaboration", "description": "Believing that the best solutions come from working together" },
+    { "icon": "Lightbulb", "title": "Creativity", "description": "Finding unique solutions to complex problems" }
+  ],
+  "currentFocus": ["iOS Swift Programming", "Backend Technologies", "Performance Optimization"],
+  "specialization": ["Cross Platform Apps", "Android Mobile Tv/Apps", "Performance Optimization"],
+  "creativeProcess": ["Ideation & Research", "Design & Prototyping", "Development & Testing", "Launch & Iterate"],
+  "timeline": [
+    { 
+      "year": "2024 - Present", 
+      "title": "Senior Software Engineer", 
+      "company": "Egora Pvt Ltd", 
+      "description": "Architecting high-performance Android and Flutter applications, optimizing thermal printing latency by 40% and managing 10k+ monthly transactions with 99.9% uptime." 
+    },
+    { 
+      "year": "2022 - 2024", 
+      "title": "Software Engineer (Android)", 
+      "company": "Healthwire Pvt Ltd", 
+      "description": "Enhanced location-based features using Google Maps API, improving delivery accuracy by 90% and boosting user engagement by 15% through A/B testing." 
+    },
+    { 
+      "year": "2020 - 2022", 
+      "title": "Senior Android Developer", 
+      "company": "DonGamers", 
+      "description": "Led the development of global gaming platforms, integrating Unity and real-time chat via Pusher while maintaining 92% crash-free sessions." 
+    },
+    { 
+      "year": "2019 - 2019", 
+      "title": "Software Engineer (Android)", 
+      "company": "Netroots Technologies LLC", 
+      "description": "Engineered a GPS-based attendance system with image validation, improving tracking accuracy by 40% and automating HR workflows." 
+    }
+  ]
+}

@@ -5,10 +5,8 @@ import type React from "react"
 import { Service3DCard } from "@/components/sections/service-3d-card" 
 import  { services } from "@/constants/my-services"
 import { sectionContent } from "@/constants/section-content"
-import { useState } from "react"
+// removed unused useState import
 import { SectionWrapper } from "@/components/ui/section-wrapper"
-
-type ServiceSectionProps = {}
 
 export default function ServiceSection()  {
   const currentSection = sectionContent.services

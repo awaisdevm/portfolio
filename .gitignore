@@ -1,1 +1,19 @@
+
 node_modules
+
+# Build / Cache
+.next/
+.cache/
+.parcel-cache/
+dist/
+build/
+coverage/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Environment
+.env.local
+.env.*.local
