@@ -80,19 +80,24 @@ body {
   }
 
   .glass {
-    @apply bg-white/10 border border-white/20;
-    /* @apply bg-white/10 backdrop-blur-md border border-white/20; */
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+    @media (max-width: 768px) {
+      @apply backdrop-blur-sm;
+    }
   }
   .glass-hover {
-    @apply hover:bg-white/15  hover:scale-105 transition-all duration-300;
-    /* @apply hover:bg-white/15 hover:backdrop-blur-lg hover:scale-105 transition-all duration-300; */
+    @apply hover:bg-white/15 hover:backdrop-blur-lg transition-all duration-300;
+    @media (min-width: 768px) {
+      @apply hover:scale-105;
+    }
   }
   .glass-strong {
-    @apply bg-white/15 border border-white/30;
-    /* @apply bg-white/15 backdrop-blur-lg border border-white/30; */
+    @apply bg-white/15 backdrop-blur-lg border border-white/30;
+    @media (max-width: 768px) {
+      @apply backdrop-blur-md;
+    }
   }
   .glass-subtle {
-    @apply bg-white/5 border border-white/10;
-    /* @apply bg-white/5 backdrop-blur-sm border border-white/10; */
+    @apply bg-white/5 backdrop-blur-sm border border-white/10;
   }
 }

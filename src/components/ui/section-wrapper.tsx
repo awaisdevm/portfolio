@@ -1,4 +1,9 @@
+"use client"
+
 import type React from "react"
+import { motion } from "framer-motion"
+import { systemInitVariants } from "@/lib/animations"
+
 interface SectionWrapperProps {
   id: string
   title: string
@@ -8,40 +13,60 @@ interface SectionWrapperProps {
 }
 
 export const SectionWrapper: React.FC<SectionWrapperProps> = ({ id, title, subTitle, description, children }) => {
-  const dividerGradient = "bg-gradient-to-r from-transparent via-white/30 to-transparent"
+  const dividerGradient = "bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"
 
   return (
-    <section id={id} className="py-20 px-4 relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-500" />
+    <motion.section 
+      id={id} 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      className="py-24 px-4 relative overflow-hidden"
+    >
+      {/* Background HUD Focus */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 blur-[120px] rounded-full" />
       </div>
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="text-center mb-20 animate-fade-in-up">
-          <div className="flex items-center justify-center gap-4 mb-6">
+        <div className="text-center mb-20">
+          <motion.div 
+            variants={systemInitVariants}
+            className="flex items-center justify-center gap-4 mb-6"
+          >
             <div className={`w-12 h-px ${dividerGradient}`} />
-            <div className="px-4 py-2 bg-white/10 rounded-full border border-white/20">
-            {/* <div className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20"> */}
-              <p className="text-sm font-bold bg-gradient-to-r from-blue-300 via-sky-400 to-cyan-300 bg-clip-text text-transparent uppercase tracking-wider">
+            <div className="px-4 py-1 bg-blue-500/5 backdrop-blur-md rounded-sm border border-blue-500/20">
+              <p className="text-[10px] font-mono font-bold text-blue-400 uppercase tracking-[0.3em]">
                 {subTitle}
               </p>
             </div>
             <div className={`w-12 h-px ${dividerGradient}`} />
-          </div>
+          </motion.div>
 
-          <h2 className="text-5xl font-bold mb-6 tracking-wider bg-gradient-to-r from-blue-200 via-sky-300 to-cyan-200 bg-clip-text text-transparent drop-shadow-2xl">
+          <motion.h2 
+            variants={systemInitVariants}
+            className="text-4xl md:text-6xl font-black mb-8 tracking-tighter bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent"
+          >
             {title}
-          </h2>
+          </motion.h2>
 
-          <p className="text-gray-300 text-xl max-w-3xl mx-auto font-serif leading-relaxed italic">{description}</p>
+          <motion.p 
+            variants={systemInitVariants}
+            className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed"
+          >
+            {description}
+          </motion.p>
 
-          <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 shadow-lg shadow-blue-500/50" />
+          <motion.div 
+            variants={systemInitVariants}
+            className="w-24 h-[1px] mx-auto mt-10 bg-gradient-to-r from-transparent via-blue-500 to-transparent shadow-[0_0_15px_rgba(59,130,246,0.5)]" 
+          />
         </div>
 
-        {children}
+        <motion.div variants={systemInitVariants}>
+          {children}
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

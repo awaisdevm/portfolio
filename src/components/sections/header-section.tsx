@@ -1,33 +1,37 @@
 "use client"
 import { Button } from "../ui/button"
-import { contactInfo } from "@/constants/contact"
-import { headerContent } from "@/app/data/header-data"
 import { useNav } from "@/app/nav-context"
 import { cn } from "@/lib/utils"
 import { Protest_Guerrilla } from "next/font/google"
 import { AnimatePresence, motion, useScroll } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Cpu, GithubIcon, Linkedin, Mail } from "lucide-react"
 import type React from "react"
 import { useState, useEffect } from "react"
+import { Magnetic } from "../ui/magnetic"
+import portfolioData from "@/data/portfolio.json"
 
 const headerIconFont = Protest_Guerrilla({
   subsets: ["latin"],
   weight: ["400"],
 })
+
 export const Header: React.FC = () => {
-  const { socialLinks } = headerContent
+  const { contact } = portfolioData.profile
   const { scrollYProgress } = useScroll()
   const { navItems, mobileMenuOpen, setMobileMenuOpen, activeSection, scrollToSection } = useNav()
   const [visible, setVisible] = useState(true)
 
-  const populatedSocialLinks = socialLinks.map((link) => ({
-    ...link,
-    href: link.label === "GitHub" ? contactInfo.github : link.label === "LinkedIn" ? contactInfo.linkedin : link.href,
-  }))
+  const populatedSocialLinks = [
+    { label: "GitHub", href: contact.github, icon: GithubIcon },
+    { label: "LinkedIn", href: contact.linkedin, icon: Linkedin },
+    { label: "Email", href: `mailto:${contact.email}`, icon: Mail },
+  ]
+
   useEffect(() => {
-    const current = scrollYProgress.get()
-    const direction = current - (scrollYProgress.getPrevious() ?? 0)
-    setVisible(current < 0.05 || direction < 0)
+    return scrollYProgress.onChange((current) => {
+      const direction = current - (scrollYProgress.getPrevious() ?? 0)
+      setVisible(current < 0.05 || direction < 0)
+    })
   }, [scrollYProgress])
 
   const handleNavClick = (id: string) => {
@@ -36,72 +40,83 @@ export const Header: React.FC = () => {
   }
 
   return (
-    <header className="fixed top-0 w-full z-50">
-      <div className="w-full max-w-7xl mx-auto px-3 py-2 relative">
+    <header className="fixed top-0 w-full z-50 transition-all duration-500">
+      <div className="w-full max-w-7xl mx-auto px-4 py-4 relative">
         <div className="flex items-center justify-between">
-          <a href="">
-            <div
-              className={cn(
-                "text-lg md:text-xl font-bold bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-300 bg-clip-text text-transparent animate-pulse",
-                headerIconFont.className,
-              )}
+          <Magnetic strength={0.2}>
+            <button 
+              onClick={() => scrollToSection("home")} 
+              className="group relative flex items-center gap-2 focus:outline-none"
             >
-              M.Awais
-            </div>
-          </a>
+              <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center group-hover:bg-blue-500/30 transition-all">
+                <Cpu className="w-4 h-4 text-blue-400 group-hover:rotate-90 transition-transform duration-500" />
+              </div>
+              <div className={cn(
+                  "text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-300 via-cyan-300 to-indigo-300 bg-clip-text text-transparent",
+                  headerIconFont.className
+                )}
+              >
+                M.Awais
+              </div>
+            </button>
+          </Magnetic>
+
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden rounded-full"
+            className="md:hidden rounded-full bg-white/5 border border-white/10"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileMenuOpen ? <X className="h-5 w-5 text-white" /> : <Menu className="h-5 w-5 text-white" />}
           </Button>
 
-          <div className="hidden md:flex justify-center absolute left-1/2 top-1/2 mt-1 transform -translate-x-1/2 -translate-y-1/2 z-[5000]">
+          <div className="hidden md:flex justify-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[5000]">
             <AnimatePresence mode="wait">
               {visible && (
                 <motion.nav
                   key="navbar"
-                  initial={{ opacity: 1, y: -100 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -100, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="bg-white/10 dark:bg-gray-800/20 backdrop-blur-md border border-white/30 dark:border-gray-600/30 shadow-2xl px-1 py-1 rounded-md flex items-center space-x-0.5"
-                  style={{ borderRadius: "8px", backdropFilter: "blur(16px) saturate(180%)" }}
+                  initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                  animate={{ y: 0, opacity: 1, scale: 1 }}
+                  exit={{ y: -20, opacity: 0, scale: 0.95 }}
+                  className="bg-[#030014]/40 backdrop-blur-3xl border border-white/20 shadow-[0_0_30px_rgba(30,58,138,0.3)] px-1.5 py-1.5 rounded-2xl flex items-center space-x-1"
                 >
                   {navItems.map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => handleNavClick(item.id)}
-                      className={`relative px-3 py-1 rounded-md font-medium transition-all duration-300 transform hover:scale-105 ${
-                        activeSection === item.id ? "text-blue-400" : "text-blue-200 hover:text-cyan-300"
-                      }`}
-                    >
-                      {item.label}
-                      {activeSection === item.id && (
-                        <motion.span
-                          layoutId="active-tab"
-                          className="absolute left-1/2 -translate-x-1/2 -bottom-1 h-[2px] w-6 bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-300 rounded-full"
-                          transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                        />
-                      )}
-                    </button>
+                    <Magnetic key={item.id} strength={0.15}>
+                      <button
+                        onClick={() => handleNavClick(item.id)}
+                        className={cn(
+                          "relative px-4 py-2 rounded-xl text-xs font-bold tracking-widest uppercase transition-all duration-300",
+                          activeSection === item.id ? "text-blue-400" : "text-gray-400 hover:text-blue-200"
+                        )}
+                      >
+                        {item.label}
+                        {activeSection === item.id && (
+                          <motion.div
+                            layoutId="active-tab-indicator"
+                            className="absolute inset-0 bg-blue-500/10 border border-blue-500/20 rounded-xl z-[-1] shadow-[inset_0_0_15px_rgba(59,130,246,0.2)]"
+                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                          >
+                            <div className="absolute -bottom-[2px] left-1/2 -translate-x-1/2 w-4 h-[2px] bg-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.8)] rounded-full" />
+                          </motion.div>
+                        )}
+                      </button>
+                    </Magnetic>
                   ))}
 
-                  <div className="flex items-center space-x-1 ml-2 pl-2 border-l border-white/20 dark:border-gray-500/30">
+                  <div className="flex items-center space-x-1 ml-4 pl-4 border-l border-white/10">
                     {populatedSocialLinks.map((social) => (
-                      <Button
-                        key={social.label}
-                        variant="ghost"
-                        size="icon"
-                        className="w-6 h-6 rounded-full hover:scale-110 hover:bg-white/10 transition-all duration-300"
-                        asChild
-                      >
-                        <a href={social.href} target="_blank" rel="noopener noreferrer">
-                          <social.icon className="h-3 w-3 text-white/70" />
-                        </a>
-                      </Button>
+                      <Magnetic key={social.label} strength={0.3}>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="w-8 h-8 rounded-xl hover:bg-blue-500/20 transition-all group"
+                          asChild
+                        >
+                          <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${social.label} profile`}>
+                            <social.icon className="h-4 w-4 text-gray-400 group-hover:text-blue-400 transition-colors" />
+                          </a>
+                        </Button>
+                      </Magnetic>
                     ))}
                   </div>
                 </motion.nav>

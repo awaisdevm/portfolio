@@ -39,33 +39,45 @@ export const NavProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+
     const sectionIds = navItems.map((n) => n.id);
-    const observers: IntersectionObserver[] = [];
+    
+    // Use a more generous threshold and rootMargin for better mobile/desktop sync
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px", // Detect section when it's in the top part of viewport
+      threshold: 0,
+    };
 
-    // Choose rootMargin so the middle of the viewport counts as 'active'
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Find the entry closest to the viewport center
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top));
-        if (visible.length > 0) {
-          const id = visible[0].target.id;
-          setActiveSection(id);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
         }
-      },
-      { root: null, rootMargin: "-40% 0px -40% 0px", threshold: [0, 0.25, 0.5, 0.75] },
-    );
+      });
+    }, observerOptions);
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+    // Function to start observing elements
+    const observeElements = () => {
+      sectionIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) {
+          observer.observe(el);
+        }
+      });
+    };
+
+    // Try observing immediately
+    observeElements();
+
+    // Fallback: If elements aren't found yet (Next.js hydration), try again after a short delay
+    const timeoutId = setTimeout(observeElements, 1000);
 
     return () => {
       observer.disconnect();
+      clearTimeout(timeoutId);
     };
-  }, []);
+  }, [navItems]);
 
   return (
     <NavContext.Provider value={{ navItems, scrollToSection, activeSection, setActiveSection ,mobileMenuOpen,
