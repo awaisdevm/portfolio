@@ -56,16 +56,16 @@ const ProjectCard = ({ project }: { project: Project }) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Flat HUD Card Shell */}
-        <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] overflow-hidden rounded-[2rem] glass-strong shadow-2xl border border-white/10 transition-all duration-500 group-hover:border-blue-500/30 group-hover:shadow-blue-500/20">
+        <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] overflow-hidden rounded-[2rem] glass-strong shadow-2xl border border-white/10 transition-all duration-500 group-hover:border-primary/30 group-hover:shadow-primary/20">
           
           {/* Energy Rail: Top & Bottom Glowing Borders */}
           <motion.div 
-            className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-400 to-transparent z-50 opacity-0 group-hover:opacity-100"
+            className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent z-50 opacity-0 group-hover:opacity-100"
             animate={{ x: isHovered ? ['-100%', '100%'] : '-100%' }}
             transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
           />
           <motion.div 
-            className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent z-50 opacity-0 group-hover:opacity-100"
+            className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-secondary to-transparent z-50 opacity-0 group-hover:opacity-100"
             animate={{ x: isHovered ? ['100%', '-100%'] : '100%' }}
             transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
           />
@@ -73,16 +73,16 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {/* Tactical HUD: Static Corner Brackets */}
           <div className="absolute inset-0 z-40 pointer-events-none p-6">
             <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
-              <path d="M 6 2 L 2 2 L 2 6" stroke="#60a5fa" strokeWidth="0.5" className="opacity-40 group-hover:opacity-100 transition-opacity" />
-              <path d="M 94 2 L 98 2 L 98 6" stroke="#60a5fa" strokeWidth="0.5" className="opacity-40 group-hover:opacity-100 transition-opacity" />
-              <path d="M 6 98 L 2 98 L 2 94" stroke="#60a5fa" strokeWidth="0.5" className="opacity-40 group-hover:opacity-100 transition-opacity" />
-              <path d="M 94 98 L 98 98 L 98 94" stroke="#60a5fa" strokeWidth="0.5" className="opacity-40 group-hover:opacity-100 transition-opacity" />
+              <path d="M 6 2 L 2 2 L 2 6" stroke="#8b5cf6" strokeWidth="0.5" className="opacity-40 group-hover:opacity-100 transition-opacity" />
+              <path d="M 94 2 L 98 2 L 98 6" stroke="#8b5cf6" strokeWidth="0.5" className="opacity-40 group-hover:opacity-100 transition-opacity" />
+              <path d="M 6 98 L 2 98 L 2 94" stroke="#8b5cf6" strokeWidth="0.5" className="opacity-40 group-hover:opacity-100 transition-opacity" />
+              <path d="M 94 98 L 98 98 L 98 94" stroke="#8b5cf6" strokeWidth="0.5" className="opacity-40 group-hover:opacity-100 transition-opacity" />
             </svg>
           </div>
 
           {/* Rapid System Scan Line (Sweeps once on hover) */}
           <motion.div 
-            className="absolute top-0 left-0 w-full h-[10%] bg-gradient-to-b from-blue-400/20 to-transparent z-30 pointer-events-none opacity-0 group-hover:opacity-100"
+            className="absolute top-0 left-0 w-full h-[10%] bg-gradient-to-b from-primary/20 to-transparent z-30 pointer-events-none opacity-0 group-hover:opacity-100"
             initial={{ top: "-10%" }}
             animate={{ top: isHovered ? "100%" : "-10%" }}
             transition={{ duration: 0.8, ease: "circIn" }}
@@ -103,7 +103,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             
             {/* Top Badges (High-Tech design - Improved Readability) */}
             <div className="absolute top-6 right-6 flex flex-col items-end gap-2 z-40 group-hover:translate-x-1 transition-transform duration-500">
-              <span className="bg-blue-600/90 backdrop-blur-2xl text-white px-3 py-1 border border-blue-400/30 text-[9px] font-bold tracking-widest uppercase rounded-sm shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-all">
+              <span className="bg-primary/90 backdrop-blur-2xl text-white px-3 py-1 border border-primary/30 text-[9px] font-bold tracking-widest uppercase rounded-sm shadow-[0_0_15px_rgba(139,92,246,0.4)] transition-all">
                 {project.technology}
               </span>
               <span className="bg-slate-950/90 backdrop-blur-2xl text-blue-100/90 px-3 py-1 border border-white/10 text-[9px] font-bold tracking-widest uppercase rounded-sm shadow-xl">
@@ -112,7 +112,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             </div>
 
             {/* Bottom Data Panel (Initialization Style) */}
-            <div className="absolute bottom-0 left-0 right-0 z-40 pt-20 pb-8 px-8 bg-gradient-to-t from-[#030014]/95 via-[#030014]/80 to-transparent">
+            <div className="absolute bottom-0 left-0 right-0 z-40 pt-20 pb-8 px-8 bg-gradient-to-t from-background/95 via-background/80 to-transparent">
               <div className="space-y-4">
                 <motion.h3 
                   className="text-white text-left font-black text-2xl sm:text-3xl tracking-tighter"
@@ -130,7 +130,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                   
                   <div className="flex flex-wrap gap-2 mb-8">
                     {project.tech.map((feature: string, index: number) => (
-                      <span key={index} className="px-2 py-1 bg-white/5 border border-white/10 text-[9px] font-mono font-bold text-blue-300/80 uppercase">
+                      <span key={index} className="px-2 py-1 bg-white/5 border border-white/10 text-[9px] font-mono font-bold text-primary/80 uppercase">
                         {feature}
                       </span>
                     ))}
@@ -141,7 +141,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     href={project.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/40 text-blue-100 px-6 py-3 rounded-sm transition-all duration-300 group/btn relative overflow-hidden"
+                    className="inline-flex items-center gap-3 bg-primary/20 hover:bg-primary/30 border border-primary/40 text-white px-6 py-3 rounded-sm transition-all duration-300 group/btn relative overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000" />
                     <span className="text-[10px] font-bold tracking-widest uppercase font-mono">{project.ctaText || "Initialize_Link"}</span>

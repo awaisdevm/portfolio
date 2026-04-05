@@ -1,31 +1,32 @@
 import Link from "next/link";
 
-import { contactInfo } from "@/constants/contact";
+import portfolioData from "@/data/portfolio.json";
 import { BsGithub, BsLinkedin, BsStackOverflow, BsWhatsapp } from "react-icons/bs";
 
 export function SocialIcons() {
+    const { contact } = portfolioData.profile;
     const socialLinks = [
         {
             name: "GitHub",
-            href: contactInfo.github,
+            href: contact.github,
             icon: BsGithub,
             ariaLabel: "Follow on Github",
         },
         {
             name: "LinkedIn",
-            href: contactInfo.linkedin,
+            href: contact.linkedin,
             icon: BsLinkedin,
             ariaLabel: "Follow on LinkedIn",
         },
         {
             name: "WhatsApp",
-            href: contactInfo.whatsappUrl,
+            href: contact.whatsapp,
             icon: BsWhatsapp,
             ariaLabel: "Follow on WhatsApp",
         },
         {
             name: "Stack Overflow",
-            href: contactInfo.stackOverFlow,
+            href: contact.stackoverflow,
             icon: BsStackOverflow,
             ariaLabel: "Visit Stack Overflow",
         },

@@ -4,11 +4,11 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 import { HomeIcon, Globe, User, HandHelping } from "lucide-react";
 
 const navItems = [
-  { id: "home", label: "Home", color: "hover:text-cyan-200", icon: HomeIcon },
-  { id: "about", label: "About", color: "hover:text-blue-400", icon: User },
-  { id: "services", label: "Service", color: "hover:text-green-500", icon: HandHelping },
-  { id: "projects", label: "Projects", color: "hover:text-purple-500", icon: HomeIcon },
-  { id: "contact", label: "Contact", color: "hover:text-orange-500", icon: Globe },
+  { id: "home", label: "Home", color: "hover:text-primary", icon: HomeIcon },
+  { id: "about", label: "About", color: "hover:text-secondary", icon: User },
+  { id: "services", label: "Service", color: "hover:text-accent", icon: HandHelping },
+  { id: "projects", label: "Projects", color: "hover:text-primary", icon: HomeIcon },
+  { id: "contact", label: "Contact", color: "hover:text-secondary", icon: Globe },
 ];
 
 // Create context type

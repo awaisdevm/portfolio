@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Mail, CheckCircle2, Terminal } from "lucide-react";
 import { useNav } from "@/app/nav-context";
 import { LiaHackerrank } from "react-icons/lia";
-import { TypewriterEffect } from "../typewriter-effect";
+import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { systemInitVariants } from "@/lib/animations";
 import portfolioData from '@/data/portfolio.json';
 
@@ -44,7 +44,7 @@ export function HeroSection() {
       onMouseLeave={handleMouseLeave}
     >
       {/* Background HUD Grid Focus */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[80%] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[80%] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
       <motion.div
         variants={systemInitVariants}
@@ -66,7 +66,7 @@ export function HeroSection() {
               <span className="inline-block mt-2 min-h-[1.2em]">
                 <TypewriterEffect
                   words={portfolioData.profile.roles}
-                  className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent transform-gpu"
+                  className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent transform-gpu"
                 />
               </span>
               <br />
@@ -85,7 +85,7 @@ export function HeroSection() {
           {/* Call To Actions */}
           <motion.div variants={systemInitVariants} className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start pt-4">
             <Button
-              className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white border-0 px-8 py-7 rounded-full text-lg font-semibold transition-all shadow-[0_0_40px_-10px_rgba(59,130,246,0.5)] hover:shadow-[0_0_50px_-5px_rgba(59,130,246,0.7)] group hover:-translate-y-1 relative overflow-hidden"
+              className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-white border-0 px-8 py-7 rounded-full text-lg font-semibold transition-all shadow-[0_0_40px_-10px_rgba(139,92,246,0.5)] hover:shadow-[0_0_50px_-5px_rgba(139,92,246,0.7)] group hover:-translate-y-1 relative overflow-hidden"
               onClick={() => scrollToSection("projects")}
               aria-label="View my featured projects and case studies"
             >
@@ -112,14 +112,14 @@ export function HeroSection() {
           {/* Quick Stats */}
           <motion.div variants={systemInitVariants} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 pt-8 opacity-90">
             <div className="flex items-center gap-2 text-sm text-gray-300 font-medium bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/5">
-              <CheckCircle2 className="w-5 h-5 text-emerald-400 animate-pulse" />
+              <CheckCircle2 className="w-5 h-5 text-primary animate-pulse" />
               Available for work
             </div>
             <div
               className="flex items-center gap-2 text-sm text-gray-300 font-medium bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/5 cursor-pointer hover:bg-white/10 transition-all group"
               onClick={() => window.open(portfolioData.profile.contact.portfolio, "_blank")}
             >
-              <LiaHackerrank className="w-6 h-6 text-blue-400 group-hover:scale-110 group-hover:rotate-12 transition-all" />
+              <LiaHackerrank className="w-6 h-6 text-secondary group-hover:scale-110 group-hover:rotate-12 transition-all" />
               <span className="group-hover:text-white transition-colors">HackerRank Certified</span>
             </div>
           </motion.div>
@@ -134,7 +134,7 @@ export function HeroSection() {
           <div className="relative w-full max-w-[320px] sm:max-w-[380px] xl:max-w-[420px]">
 
             {/* Ambient Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/30 to-purple-500/30 rounded-[3rem] blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-[3rem] blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
 
             {/* Main Hero Card */}
             <div className="relative aspect-[4/5] rounded-[2.5rem] sm:rounded-[3rem] overflow-hidden border border-white/20 shadow-2xl glass group transform-gpu">
@@ -148,11 +148,11 @@ export function HeroSection() {
               />
               {/* Tactical Scanning Overlay */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-b from-blue-400/20 to-transparent h-[10%] w-full z-10 pointer-events-none"
+                className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent h-[10%] w-full z-10 pointer-events-none"
                 animate={{ top: ["-10%", "100%"] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#030014]/90 via-[#030014]/20 to-transparent opacity-80 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-80 pointer-events-none" />
             </div>
 
             {/* Floating Pills with Parallax Bias */}
@@ -161,7 +161,7 @@ export function HeroSection() {
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
               className="absolute top-10 sm:top-14 -left-6 sm:-left-12 glass-strong px-5 sm:px-6 py-3 sm:py-4 rounded-3xl flex items-center gap-3 shadow-2xl z-20 group"
             >
-              <span className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-cyan-400 drop-shadow-lg group-hover:scale-110 transition-transform">6+</span>
+              <span className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-primary to-secondary drop-shadow-lg group-hover:scale-110 transition-transform">6+</span>
               <span className="text-[10px] sm:text-xs font-bold text-white uppercase tracking-wider leading-tight">Years<br />Experience</span>
             </motion.div>
 
@@ -170,7 +170,7 @@ export function HeroSection() {
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
               className="absolute bottom-16 sm:bottom-20 -right-4 sm:-right-8 glass-strong px-5 sm:px-6 py-3 sm:py-4 rounded-3xl flex items-center gap-3 shadow-2xl z-20 group"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                 <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
               <div className="flex flex-col">

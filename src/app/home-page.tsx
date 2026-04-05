@@ -1,21 +1,17 @@
 "use client"
 
-import { SocialIcons } from '@/components/social-icons';
-
-import { Footer } from '@/components/sections/footer-section';
+import { SocialIcons } from '@/components/layout/social-links';
+import { Footer } from '@/components/layout/footer';
 import { HeroSection } from '@/components/sections/hero-section';
 import { FeatureProjectsSection } from '@/components/sections/projects-section';
 import { ContactSection } from '@/components/sections/contact-section';
-import { Service3DCard } from "@/components/sections/service-3d-card";
+import { TestimonialSection } from '@/components/sections/testimonial-section';
+import { Service3DCard } from "@/components/ui/service-card";
 import { SectionWrapper } from '@/components/ui/section-wrapper';
 import portfolioData from '@/data/portfolio.json';
-import { MapPin, Phone, } from 'lucide-react';
-import { Rocket, Target, Users, Lightbulb, Briefcase, GraduationCap, Heart, Github, Linkedin, Mail, Wind } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Frameworks } from "@/components/framework";
-import { Globe } from "@/components/globe";
-import { ExpandableJourney } from "@/components/expandable-journey";
+import { Frameworks } from "@/components/sections/tech-stack";
 import { AboutSection } from "@/components/sections/about-section";
+
 // using portfolioData now
 
 export const MainContent: React.FC = () => {
@@ -53,6 +49,7 @@ export const MainContent: React.FC = () => {
 
       </SectionWrapper>
       <FeatureProjectsSection />
+      <TestimonialSection />
       <ContactSection />
 
       <Footer />

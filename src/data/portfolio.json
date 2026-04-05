@@ -15,7 +15,7 @@
     ],
     "location": "Lahore, Pakistan | Global Remote",
     "tagline": "I build high-performance mobile apps that scale to millions of users — from healthcare platforms to e-sports ecosystems. 6+ years of Kotlin, Flutter, and clean architecture expertise.",
-    "heroImage": "/images/dev-pic.png",
+    "heroImage": "/images/dev-pic.avif",
     "heroImageAlt": "Muhammad Awais — Senior Android Developer and Flutter Architect, professional portrait",
     "aboutBio": {
       "heading": "Architecting the Future of High-Performance Mobile",
@@ -121,7 +121,11 @@
       "linkedin": "https://linkedin.com/in/awaisdevm",
       "github": "https://github.com/awaisdevm",
       "phone": "+92 301 0789555",
-      "portfolio": "https://www.hackerrank.com/certificates/794ccb84d359"
+      "portfolio": "https://www.hackerrank.com/certificates/794ccb84d359",
+      "whatsapp": "https://wa.me/+923010789555",
+      "stackoverflow": "https://stackoverflow.com/users/15903692/awais963",
+      "upwork": "",
+      "fiverr": ""
     }
   },
   "sections": {
@@ -148,6 +152,12 @@
       "subtitle": "Let's Work Together",
       "title": "Get in Touch",
       "description": "Ready to scale your mobile product? Let's discuss your next high-performance app over a free consultation."
+    },
+    "testimonials": {
+      "id": "testimonials",
+      "subtitle": "Client Feedback",
+      "title": "Testimonials",
+      "description": "Don't just take my word for it. Here is what engineering leaders and founders have to say about my work."
     }
   },
   "projects": [
@@ -162,7 +172,7 @@
         "LBS Optimization"
       ],
       "image": "/images/projects-image/healthwire.webp?height=400&width=300",
-      "gradient": "from-blue-600 via-indigo-700 to-purple-800",
+      "gradient": "from-primary via-secondary to-accent",
       "url": "https://play.google.com/store/apps/details?id=com.healthwire.healthwire",
       "category": "HealthTech Infrastructure",
       "technology": "Android Native",
@@ -180,7 +190,7 @@
         "Real-time Sync",
         "Advanced CI/CD"
       ],
-      "gradient": "from-cyan-500 via-blue-600 to-indigo-700",
+      "gradient": "from-secondary via-primary to-accent",
       "url": "https://play.google.com/store/apps/details?id=com.healthwire.hcloud",
       "category": "Clinic Operations",
       "technology": "Native Mobile Architecture",
@@ -198,7 +208,7 @@
         "Reactive Flow",
         "Scale Optimization"
       ],
-      "gradient": "from-purple-600 via-pink-700 to-red-800",
+      "gradient": "from-accent via-secondary to-primary",
       "category": "Social Gaming Architecture",
       "url": "https://play.google.com/store/apps/details?id=com.dongamers.dongamers",
       "technology": "E-Sports Solutions",
@@ -216,7 +226,7 @@
         "BLoC Flow",
         "Design Systems"
       ],
-      "gradient": "from-green-600 via-teal-700 to-blue-800",
+      "gradient": "from-primary via-accent to-secondary",
       "category": "EdTech Solutions",
       "url": "https://apps.apple.com/hk/app/makernote/id6475201417?l=en-GB",
       "technology": "Flutter Hybrid",
@@ -236,14 +246,14 @@
         "Clean Architecture"
       ],
       "iconName": "Smartphone",
-      "gradient": "from-blue-500 to-cyan-500",
+      "gradient": "from-primary to-secondary",
       "features": [
         "Jetpack Compose UI Optimization",
         "Advanced Payment System Scaling",
         "Offline-First System Design",
         "High-Frequency Data Integration"
       ],
-      "iconColor": "text-blue-500"
+      "iconColor": "text-primary"
     },
     {
       "id": "android-tv-solutions",
@@ -256,14 +266,14 @@
         "Remote HID Events"
       ],
       "iconName": "Tv",
-      "gradient": "from-purple-500 to-pink-500",
+      "gradient": "from-secondary to-accent",
       "features": [
         "Big-Screen Strategy & UI Audit",
         "Seamless Media Hub Architecture",
         "Legacy Code Refactoring",
         "High-Refresh Rate UX Design"
       ],
-      "iconColor": "text-red-500"
+      "iconColor": "text-secondary"
     },
     {
       "id": "ai-mobile-systems",
@@ -276,14 +286,25 @@
         "Data Intelligent Apps"
       ],
       "iconName": "Brain",
-      "gradient": "from-green-500 to-emerald-500",
+      "gradient": "from-accent to-primary",
       "features": [
         "Real-Time Vision & Recognition",
         "Automated System Intelligence",
         "Predictive User Behavior Models",
         "Custom Neural Model Deployment"
       ],
-      "iconColor": "text-green-500"
+      "iconColor": "text-accent"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "clientName": "Louis Wong",
+      "clientRole": "CEO @ TacklEd Innovation Ltd",
+      "clientImage": "https://i.pravatar.cc/150?u=24",
+      "testimonial": "Working with Awais was a great experience. He optimized our application, reduced its RAM usage, and improved performance by 30%. His expertise in code optimization made a noticeable impact on our product quality.",
+      "rating": 5,
+      "verified": true
     }
   ]
 }

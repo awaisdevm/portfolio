@@ -48,11 +48,11 @@ export const Header: React.FC = () => {
               onClick={() => scrollToSection("home")} 
               className="group relative flex items-center gap-2 focus:outline-none"
             >
-              <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center group-hover:bg-blue-500/30 transition-all">
-                <Cpu className="w-4 h-4 text-blue-400 group-hover:rotate-90 transition-transform duration-500" />
+              <div className="w-8 h-8 rounded-lg bg-primary/20 border border-primary/30 flex items-center justify-center group-hover:bg-primary/30 transition-all">
+                <Cpu className="w-4 h-4 text-primary group-hover:rotate-90 transition-transform duration-500" />
               </div>
               <div className={cn(
-                  "text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-300 via-cyan-300 to-indigo-300 bg-clip-text text-transparent",
+                  "text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent",
                   headerIconFont.className
                 )}
               >
@@ -78,7 +78,7 @@ export const Header: React.FC = () => {
                   initial={{ opacity: 0, y: -20, scale: 0.95 }}
                   animate={{ y: 0, opacity: 1, scale: 1 }}
                   exit={{ y: -20, opacity: 0, scale: 0.95 }}
-                  className="bg-[#030014]/40 backdrop-blur-3xl border border-white/20 shadow-[0_0_30px_rgba(30,58,138,0.3)] px-1.5 py-1.5 rounded-2xl flex items-center space-x-1"
+                  className="bg-background/40 backdrop-blur-3xl border border-white/20 shadow-[0_0_30px_rgba(139,92,246,0.3)] px-1.5 py-1.5 rounded-2xl flex items-center space-x-1"
                 >
                   {navItems.map((item) => (
                     <Magnetic key={item.id} strength={0.15}>
@@ -86,17 +86,17 @@ export const Header: React.FC = () => {
                         onClick={() => handleNavClick(item.id)}
                         className={cn(
                           "relative px-4 py-2 rounded-xl text-xs font-bold tracking-widest uppercase transition-all duration-300",
-                          activeSection === item.id ? "text-blue-400" : "text-gray-400 hover:text-blue-200"
+                          activeSection === item.id ? "text-primary" : "text-gray-400 hover:text-primary/70"
                         )}
                       >
                         {item.label}
                         {activeSection === item.id && (
                           <motion.div
                             layoutId="active-tab-indicator"
-                            className="absolute inset-0 bg-blue-500/10 border border-blue-500/20 rounded-xl z-[-1] shadow-[inset_0_0_15px_rgba(59,130,246,0.2)]"
+                            className="absolute inset-0 bg-primary/10 border border-primary/20 rounded-xl z-[-1] shadow-[inset_0_0_15px_rgba(139,92,246,0.2)]"
                             transition={{ type: "spring", stiffness: 380, damping: 30 }}
                           >
-                            <div className="absolute -bottom-[2px] left-1/2 -translate-x-1/2 w-4 h-[2px] bg-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.8)] rounded-full" />
+                            <div className="absolute -bottom-[2px] left-1/2 -translate-x-1/2 w-4 h-[2px] bg-primary shadow-[0_0_10px_rgba(139,92,246,0.8)] rounded-full" />
                           </motion.div>
                         )}
                       </button>
@@ -109,11 +109,11 @@ export const Header: React.FC = () => {
                         <Button
                           variant="ghost"
                           size="icon"
-                          className="w-8 h-8 rounded-xl hover:bg-blue-500/20 transition-all group"
+                          className="w-8 h-8 rounded-xl hover:bg-primary/20 transition-all group"
                           asChild
                         >
                           <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${social.label} profile`}>
-                            <social.icon className="h-4 w-4 text-gray-400 group-hover:text-blue-400 transition-colors" />
+                            <social.icon className="h-4 w-4 text-gray-400 group-hover:text-primary transition-colors" />
                           </a>
                         </Button>
                       </Magnetic>
@@ -172,7 +172,7 @@ export const Header: React.FC = () => {
           hover:bg-gray-700/40 group
         `}
               >
-                <social.icon className="w-6 h-6  text-white group-hover:text-blue-400 transition-colors duration-200" />
+                <social.icon className="w-6 h-6  text-white group-hover:text-primary transition-colors duration-200" />
               </a>
             ))}
           </div>

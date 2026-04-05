@@ -15,9 +15,9 @@ export default function Portfolio() {
     <div className="relative">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-32 left-32 w-80 h-80 bg-gradient-to-r from-blue-300/20 to-cyan-200/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-40 right-40 w-96 h-96 bg-gradient-to-r from-sky-300/20 to-blue-300/20 rounded-full blur-3xl" />
-          <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-gradient-to-r from-cyan-300/15 to-sky-200/15 rounded-full blur-3xl" />
+          <div className="absolute top-32 left-32 w-80 h-80 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-40 right-40 w-96 h-96 bg-gradient-to-r from-secondary/20 to-accent/20 rounded-full blur-3xl" />
+          <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-gradient-to-r from-accent/15 to-primary/15 rounded-full blur-3xl" />
         </div>
       </div>
 

@@ -1,19 +1,15 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import { NavProvider } from "@/app/nav-context";
-import { Header } from "@/components/sections/header-section";
-import ClientLayout from "@/components/client-layout";
+import { Header } from "@/components/layout/header";
+import ClientLayout from "@/components/layout/client-layout";
 import portfolioData from "@/data/portfolio.json";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
 const siteUrl = "https://devawais.com";
@@ -125,14 +121,14 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.className} antialiased`}
       >
-        <div className="min-h-screen bg-[#030014] overflow-x-hidden relative text-white">
+        <div className="min-h-screen bg-background overflow-x-hidden relative text-white">
           {/* Deep atmospheric glowing orbs for ethereal effect */}
           <div className="fixed inset-0 z-0 pointer-events-none">
-            <div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-blue-900/30 blur-[120px]" />
-            <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-indigo-900/20 blur-[120px]" />
-            <div className="absolute top-[30%] left-[50%] w-[30vw] h-[30vw] rounded-full bg-purple-900/20 blur-[120px]" />
+            <div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-primary/20 blur-[120px]" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-secondary/20 blur-[120px]" />
+            <div className="absolute top-[30%] left-[50%] w-[30vw] h-[30vw] rounded-full bg-accent/20 blur-[120px]" />
           </div>
           <div className="relative z-10">
             <NavProvider>

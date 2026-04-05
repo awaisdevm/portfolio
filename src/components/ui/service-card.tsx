@@ -124,9 +124,9 @@ export function Service3DCard({ service }: Service3DCardProps) {
             />
             <defs>
               <linearGradient id="cyber-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#60a5fa" />
-                <stop offset="50%" stopColor="#818cf8" />
-                <stop offset="100%" stopColor="#22d3ee" />
+                <stop offset="0%" stopColor="#8b5cf6" />
+                <stop offset="50%" stopColor="#0ea5e9" />
+                <stop offset="100%" stopColor="#f43f5e" />
               </linearGradient>
             </defs>
           </svg>
@@ -134,7 +134,7 @@ export function Service3DCard({ service }: Service3DCardProps) {
 
         {/* Global Atmospheric Glow */}
         <div 
-          className="absolute inset-0 rounded-[2rem] bg-blue-500/5 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" 
+          className="absolute inset-0 rounded-[2rem] bg-primary/5 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" 
         />
 
         {/* Main Card Shell */}
@@ -143,11 +143,11 @@ export function Service3DCard({ service }: Service3DCardProps) {
           className="group relative h-full overflow-hidden border-white/10 backdrop-blur-3xl transition-all duration-700
                      bg-gradient-to-br from-white/10 via-white/5 to-transparent
                      shadow-[0_8px_32px_rgba(0,0,0,0.5)] 
-                     group-hover:border-white/30 group-hover:bg-white/[0.12] group-hover:shadow-blue-500/20"
+                     group-hover:border-white/30 group-hover:bg-white/[0.12] group-hover:shadow-primary/20"
         >
           {/* Scanning Light Bar Effect */}
           <motion.div
-            className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-400 to-transparent z-40 opacity-0 group-hover:opacity-100"
+            className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent z-40 opacity-0 group-hover:opacity-100"
             initial={{ translateY: "-100%" }}
             animate={{ translateY: isHovered ? "1000%" : "-100%" }}
             transition={{ 
@@ -177,13 +177,13 @@ export function Service3DCard({ service }: Service3DCardProps) {
                 className="relative mb-6 w-16 h-16"
                 animate={{ translateZ: isHovered ? 40 : 0 }}
               >
-                <div className="absolute inset-0 rounded-2xl bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 rounded-2xl bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative inline-flex items-center justify-center w-full h-full bg-white/10 rounded-2xl border border-white/20 group-hover:bg-white/20 transition-all duration-300">
-                  <IconComponent className="w-8 h-8 text-blue-300 group-hover:text-cyan-200 transition-colors duration-300" />
+                  <IconComponent className="w-8 h-8 text-primary group-hover:text-secondary transition-colors duration-300" />
                 </div>
               </motion.div>
 
-              <h3 className="text-2xl font-black text-white mb-3 tracking-tight group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-300 group-hover:via-cyan-300 group-hover:to-indigo-300 group-hover:bg-clip-text transition-all duration-300">
+              <h3 className="text-2xl font-black text-white mb-3 tracking-tight group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-primary group-hover:via-secondary group-hover:to-accent group-hover:bg-clip-text transition-all duration-300">
                 {service.title}
               </h3>
 
@@ -201,7 +201,7 @@ export function Service3DCard({ service }: Service3DCardProps) {
                     initial={{ opacity: 0.6, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     className="px-3 py-1.5 text-[10px] font-bold tracking-widest bg-white/5 uppercase text-gray-400 rounded-lg border border-white/10 
-                             group-hover:bg-blue-500/10 group-hover:text-blue-300 group-hover:border-blue-500/30 transition-all duration-300 scale-95 hover:scale-105"
+                             group-hover:bg-primary/10 group-hover:text-primary group-hover:border-primary/30 transition-all duration-300 scale-95 hover:scale-105"
                   >
                     {tech}
                   </motion.span>
@@ -217,7 +217,7 @@ export function Service3DCard({ service }: Service3DCardProps) {
               >
                 {service.features.map((feature) => (
                   <div key={feature} className="flex items-center text-xs font-bold tracking-tight text-white/70 group-hover:text-white transition-colors">
-                    <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mr-3 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-secondary mr-3 shadow-[0_0_8px_rgba(14,165,233,0.8)]" />
                     {feature}
                   </div>
                 ))}
@@ -228,9 +228,9 @@ export function Service3DCard({ service }: Service3DCardProps) {
 
         {/* Ambient Corner Particles Overlay */}
         <div className="absolute inset-0 pointer-events-none opacity-40 group-hover:opacity-70 transition-opacity">
-            <div className="absolute top-4 left-4 w-1 h-1 bg-blue-300 rounded-full animate-pulse" />
-            <div className="absolute bottom-12 right-6 w-1 h-1 bg-cyan-300 rounded-full animate-pulse delay-700" />
-            <div className="absolute top-1/2 right-4 w-0.5 h-0.5 bg-purple-300 rounded-full animate-pulse delay-1000" />
+            <div className="absolute top-4 left-4 w-1 h-1 bg-primary rounded-full animate-pulse" />
+            <div className="absolute bottom-12 right-6 w-1 h-1 bg-secondary rounded-full animate-pulse delay-700" />
+            <div className="absolute top-1/2 right-4 w-0.5 h-0.5 bg-accent rounded-full animate-pulse delay-1000" />
         </div>
       </motion.div>
     </a>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { Service3DCard } from "@/components/sections/service-3d-card"
+import { Service3DCard } from "@/components/ui/service-card"
 import portfolioData from "@/data/portfolio.json";
 import { SectionWrapper } from "@/components/ui/section-wrapper"
 

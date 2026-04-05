@@ -1,24 +1,30 @@
-import { OrbitingCircles } from "@/components/orbiting-circle";
-import { motion, AnimatePresence } from "framer-motion";
-import { Star, Sparkles } from "lucide-react";
-import React, { useState, useEffect } from "react";
+"use client";
 
-export function Frameworks({ compact = false }) {
+import { OrbitingCircles } from "@/components/ui/orbiting-circles";
+import { motion } from "framer-motion";
+import { Star, Sparkles } from "lucide-react";
+import React from "react";
+
+interface TechStackProps {
+  compact?: boolean;
+}
+
+export function Frameworks({ compact = false }: TechStackProps) {
   const skills = [
-    "Android Studio",
-    "Flutter",
-    "git",
-    "github",
-    "java",
-    "Kotlin",
-    "nodejs",
-    "sqlite",
-    "tailwindcss",
-    "visualstudiocode",
-    "xcode",
-    "nextjs",
-    "react",
-    "typescript"
+    { name: "Android Studio", src: "/assets/logos/Android Studio.svg" },
+    { name: "Flutter", src: "/assets/logos/Flutter.svg" },
+    { name: "git", src: "/assets/logos/git.svg" },
+    { name: "github", src: "/assets/logos/github.svg" },
+    { name: "java", src: "/assets/logos/java.svg" },
+    { name: "kotlin", src: "/assets/logos/kotlin.svg" },
+    { name: "nodejs", src: "/assets/logos/nodejs.svg" },
+    { name: "sqlite", src: "/assets/logos/sqlite.svg" },
+    { name: "tailwindcss", src: "/assets/logos/tailwindcss.svg" },
+    { name: "visualstudiocode", src: "/assets/logos/visualstudiocode.svg" },
+    { name: "Xcode", src: "/assets/logos/Xcode.svg" },
+    { name: "nextjs", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+    { name: "react", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "typescript", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" }
   ];
   
   return (
@@ -91,7 +97,7 @@ export function Frameworks({ compact = false }) {
               <div key={index} className="flex-shrink-0 relative group/star">
                  {/* Connecting Ray */}
                  <div className="absolute top-1/2 left-full w-14 h-[1px] bg-gradient-to-r from-blue-500/20 to-transparent -translate-y-1/2" />
-                 <Icon src={`assets/logos/${skill}.svg`} name={skill} />
+                 <Icon src={skill.src} name={skill.name} />
               </div>
             ))}
           </motion.div>
@@ -101,12 +107,12 @@ export function Frameworks({ compact = false }) {
         <div className="relative z-20">
           <OrbitingCircles iconSize={32} radius={100} speed={1}>
             {skills.slice(0, 6).map((skill, index) => (
-              <Icon key={index} src={`assets/logos/${skill}.svg`} name={skill} />
+              <Icon key={index} src={skill.src} name={skill.name} />
             ))}
           </OrbitingCircles>
           <OrbitingCircles iconSize={32} radius={140} reverse speed={1.5}>
-            {skills.slice(6, 12).map((skill, index) => (
-              <Icon key={index} src={`assets/logos/${skill}.svg`} name={skill} />
+            {skills.slice(6).map((skill, index) => (
+              <Icon key={index} src={skill.src} name={skill.name} />
             ))}
           </OrbitingCircles>
         </div>
@@ -140,7 +146,12 @@ function ShootingStar() {
   );
 }
 
-const Icon = ({ src, name }) => (
+interface IconProps {
+  src: string;
+  name: string;
+}
+
+const Icon = ({ src, name }: IconProps) => (
   <div className="group relative flex flex-col items-center">
     {/* Star Burst Effect Background */}
     <div className="absolute inset-0 flex items-center justify-center">
@@ -161,7 +172,9 @@ const Icon = ({ src, name }) => (
       <img 
         src={src} 
         alt={name}
-        className="relative w-8 h-8 object-contain transition-all duration-500 contrast-125 saturate-150 grayscale-[0.8] group-hover:grayscale-0 group-hover:scale-125 group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.6)]" 
+        className={`relative w-8 h-8 object-contain transition-all duration-500 contrast-125 saturate-150 grayscale-[0.4] opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-125 group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.6)] ${
+          name.toLowerCase() === 'github' || name.toLowerCase() === 'nextjs' ? 'invert dark:invert-0' : ''
+        }`}
       />
       
       {/* Orbital sparkle nodes */}
@@ -173,7 +186,7 @@ const Icon = ({ src, name }) => (
       <div className="flex items-center gap-1">
         <div className="w-1 h-1 rounded-full bg-blue-500 animate-ping" />
         <span className="text-[7px] font-mono text-blue-400 font-black uppercase tracking-[0.2em] whitespace-nowrap bg-blue-950/40 px-2 py-0.5 rounded-full border border-blue-500/30">
-          NODE_{name}
+          {name.toUpperCase()}
         </span>
       </div>
     </div>

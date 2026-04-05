@@ -12,10 +12,10 @@ interface TimelineEntry {
 }
 
 const companyIcons: Record<string, React.ReactNode> = {
-  "Egora Pvt Ltd": <BrainCircuit className="w-8 h-8 text-cyan-400" />,
-  "Healthwire Pvt Ltd": <Laptop className="w-8 h-8 text-green-400" />,
-  "DonGamers": <Gamepad2 className="w-8 h-8 text-purple-400" />,
-  "Netroots Technologies LLC": <Building2 className="w-8 h-8 text-blue-400" />
+  "Egora Pvt Ltd": <BrainCircuit className="w-8 h-8 text-secondary" />,
+  "Healthwire Pvt Ltd": <Laptop className="w-8 h-8 text-primary" />,
+  "DonGamers": <Gamepad2 className="w-8 h-8 text-accent" />,
+  "Netroots Technologies LLC": <Building2 className="w-8 h-8 text-primary" />
 };
 
 export const ExpandableJourney = ({ data }: { data: TimelineEntry[] }) => {
@@ -24,7 +24,7 @@ export const ExpandableJourney = ({ data }: { data: TimelineEntry[] }) => {
   return (
     <div className="w-full max-w-7xl mx-auto pb-20 mt-10">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 inline-block">
+        <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent inline-block">
           Experience Accordion
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto mt-4">
@@ -54,7 +54,7 @@ export const ExpandableJourney = ({ data }: { data: TimelineEntry[] }) => {
               <div className="absolute inset-0 bg-white/5 border border-white/10 rounded-[2rem] z-0" />
 
               <motion.div
-                className={`absolute inset-0 opacity-0 transition-opacity duration-300 z-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20`}
+                className={`absolute inset-0 opacity-0 transition-opacity duration-300 z-0 bg-gradient-to-br from-primary/20 to-secondary/20`}
                 initial={false}
                 animate={{ opacity: isActive ? 1 : 0 }}
               />
@@ -81,7 +81,7 @@ export const ExpandableJourney = ({ data }: { data: TimelineEntry[] }) => {
 
                 {/* Bottom Bar: Icon + Company details */}
                 <div className={`flex items-center gap-4 ${isActive ? 'w-full' : ''}`}>
-                  <motion.div layout className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isActive ? 'bg-gradient-to-br from-blue-500 to-indigo-500 shadow-lg shadow-blue-500/25 scale-110' : 'bg-white/10 border border-white/10 group-hover:scale-110'}`}>
+                  <motion.div layout className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isActive ? 'bg-gradient-to-br from-primary to-secondary shadow-lg shadow-primary/25 scale-110' : 'bg-white/10 border border-white/10 group-hover:scale-110'}`}>
                     {Icon}
                   </motion.div>
 
@@ -95,7 +95,7 @@ export const ExpandableJourney = ({ data }: { data: TimelineEntry[] }) => {
                         className="overflow-hidden flex flex-col justify-center whitespace-nowrap"
                       >
                         <h4 className="text-lg md:text-xl font-bold text-white truncate">{item.company}</h4>
-                        <span className="text-blue-300 text-xs md:text-sm font-semibold tracking-wider uppercase">{item.year}</span>
+                        <span className="text-primary text-xs md:text-sm font-semibold tracking-wider uppercase">{item.year}</span>
                       </motion.div>
                     )}
                   </AnimatePresence>
