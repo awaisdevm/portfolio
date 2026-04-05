@@ -41,7 +41,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({ data }) => {
 
         {/* Testimonial Text */}
         <p className="text-zinc-300 leading-relaxed text-sm lg:text-base italic">
-          "{data.testimonial}"
+          &ldquo;{data.testimonial}&rdquo;
         </p>
       </div>
 

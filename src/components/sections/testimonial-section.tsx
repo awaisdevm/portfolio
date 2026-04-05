@@ -55,7 +55,7 @@ export const TestimonialSection = () => {
             }
           `}} />
           
-          {testimonials.map((data, idx) => (
+          {testimonials.map((data) => (
             <div 
               key={data.id} 
               className="flex-none snap-center"

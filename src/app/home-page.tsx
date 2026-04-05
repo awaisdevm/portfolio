@@ -9,7 +9,7 @@ import { TestimonialSection } from '@/components/sections/testimonial-section';
 import { Service3DCard } from "@/components/ui/service-card";
 import { SectionWrapper } from '@/components/ui/section-wrapper';
 import portfolioData from '@/data/portfolio.json';
-import { Frameworks } from "@/components/sections/tech-stack";
+
 import { AboutSection } from "@/components/sections/about-section";
 
 // using portfolioData now

@@ -1,5 +1,5 @@
-import { motion, Variants } from "framer-motion";
-import { Rocket, Target, MapPin, Cpu, Shield, Users, Lightbulb, Activity } from "lucide-react";
+import { motion } from "framer-motion";
+import { Rocket, Target, MapPin, Cpu, Users, Lightbulb } from "lucide-react";
 import { Globe } from "@/components/ui/globe";
 import { Frameworks } from "@/components/sections/tech-stack";
 import { ExpandableJourney } from "@/components/sections/journey-section";
