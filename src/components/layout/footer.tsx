@@ -1,8 +1,9 @@
-import { Linkedin, Mail, GithubIcon } from "lucide-react"
+import { Linkedin, Mail, GithubIcon, Phone, MapPin } from "lucide-react"
 import portfolioData from "@/data/portfolio.json"
+import { ObfuscatedContact } from "../ui/obfuscated-contact"
 
 export const Footer: React.FC = () => {
-  const { contact, name, roles } = portfolioData.profile;
+  const { contact, name, roles, location } = portfolioData.profile;
   const currentYear = new Date().getFullYear();
 
   return (
@@ -27,6 +28,17 @@ export const Footer: React.FC = () => {
             <p className="text-blue-400 font-mono text-[10px] uppercase tracking-widest font-bold mt-1">
               {roles[0]}
             </p>
+            
+            <div className="mt-6 flex flex-col items-center md:items-start space-y-2 text-gray-400 text-xs font-medium">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-3 h-3 text-secondary" />
+                <span>{location.split('|')[0]}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone className="w-3 h-3 text-secondary" />
+                <ObfuscatedContact type="phone" value={contact.phone} className="hover:text-primary" />
+              </div>
+            </div>
           </div>
 
           {/* Right: Let's Connect & Social Icons */}
@@ -42,9 +54,9 @@ export const Footer: React.FC = () => {
               <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile" className="text-gray-400 hover:text-blue-400 transition-all hover:scale-110">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href={`mailto:${contact.email}`} aria-label="Send email to Muhammad Awais" className="text-gray-400 hover:text-blue-400 transition-all hover:scale-110">
+              <ObfuscatedContact type="email" value={contact.email} className="text-gray-400 hover:text-blue-400 transition-all hover:scale-110">
                 <Mail className="w-5 h-5" />
-              </a>
+              </ObfuscatedContact>
             </nav>
           </div>
         </div>

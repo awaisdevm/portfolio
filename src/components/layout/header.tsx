@@ -9,6 +9,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { Magnetic } from "../ui/magnetic"
 import portfolioData from "@/data/portfolio.json"
+import { ObfuscatedContact } from "../ui/obfuscated-contact"
 
 const headerIconFont = Protest_Guerrilla({
   subsets: ["latin"],
@@ -106,16 +107,26 @@ export const Header: React.FC = () => {
                   <div className="flex items-center space-x-1 ml-4 pl-4 border-l border-white/10">
                     {populatedSocialLinks.map((social) => (
                       <Magnetic key={social.label} strength={0.3}>
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          className="w-8 h-8 rounded-xl hover:bg-primary/20 transition-all group"
-                          asChild
-                        >
-                          <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${social.label} profile`}>
+                        {social.label === "Email" ? (
+                          <ObfuscatedContact
+                            type="email"
+                            value={contact.email}
+                            className="w-8 h-8 flex items-center justify-center rounded-xl hover:bg-primary/20 transition-all group"
+                          >
                             <social.icon className="h-4 w-4 text-gray-400 group-hover:text-primary transition-colors" />
-                          </a>
-                        </Button>
+                          </ObfuscatedContact>
+                        ) : (
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="w-8 h-8 rounded-xl hover:bg-primary/20 transition-all group"
+                            asChild
+                          >
+                            <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${social.label} profile`}>
+                              <social.icon className="h-4 w-4 text-gray-400 group-hover:text-primary transition-colors" />
+                            </a>
+                          </Button>
+                        )}
                       </Magnetic>
                     ))}
                   </div>
@@ -160,20 +171,31 @@ export const Header: React.FC = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-4">
             {populatedSocialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                className={`
-          p-4 rounded-full border border-gray-700/60 backdrop-blur-sm
-          hover:scale-110 hover:rotate-6 transition-all duration-300
-          hover:bg-gray-700/40 group
-        `}
-              >
-                <social.icon className="w-6 h-6  text-white group-hover:text-primary transition-colors duration-200" />
-              </a>
+              social.label === "Email" ? (
+                <ObfuscatedContact
+                  key={social.label}
+                  type="email"
+                  value={contact.email}
+                  className="p-4 rounded-full border border-gray-700/60 backdrop-blur-sm hover:scale-110 hover:rotate-6 transition-all duration-300 hover:bg-gray-700/40 group flex items-center justify-center"
+                >
+                  <social.icon className="w-6 h-6 text-white group-hover:text-primary transition-colors duration-200" />
+                </ObfuscatedContact>
+              ) : (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className={`
+            p-4 rounded-full border border-gray-700/60 backdrop-blur-sm
+            hover:scale-110 hover:rotate-6 transition-all duration-300
+            hover:bg-gray-700/40 group
+          `}
+                >
+                  <social.icon className="w-6 h-6  text-white group-hover:text-primary transition-colors duration-200" />
+                </a>
+              )
             ))}
           </div>
         </div>

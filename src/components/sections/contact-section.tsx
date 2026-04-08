@@ -1,10 +1,11 @@
 "use client";
 
-import { Mail, Linkedin, Github, ArrowRight, ShieldCheck, Zap } from "lucide-react";
+import { Mail, Linkedin, Github, ArrowRight, ShieldCheck, Zap, Phone } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
 import portfolioData from "@/data/portfolio.json";
 import { motion } from "framer-motion";
 import { systemInitVariants } from "@/lib/animations";
+import { ObfuscatedContact } from "../ui/obfuscated-contact";
 
 export const ContactSection = () => {
   const contactSection = portfolioData.sections.contact;
@@ -34,10 +35,19 @@ export const ContactSection = () => {
       color: "text-accent",
       glow: "shadow-accent/20",
     },
+    {
+      icon: Phone,
+      label: "Secure_Line",
+      value: portfolioData.profile.contact.phone,
+      meta: "UPLINK_04",
+      color: "text-accent",
+      glow: "shadow-accent/20",
+    },
   ];
 
   const getHref = (label: string, value: string) => {
     if (label === 'Direct_Email') return `mailto:${value}`;
+    if (label === 'Secure_Line') return `tel:${value.replace(/\s/g, "")}`;
     if (label === 'Social_Node_LI') return value.startsWith('http') ? value : `https://linkedin.com/in/${value.replace('@', '')}`;
     if (label === 'Source_Node_GH') return value.startsWith('http') ? value : `https://github.com/${value.replace('@', '')}`;
     return '#';
@@ -88,42 +98,66 @@ export const ContactSection = () => {
 
             {/* RIGHT CONTENT: Tactical Contact Nodes */}
             <div className="lg:col-span-7 grid gap-4">
-              {contactOptions.map(({ icon: Icon, label, value = "", color, glow, meta }) => (
-                <motion.a
-                  variants={systemInitVariants}
-                  href={getHref(label, value)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={label}
-                  aria-label={`Contact via ${label.replace(/_/g, ' ')}: ${value}`}
-                  className={`group relative flex items-center p-6 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:-translate-x-2 overflow-hidden`}
-                >
-                  {/* Energy Rail Animation */}
-                  <motion.div
-                    className="absolute top-0 left-0 w-1 h-full bg-primary/40 opacity-0 group-hover:opacity-100"
-                    initial={{ height: 0 }}
-                    whileHover={{ height: "100%" }}
-                  />
+              {contactOptions.map(({ icon: Icon, label, value = "", color, glow, meta }) => {
+                const isEmail = label === 'Direct_Email';
+                
+                const content = (
+                  <div className={`group relative flex items-center p-6 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl transition-all duration-500 hover:border-primary/30 hover:bg-primary/5 hover:-translate-x-2 overflow-hidden w-full cursor-pointer`}>
+                    {/* Energy Rail Animation */}
+                    <motion.div
+                      className="absolute top-0 left-0 w-1 h-full bg-primary/40 opacity-0 group-hover:opacity-100"
+                      initial={{ height: 0 }}
+                      whileHover={{ height: "100%" }}
+                    />
 
-                  <div className={`w-14 h-14 bg-black/30 backdrop-blur-md border border-white/10 rounded-xl flex items-center justify-center mr-6 group-hover:scale-110 group-hover:border-primary/40 transition-all duration-500 shadow-2xl ${glow}`}>
-                    <Icon className={`w-6 h-6 ${color}`} />
-                  </div>
-
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-1">
-                      <h3 className="text-[10px] font-mono font-bold text-gray-500 uppercase tracking-[0.2em]">{label}</h3>
+                    <div className={`w-14 h-14 bg-black/30 backdrop-blur-md border border-white/10 rounded-xl flex items-center justify-center mr-6 group-hover:scale-110 group-hover:border-primary/40 transition-all duration-500 shadow-2xl ${glow}`}>
+                      <Icon className={`w-6 h-6 ${color}`} />
                     </div>
-                    <p className="text-white font-black text-lg sm:text-xl tracking-tighter truncate">{value}</p>
-                  </div>
 
-                  <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:rotate-[360deg] transition-all duration-700 ml-4">
-                    <ArrowRight className="w-5 h-5 text-primary" />
-                  </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-1">
+                        <h3 className="text-[10px] font-mono font-bold text-gray-500 uppercase tracking-[0.2em]">{label}</h3>
+                      </div>
+                      <p className="text-white font-black text-lg sm:text-xl tracking-tighter truncate">{value}</p>
+                    </div>
 
-                  {/* Corner Particle */}
-                  <div className="absolute bottom-2 right-2 w-1 h-1 bg-white/10 rounded-full animate-pulse" />
-                </motion.a>
-              ))}
+                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:rotate-[360deg] transition-all duration-700 ml-4">
+                      <ArrowRight className="w-5 h-5 text-primary" />
+                    </div>
+
+                    {/* Corner Particle */}
+                    <div className="absolute bottom-2 right-2 w-1 h-1 bg-white/10 rounded-full animate-pulse" />
+                  </div>
+                );
+
+                if (isEmail || label === 'Secure_Line') {
+                  return (
+                    <motion.div key={label} variants={systemInitVariants}>
+                      <ObfuscatedContact
+                        type={isEmail ? "email" : "phone"}
+                        value={value}
+                        className="block w-full"
+                      >
+                        {content}
+                      </ObfuscatedContact>
+                    </motion.div>
+                  );
+                }
+
+                return (
+                  <motion.a
+                    variants={systemInitVariants}
+                    href={getHref(label, value)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={label}
+                    aria-label={`Contact via ${label.replace(/_/g, ' ')}: ${value}`}
+                    className="block w-full"
+                  >
+                    {content}
+                  </motion.a>
+                );
+              })}
             </div>
 
           </div>
