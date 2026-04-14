@@ -5,6 +5,8 @@ import { NavProvider } from "@/app/nav-context";
 import { Header } from "@/components/layout/header";
 import ClientLayout from "@/components/layout/client-layout";
 import portfolioData from "@/data/portfolio.json";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -195,6 +197,8 @@ export default function RootLayout({
             </NavProvider>
           </div>
         </div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
