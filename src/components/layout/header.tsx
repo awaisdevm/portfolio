@@ -152,13 +152,11 @@ export const Header: React.FC = () => {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`
-          p-4 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm
-          rounded-2xl border border-white/20 text-white hover:scale-105
-          hover:bg-white/20 transition-all duration-300 flex flex-col items-center
-          space-y-2 animate-in fade-in-0 zoom-in-95
-        `}
-                style={{ animationDelay: `${index * 150}ms` }}
+                className="p-4 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl border border-white/20 text-white hover:scale-105 hover:bg-white/20 transition-all duration-300 flex flex-col items-center space-y-2 animate-in fade-in-0 zoom-in-95 fade-in slide-in-from-right-4 duration-500"
+                style={{ 
+                  "--delay": `${index * 150}ms`,
+                  animationDelay: "var(--delay)"
+                } as React.CSSProperties}
               >
                 <span className="text-xs font-medium">{item.label}</span>
               </button>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import { motion } from "framer-motion";
 import { Star, Sparkles } from "lucide-react";
@@ -45,14 +46,13 @@ export function Frameworks({ compact = false }: TechStackProps) {
               repeat: Infinity,
               delay: Math.random() * 5
             }}
-            className="absolute rounded-full bg-white"
+            className="absolute rounded-full bg-white shadow-[0_0_4px_rgba(255,255,255,0.5)]"
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
               width: `${Math.random() * 2 + 1}px`,
               height: `${Math.random() * 2 + 1}px`,
-              boxShadow: '0 0 4px rgba(255, 255, 255, 0.5)'
-            }}
+            } as React.CSSProperties}
           />
         ))}
       </div>
@@ -61,7 +61,10 @@ export function Frameworks({ compact = false }: TechStackProps) {
       <ShootingStar />
 
       {/* 3. Constellation Line Effect (Atmospheric) */}
-      <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none z-0" preserveAspectRatio="none">
+      <svg 
+        className="absolute inset-0 w-full h-full opacity-20 pointer-events-none z-0 stroke-dash-[4_4]" 
+        preserveAspectRatio="none"
+      >
         <defs>
           <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="transparent" />
@@ -77,7 +80,6 @@ export function Frameworks({ compact = false }: TechStackProps) {
           fill="none"
           animate={{ strokeDashoffset: [0, -100] }}
           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          style={{ strokeDasharray: "4 4" }}
         />
       </svg>
       
@@ -169,9 +171,11 @@ const Icon = ({ src, name }: IconProps) => (
 
     <div className="relative">
       <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <img 
-        src={src} 
-        alt={name}
+      <Image
+        src={src}
+        alt={`${name} — Mobile Development Tool`}
+        width={32}
+        height={32}
         className={`relative w-8 h-8 object-contain transition-all duration-500 contrast-125 saturate-150 grayscale-[0.4] opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-125 group-hover:drop-shadow-[0_0_15px_rgba(59,130,246,0.6)] ${
           name.toLowerCase() === 'github' || name.toLowerCase() === 'nextjs' ? 'invert dark:invert-0' : ''
         }`}

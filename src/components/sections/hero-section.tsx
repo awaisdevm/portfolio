@@ -3,7 +3,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Mail, CheckCircle2, Terminal } from "lucide-react";
+import { ExternalLink, Mail, CheckCircle2 } from "lucide-react";
 import { useNav } from "@/app/nav-context";
 import { LiaHackerrank } from "react-icons/lia";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
@@ -61,16 +61,20 @@ export function HeroSection() {
               variants={systemInitVariants}
               className="text-3xl sm:text-4xl xl:text-5xl font-extrabold tracking-tight leading-[1.15]"
             >
-              <span className="text-white">I&apos;m {portfolioData.profile.name}</span>
+              {/* sr-only: static keyword text for Google indexing — TypewriterEffect is JS-rendered */}
+              <span className="sr-only">
+                Awais — Senior Android Developer, Flutter Expert &amp; Mobile App Architect
+              </span>
+              <span className="text-white" aria-hidden="true">I&apos;m {portfolioData.profile.name}</span>
               <br />
-              <span className="inline-block mt-2 min-h-[1.2em]">
+              <span className="inline-block mt-2 min-h-[1.2em]" aria-hidden="true">
                 <TypewriterEffect
                   words={portfolioData.profile.roles}
                   className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent transform-gpu"
                 />
               </span>
               <br />
-              <span className="text-gray-200 mt-2 block font-bold">
+              <span className="text-gray-200 mt-2 block font-bold" aria-hidden="true">
                 {portfolioData.profile.location.split('|')[0].trim()}
               </span>
             </motion.h1>
@@ -128,13 +132,13 @@ export function HeroSection() {
         {/* RIGHT CONTENT: Holographic Parallax Card */}
         <motion.div
           variants={systemInitVariants}
-          style={{ rotateX, rotateY, perspective: 1000 }}
-          className="flex justify-center lg:justify-end lg:col-span-5 order-1 lg:order-2 mt-8 lg:mt-0 relative"
+          style={{ rotateX, rotateY }}
+          className="flex justify-center lg:justify-end lg:col-span-5 order-1 lg:order-2 mt-8 lg:mt-0 relative perspective-[1000px]"
         >
           <div className="relative w-full max-w-[320px] sm:max-w-[380px] xl:max-w-[420px]">
 
             {/* Ambient Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-[3rem] blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-secondary/30 rounded-[3rem] blur-3xl animate-pulse duration-[4s]" />
 
             {/* Main Hero Card */}
             <div className="relative aspect-[4/5] rounded-[2.5rem] sm:rounded-[3rem] overflow-hidden border border-white/20 shadow-2xl glass group transform-gpu">
@@ -146,7 +150,6 @@ export function HeroSection() {
                 sizes="(max-width: 640px) 320px, (max-width: 1280px) 380px, 420px"
                 className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-in-out"
               />
-              {/* Tactical Scanning Overlay */}
               <motion.div
                 className="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent h-[10%] w-full z-10 pointer-events-none"
                 animate={{ top: ["-10%", "100%"] }}

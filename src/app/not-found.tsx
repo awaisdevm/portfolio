@@ -91,7 +91,6 @@ export default function NotFound() {
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 bg-primary/40 rounded-full"
           animate={{
             x: [Math.random() * 100 + "%", Math.random() * 100 + "%"],
             y: [Math.random() * 100 + "%", Math.random() * 100 + "%"],
@@ -103,9 +102,10 @@ export default function NotFound() {
             ease: "linear"
           }}
           style={{
-            left: Math.random() * 100 + "%",
-            top: Math.random() * 100 + "%"
-          }}
+            "--x": Math.random() * 100 + "%",
+            "--y": Math.random() * 100 + "%"
+          } as React.CSSProperties}
+          className="absolute w-1 h-1 bg-primary/40 rounded-full left-[var(--x)] top-[var(--y)]"
         />
       ))}
     </div>

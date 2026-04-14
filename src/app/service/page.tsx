@@ -5,17 +5,40 @@ import portfolioData from "@/data/portfolio.json";
 import { SectionWrapper } from "@/components/ui/section-wrapper"
 
 export const metadata: Metadata = {
-  title: "Mobile Development Services — Android, Flutter & Android TV",
+  title: "Mobile App Development Services — Android, Flutter & Android TV",
   description:
-    "Hire a senior mobile architect for custom Android, Flutter, and Android TV solutions. Scalable architectures, Jetpack Compose expertise, and enterprise-grade performance for healthcare, fintech, and gaming platforms.",
+    "Hire Awais — Senior Android & Flutter Developer — for custom mobile apps, Android TV, and Jetpack Compose solutions. Enterprise-grade performance for healthcare, fintech, and gaming.",
+  keywords: [
+    "Awais",
+    "Senior Developer",
+    "Android",
+    "Flutter",
+    "Mobile Apps",
+    "Android Developer",
+    "Flutter Developer",
+    "Mobile App Developer",
+    "Hire Android Developer",
+    "Hire Flutter Developer",
+    "Android TV Development",
+    "Jetpack Compose",
+    "Mobile App Services",
+  ],
   alternates: {
     canonical: "https://devawais.com/service",
   },
   openGraph: {
-    title: "Mobile Development Services — Android, Flutter & Android TV",
+    title: "Mobile App Development Services — Android, Flutter & Android TV | Awais",
     description:
-      "Hire a senior mobile architect for custom Android, Flutter, and Android TV solutions. Scalable architectures for enterprise platforms.",
+      "Hire Awais — Senior Android & Flutter Developer — for custom mobile apps and enterprise-grade mobile solutions.",
     url: "https://devawais.com/service",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Muhammad Awais — Mobile App Development Services",
+      },
+    ],
   },
 };
 
@@ -34,8 +57,8 @@ export default function ServiceSection()  {
               {portfolioData.services.map((service, index) => (
                 <div
                   key={service.id}
-                  className="transform hover:scale-110 hover:-translate-y-4 transition-all duration-700 "
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  style={{ "--delay": `${index * 100}ms` } as React.CSSProperties}
+                  className="animate-in fade-in slide-in-from-bottom-4 [animation-delay:var(--delay)]"
                 >
                   <Service3DCard service={service} />
                 </div>

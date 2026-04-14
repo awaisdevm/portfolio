@@ -37,9 +37,9 @@ export const MainContent: React.FC = () => {
           <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8`}>
             {portfolioData.services.map((service, index) => (
               <div
-                key={service.id}
-                className="transform hover:scale-110 hover:-translate-y-4 transition-all duration-700 "
-                style={{ animationDelay: `${index * 100}ms` }}
+                key={index}
+                style={{ "--delay": `${index * 100}ms` } as React.CSSProperties}
+                className="transform hover:scale-110 hover:-translate-y-4 transition-all duration-700 animate-in fade-in slide-in-from-bottom-4 [animation-delay:var(--delay)]"
               >
                 <Service3DCard service={service} />
               </div>

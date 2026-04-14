@@ -98,7 +98,7 @@ export const ContactSection = () => {
 
             {/* RIGHT CONTENT: Tactical Contact Nodes */}
             <div className="lg:col-span-7 grid gap-4">
-              {contactOptions.map(({ icon: Icon, label, value = "", color, glow, meta }) => {
+              {contactOptions.map(({ icon: Icon, label, value = "", color, glow }) => {
                 const isEmail = label === 'Direct_Email';
                 
                 const content = (

@@ -2,11 +2,40 @@ import type { Metadata } from "next";
 import { MainContent } from "@/app/home-page";
 
 export const metadata: Metadata = {
-  title: "Portfolio — Senior Android Architect & Flutter Expert",
+  title: "Awais — Senior Android & Flutter Developer",
   description:
-    "Explore the portfolio of Muhammad Awais — a Senior Mobile Engineer specializing in scalable Android (Jetpack Compose) and Flutter apps for healthcare, e-sports, and enterprise platforms.",
+    "Awais is a Senior Android & Flutter Developer with 6+ years building high-performance mobile apps. Hire a top Mobile Developer — 25+ apps shipped.",
+  keywords: [
+    "Awais",
+    "Senior Developer",
+    "Android",
+    "Flutter",
+    "Mobile Apps",
+    "Android Developer",
+    "Flutter Developer",
+    "Senior Android Developer",
+    "Senior Flutter Developer",
+    "Mobile App Developer",
+    "Hire Android Developer",
+    "Kotlin Developer",
+    "Jetpack Compose",
+  ],
   alternates: {
     canonical: "https://devawais.com",
+  },
+  openGraph: {
+    title: "Awais — Senior Android & Flutter Developer",
+    description:
+      "Senior Mobile App Developer with 6+ years in Android & Flutter. 25+ apps deployed for healthcare, e-sports, and enterprise clients.",
+    url: "https://devawais.com",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Muhammad Awais — Senior Android & Flutter Developer",
+      },
+    ],
   },
 };
 

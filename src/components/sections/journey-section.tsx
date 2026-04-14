@@ -25,10 +25,10 @@ export const ExpandableJourney = ({ data }: { data: TimelineEntry[] }) => {
     <div className="w-full max-w-7xl mx-auto pb-20 mt-10">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent inline-block">
-          Experience Accordion
+          Professional Journey
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto mt-4">
-          Hover over to unfold my career journey and technical achievements.
+          6+ years as a Senior Android &amp; Flutter Developer — hover to explore each milestone.
         </p>
       </div>
 

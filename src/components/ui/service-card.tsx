@@ -91,11 +91,7 @@ export function Service3DCard({ service }: Service3DCardProps) {
     >
       <motion.div
         ref={cardRef}
-        className="group relative rounded-[2rem] cursor-pointer"
-        style={{
-          perspective: "1200px",
-          transformStyle: "preserve-3d",
-        }}
+        className="group relative rounded-[2rem] cursor-pointer perspective-[1200px] transform-style-3d"
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -162,8 +158,10 @@ export function Service3DCard({ service }: Service3DCardProps) {
           <div 
             className="absolute inset-0 pointer-events-none z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             style={{
-              background: `radial-gradient(circle at ${shineX}px ${shineY}px, rgba(255,255,255,0.08) 0%, transparent 70%)`
-            }}
+              "--x": `${shineX}px`,
+              "--y": `${shineY}px`,
+              background: "radial-gradient(circle at var(--x) var(--y), rgba(255,255,255,0.08) 0%, transparent 70%)"
+            } as React.CSSProperties}
           />
 
           {/* Icon Space-Lift (Higher translateZ) */}

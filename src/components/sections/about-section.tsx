@@ -136,7 +136,7 @@ export const AboutSection = () => {
               { metric: portfolioData.profile.achievements.clients, label: "Stakeholders", color: "purple" },
               { metric: portfolioData.profile.achievements.followers, label: "Engagement", color: "cyan" },
               { metric: portfolioData.profile.achievements.certifications, label: "Validation", color: "indigo" },
-            ].map((achievement, index) => (
+            ].map((achievement) => (
               <div
                 key={achievement.label}
                 className="relative flex flex-col justify-center items-center text-center rounded-2xl border border-white/10 p-6 bg-white/5 hover:bg-white/10 hover:border-blue-500/30 transition-all duration-500 group overflow-hidden"

@@ -75,6 +75,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="color-scheme" content="light dark" />
+        {/* Person Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -82,7 +83,7 @@ export default function RootLayout({
               "@context": "https://schema.org/",
               "@type": "Person",
               name: portfolioData.profile.name,
-              jobTitle: "Senior Solutions Architect & Mobile Engineer",
+              jobTitle: "Senior Android & Flutter Developer",
               description: portfolioData.seo.description,
               url: siteUrl,
               image: `${siteUrl}${portfolioData.profile.heroImage}`,
@@ -96,16 +97,39 @@ export default function RootLayout({
               sameAs: [
                 portfolioData.profile.contact.linkedin,
                 portfolioData.profile.contact.github,
+                siteUrl,
               ],
               worksFor: portfolioData.profile.timeline.map((job) => ({
                 "@type": "Organization",
                 name: job.company,
               })),
+              hasOccupation: {
+                "@type": "Occupation",
+                name: "Senior Mobile App Developer",
+                occupationLocation: {
+                  "@type": "Country",
+                  name: "Pakistan",
+                },
+                estimatedSalary: [],
+                description:
+                  "Senior Android Developer and Flutter Expert specializing in high-performance mobile apps for healthcare, e-sports, and enterprise platforms.",
+                skills: [
+                  "Android Development",
+                  "Flutter",
+                  "Mobile Apps",
+                  "Kotlin",
+                  "Dart",
+                  "Jetpack Compose",
+                  "Clean Architecture",
+                  "Firebase",
+                ],
+              },
+              knowsLanguage: ["Kotlin", "Dart", "Java", "TypeScript"],
               knowsAbout: [
                 "Android Native Architecture",
                 "Flutter Cross-Platform Development",
                 "Jetpack Compose",
-                "Mobile App Scalability",
+                "Mobile App Development",
                 "Android TV Development",
                 "Clean Architecture",
                 "Kotlin",
@@ -114,7 +138,39 @@ export default function RootLayout({
                 "Firebase",
                 "CI/CD Pipelines",
                 "Real-Time Data Systems",
+                "Senior Developer",
               ],
+              brand: {
+                "@type": "Brand",
+                name: "devawais",
+                url: siteUrl,
+              },
+            }),
+          }}
+        />
+        {/* WebSite Schema — enables Sitelinks Search Box signal */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: `${portfolioData.profile.name} — Senior Android & Flutter Developer`,
+              url: siteUrl,
+              description:
+                "Portfolio of Muhammad Awais — Senior Android Developer, Flutter Expert & Mobile App Architect with 6+ years building scalable mobile apps.",
+              author: {
+                "@type": "Person",
+                name: portfolioData.profile.name,
+              },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: `${siteUrl}/?q={search_term_string}`,
+                },
+                "query-input": "required name=search_term_string",
+              },
             }),
           }}
         />

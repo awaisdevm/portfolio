@@ -4,8 +4,14 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'i.pravatar.cc',
+        protocol: "https",
+        hostname: "i.pravatar.cc",
+      },
+      {
+        // Devicons CDN used in tech-stack orbiting display
+        protocol: "https",
+        hostname: "cdn.jsdelivr.net",
+        pathname: "/gh/devicons/**",
       },
     ],
   },

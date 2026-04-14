@@ -44,13 +44,12 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     <div className="relative w-full h-full min-h-screen selection:bg-primary/30 selection:text-white overflow-x-hidden">
       {/* Dynamic Background Noise/Texture Overlay runs on top of layout.tsx */}
       <div 
-        className="absolute inset-0 z-0 opacity-[0.015] pointer-events-none mix-blend-overlay"
-        style={{ backgroundImage: `url('/noise.png')`, backgroundRepeat: 'repeat' }}
+        className="absolute inset-0 z-0 opacity-[0.015] pointer-events-none mix-blend-overlay bg-noise"
       />
 
       <AnimatePresence mode="wait" custom={direction}>
         <motion.div
-// ... (rest of the component)          key={pathname}
+          key={pathname}
           custom={direction}
           variants={variants}
           initial="enter"

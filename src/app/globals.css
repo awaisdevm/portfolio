@@ -70,6 +70,14 @@ body {
     animation: gradient-x 3s ease infinite;
   }
 
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
   .glass {
     @apply bg-white/10 backdrop-blur-md border border-white/20;
     @media (max-width: 768px) {
@@ -90,5 +98,10 @@ body {
   }
   .glass-subtle {
     @apply bg-white/5 backdrop-blur-sm border border-white/10;
+  }
+
+  .bg-noise {
+    background-image: url('/noise.png');
+    background-repeat: repeat;
   }
 }

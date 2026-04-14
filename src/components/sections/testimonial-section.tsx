@@ -46,20 +46,12 @@ export const TestimonialSection = () => {
         {/* Scroll Container */}
         <div 
           ref={scrollContainerRef}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 pt-4 px-4 -mx-4 hide-scrollbar"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 pt-4 px-4 -mx-4 no-scrollbar"
         >
-          <style dangerouslySetInnerHTML={{__html: `
-            .hide-scrollbar::-webkit-scrollbar {
-              display: none;
-            }
-          `}} />
-          
           {testimonials.map((data) => (
             <div 
               key={data.id} 
-              className="flex-none snap-center"
-              style={{ width: "min(100%, 400px)" }}
+              className="flex-none snap-center w-full max-w-[400px]"
             >
               <TestimonialCard data={data} />
             </div>
