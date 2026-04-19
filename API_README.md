@@ -9,30 +9,45 @@ This documentation provides all the necessary endpoints for your mobile applicat
 - **Base URL (Local):** `http://localhost:3000/wallpaper/api`
 - **Base URL (Production):** `https://your-domain.com/wallpaper/api` *(Replace with your deployed Vercel domain)*
 - **Content-Type:** `application/json`
-- **Authentication:** No API Keys or Bearer tokens are required for these `GET` endpoints, as they are specifically designed for public read-only consumption by mobile clients.
 
+### 🔒 Security & Authentication
+To protect your data from public scrapers and unauthorized apps, the API has a strict Gateway deployed. All mobile `GET` requests **MUST** include two specific HTTP Headers:
+
+1. `x-api-key`: Your secret API key. Default fallback: `awais_mobile_secure_999` *(You can change this by adding `MOBILE_API_KEY=your_secret` to your `.env` file)*.
+2. `x-app-package`: The exact Package Name of your app (e.g. `com.awais.wallpapers`). This package name MUST exist inside your Admin Dashboard's Ads Manager list!
+
+Example Headers in Flutter/Dart:
+```dart
+final headers = {
+  "Content-Type": "application/json",
+  "x-api-key": "awais_mobile_secure_999",
+  "x-app-package": "com.awais.wallpapers"
+};
+```
 ---
 
 ## 1. 📂 Categories API
 
-Fetch all available, active wallpaper categories.
+Fetch all available, active wallpaper categories to display in your mobile app.
 
-- **Endpoint:** `/categories`
+- **Endpoint (Global):** `/categories`
+- **Endpoint (By App):** `/categories/{app_package_name}` *(Validates your app and returns its categories)*
 - **Method:** `GET`
 - **Response Format:**
 ```json
 {
-  "data": [
+  "app_package": "com.awais.wallpapers", // Optional depending on endpoint
+  "count": 1,
+  "categories": [
     {
-      "id": "e2ba3...",
+      "id": "e2ba3...", 
       "name": "Nature",
       "slug": "nature",
       "image_url": "https://...",
       "is_active": true,
       "created_at": "2024-03-22T..."
     }
-  ],
-  "count": 1
+  ]
 }
 ```
 
@@ -161,3 +176,37 @@ When your mobile app launches, call `/ads/com.your.package`.
 1. Check `ads_enabled`. If `false`, do not initialize any SDKs.
 2. If `true`, loop through the `networks` array.
 3. For each network where `is_active === true`, retrieve the IDs (`banner_id`, `interstitial_id`) and inject them into the respective mobile Ad SDK setup logic.
+
+---
+
+## 🚀 Production Deployment (Revenue Scale)
+
+To handle professional traffic levels and ensure your **Portfolio** and **API Backend** don't interfere with each other, follow this "Dual Deployment" strategy on Vercel:
+
+### 1. Create Two Projects on Vercel
+Go to the Vercel dashboard and import this GitHub repository **twice**:
+
+| Project Name | Primary Domain | `NEXT_PUBLIC_API_DOMAIN` Env Var |
+| :--- | :--- | :--- |
+| `devawais-portfolio` | `devawais.com` | *Leave Empty* |
+| `wallpaper-backend` | `api.devawais.com` | `api.devawais.com` |
+
+### 2. How the Isolation Works
+The `middleware.ts` contains a **Domain Shield** I've implemented for you. 
+
+- **On `devawais.com`:** Everything works normally (Portfolio + Admin Panel).
+- **On `api.devawais.com` (or any domain matching the env var):** 
+    - Only paths starting with `/wallpaper` are allowed.
+    - If anyone tries to visit your home page, about page, or portfolio projects on this subdomain, the server instantly redirects them to your main `devawais.com` site.
+    - This ensures your portfolio branding is never "seen" on your technical API subdomain.
+
+### 3. Recommended Environment Variables
+Make sure the **Backend Project** in Vercel has these variables set:
+- `NEXT_PUBLIC_API_DOMAIN`: `api.devawais.com` (or your chosen subdomain)
+- `MOBILE_API_KEY`: A complex secret string.
+- `NEXT_PUBLIC_SUPABASE_URL`: Your Supabase URL.
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Your Supabase Anon Key.
+
+---
+*Created by Antigravity AI for devawais*
+

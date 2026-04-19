@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Plus, Trash2, Tag, ToggleLeft, ToggleRight, Image as ImageIcon, ChevronDown, ChevronUp } from 'lucide-react'
+import { Plus, Trash2, Tag, ToggleLeft, ToggleRight, Image as ImageIcon, ChevronDown, ChevronUp, Edit2, X, Check } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { createClient } from '@/lib/supabase/client'
 import WallpaperTable from './wallpaper-table'
@@ -13,16 +13,19 @@ export default function CategoryManager() {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null)
   const [categoryWallpapers, setCategoryWallpapers] = useState<any[]>([])
   
+  // Edit State
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [editName, setEditName] = useState('')
+  const [editSlug, setEditSlug] = useState('')
+
   const supabase = createClient()
 
   const fetchCategories = async () => {
-    // using exact counting on foreign table
     const { data, error } = await supabase
         .from('categories')
         .select('*, wallpapers(id)')
         .order('name')
     if (data) {
-        // Map to include count manually since postgREST sometimes returns array of objects
         const mapped = data.map(c => ({...c, wallpaper_count: c.wallpapers?.length || 0}))
         setCategories(mapped)
     }
@@ -61,6 +64,18 @@ export default function CategoryManager() {
       fetchCategories()
     }
     setLoading(false)
+  }
+
+  const handleUpdate = async (id: string) => {
+      if (!editName || !editSlug) return
+      const { error } = await supabase.from('categories').update({ name: editName, slug: editSlug }).eq('id', id)
+      if (error) {
+          toast.error(error.message)
+      } else {
+          toast.success('Category updated')
+          setEditingId(null)
+          fetchCategories()
+      }
   }
 
   const handleToggle = async (id: string, current: boolean) => {
@@ -131,47 +146,84 @@ export default function CategoryManager() {
           {categories.map(c => (
             <div key={c.id} className="w-full flex flex-col">
                 <div className={`p-4 rounded-xl flex items-center justify-between border transition-colors ${c.is_active ? 'bg-white/5 border-white/10 hover:border-white/20' : 'bg-black/40 border-red-500/10 opacity-70'}`}>
-                  <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center border shadow-inner ${c.is_active ? 'bg-primary/10 text-primary border-primary/20' : 'bg-gray-500/10 text-gray-500 border-gray-500/20'}`}>
-                        <Tag size={20} />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-white leading-tight">{c.name}</h4>
-                        <p className="text-xs text-gray-400 font-mono">/{c.slug}</p>
-                      </div>
-                  </div>
                   
-                  <div className="flex items-center gap-4">
-                      <div className="hidden sm:flex items-center gap-1.5 text-sm text-gray-400 bg-black/20 px-3 py-1.5 rounded-md border border-white/5">
-                          <ImageIcon size={14} />
-                          <span>{c.wallpaper_count} Items</span>
-                      </div>
+                  {editingId === c.id ? (
+                     // EDITING STATE
+                     <div className="flex-1 flex flex-col sm:flex-row gap-4 items-center mr-4">
+                        <input value={editName} onChange={e => setEditName(e.target.value)} className="w-full bg-black/40 border border-white/20 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary" placeholder="Name" />
+                        <input value={editSlug} onChange={e => setEditSlug(e.target.value)} className="w-full bg-black/40 border border-white/20 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary text-gray-300" placeholder="slug" />
+                     </div>
+                  ) : (
+                     // NORMAL STATE
+                     <div className="flex items-center gap-4">
+                         <div className={`w-12 h-12 rounded-lg flex items-center justify-center border shadow-inner ${c.is_active ? 'bg-primary/10 text-primary border-primary/20' : 'bg-gray-500/10 text-gray-500 border-gray-500/20'}`}>
+                           <Tag size={20} />
+                         </div>
+                         <div>
+                           <h4 className="font-bold text-white leading-tight">{c.name}</h4>
+                           <p className="text-xs text-gray-400 font-mono">/{c.slug}</p>
+                         </div>
+                     </div>
+                  )}
+
+                  <div className="flex items-center gap-4 shrink-0">
+                      {!editingId && (
+                        <div className="hidden sm:flex items-center gap-1.5 text-sm text-gray-400 bg-black/20 px-3 py-1.5 rounded-md border border-white/5">
+                            <ImageIcon size={14} />
+                            <span>{c.wallpaper_count} Items</span>
+                        </div>
+                      )}
                       
                       <div className="flex items-center gap-2 border-l border-white/10 pl-4">
-                          <button 
-                            onClick={() => toggleExpand(c.id)} 
-                            className={`flex items-center gap-1 px-3 py-1.5 rounded-lg transition-colors border border-transparent ${expandedCategory === c.id ? 'bg-white/10 text-white' : 'hover:bg-white/5 text-gray-400 hover:text-white'}`}
-                          >
-                             {expandedCategory === c.id ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                             <span className="text-sm font-medium">{expandedCategory === c.id ? 'Close' : 'View'}</span>
-                          </button>
-                      
-                          <button 
-                             onClick={() => handleToggle(c.id, c.is_active)} 
-                             className={`flex items-center gap-1 px-2 py-1.5 rounded-lg transition-colors ${c.is_active ? 'hover:bg-red-500/20 text-gray-300 hover:text-red-400' : 'hover:bg-green-500/20 text-gray-500 hover:text-green-400'}`}
-                             title="Toggle Active Status"
-                          >
-                             {c.is_active ? <ToggleRight size={20} className="text-green-400" /> : <ToggleLeft size={20} />}
-                          </button>
-                          <button onClick={() => handleDelete(c.id)} className="p-1.5 text-gray-500 hover:text-accent hover:bg-accent/10 rounded-lg transition-colors">
-                            <Trash2 size={18} />
-                          </button>
+                          {editingId === c.id ? (
+                             <>
+                                <button onClick={() => handleUpdate(c.id)} className="p-2 text-green-400 hover:bg-green-400/10 rounded-lg transition-colors border border-green-400/20">
+                                   <Check size={18} />
+                                </button>
+                                <button onClick={() => setEditingId(null)} className="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors border border-transparent">
+                                   <X size={18} />
+                                </button>
+                             </>
+                          ) : (
+                             <>
+                                <button 
+                                  onClick={() => toggleExpand(c.id)} 
+                                  className={`flex items-center gap-1 px-3 py-1.5 rounded-lg transition-colors border border-transparent ${expandedCategory === c.id ? 'bg-white/10 text-white' : 'hover:bg-white/5 text-gray-400 hover:text-white'}`}
+                                >
+                                   {expandedCategory === c.id ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                                   <span className="text-sm font-medium">{expandedCategory === c.id ? 'Close' : 'View'}</span>
+                                </button>
+                            
+                                <button 
+                                   onClick={() => {
+                                      setEditingId(c.id)
+                                      setEditName(c.name)
+                                      setEditSlug(c.slug)
+                                   }} 
+                                   className="p-1.5 text-blue-400 hover:bg-blue-400/10 rounded-lg transition-colors"
+                                   title="Edit Category Name"
+                                >
+                                   <Edit2 size={18} />
+                                </button>
+
+                                <button 
+                                   onClick={() => handleToggle(c.id, c.is_active)} 
+                                   className={`flex items-center gap-1 px-2 py-1.5 rounded-lg transition-colors ${c.is_active ? 'hover:bg-red-500/20 text-gray-300 hover:text-red-400' : 'hover:bg-green-500/20 text-gray-500 hover:text-green-400'}`}
+                                   title="Toggle Active Status"
+                                >
+                                   {c.is_active ? <ToggleRight size={20} className="text-green-400" /> : <ToggleLeft size={20} />}
+                                </button>
+                                <button onClick={() => handleDelete(c.id)} className="p-1.5 text-gray-500 hover:text-accent hover:bg-accent/10 rounded-lg transition-colors">
+                                  <Trash2 size={18} />
+                                </button>
+                             </>
+                          )}
                       </div>
                   </div>
                 </div>
 
                 {/* EXPANDED VIEW */}
-                {expandedCategory === c.id && (
+                {expandedCategory === c.id && !editingId && (
                     <div className="mt-2 ml-4 md:ml-12 p-4 md:p-6 bg-black/40 border-l-2 border-primary/50 rounded-r-2xl rounded-bl-2xl shadow-xl animate-in fade-in slide-in-from-top-2">
                         <h4 className="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Wallpapers in {c.name}</h4>
                         <WallpaperTable 
@@ -194,3 +246,4 @@ export default function CategoryManager() {
     </div>
   )
 }
+

@@ -1,12 +1,13 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { Plus, Trash2, Smartphone, ToggleLeft, ToggleRight, Settings, ShieldAlert, Cpu } from 'lucide-react'
+import { Plus, Trash2, Smartphone, ToggleLeft, ToggleRight, Settings, ShieldAlert, Cpu, Key } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { createClient } from '@/lib/supabase/client'
 
 export default function AdsManager() {
   const [ads, setAds] = useState<any[]>([])
   const [appSettings, setAppSettings] = useState<{ [key: string]: any }>({})
+  const [whitelistName, setWhitelistName] = useState('')
   const [appName, setAppName] = useState('')
   const [network, setNetwork] = useState('AppLovin')
   const [bannerId, setBannerId] = useState('')
@@ -16,11 +17,8 @@ export default function AdsManager() {
   const supabase = createClient()
 
   const fetchAdsAndSettings = async () => {
-    // Fetch all ads config
     const { data: adsData } = await supabase.from('ads_config').select('*').order('created_at', { ascending: false })
-    
-    // Fetch global settings for all apps present
-    const { data: settingsData } = await supabase.from('app_settings').select('*')
+    const { data: settingsData } = await supabase.from('app_settings').select('*').order('created_at', { ascending: false })
     
     if (adsData) setAds(adsData)
     if (settingsData) {
@@ -34,12 +32,27 @@ export default function AdsManager() {
     fetchAdsAndSettings()
   }, [])
 
-  const handleAdd = async (e: React.FormEvent) => {
+  const handleWhitelistApp = async (e: React.FormEvent) => {
+      e.preventDefault()
+      if (!whitelistName) return
+      setLoading(true)
+      const { error } = await supabase.from('app_settings').insert([{ app_name: whitelistName, ads_enabled: true, features_enabled: true }])
+      if (error) {
+          if (error.code === '23505') toast.error('App package is already whitelisted.')
+          else toast.error(error.message)
+      } else {
+          toast.success('App Package Whitelisted Successfully!')
+          setWhitelistName('')
+          fetchAdsAndSettings()
+      }
+      setLoading(false)
+  }
+
+  const handleAddNetwork = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!appName || !network) return
     setLoading(true)
     
-    // 1. Insert Ad Config
     const { error } = await supabase.from('ads_config').insert([{ 
         app_name: appName, 
         ad_network: network,
@@ -51,11 +64,9 @@ export default function AdsManager() {
     if (error) {
       toast.error(error.message)
     } else {
-      // 2. Ensure an app_settings row exists for this app
       if (!appSettings[appName]) {
          await supabase.from('app_settings').insert([{ app_name: appName, ads_enabled: true, features_enabled: true }])
       }
-      
       toast.success('Ad Network Configured')
       setBannerId(''); setInterstitialId(''); setAppOpenId('');
       fetchAdsAndSettings()
@@ -70,43 +81,61 @@ export default function AdsManager() {
   }
   
   const toggleAppSetting = async (app_name: string, field: string, currentValue: boolean) => {
-      // Opt-in creation if settings row doesn't exist natively
-      if (!appSettings[app_name]) {
-         await supabase.from('app_settings').insert([{ app_name, [field]: !currentValue }])
-      } else {
-         await supabase.from('app_settings').update({ [field]: !currentValue }).eq('app_name', app_name)
-      }
-      fetchAdsAndSettings()
+      const { error } = await supabase.from('app_settings').update({ [field]: !currentValue }).eq('app_name', app_name)
+      if (error) toast.error(error.message)
+      else fetchAdsAndSettings()
   }
 
-  const handleDelete = async (id: string) => {
+  const handleDeleteNetwork = async (id: string) => {
     if (!window.confirm('Delete this Network Ad config?')) return
     const { error } = await supabase.from('ads_config').delete().eq('id', id)
     if (error) toast.error(error.message)
     else fetchAdsAndSettings()
   }
 
-  // Group ads by app_name
+  const handleDeleteApp = async (app_name: string) => {
+    if (!window.confirm(`Delete ${app_name} entirely? This removes all its specific ad network configs and revokes its API access!`)) return
+    
+    // Deleting app_settings will cascade to ads_config if we had a foreign key, but we don't.
+    // So manually delete ads first then settings.
+    await supabase.from('ads_config').delete().eq('app_name', app_name)
+    const { error } = await supabase.from('app_settings').delete().eq('app_name', app_name)
+    
+    if (error) toast.error(error.message)
+    else {
+        toast.success('App revoked successfully')
+        fetchAdsAndSettings()
+    }
+  }
+
   const groupedAds = ads.reduce((acc: any, ad: any) => {
       if (!acc[ad.app_name]) acc[ad.app_name] = []
       acc[ad.app_name].push(ad)
       return acc
   }, {})
 
+  // Master list of all registered apps (combining settings and networks)
+  const allAppNames = Array.from(new Set([
+      ...Object.keys(appSettings),
+      ...Object.keys(groupedAds)
+  ]))
+
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       
-      {/* FORM SECTION */}
-      <div className="glass-strong p-6 rounded-2xl border border-white/10 shadow-2xl relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+      {/* AD NETWORK FORM SECTION */}
+      <div className="glass-strong p-6 rounded-2xl border border-white/10 shadow-xl relative overflow-hidden">
         <h3 className="text-xl font-bold mb-6 font-inter text-primary flex items-center gap-2">
-            <Cpu className="text-primary" /> Integrate Ad Network
+            <Cpu className="text-primary" /> Attach Ad Network
         </h3>
-        <form onSubmit={handleAdd} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+        <form onSubmit={handleAddNetwork} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
           <div className="space-y-4">
               <div>
-                <label className="block text-sm text-gray-400 mb-1">App Package Name</label>
-                <input value={appName} onChange={e => setAppName(e.target.value)} className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary/50 transition-colors" required placeholder="com.example.app" />
+                <label className="block text-sm text-gray-400 mb-1">Target App Package</label>
+                <input value={appName} onChange={e => setAppName(e.target.value)} list="whitelisted-apps" className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary/50 transition-colors" required placeholder="com.example.app" />
+                <datalist id="whitelisted-apps">
+                    {Object.keys(appSettings).map(app => <option key={app} value={app} />)}
+                </datalist>
               </div>
               <div>
                 <label className="block text-sm text-gray-400 mb-1">Ad Network Provider</label>
@@ -136,7 +165,7 @@ export default function AdsManager() {
               </div>
               <div className="mt-auto pt-4">
                   <button disabled={loading} type="submit" className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 py-3 rounded-xl font-medium transition-all shadow-lg flex justify-center items-center gap-2">
-                    <Plus size={18} /> Attach Network to App
+                    <Plus size={18} /> Attach Network
                   </button>
               </div>
           </div>
@@ -144,54 +173,68 @@ export default function AdsManager() {
       </div>
 
       {/* APPS LIST (GROUPED ADS) */}
+      <h3 className="text-xl font-bold font-inter text-white mt-12 mb-6 border-b border-white/10 pb-4">Registered Apps & Configurations</h3>
       <div className="space-y-6">
-        {Object.keys(groupedAds).map(app_name => {
+        {allAppNames.map(app_name => {
           const settings = appSettings[app_name] || { ads_enabled: true, features_enabled: true }
-          const appNetworks = groupedAds[app_name]
+          const appNetworks = groupedAds[app_name] || []
 
           return (
             <div key={app_name} className="glass-subtle rounded-2xl border border-white/5 overflow-hidden">
                 {/* APP HEADER & GLOBAL CONTROLS */}
-                <div className="bg-black/30 p-5 md:p-6 border-b border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="bg-black/30 p-5 md:p-6 border-b border-white/5 flex flex-col xl:flex-row xl:items-center justify-between gap-6">
                     <div className="flex items-center gap-4">
                         <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center text-primary-foreground border border-white/10 shadow-inner">
                            <Smartphone size={28} className="text-primary" />
                         </div>
                         <div>
-                           <h4 className="font-bold text-white text-xl">{app_name}</h4>
-                           <span className="text-sm font-mono text-gray-400">{appNetworks.length} Network(s) Attached</span>
+                           <div className="flex flex-wrap items-center gap-2">
+                               <h4 className="font-bold text-white text-xl">{app_name}</h4>
+                               <span className="bg-green-500/20 text-green-400 border border-green-500/30 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-widest">API Allowed</span>
+                           </div>
+                           <span className="text-sm font-mono text-gray-400 block mt-1">{appNetworks.length} Ad Network(s) Attached</span>
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-6 bg-black/20 p-2 rounded-xl border border-white/5">
-                        <div className="flex flex-col items-center">
-                            <span className="text-[10px] text-gray-500 uppercase tracking-widest mb-1.5 font-bold flex gap-1 items-center">
-                                <Settings size={10}/> Master Ads
-                            </span>
-                            <button 
-                               onClick={() => toggleAppSetting(app_name, 'ads_enabled', settings.ads_enabled)} 
-                               className={`flex flex-col items-center justify-center p-1.5 rounded-lg border transition-all min-w-[70px] ${settings.ads_enabled ? 'bg-green-500/10 text-green-400 border-green-500/30 shadow-[0_0_15px_rgba(34,197,94,0.15)]' : 'bg-red-500/10 text-red-400 border-red-500/20'}`}
-                            >
-                               {settings.ads_enabled ? <ToggleRight size={24} /> : <ToggleLeft size={24} />}
-                            </button>
+                    <div className="flex flex-wrap items-center gap-6">
+                        <div className="flex items-center gap-6 bg-black/20 p-2 rounded-xl border border-white/5">
+                            <div className="flex flex-col items-center">
+                                <span className="text-[10px] text-gray-500 uppercase tracking-widest mb-1.5 font-bold flex gap-1 items-center">
+                                    <Settings size={10}/> Master Ads
+                                </span>
+                                <button 
+                                   onClick={() => toggleAppSetting(app_name, 'ads_enabled', settings.ads_enabled)} 
+                                   className={`flex flex-col items-center justify-center p-1.5 rounded-lg border transition-all min-w-[70px] ${settings.ads_enabled ? 'bg-green-500/10 text-green-400 border-green-500/30 shadow-[0_0_15px_rgba(34,197,94,0.15)]' : 'bg-red-500/10 text-red-400 border-red-500/20'}`}
+                                >
+                                   {settings.ads_enabled ? <ToggleRight size={24} /> : <ToggleLeft size={24} />}
+                                </button>
+                            </div>
+                            <div className="w-px h-10 bg-white/10"></div>
+                            <div className="flex flex-col items-center pr-2">
+                                <span className="text-[10px] text-gray-500 uppercase tracking-widest mb-1.5 font-bold flex gap-1 items-center">
+                                    <ShieldAlert size={10}/> Global Features
+                                </span>
+                                <button 
+                                   onClick={() => toggleAppSetting(app_name, 'features_enabled', settings.features_enabled)} 
+                                   className={`flex flex-col items-center justify-center p-1.5 rounded-lg border transition-all min-w-[70px] ${settings.features_enabled ? 'bg-primary/10 text-primary border-primary/30 shadow-[0_0_15px_rgba(139,92,246,0.15)]' : 'bg-gray-800 text-gray-500 border-gray-700'}`}
+                                >
+                                   {settings.features_enabled ? <ToggleRight size={24} /> : <ToggleLeft size={24} />}
+                                </button>
+                            </div>
                         </div>
-                        <div className="w-px h-10 bg-white/10"></div>
-                        <div className="flex flex-col items-center pr-2">
-                            <span className="text-[10px] text-gray-500 uppercase tracking-widest mb-1.5 font-bold flex gap-1 items-center">
-                                <ShieldAlert size={10}/> Global Features
-                            </span>
-                            <button 
-                               onClick={() => toggleAppSetting(app_name, 'features_enabled', settings.features_enabled)} 
-                               className={`flex flex-col items-center justify-center p-1.5 rounded-lg border transition-all min-w-[70px] ${settings.features_enabled ? 'bg-primary/10 text-primary border-primary/30 shadow-[0_0_15px_rgba(139,92,246,0.15)]' : 'bg-gray-800 text-gray-500 border-gray-700'}`}
-                            >
-                               {settings.features_enabled ? <ToggleRight size={24} /> : <ToggleLeft size={24} />}
-                            </button>
-                        </div>
+                        <button onClick={() => handleDeleteApp(app_name)} className="p-3 text-red-500 hover:text-white hover:bg-red-500 rounded-xl transition-colors shrink-0 bg-red-500/10 border border-red-500/20" title="Revoke App Access & Ads">
+                            <Trash2 size={20} />
+                        </button>
                     </div>
                 </div>
 
                 {/* INDIVIDUAL AD NETWORKS */}
                 <div className="p-4 space-y-3 bg-gradient-to-b from-black/0 to-black/10">
+                    {appNetworks.length === 0 && (
+                        <div className="p-6 text-center text-gray-500 border border-white/5 border-dashed rounded-xl">
+                            <p>No ad networks attached to this app. It currently runs ad-free.</p>
+                        </div>
+                    )}
                     {appNetworks.map((ad: any) => (
                         <div key={ad.id} className={`flex flex-col xl:flex-row xl:items-center justify-between gap-4 p-4 rounded-xl border transition-all ${ad.is_active ? 'bg-white/[0.03] border-white/10 hover:bg-white/[0.05]' : 'bg-black/40 border-dashed border-red-500/20 opacity-80'}`}>
                             <div className="flex gap-4 items-center">
@@ -216,7 +259,7 @@ export default function AdsManager() {
                                    {ad.is_active ? <ToggleRight size={18} /> : <ToggleLeft size={18} />}
                                    <span className="text-sm font-bold uppercase tracking-wider">{ad.is_active ? 'Online' : 'Offline'}</span>
                                 </button>
-                                <button onClick={() => handleDelete(ad.id)} className="p-2 text-gray-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors ml-2 border border-transparent hover:border-red-500/20">
+                                <button onClick={() => handleDeleteNetwork(ad.id)} className="p-2 text-gray-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors ml-2 border border-transparent hover:border-red-500/20">
                                    <Trash2 size={16} />
                                 </button>
                             </div>
@@ -226,13 +269,13 @@ export default function AdsManager() {
             </div>
           )
         })}
-        {Object.keys(groupedAds).length === 0 && (
+        {allAppNames.length === 0 && (
             <div className="glass-subtle rounded-xl p-12 text-center text-gray-500 border border-white/5 border-dashed flex flex-col items-center">
                 <div className="w-16 h-16 rounded-full border-2 border-dashed border-gray-600 mb-4 flex items-center justify-center">
                     <Smartphone size={24} className="opacity-50" />
                 </div>
-                <p className="text-lg">No app ad configurations exist yet.</p>
-                <p className="text-sm opacity-60 mt-1">Add your app's package name and network IDs above.</p>
+                <p className="text-lg">No app packages have been whitelisted yet.</p>
+                <p className="text-sm opacity-60 mt-1">Register an app package above to grant API access.</p>
             </div>
         )}
       </div>

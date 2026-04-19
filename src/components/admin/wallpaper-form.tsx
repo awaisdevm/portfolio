@@ -1,8 +1,8 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Upload } from 'lucide-react'
 import toast from 'react-hot-toast'
-import useSWR from 'swr'
+import { createClient } from '@/lib/supabase/client'
 
 interface Category {
   id: string
@@ -18,8 +18,16 @@ export default function WallpaperForm({ onSuccess }: { onSuccess: () => void }) 
   const [fullRes, setFullRes] = useState<File | null>(null)
   const [loading, setLoading] = useState(false)
 
-  const { data: catRes } = useSWR('/wallpaper/api/categories', (url) => fetch(url).then(res => res.json()))
-  const categories: Category[] = catRes?.data || []
+  const supabase = createClient()
+  const [categories, setCategories] = useState<Category[]>([])
+
+  useEffect(() => {
+    const loadCategories = async () => {
+      const { data } = await supabase.from('categories').select('id, name').eq('is_active', true).order('name')
+      if (data) setCategories(data)
+    }
+    loadCategories()
+  }, [])
 
   // Create preview URLs
   const thumbPreview = thumbnail ? URL.createObjectURL(thumbnail) : null

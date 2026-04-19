@@ -1,10 +1,19 @@
 'use client'
-import { Trash2, Eye, X, ToggleLeft, ToggleRight, Star, StarOff } from 'lucide-react'
+import { Trash2, Eye, X, ToggleLeft, ToggleRight, Star, StarOff, Edit2, Check } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 
 export default function WallpaperTable({ wallpapers, onDelete, onUpdate }: { wallpapers: any[], onDelete: (id: string) => void, onUpdate: (id: string, updates: any) => void }) {
   const [previewImage, setPreviewImage] = useState<string | null>(null)
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [editTitle, setEditTitle] = useState('')
+  const [editTags, setEditTags] = useState('')
+
+  const handleSave = (id: string) => {
+     const tagArray = editTags.split(',').map(t => t.trim()).filter(Boolean)
+     onUpdate(id, { title: editTitle, tags: tagArray })
+     setEditingId(null)
+  }
 
   return (
     <>
@@ -44,15 +53,25 @@ export default function WallpaperTable({ wallpapers, onDelete, onUpdate }: { wal
                   </div>
                 </td>
                 <td className="py-3 px-4">
-                  <div className="flex items-center gap-2">
-                    <p className="font-semibold text-white">{wp.title}</p>
-                    {wp.is_featured && <Star size={14} className="text-yellow-400 fill-yellow-400" />}
-                  </div>
-                  <div className="flex items-center gap-2 mt-1.5 flex-wrap">
-                    {wp.tags?.slice(0, 3).map((tag: string, i: number) => (
-                      <span key={i} className="text-[10px] bg-white/5 text-gray-400 px-2 py-0.5 rounded-md border border-white/10">#{tag}</span>
-                    ))}
-                  </div>
+                  {editingId === wp.id ? (
+                     <div className="flex flex-col gap-2 w-48">
+                        <input value={editTitle} onChange={e => setEditTitle(e.target.value)} className="bg-black/40 border border-white/20 rounded-md px-2 py-1 text-sm focus:outline-none focus:border-primary w-full" placeholder="Title" />
+                        <input value={editTags} onChange={e => setEditTags(e.target.value)} className="bg-black/40 border border-white/20 rounded-md px-2 py-1 text-xs focus:outline-none focus:border-primary w-full text-gray-400" placeholder="Tags (comma separated)" />
+                     </div>
+                  ) : (
+                     <>
+                        <div className="flex items-center gap-2">
+                          <p className="font-semibold text-white">{wp.title}</p>
+                          {wp.is_featured && <Star size={14} className="text-yellow-400 fill-yellow-400" />}
+                        </div>
+                        <div className="flex items-center gap-2 mt-1.5 flex-wrap max-w-[200px] whitespace-normal">
+                          {wp.tags?.slice(0, 3).map((tag: string, i: number) => (
+                            <span key={i} className="text-[10px] bg-white/5 text-gray-400 px-2 py-0.5 rounded-md border border-white/10">#{tag}</span>
+                          ))}
+                          {wp.tags?.length > 3 && <span className="text-[10px] text-gray-500">+{wp.tags.length - 3}</span>}
+                        </div>
+                     </>
+                  )}
                 </td>
                 <td className="py-3 px-4">
                   <span className="text-sm bg-primary/10 text-primary-foreground px-3 py-1 rounded-full border border-primary/20">
@@ -78,19 +97,43 @@ export default function WallpaperTable({ wallpapers, onDelete, onUpdate }: { wal
                 </td>
                 <td className="py-3 px-4 text-right">
                   <div className="flex items-center justify-end gap-1">
-                    <button
-                      onClick={() => onUpdate(wp.id, { is_featured: !wp.is_featured })}
-                      className={`p-2 rounded-lg transition-colors border border-transparent ${wp.is_featured ? 'text-yellow-400 bg-yellow-400/10 hover:bg-yellow-400/20' : 'text-gray-400 hover:text-yellow-400 hover:bg-yellow-400/10'}`}
-                      title={wp.is_featured ? "Remove from Featured" : "Mark as Featured"}
-                    >
-                      {wp.is_featured ? <Star size={16} className="fill-yellow-400" /> : <StarOff size={16} />}
-                    </button>
-                    <button onClick={() => setPreviewImage(wp.full_res_url || wp.thumbnail_url)} className="p-2 text-gray-400 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors border border-transparent hover:border-primary/20">
-                      <Eye size={16} />
-                    </button>
-                    <button onClick={() => onDelete(wp.id)} className="p-2 text-gray-400 hover:text-accent hover:bg-accent/10 rounded-lg transition-colors border border-transparent hover:border-accent/20">
-                      <Trash2 size={16} />
-                    </button>
+                    {editingId === wp.id ? (
+                      <>
+                        <button onClick={() => handleSave(wp.id)} className="p-2 text-green-400 hover:bg-green-400/10 rounded-lg transition-colors border border-green-400/20" title="Save Changes">
+                           <Check size={16} />
+                        </button>
+                        <button onClick={() => setEditingId(null)} className="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors border border-transparent" title="Cancel">
+                           <X size={16} />
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <button
+                          onClick={() => {
+                             setEditingId(wp.id)
+                             setEditTitle(wp.title)
+                             setEditTags(wp.tags?.join(', ') || '')
+                          }}
+                          className="p-2 text-blue-400 hover:bg-blue-400/10 rounded-lg transition-colors border border-transparent hover:border-blue-400/20"
+                          title="Edit Wallpaper"
+                        >
+                          <Edit2 size={16} />
+                        </button>
+                        <button
+                          onClick={() => onUpdate(wp.id, { is_featured: !wp.is_featured })}
+                          className={`p-2 rounded-lg transition-colors border border-transparent ${wp.is_featured ? 'text-yellow-400 bg-yellow-400/10 hover:bg-yellow-400/20' : 'text-gray-400 hover:text-yellow-400 hover:bg-yellow-400/10'}`}
+                          title={wp.is_featured ? "Remove from Featured" : "Mark as Featured"}
+                        >
+                          {wp.is_featured ? <Star size={16} className="fill-yellow-400" /> : <StarOff size={16} />}
+                        </button>
+                        <button onClick={() => setPreviewImage(wp.full_res_url || wp.thumbnail_url)} className="p-2 text-gray-400 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors border border-transparent hover:border-primary/20" title="Preview">
+                          <Eye size={16} />
+                        </button>
+                        <button onClick={() => onDelete(wp.id)} className="p-2 text-gray-400 hover:text-accent hover:bg-accent/10 rounded-lg transition-colors border border-transparent hover:border-accent/20" title="Delete">
+                          <Trash2 size={16} />
+                        </button>
+                      </>
+                    )}
                   </div>
                 </td>
               </tr>
