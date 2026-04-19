@@ -4,7 +4,7 @@ import { adsService } from '@/lib/wallpaper/services/ads.service'
 
 export const revalidate = 60
 
-export async function GET(request: Request, context: any) {
+export async function GET(request: Request, context: { params: Promise<{ app_id: string }> }) {
   // Fix params unwrapping for Next.js 15
   const params = await context.params;
   const app_id = params.app_id;

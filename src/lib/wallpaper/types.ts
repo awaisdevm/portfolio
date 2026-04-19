@@ -3,7 +3,9 @@ export interface Category {
   name: string;
   slug: string;
   image_url: string | null;
+  is_active: boolean;
   created_at: string;
+  wallpaper_count?: number;
 }
 
 export interface Wallpaper {
@@ -15,6 +17,7 @@ export interface Wallpaper {
   tags: string[];
   download_count: number;
   is_featured: boolean;
+  is_active: boolean;
   created_at: string;
 }
 
@@ -27,6 +30,19 @@ export interface AdsConfig {
   app_open_id: string | null;
   is_active: boolean;
   created_at: string;
+}
+
+export interface AppSetting {
+  app_name: string;
+  ads_enabled: boolean;
+  features_enabled: boolean;
+  created_at?: string;
+}
+
+export interface WallpaperWithCategory extends Wallpaper {
+  categories?: {
+    name: string;
+  };
 }
 
 export interface PaginatedResponse<T> {

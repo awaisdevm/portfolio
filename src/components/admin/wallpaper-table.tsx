@@ -2,8 +2,9 @@
 import { Trash2, Eye, X, ToggleLeft, ToggleRight, Star, StarOff, Edit2, Check } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
+import { WallpaperWithCategory } from '@/lib/wallpaper/types'
 
-export default function WallpaperTable({ wallpapers, onDelete, onUpdate }: { wallpapers: any[], onDelete: (id: string) => void, onUpdate: (id: string, updates: any) => void }) {
+export default function WallpaperTable({ wallpapers, onDelete, onUpdate }: { wallpapers: WallpaperWithCategory[], onDelete: (id: string) => void, onUpdate: (id: string, updates: Partial<WallpaperWithCategory>) => void }) {
   const [previewImage, setPreviewImage] = useState<string | null>(null)
   const [editingId, setEditingId] = useState<string | null>(null)
   const [editTitle, setEditTitle] = useState('')

@@ -1,5 +1,14 @@
 import { wallpaperRepository } from '../repositories/wallpaper.repository'
-import { Wallpaper } from '../types'
+
+interface WallpaperUploadInput {
+  title: string;
+  thumbnail_url: string;
+  full_res_url: string;
+  category_id?: string | null;
+  tags?: string | string[];
+  is_featured?: boolean;
+  is_active?: boolean;
+}
 
 export class WallpaperService {
   async getAll() {
@@ -19,22 +28,29 @@ export class WallpaperService {
     return await wallpaperRepository.getPopular(50)
   }
 
-  async uploadWallpaper(wallpaperData: any) {
+  async uploadWallpaper(wallpaperData: WallpaperUploadInput) {
     // Basic validation
     if (!wallpaperData.title || !wallpaperData.thumbnail_url || !wallpaperData.full_res_url) {
       throw new Error('Title and URLs are required')
     }
     
     // Ensure tags is array
+    let finalTags: string[] = []
     if (typeof wallpaperData.tags === 'string') {
-        try {
-            wallpaperData.tags = JSON.parse(wallpaperData.tags)
-        } catch {
-            wallpaperData.tags = [wallpaperData.tags]
-        }
+      try {
+        const parsed = JSON.parse(wallpaperData.tags)
+        finalTags = Array.isArray(parsed) ? parsed : [String(parsed)]
+      } catch {
+        finalTags = [wallpaperData.tags]
+      }
+    } else if (Array.isArray(wallpaperData.tags)) {
+      finalTags = wallpaperData.tags
     }
-    
-    return await wallpaperRepository.create(wallpaperData)
+
+    return await wallpaperRepository.create({
+      ...wallpaperData,
+      tags: finalTags
+    })
   }
 
   async deleteWallpaper(id: string) {

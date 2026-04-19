@@ -1,13 +1,14 @@
 'use client'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import WallpaperForm from '@/components/admin/wallpaper-form'
 import WallpaperTable from '@/components/admin/wallpaper-table'
 import { createClient } from '@/lib/supabase/client'
 import toast from 'react-hot-toast'
+import { WallpaperWithCategory } from '@/lib/wallpaper/types'
 
 export default function WallpapersPage() {
-  const [wallpapers, setWallpapers] = useState<any[]>([])
-  const supabase = createClient()
+  const [wallpapers, setWallpapers] = useState<WallpaperWithCategory[]>([])
+  const supabase = useMemo(() => createClient(), [])
 
   const fetchWallpapers = useCallback(async () => {
     const { data, error } = await supabase
@@ -32,7 +33,7 @@ export default function WallpapersPage() {
     }
   }
 
-  const handleUpdate = async (id: string, updates: any) => {
+  const handleUpdate = async (id: string, updates: Partial<WallpaperWithCategory>) => {
       // Optimistic UI update
       setWallpapers(prev => prev.map(wp => wp.id === id ? { ...wp, ...updates } : wp))
       const { error } = await supabase.from('wallpapers').update(updates).eq('id', id)

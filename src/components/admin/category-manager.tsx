@@ -1,27 +1,28 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
 import { Plus, Trash2, Tag, ToggleLeft, ToggleRight, Image as ImageIcon, ChevronDown, ChevronUp, Edit2, X, Check } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { createClient } from '@/lib/supabase/client'
+import { Category, WallpaperWithCategory } from '@/lib/wallpaper/types'
 import WallpaperTable from './wallpaper-table'
 
 export default function CategoryManager() {
-  const [categories, setCategories] = useState<any[]>([])
+  const [categories, setCategories] = useState<Category[]>([])
   const [name, setName] = useState('')
   const [slug, setSlug] = useState('')
   const [loading, setLoading] = useState(false)
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null)
-  const [categoryWallpapers, setCategoryWallpapers] = useState<any[]>([])
+  const [categoryWallpapers, setCategoryWallpapers] = useState<WallpaperWithCategory[]>([])
   
   // Edit State
   const [editingId, setEditingId] = useState<string | null>(null)
   const [editName, setEditName] = useState('')
   const [editSlug, setEditSlug] = useState('')
 
-  const supabase = createClient()
+  const supabase = useMemo(() => createClient(), [])
 
-  const fetchCategories = async () => {
-    const { data, error } = await supabase
+  const fetchCategories = useCallback(async () => {
+    const { data } = await supabase
         .from('categories')
         .select('*, wallpapers(id)')
         .order('name')
@@ -29,12 +30,12 @@ export default function CategoryManager() {
         const mapped = data.map(c => ({...c, wallpaper_count: c.wallpapers?.length || 0}))
         setCategories(mapped)
     }
-  }
+  }, [supabase])
 
-  const fetchCategoryWallpapers = async (categoryId: string) => {
+  const fetchCategoryWallpapers = useCallback(async (categoryId: string) => {
     const { data } = await supabase.from('wallpapers').select('*, categories(name)').eq('category_id', categoryId).order('created_at', { ascending: false })
     if (data) setCategoryWallpapers(data)
-  }
+  }, [supabase])
 
   const toggleExpand = (categoryId: string) => {
       if (expandedCategory === categoryId) {
@@ -48,7 +49,7 @@ export default function CategoryManager() {
 
   useEffect(() => {
     fetchCategories()
-  }, [])
+  }, [fetchCategories])
 
   const handleAdd = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -95,7 +96,7 @@ export default function CategoryManager() {
     }
   }
 
-  const handleWallpaperUpdate = async (id: string, updates: any) => {
+  const handleWallpaperUpdate = async (id: string, updates: Partial<WallpaperWithCategory>) => {
       setCategoryWallpapers(prev => prev.map(wp => wp.id === id ? { ...wp, ...updates } : wp))
       const { error } = await supabase.from('wallpapers').update(updates).eq('id', id)
       if (error) toast.error(error.message)

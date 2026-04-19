@@ -1,23 +1,24 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
 import { Plus, Key, Smartphone, Trash2 } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { createClient } from '@/lib/supabase/client'
+import { AppSetting } from '@/lib/wallpaper/types'
 
 export default function SettingsManager() {
-  const [appSettings, setAppSettings] = useState<any[]>([])
+  const [appSettings, setAppSettings] = useState<AppSetting[]>([])
   const [whitelistName, setWhitelistName] = useState('')
   const [loading, setLoading] = useState(false)
-  const supabase = createClient()
+  const supabase = useMemo(() => createClient(), [])
 
-  const fetchSettings = async () => {
+  const fetchSettings = useCallback(async () => {
     const { data } = await supabase.from('app_settings').select('*').order('created_at', { ascending: false })
     if (data) setAppSettings(data)
-  }
+  }, [supabase])
 
   useEffect(() => {
     fetchSettings()
-  }, [])
+  }, [fetchSettings])
 
   const handleWhitelistApp = async (e: React.FormEvent) => {
       e.preventDefault()
@@ -56,7 +57,7 @@ export default function SettingsManager() {
          <h3 className="text-xl font-bold mb-4 font-inter text-secondary flex items-center gap-2">
             <Key className="text-secondary" /> Whitelist App Package
          </h3>
-         <p className="text-sm text-gray-400 mb-4">Register your mobile app's package name here to securely allow it to call the backend API.</p>
+         <p className="text-sm text-gray-400 mb-4">Register your mobile app&apos;s package name here to securely allow it to call the backend API.</p>
          <form onSubmit={handleWhitelistApp} className="flex flex-col sm:flex-row gap-4 items-end max-w-3xl">
             <div className="flex-1 w-full">
                <label className="block text-sm text-gray-400 mb-1">Package Name</label>

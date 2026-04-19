@@ -18,7 +18,6 @@ export const ObfuscatedContact: React.FC<ObfuscatedContactProps> = ({
   ariaLabel,
   children,
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
   const [displayValue, setDisplayValue] = useState("");
 
   useEffect(() => {
@@ -32,12 +31,10 @@ export const ObfuscatedContact: React.FC<ObfuscatedContactProps> = ({
   }, [type, value]);
 
   const handleMouseEnter = () => {
-    setIsHovered(true);
     setDisplayValue(value);
   };
 
   const handleMouseLeave = () => {
-    setIsHovered(false);
     // Re-obfuscate or keep it revealed once touched? 
     // Usually revealing on touch/hover is enough for bots.
   };

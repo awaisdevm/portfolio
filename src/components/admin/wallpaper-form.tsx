@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { Upload } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { createClient } from '@/lib/supabase/client'
@@ -18,7 +18,7 @@ export default function WallpaperForm({ onSuccess }: { onSuccess: () => void }) 
   const [fullRes, setFullRes] = useState<File | null>(null)
   const [loading, setLoading] = useState(false)
 
-  const supabase = createClient()
+  const supabase = useMemo(() => createClient(), [])
   const [categories, setCategories] = useState<Category[]>([])
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function WallpaperForm({ onSuccess }: { onSuccess: () => void }) 
       if (data) setCategories(data)
     }
     loadCategories()
-  }, [])
+  }, [supabase])
 
   // Create preview URLs
   const thumbPreview = thumbnail ? URL.createObjectURL(thumbnail) : null
@@ -64,8 +64,9 @@ export default function WallpaperForm({ onSuccess }: { onSuccess: () => void }) 
       setThumbnail(null)
       setFullRes(null)
       onSuccess()
-    } catch (err: any) {
-      toast.error(err.message)
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Upload failed';
+      toast.error(message)
     } finally {
       setLoading(false)
     }

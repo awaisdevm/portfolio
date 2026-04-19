@@ -1,12 +1,12 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { ImageIcon, Download, Tag, MonitorSmartphone } from 'lucide-react'
 import   StatsCard from '@/components/admin/stats-card'
 import { createClient } from '@/lib/supabase/client'
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState({ wallpapers: 0, categories: 0, ads: 0, downloads: 0 })
-  const supabase = createClient()
+  const supabase = useMemo(() => createClient(), [])
 
   useEffect(() => {
     async function fetchStats() {
@@ -27,7 +27,7 @@ export default function AdminDashboard() {
       })
     }
     fetchStats()
-  }, [])
+  }, [supabase])
 
   return (
     <div className="space-y-8">

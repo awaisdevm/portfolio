@@ -3,7 +3,7 @@ import { createAdminClient } from '@/lib/supabase/server'
 
 export const revalidate = 60
 
-export async function GET(request: Request, context: any) {
+export async function GET(request: Request, context: { params: Promise<{ app_id: string }> }) {
   const params = await context.params;
   const app_id = params.app_id;
   

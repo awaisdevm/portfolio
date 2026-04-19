@@ -1,52 +1,38 @@
 'use client'
-import { useState, useEffect } from 'react'
-import { Plus, Trash2, Smartphone, ToggleLeft, ToggleRight, Settings, ShieldAlert, Cpu, Key } from 'lucide-react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
+import { Plus, Trash2, Smartphone, ToggleLeft, ToggleRight, Settings, ShieldAlert, Cpu } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { createClient } from '@/lib/supabase/client'
+import { AdsConfig, AppSetting } from '@/lib/wallpaper/types'
+
 
 export default function AdsManager() {
-  const [ads, setAds] = useState<any[]>([])
-  const [appSettings, setAppSettings] = useState<{ [key: string]: any }>({})
-  const [whitelistName, setWhitelistName] = useState('')
+  const [ads, setAds] = useState<AdsConfig[]>([])
+  const [appSettings, setAppSettings] = useState<{ [key: string]: AppSetting }>({})
   const [appName, setAppName] = useState('')
   const [network, setNetwork] = useState('AppLovin')
   const [bannerId, setBannerId] = useState('')
   const [interstitialId, setInterstitialId] = useState('')
   const [appOpenId, setAppOpenId] = useState('')
   const [loading, setLoading] = useState(false)
-  const supabase = createClient()
+  const supabase = useMemo(() => createClient(), [])
 
-  const fetchAdsAndSettings = async () => {
+  const fetchAdsAndSettings = useCallback(async () => {
     const { data: adsData } = await supabase.from('ads_config').select('*').order('created_at', { ascending: false })
     const { data: settingsData } = await supabase.from('app_settings').select('*').order('created_at', { ascending: false })
     
     if (adsData) setAds(adsData)
     if (settingsData) {
-       const settingsMap: any = {}
+       const settingsMap: { [key: string]: AppSetting } = {}
        settingsData.forEach(s => settingsMap[s.app_name] = s)
        setAppSettings(settingsMap)
     }
-  }
+  }, [supabase])
 
   useEffect(() => {
     fetchAdsAndSettings()
-  }, [])
+  }, [fetchAdsAndSettings])
 
-  const handleWhitelistApp = async (e: React.FormEvent) => {
-      e.preventDefault()
-      if (!whitelistName) return
-      setLoading(true)
-      const { error } = await supabase.from('app_settings').insert([{ app_name: whitelistName, ads_enabled: true, features_enabled: true }])
-      if (error) {
-          if (error.code === '23505') toast.error('App package is already whitelisted.')
-          else toast.error(error.message)
-      } else {
-          toast.success('App Package Whitelisted Successfully!')
-          setWhitelistName('')
-          fetchAdsAndSettings()
-      }
-      setLoading(false)
-  }
 
   const handleAddNetwork = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -108,7 +94,7 @@ export default function AdsManager() {
     }
   }
 
-  const groupedAds = ads.reduce((acc: any, ad: any) => {
+  const groupedAds = ads.reduce((acc: { [key: string]: AdsConfig[] }, ad: AdsConfig) => {
       if (!acc[ad.app_name]) acc[ad.app_name] = []
       acc[ad.app_name].push(ad)
       return acc
@@ -235,7 +221,7 @@ export default function AdsManager() {
                             <p>No ad networks attached to this app. It currently runs ad-free.</p>
                         </div>
                     )}
-                    {appNetworks.map((ad: any) => (
+                    {appNetworks.map((ad: AdsConfig) => (
                         <div key={ad.id} className={`flex flex-col xl:flex-row xl:items-center justify-between gap-4 p-4 rounded-xl border transition-all ${ad.is_active ? 'bg-white/[0.03] border-white/10 hover:bg-white/[0.05]' : 'bg-black/40 border-dashed border-red-500/20 opacity-80'}`}>
                             <div className="flex gap-4 items-center">
                                 <div className="w-2 h-12 rounded-full bg-gradient-to-b from-white/10 to-white/5 flex-shrink-0"></div>

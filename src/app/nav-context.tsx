@@ -77,7 +77,7 @@ export const NavProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       observer.disconnect();
       clearTimeout(timeoutId);
     };
-  }, [navItems]);
+  }, []);
 
   return (
     <NavContext.Provider value={{ navItems, scrollToSection, activeSection, setActiveSection ,mobileMenuOpen,
