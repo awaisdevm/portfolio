@@ -10,6 +10,7 @@ import { useState, useEffect } from "react"
 import { Magnetic } from "../ui/magnetic"
 import portfolioData from "@/data/portfolio.json"
 import { ObfuscatedContact } from "../ui/obfuscated-contact"
+import { usePathname } from "next/navigation"
 
 const headerIconFont = Protest_Guerrilla({
   subsets: ["latin"],
@@ -21,6 +22,7 @@ export const Header: React.FC = () => {
   const { scrollYProgress } = useScroll()
   const { navItems, mobileMenuOpen, setMobileMenuOpen, activeSection, scrollToSection } = useNav()
   const [visible, setVisible] = useState(true)
+  const pathname = usePathname()
 
   const populatedSocialLinks = [
     { label: "GitHub", href: contact.github, icon: GithubIcon },
@@ -38,6 +40,10 @@ export const Header: React.FC = () => {
   const handleNavClick = (id: string) => {
     scrollToSection(id)
     setMobileMenuOpen(false)
+  }
+
+  if (pathname?.startsWith('/wallpaper')) {
+    return null
   }
 
   return (
