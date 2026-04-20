@@ -1,4 +1,5 @@
 'use client'
+export const dynamic = 'force-dynamic'
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import WallpaperForm from '@/components/admin/wallpaper-form'
 import WallpaperTable from '@/components/admin/wallpaper-table'

@@ -1,4 +1,5 @@
 'use client'
+export const dynamic = 'force-dynamic'
 import { useEffect, useState, useMemo } from 'react'
 import { ImageIcon, Download, Tag, MonitorSmartphone } from 'lucide-react'
 import   StatsCard from '@/components/admin/stats-card'

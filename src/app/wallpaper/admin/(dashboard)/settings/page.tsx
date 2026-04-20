@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import SettingsManager from '@/components/admin/settings-manager'
 
 export default function SettingsPage() {
