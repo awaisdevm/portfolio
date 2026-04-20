@@ -14,7 +14,7 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const siteUrl = "https://devawais.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://devawais.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

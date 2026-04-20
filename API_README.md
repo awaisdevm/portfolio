@@ -13,17 +13,16 @@ This documentation provides all the necessary endpoints for your mobile applicat
 ### 🔒 Security & Authentication
 To protect your data from public scrapers and unauthorized apps, the API has a strict Gateway deployed. All mobile `GET` requests **MUST** include two specific HTTP Headers:
 
-1. `x-api-key`: Your secret API key. Default fallback: `awais_mobile_secure_999` *(You can change this by adding `MOBILE_API_KEY=your_secret` to your `.env` file)*.
+1. `x-api-key`: Your secret API key. *(Configured via `MOBILE_API_KEY` in your `.env` file)*.
 2. `x-app-package`: The exact Package Name of your app (e.g. `com.awais.wallpapers`). This package name MUST exist inside your Admin Dashboard's Ads Manager list!
 
 Example Headers in Flutter/Dart:
-```dart
 final headers = {
   "Content-Type": "application/json",
-  "x-api-key": "awais_mobile_secure_999",
+  "x-api-key": "YOUR_SECRET_API_KEY",
   "x-app-package": "com.awais.wallpapers"
 };
-```
+
 ---
 
 ## 1. 📂 Categories API

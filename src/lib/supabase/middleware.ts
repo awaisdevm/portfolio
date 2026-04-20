@@ -9,7 +9,7 @@ export async function updateSession(request: NextRequest) {
   // --- Domain-Based Isolation Logic ---
   const hostname = request.headers.get('host')
   const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN // e.g., api.devawais.com
-  const mainDomain = 'https://devawais.com'
+  const mainDomain = process.env.NEXT_PUBLIC_SITE_URL || 'https://devawais.com'
 
   // If we are currently serving traffic on the dedicated API SUBDOMAIN
   if (apiDomain && hostname === apiDomain) {
@@ -69,7 +69,7 @@ export async function updateSession(request: NextRequest) {
   ) {
     const apiKey = request.headers.get('x-api-key')
     const appPackage = request.headers.get('x-app-package')
-    const validApiKey = process.env.MOBILE_API_KEY || 'awais_mobile_secure_999'
+    const validApiKey = process.env.MOBILE_API_KEY
 
     // Block if no package name or wrong API Key
     if (!appPackage || apiKey !== validApiKey) {
