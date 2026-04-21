@@ -10,17 +10,18 @@ This documentation provides all the necessary endpoints for your mobile applicat
 - **Base URL (Production):** `https://your-domain.com/wallpaper/api` *(Replace with your deployed Vercel domain)*
 - **Content-Type:** `application/json`
 
-### 🔒 Security & Authentication
-To protect your data from public scrapers and unauthorized apps, the API has a strict Gateway deployed. All mobile `GET` requests **MUST** include two specific HTTP Headers:
-
+To protect your data from public scrapers and unauthorized apps, the API has a multi-layered Security Shield. All mobile `GET` requests **MUST** include four specific HTTP Headers:
 1. `x-api-key`: Your secret API key. *(Configured via `MOBILE_API_KEY` in your `.env` file)*.
-2. `x-app-package`: The exact Package Name of your app (e.g. `com.awais.wallpapers`). This package name MUST exist inside your Admin Dashboard's Ads Manager list!
+2. `x-app-package`: The exact Package Name of your app (e.g., `com.awais.wallpapers`).
+3. `x-device-id`: A unique identifier for the phone (e.g., Android Device ID or a UUID). Used for per-device rate limiting.
+4. `x-integrity-token`: A fresh "Play Integrity" token generated on the phone. This proves the request is from a real, untampered device.
 
-Example Headers in Flutter/Dart:
 final headers = {
   "Content-Type": "application/json",
   "x-api-key": "YOUR_SECRET_API_KEY",
-  "x-app-package": "com.awais.wallpapers"
+  "x-app-package": "com.awais.wallpapers",
+  "x-device-id": "device_uuid_here",
+  "x-integrity-token": "eyJhbGciOi..." // Token from Play Integrity API
 };
 
 ---
@@ -54,10 +55,11 @@ Fetch all available, active wallpaper categories to display in your mobile app.
 
 ## 2. 🖼️ Wallpapers by Category
 
-Fetch all wallpapers belonging to a specific category using its `slug`.
+Fetch all wallpapers belonging to a specific category.
 
 - **Endpoint:** `/wallpapers?category={slug}`
 - **Method:** `GET`
+- **Security NOTE:** The `thumbnail_url` and `full_res_url` returned are **Temporary Signed URLs** that expire after 5 minutes.
 - **Query Parameters:**
   - `category` (Required): The slug of the category (e.g., `nature`, `abstract-art`).
 - **Response Format:**
@@ -146,9 +148,10 @@ Fetch the master configuration for a specific mobile application. This endpoint 
 ```json
 {
   "app_name": "com.awais.wallpapers",
-  "ads_enabled": true,            // Master Kill Switch for ALL ads in this app
+  "ads_enabled": true,            // Master Kill Switch for ALL ads in this specific app
+  "global_ads_online": true,      // Global status. If false, ALL apps are forced ad-free
   "features_enabled": true,       // Global toggle to unlock/lock premium app features remotely
-  "count": 2,                     // Number of active ad network configurations
+  "count": 2,                     // Number of ACTIVE ad configurations. Returns 0 if ads are disabled!
   "networks": [
     {
       "id": "...",
@@ -172,9 +175,9 @@ Fetch the master configuration for a specific mobile application. This endpoint 
 
 ### Mobile Implementation Logic for Ads:
 When your mobile app launches, call `/ads/com.your.package`.
-1. Check `ads_enabled`. If `false`, do not initialize any SDKs.
-2. If `true`, loop through the `networks` array.
-3. For each network where `is_active === true`, retrieve the IDs (`banner_id`, `interstitial_id`) and inject them into the respective mobile Ad SDK setup logic.
+1. Check `ads_enabled` and `global_ads_online`. If either is `false`, do not initialize any SDKs.
+2. **Double Safety**: The server will automatically return an **empty `networks` array** if advertisements are disabled in the dashboard.
+3. If IDs are present, loop through the `networks` array and initialize the respective SDKs.
 
 ---
 

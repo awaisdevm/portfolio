@@ -101,13 +101,47 @@ export default function AdsManager() {
   }, {})
 
   // Master list of all registered apps (combining settings and networks)
+  // We exclude 'GLOBAL' from the main list as it has its own master control
   const allAppNames = Array.from(new Set([
       ...Object.keys(appSettings),
       ...Object.keys(groupedAds)
-  ]))
+  ])).filter(name => name !== 'GLOBAL')
+
+  const globalSettings = appSettings['GLOBAL'] || { ads_enabled: true, features_enabled: true }
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+      
+      {/* GLOBAL MASTER KILL SWITCH */}
+      <div className={`p-6 rounded-2xl border transition-all duration-500 ${!globalSettings.ads_enabled ? 'bg-red-500/10 border-red-500/50 shadow-[0_0_30px_rgba(239,68,68,0.2)]' : 'glass-strong border-white/10'}`}>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-5">
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 ${!globalSettings.ads_enabled ? 'bg-red-500 text-white animate-pulse' : 'bg-primary/20 text-primary border border-primary/30'}`}>
+                      <ShieldAlert size={32} />
+                  </div>
+                  <div>
+                      <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                          Global Ads Master Switch
+                          {!globalSettings.ads_enabled && <span className="bg-red-500 text-[10px] px-2 py-0.5 rounded-full animate-bounce">EMERGENCY OFF</span>}
+                      </h3>
+                      <p className="text-gray-400 max-w-xl">
+                          This switch overrides all individual app settings. If OFF, **zero ads** will be served to any mobile device, regardless of per-app configs.
+                      </p>
+                  </div>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                   <span className={`text-xs font-bold uppercase tracking-[0.2em] ${!globalSettings.ads_enabled ? 'text-red-400' : 'text-primary'}`}>
+                       {globalSettings.ads_enabled ? 'Network Online' : 'Network Silent'}
+                   </span>
+                   <button 
+                      onClick={() => toggleAppSetting('GLOBAL', 'ads_enabled', globalSettings.ads_enabled)} 
+                      className={`relative inline-flex h-12 w-24 items-center rounded-full transition-all duration-300 focus:outline-none ${globalSettings.ads_enabled ? 'bg-primary' : 'bg-red-500'}`}
+                   >
+                       <span className={`inline-block h-10 w-10 transform rounded-full bg-white transition-all duration-300 shadow-xl ${globalSettings.ads_enabled ? 'translate-x-[50px]' : 'translate-x-[4px]'}`} />
+                   </button>
+              </div>
+          </div>
+      </div>
       
       {/* AD NETWORK FORM SECTION */}
       <div className="glass-strong p-6 rounded-2xl border border-white/10 shadow-xl relative overflow-hidden">
@@ -118,8 +152,8 @@ export default function AdsManager() {
           <div className="space-y-4">
               <div>
                 <label className="block text-sm text-gray-400 mb-1">Target App Package</label>
-                <input value={appName} onChange={e => setAppName(e.target.value)} list="whitelisted-apps" className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary/50 transition-colors" required placeholder="com.example.app" />
-                <datalist id="whitelisted-apps">
+                <input value={appName} onChange={e => setAppName(e.target.value)} list="existing-apps" className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary/50 transition-colors" required placeholder="com.example.app" />
+                <datalist id="existing-apps">
                     {Object.keys(appSettings).map(app => <option key={app} value={app} />)}
                 </datalist>
               </div>
@@ -176,7 +210,6 @@ export default function AdsManager() {
                         <div>
                            <div className="flex flex-wrap items-center gap-2">
                                <h4 className="font-bold text-white text-xl">{app_name}</h4>
-                               <span className="bg-green-500/20 text-green-400 border border-green-500/30 text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-widest">API Allowed</span>
                            </div>
                            <span className="text-sm font-mono text-gray-400 block mt-1">{appNetworks.length} Ad Network(s) Attached</span>
                         </div>
@@ -208,7 +241,7 @@ export default function AdsManager() {
                                 </button>
                             </div>
                         </div>
-                        <button onClick={() => handleDeleteApp(app_name)} className="p-3 text-red-500 hover:text-white hover:bg-red-500 rounded-xl transition-colors shrink-0 bg-red-500/10 border border-red-500/20" title="Revoke App Access & Ads">
+                        <button onClick={() => handleDeleteApp(app_name)} className="p-3 text-red-500 hover:text-white hover:bg-red-500 rounded-xl transition-colors shrink-0 bg-red-500/10 border border-red-500/20" title="Delete App Config & Ads">
                             <Trash2 size={20} />
                         </button>
                     </div>
@@ -260,8 +293,8 @@ export default function AdsManager() {
                 <div className="w-16 h-16 rounded-full border-2 border-dashed border-gray-600 mb-4 flex items-center justify-center">
                     <Smartphone size={24} className="opacity-50" />
                 </div>
-                <p className="text-lg">No app packages have been whitelisted yet.</p>
-                <p className="text-sm opacity-60 mt-1">Register an app package above to grant API access.</p>
+                <p className="text-lg">No app configurations found yet.</p>
+                <p className="text-sm opacity-60 mt-1">Add an app package above to configure its ad networks.</p>
             </div>
         )}
       </div>

@@ -1,5 +1,6 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import { rateLimitService } from '../wallpaper/services/ratelimit.service'
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
@@ -62,25 +63,38 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  // 2. Protect Mobile API Routes
+  // 2. Protect Mobile API Routes (The Security Shield)
   if (
     request.nextUrl.pathname.startsWith('/wallpaper/api/') &&
     !request.nextUrl.pathname.startsWith('/wallpaper/api/wallpapers/upload')
   ) {
     const apiKey = request.headers.get('x-api-key')
     const appPackage = request.headers.get('x-app-package')
+    const deviceId = request.headers.get('x-device-id')
+    const integrityToken = request.headers.get('x-integrity-token')
     const validApiKey = process.env.MOBILE_API_KEY
 
-    // Block if no package name or wrong API Key
-    if (!appPackage || apiKey !== validApiKey) {
-      return NextResponse.json({ error: 'Unauthorized Access. Invalid API Key or missing Package Name.' }, { status: 401 })
+    // Phase 1: Basic Authentication
+    if (!appPackage || !deviceId || apiKey !== validApiKey) {
+      return NextResponse.json({ 
+        error: 'Unauthorized Access. Missing or invalid security headers (API Key, Package Name, or Device ID).' 
+      }, { status: 401 })
     }
 
-    // Verify the package name actually exists in the database
-    const { data: appData } = await supabase.from('app_settings').select('app_name').eq('app_name', appPackage).single()
+    // Phase 2: Rate Limiting (Device-Based)
+    const ratelimit = await rateLimitService.check(deviceId)
+    if (!ratelimit.success) {
+      return NextResponse.json({ 
+        error: 'Too many requests. Please slow down.',
+        retryAfter: Math.ceil((ratelimit.reset - Date.now()) / 1000)
+      }, { status: 429 })
+    }
 
-    if (!appData) {
-      return NextResponse.json({ error: 'Unauthorized Access. Package name not recognized.' }, { status: 403 })
+    // Phase 3: Integrity Check (Token existence)
+    if (!integrityToken && process.env.NODE_ENV === 'production') {
+      return NextResponse.json({ 
+        error: 'Security Failure. Integrity token is required for production requests.' 
+      }, { status: 403 })
     }
   }
 

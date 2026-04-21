@@ -1,4 +1,6 @@
+import { createAdminClient } from '@/lib/supabase/server'
 import { wallpaperRepository } from '../repositories/wallpaper.repository'
+import { Wallpaper } from '../types'
 
 interface WallpaperUploadInput {
   title: string;
@@ -11,21 +13,72 @@ interface WallpaperUploadInput {
 }
 
 export class WallpaperService {
+  private extractStoragePath(url: string): string | null {
+    if (!url || !url.includes('/storage/v1/object/public/wallpapers/')) return null
+    return url.split('/storage/v1/object/public/wallpapers/')[1]
+  }
+
+  private async signWallpapers(wallpapers: Wallpaper[]): Promise<Wallpaper[]> {
+    if (!wallpapers.length) return wallpapers
+    
+    const supabase = await createAdminClient()
+    
+    // Extract paths
+    const thumbPaths = wallpapers.map(w => this.extractStoragePath(w.thumbnail_url)).filter(Boolean) as string[]
+    const fullPaths = wallpapers.map(w => this.extractStoragePath(w.full_res_url)).filter(Boolean) as string[]
+    
+    // Create signed URLs (valid for 5 minutes)
+    const { data: thumbSigned } = await supabase.storage.from('wallpapers').createSignedUrls(thumbPaths, 300)
+    const { data: fullSigned } = await supabase.storage.from('wallpapers').createSignedUrls(fullPaths, 300)
+    
+    // Create maps for lookup
+    const thumbMap = new Map(thumbSigned?.map(s => [s.path, s.signedUrl]))
+    const fullMap = new Map(fullSigned?.map(s => [s.path, s.signedUrl]))
+    
+    // Return transformed wallpapers
+    return wallpapers.map(w => {
+      const tPath = this.extractStoragePath(w.thumbnail_url)
+      const fPath = this.extractStoragePath(w.full_res_url)
+      
+      return {
+        ...w,
+        thumbnail_url: (tPath && thumbMap.get(tPath)) || w.thumbnail_url,
+        full_res_url: (fPath && fullMap.get(fPath)) || w.full_res_url
+      }
+    })
+  }
+
   async getAll() {
-    return await wallpaperRepository.getAll()
+    const response = await wallpaperRepository.getAll()
+    if (response.data) {
+      response.data = await this.signWallpapers(response.data)
+    }
+    return response
   }
 
   async getByCategory(slug: string) {
     if (!slug) return { data: [], count: 0, error: 'Slug is required' }
-    return await wallpaperRepository.getByCategory(slug)
+    const response = await wallpaperRepository.getByCategory(slug)
+    if (response.data) {
+      response.data = await this.signWallpapers(response.data)
+    }
+    return response
   }
 
   async getFeatured() {
-    return await wallpaperRepository.getFeatured()
+    const response = await wallpaperRepository.getFeatured()
+    if (response.data) {
+      response.data = await this.signWallpapers(response.data)
+    }
+    return response
   }
 
   async getPopular() {
-    return await wallpaperRepository.getPopular(50)
+    const response = await wallpaperRepository.getPopular(50)
+    if (response.data) {
+      response.data = await this.signWallpapers(response.data)
+    }
+    return response
   }
 
   async uploadWallpaper(wallpaperData: WallpaperUploadInput) {

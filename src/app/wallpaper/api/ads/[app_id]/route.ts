@@ -13,19 +13,38 @@ export async function GET(request: Request, context: { params: Promise<{ app_id:
   
   const supabase = await createAdminClient()
   
-  // 1. Fetch Global Settings
-  const { data: settings } = await supabase.from('app_settings').select('*').eq('app_name', app_id).single()
-  
-  // 2. Fetch specific network configurations
-  const { data: networks, count, error } = await adsService.getByApp(app_id)
+  // 1. Fetch Global Settings & Specific App Settings in parallel
+  const [globalRes, appRes] = await Promise.all([
+    supabase.from('app_settings').select('*').eq('app_name', 'GLOBAL').single(),
+    supabase.from('app_settings').select('*').eq('app_name', app_id).single()
+  ])
+
+  const globalSettings = globalRes.data
+  const appSettings = appRes.data
+
+  // 2. Determine effective ads state
+  // Global switch takes precedence if it specifically is set to false
+  const isGlobalAdsOff = globalSettings?.ads_enabled === false
+  const isAppAdsOff = appSettings?.ads_enabled === false
+  const ads_enabled = !isGlobalAdsOff && !isAppAdsOff
+
+  // 3. Fetch specific network configurations
+  const { data, error } = await adsService.getByApp(app_id)
+  let networks = data ?? []
   
   if (error) return NextResponse.json({ error }, { status: 500 })
+
+  // 4. Force empty networks if ads are disabled globally or for this app
+  if (!ads_enabled) {
+    networks = []
+  }
   
   return NextResponse.json({ 
       app_name: app_id,
-      ads_enabled: settings?.ads_enabled ?? true, // fallback true if not configured
-      features_enabled: settings?.features_enabled ?? true,
-      count,
+      ads_enabled,
+      global_ads_online: !isGlobalAdsOff,
+      features_enabled: appSettings?.features_enabled ?? true,
+      count: networks?.length ?? 0,
       networks
   })
 }

@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { LayoutDashboard, Image as ImageIcon, Tags, MonitorSmartphone, LogOut, Settings } from 'lucide-react'
+import { LayoutDashboard, Image as ImageIcon, Tags, MonitorSmartphone, LogOut } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 
 const navItems = [
@@ -9,7 +9,6 @@ const navItems = [
   { name: 'Wallpapers', href: '/wallpaper/admin/wallpapers', icon: ImageIcon },
   { name: 'Categories', href: '/wallpaper/admin/categories', icon: Tags },
   { name: 'Ads Config', href: '/wallpaper/admin/ads', icon: MonitorSmartphone },
-  { name: 'Settings', href: '/wallpaper/admin/settings', icon: Settings },
 ]
 
 export default function Sidebar() {
