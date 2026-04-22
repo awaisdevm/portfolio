@@ -27,9 +27,14 @@ export class WallpaperService {
     const thumbPaths = wallpapers.map(w => this.extractStoragePath(w.thumbnail_url)).filter(Boolean) as string[]
     const fullPaths = wallpapers.map(w => this.extractStoragePath(w.full_res_url)).filter(Boolean) as string[]
     
-    // Create signed URLs (valid for 5 minutes)
-    const { data: thumbSigned } = await supabase.storage.from('wallpapers').createSignedUrls(thumbPaths, 300)
-    const { data: fullSigned } = await supabase.storage.from('wallpapers').createSignedUrls(fullPaths, 300)
+    // Create signed URLs in parallel (valid for 1 hour for better performance/caching)
+    const [thumbRes, fullRes] = await Promise.all([
+      supabase.storage.from('wallpapers').createSignedUrls(thumbPaths, 3600),
+      supabase.storage.from('wallpapers').createSignedUrls(fullPaths, 3600)
+    ])
+    
+    const thumbSigned = thumbRes.data
+    const fullSigned = fullRes.data
     
     // Create maps for lookup
     const thumbMap = new Map(thumbSigned?.map(s => [s.path, s.signedUrl]))

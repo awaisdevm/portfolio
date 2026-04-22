@@ -4,15 +4,30 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { WallpaperWithCategory } from '@/lib/wallpaper/types'
 
-export default function WallpaperTable({ wallpapers, onDelete, onUpdate }: { wallpapers: WallpaperWithCategory[], onDelete: (id: string) => void, onUpdate: (id: string, updates: Partial<WallpaperWithCategory>) => void }) {
+export default function WallpaperTable({ 
+  wallpapers, 
+  categories, 
+  onDelete, 
+  onUpdate 
+}: { 
+  wallpapers: WallpaperWithCategory[], 
+  categories: {id: string, name: string}[],
+  onDelete: (id: string) => void, 
+  onUpdate: (id: string, updates: Partial<WallpaperWithCategory>) => void 
+}) {
   const [previewImage, setPreviewImage] = useState<string | null>(null)
   const [editingId, setEditingId] = useState<string | null>(null)
   const [editTitle, setEditTitle] = useState('')
   const [editTags, setEditTags] = useState('')
+  const [editCategoryId, setEditCategoryId] = useState('')
 
   const handleSave = (id: string) => {
      const tagArray = editTags.split(',').map(t => t.trim()).filter(Boolean)
-     onUpdate(id, { title: editTitle, tags: tagArray })
+     onUpdate(id, { 
+       title: editTitle, 
+       tags: tagArray,
+       category_id: editCategoryId === 'null' ? null : editCategoryId
+     })
      setEditingId(null)
   }
 
@@ -75,9 +90,20 @@ export default function WallpaperTable({ wallpapers, onDelete, onUpdate }: { wal
                   )}
                 </td>
                 <td className="py-3 px-4">
-                  <span className="text-sm bg-primary/10 text-primary-foreground px-3 py-1 rounded-full border border-primary/20">
-                    {wp.categories?.name || 'Uncategorized'}
-                  </span>
+                  {editingId === wp.id ? (
+                    <select 
+                      value={editCategoryId} 
+                      onChange={e => setEditCategoryId(e.target.value)}
+                      className="bg-black/40 border border-white/20 rounded-md px-2 py-1 text-sm focus:outline-none focus:border-primary w-full"
+                    >
+                      <option value="null">Uncategorized</option>
+                      {categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+                    </select>
+                  ) : (
+                    <span className="text-sm bg-primary/10 text-primary-foreground px-3 py-1 rounded-full border border-primary/20">
+                      {wp.categories?.name || 'Uncategorized'}
+                    </span>
+                  )}
                 </td>
                 <td className="py-3 px-4">
                   <div className="flex items-center gap-6">
@@ -114,6 +140,7 @@ export default function WallpaperTable({ wallpapers, onDelete, onUpdate }: { wal
                              setEditingId(wp.id)
                              setEditTitle(wp.title)
                              setEditTags(wp.tags?.join(', ') || '')
+                             setEditCategoryId(wp.category_id || 'null')
                           }}
                           className="p-2 text-blue-400 hover:bg-blue-400/10 rounded-lg transition-colors border border-transparent hover:border-blue-400/20"
                           title="Edit Wallpaper"

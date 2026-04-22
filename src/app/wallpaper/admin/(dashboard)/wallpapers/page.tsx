@@ -9,7 +9,13 @@ import { WallpaperWithCategory } from '@/lib/wallpaper/types'
 
 export default function WallpapersPage() {
   const [wallpapers, setWallpapers] = useState<WallpaperWithCategory[]>([])
+  const [categories, setCategories] = useState<{id: string, name: string}[]>([])
   const supabase = useMemo(() => createClient(), [])
+
+  const fetchCategories = useCallback(async () => {
+    const { data } = await supabase.from('categories').select('id, name').eq('is_active', true).order('name')
+    if (data) setCategories(data)
+  }, [supabase])
 
   const fetchWallpapers = useCallback(async () => {
     const { data, error } = await supabase
@@ -21,7 +27,8 @@ export default function WallpapersPage() {
 
   useEffect(() => {
     fetchWallpapers()
-  }, [fetchWallpapers])
+    fetchCategories()
+  }, [fetchWallpapers, fetchCategories])
 
   const handleDelete = async (id: string) => {
     if (!window.confirm('Are you sure you want to delete this wallpaper? (This will not delete the storage files immediately)')) return
@@ -36,11 +43,33 @@ export default function WallpapersPage() {
 
   const handleUpdate = async (id: string, updates: Partial<WallpaperWithCategory>) => {
       // Optimistic UI update
-      setWallpapers(prev => prev.map(wp => wp.id === id ? { ...wp, ...updates } : wp))
-      const { error } = await supabase.from('wallpapers').update(updates).eq('id', id)
-      if (error) {
-         toast.error(error.message)
-         fetchWallpapers() // revert to server state
+      setWallpapers(prev => prev.map(wp => {
+        if (wp.id === id) {
+          const updatedWp = { ...wp, ...updates }
+          // If category_id was updated, also update the expanded category name for immediate UI feedback
+          if (updates.category_id !== undefined) {
+             const newCat = categories.find(c => c.id === updates.category_id)
+             updatedWp.categories = newCat ? { name: newCat.name } : undefined
+          }
+          return updatedWp
+        }
+        return wp
+      }))
+
+      // 1. Call API instead of direct DB to avoid RLS issues
+      try {
+        await fetch(`/wallpaper/api/wallpapers/${id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(updates)
+        })
+
+        toast.success('Updated successfully')
+        fetchWallpapers() // Re-sync to ensure everything is correct
+      } catch (error: unknown) {
+         const message = error instanceof Error ? error.message : 'Failed to update'
+         toast.error(message)
+         fetchWallpapers() // Rollback on error
       }
   }
 
@@ -57,7 +86,7 @@ export default function WallpapersPage() {
 
       <div className="glass-strong rounded-2xl p-6 border border-white/10">
         <h3 className="text-xl font-bold mb-6">Gallery Archive</h3>
-        <WallpaperTable wallpapers={wallpapers} onDelete={handleDelete} onUpdate={handleUpdate} />
+        <WallpaperTable wallpapers={wallpapers} categories={categories} onDelete={handleDelete} onUpdate={handleUpdate} />
       </div>
     </div>
   )

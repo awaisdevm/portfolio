@@ -12,6 +12,17 @@ export class WallpaperRepository {
     return { data: data || [], count, error: error?.message }
   }
 
+  async getMostViewed(limit = 50): Promise<PaginatedResponse<Wallpaper>> {
+    const supabase = await createAdminClient()
+    const { data, error, count } = await supabase
+      .from('wallpapers')
+      .select('*', { count: 'exact' })
+      .order('view_count', { ascending: false })
+      .limit(limit)
+
+    return { data: data || [], count, error: error?.message }
+  }
+
   async getByCategory(slug: string): Promise<PaginatedResponse<Wallpaper>> {
     const supabase = await createAdminClient()
     const { data: category } = await supabase

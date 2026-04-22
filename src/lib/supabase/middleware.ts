@@ -66,18 +66,31 @@ export async function updateSession(request: NextRequest) {
   // 2. Protect Mobile API Routes (The Security Shield)
   if (
     request.nextUrl.pathname.startsWith('/wallpaper/api/') &&
-    !request.nextUrl.pathname.startsWith('/wallpaper/api/wallpapers/upload')
+    !request.nextUrl.pathname.startsWith('/wallpaper/api/wallpapers/upload') &&
+    !request.nextUrl.pathname.endsWith('/download') &&
+    !request.nextUrl.pathname.endsWith('/view')
   ) {
     const apiKey = request.headers.get('x-api-key')
+    const validApiKey = process.env.MOBILE_API_KEY
     const appPackage = request.headers.get('x-app-package')
     const deviceId = request.headers.get('x-device-id')
-    const integrityToken = request.headers.get('x-integrity-token')
-    const validApiKey = process.env.MOBILE_API_KEY
+    const integrityToken = request.headers.get('x-app-integrity')
 
     // Phase 1: Basic Authentication
-    if (!appPackage || !deviceId || apiKey !== validApiKey) {
+    if (!apiKey || apiKey !== validApiKey) {
       return NextResponse.json({ 
-        error: 'Unauthorized Access. Missing or invalid security headers (API Key, Package Name, or Device ID).' 
+        error: 'Unauthorized Access. Invalid or missing x-api-key.' 
+      }, { status: 401 })
+    }
+
+    if (!appPackage || !deviceId) {
+      const missing = [];
+      if (!appPackage) missing.push('x-app-package');
+      if (!deviceId) missing.push('x-device-id');
+      
+      return NextResponse.json({ 
+        error: `Unauthorized Access. Missing required mobile headers: ${missing.join(', ')}.`,
+        help: "Check API_README.md for mandatory headers."
       }, { status: 401 })
     }
 

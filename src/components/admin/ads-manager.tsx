@@ -67,7 +67,12 @@ export default function AdsManager() {
   }
   
   const toggleAppSetting = async (app_name: string, field: string, currentValue: boolean) => {
-      const { error } = await supabase.from('app_settings').update({ [field]: !currentValue }).eq('app_name', app_name)
+      const { error } = await supabase.from('app_settings').upsert({ 
+          app_name, 
+          [field]: !currentValue,
+          updated_at: new Date().toISOString()
+      }, { onConflict: 'app_name' })
+      
       if (error) toast.error(error.message)
       else fetchAdsAndSettings()
   }

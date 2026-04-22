@@ -74,6 +74,7 @@ Fetch all wallpapers belonging to a specific category.
       "category_id": "...",
       "tags": ["mountain", "snow", "landscape"],
       "download_count": 125,
+      "view_count": 450,
       "is_featured": false,
       "is_active": true,
       "created_at": "2024-03-22T..."
@@ -103,6 +104,7 @@ Fetch exclusively wallpapers that have been marked as "Featured" via the Admin D
       "full_res_url": "https://...",
       "is_featured": true,
       "download_count": 500,
+      "view_count": 1200,
       "is_active": true
       // ...
     }
@@ -127,6 +129,7 @@ Fetch wallpapers sorted automatically by their `download_count` in descending or
       "id": "...",
       "title": "Dark Aesthetic",
       "download_count": 9845,
+      "view_count": 25000,
       // ...
     }
   ],
@@ -211,4 +214,21 @@ Make sure the **Backend Project** in Vercel has these variables set:
 
 ---
 *Created by Antigravity AI for devawais*
+### 📈 Interaction Tracking (Public APIs)
 
+To keep your analytics fresh, the mobile app should notify the server whenever a wallpaper is interacted with. These tracking endpoints are **Public** and do not require the standard security shield headers.
+
+#### 1. Track Downloads
+Call this when the user successfully saves a wallpaper or sets it as a background.
+- **Endpoint:** `POST /wallpapers/[id]/download`
+- **Method:** `POST`
+- **Response:** `{"success": true, "message": "Download count incremented"}`
+
+#### 2. Track Views
+Call this whenever a user clicks/opens a wallpaper to preview it in the app.
+- **Endpoint:** `POST /wallpapers/[id]/view`
+- **Method:** `POST`
+- **Response:** `{"success": true, "message": "View count incremented"}`
+
+> [!TIP]
+> Use the **Views API** to track user interest and the **Downloads API** to track final conversions. Both are reflected in your Admin Analytics Dashboard.

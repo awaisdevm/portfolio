@@ -16,6 +16,7 @@ export interface Wallpaper {
   category_id: string | null;
   tags: string[];
   download_count: number;
+  view_count: number;
   is_featured: boolean;
   is_active: boolean;
   created_at: string;

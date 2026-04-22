@@ -99,7 +99,13 @@ export default function CategoryManager() {
   const handleWallpaperUpdate = async (id: string, updates: Partial<WallpaperWithCategory>) => {
       setCategoryWallpapers(prev => prev.map(wp => wp.id === id ? { ...wp, ...updates } : wp))
       const { error } = await supabase.from('wallpapers').update(updates).eq('id', id)
-      if (error) toast.error(error.message)
+      if (error) {
+          toast.error(error.message)
+      } else {
+          toast.success('Updated')
+          if (expandedCategory) fetchCategoryWallpapers(expandedCategory)
+          fetchCategories() // refresh counts and state
+      }
   }
 
   const handleWallpaperDelete = async (id: string) => {
@@ -229,6 +235,7 @@ export default function CategoryManager() {
                         <h4 className="text-sm font-bold text-gray-400 mb-4 uppercase tracking-wider">Wallpapers in {c.name}</h4>
                         <WallpaperTable 
                             wallpapers={categoryWallpapers} 
+                            categories={categories}
                             onUpdate={handleWallpaperUpdate} 
                             onDelete={handleWallpaperDelete} 
                         />
