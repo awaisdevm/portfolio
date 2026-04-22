@@ -104,7 +104,9 @@ export async function updateSession(request: NextRequest) {
     }
 
     // Phase 3: Integrity Check (Token existence)
-    if (!integrityToken && process.env.NODE_ENV === 'production') {
+    const isIntegrityBypass = process.env.INTEGRITY_BYPASS === 'true'
+    
+    if (!integrityToken && process.env.NODE_ENV === 'production' && !isIntegrityBypass) {
       return NextResponse.json({ 
         error: 'Security Failure. Integrity token is required for production requests.' 
       }, { status: 403 })
