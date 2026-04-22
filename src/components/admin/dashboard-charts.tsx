@@ -170,6 +170,7 @@ export default function DashboardCharts({ categoryData, topWallpapers, topViewed
                 />
                 <Bar 
                   dataKey={dataKey} 
+                  name={metricLabel}
                   radius={[0, 6, 6, 0]}
                   barSize={16}
                 >
