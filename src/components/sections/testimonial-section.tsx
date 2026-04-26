@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, memo } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
 import portfolioData from "@/data/portfolio.json";
 
-export const TestimonialSection = () => {
+export const TestimonialSection = memo(function TestimonialSection() {
   const sectionContent = portfolioData.sections.testimonials;
   const testimonials = portfolioData.testimonials;
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -73,4 +73,4 @@ export const TestimonialSection = () => {
 
     </SectionWrapper>
   );
-};
+});

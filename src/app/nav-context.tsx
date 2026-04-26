@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect, useCallback, useMemo, useTransition } from "react";
 import { HomeIcon, Globe, User, HandHelping } from "lucide-react";
 
 const navItems = [
@@ -29,13 +29,21 @@ export const NavProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [activeSection, setActiveSection] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
+  const [isPending, startTransition] = useTransition();
+  
+  const updateActiveSection = useCallback((id: string) => {
+    startTransition(() => {
+      setActiveSection(id);
+    });
+  }, []);
+
+  const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(sectionId); //  set active section on scroll
+      updateActiveSection(sectionId);
     }
-  };
+  }, [updateActiveSection]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -52,7 +60,7 @@ export const NavProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+          updateActiveSection(entry.target.id);
         }
       });
     }, observerOptions);
@@ -79,10 +87,17 @@ export const NavProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     };
   }, []);
 
+  const value = useMemo(() => ({
+    navItems,
+    scrollToSection,
+    activeSection,
+    setActiveSection: updateActiveSection,
+    mobileMenuOpen,
+    setMobileMenuOpen
+  }), [scrollToSection, activeSection, updateActiveSection, mobileMenuOpen]);
+
   return (
-    <NavContext.Provider value={{ navItems, scrollToSection, activeSection, setActiveSection ,mobileMenuOpen,
-        setMobileMenuOpen
-}}>
+    <NavContext.Provider value={value}>
       {children}
     </NavContext.Provider>
   );

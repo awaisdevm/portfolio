@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { Mail, Linkedin, Github, ArrowRight, ShieldCheck, Zap, Phone } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
 import portfolioData from "@/data/portfolio.json";
@@ -7,7 +8,7 @@ import { motion } from "framer-motion";
 import { systemInitVariants } from "@/lib/animations";
 import { ObfuscatedContact } from "../ui/obfuscated-contact";
 
-export const ContactSection = () => {
+export const ContactSection = memo(function ContactSection() {
   const contactSection = portfolioData.sections.contact;
 
   const contactOptions = [
@@ -165,4 +166,4 @@ export const ContactSection = () => {
       </SectionWrapper>
     </div>
   );
-};
+});

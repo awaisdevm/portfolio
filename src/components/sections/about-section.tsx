@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { Rocket, Target, MapPin, Cpu, Users, Lightbulb } from "lucide-react";
 import { Globe } from "@/components/ui/globe";
@@ -7,7 +8,7 @@ import { SectionWrapper } from "@/components/ui/section-wrapper";
 import { systemInitVariants } from "@/lib/animations";
 import portfolioData from "@/data/portfolio.json";
 
-export const AboutSection = () => {
+export const AboutSection = memo(function AboutSection() {
   const aboutSection = portfolioData.sections.about;
 
   return (
@@ -242,4 +243,4 @@ export const AboutSection = () => {
       </motion.div>
     </SectionWrapper>
   );
-};
+});

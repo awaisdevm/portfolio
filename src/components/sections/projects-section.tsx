@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, memo } from "react";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../ui/section-wrapper";
 import portfolioData from "@/data/portfolio.json";
 import { RecentProjects } from "./recent-projects"; 
 
-export const FeatureProjectsSection: React.FC = () => {
+export const FeatureProjectsSection: React.FC = memo(function FeatureProjectsSection() {
   const [activeTab, setActiveTab] = useState("All");
   const currentSection = portfolioData.sections.projects;
   const tabs = ["All", "Mobile", "Flutter", "Android", "iOS"];
@@ -42,4 +42,4 @@ export const FeatureProjectsSection: React.FC = () => {
       <RecentProjects activeTab={activeTab} />
     </SectionWrapper>
   );
-};
+});

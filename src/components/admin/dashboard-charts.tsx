@@ -51,7 +51,7 @@ export default function DashboardCharts({ categoryData, topWallpapers, topViewed
           <CardDescription className="text-zinc-500">Inventory distribution across categories</CardDescription>
         </CardHeader>
         <CardContent className="pt-8">
-          <div className="h-[320px] w-full">
+          <div className="h-[260px] md:h-[320px] w-full">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <defs>
@@ -139,7 +139,7 @@ export default function DashboardCharts({ categoryData, topWallpapers, topViewed
           </div>
         </CardHeader>
         <CardContent className="pt-8">
-          <div className="h-[320px] w-full">
+          <div className="h-[260px] md:h-[320px] w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 layout="vertical"

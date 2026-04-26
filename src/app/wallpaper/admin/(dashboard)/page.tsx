@@ -105,14 +105,14 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="flex flex-col gap-2">
-        <h1 className="text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-white/60">
+        <h1 className="text-2xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-white/60">
           Analytics Overview
         </h1>
-        <p className="text-zinc-500 text-lg">Performance insights for your wallpaper ecosystem.</p>
+        <p className="text-zinc-500 text-sm md:text-lg">Performance insights for your wallpaper ecosystem.</p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
         <StatCard 
           title="Total Wallpapers" 
           value={stats.totalWallpapers} 
@@ -144,7 +144,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Charts Section */}
-      <div className="min-h-[500px]">
+      <div className="min-h-[400px] md:min-h-[500px]">
         <DashboardCharts 
           categoryData={categoryData} 
           topWallpapers={topWallpapers} 
@@ -166,15 +166,16 @@ interface StatCardProps {
 function StatCard({ title, value, icon: Icon, description, color }: StatCardProps) {
   return (
     <Card className="bg-zinc-900/40 border-white/5 backdrop-blur-xl shadow-xl hover:bg-zinc-900/60 transition-all duration-300 group">
-      <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
-        <CardTitle className="text-sm font-medium text-zinc-400">{title}</CardTitle>
-        <div className={`p-2 rounded-lg bg-zinc-800/50 ${color} group-hover:scale-110 transition-transform duration-300`}>
-          <Icon size={20} />
+      <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0 p-3 md:p-6 md:pb-2">
+        <CardTitle className="text-xs md:text-sm font-medium text-zinc-400">{title}</CardTitle>
+        <div className={`p-1.5 md:p-2 rounded-lg bg-zinc-800/50 ${color} group-hover:scale-110 transition-transform duration-300`}>
+          <Icon size={16} className="md:hidden" />
+          <Icon size={20} className="hidden md:block" />
         </div>
       </CardHeader>
-      <CardContent>
-        <div className="text-3xl font-bold text-white tracking-tight">{value}</div>
-        <p className="text-xs text-zinc-500 mt-1">{description}</p>
+      <CardContent className="p-3 pt-0 md:p-6 md:pt-0">
+        <div className="text-xl md:text-3xl font-bold text-white tracking-tight">{value}</div>
+        <p className="text-[10px] md:text-xs text-zinc-500 mt-1 hidden sm:block">{description}</p>
       </CardContent>
     </Card>
   )

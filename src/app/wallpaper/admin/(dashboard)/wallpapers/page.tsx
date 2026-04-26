@@ -58,11 +58,16 @@ export default function WallpapersPage() {
 
       // 1. Call API instead of direct DB to avoid RLS issues
       try {
-        await fetch(`/wallpaper/api/wallpapers/${id}`, {
+        const res = await fetch(`/wallpaper/api/wallpapers/${id}`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(updates)
         })
+
+        if (!res.ok) {
+          const { error } = await res.json()
+          throw new Error(error || 'Failed to update')
+        }
 
         toast.success('Updated successfully')
         fetchWallpapers() // Re-sync to ensure everything is correct
@@ -76,15 +81,15 @@ export default function WallpapersPage() {
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div>
-        <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+        <h1 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
           Wallpaper Management
         </h1>
-        <p className="text-gray-400 mt-2">Upload and manage your wallpapers here.</p>
+        <p className="text-gray-400 mt-1 md:mt-2 text-sm md:text-base">Upload and manage your wallpapers here.</p>
       </div>
 
       <WallpaperForm onSuccess={fetchWallpapers} />
 
-      <div className="glass-strong rounded-2xl p-6 border border-white/10">
+      <div className="glass-strong rounded-2xl p-4 md:p-6 border border-white/10">
         <h3 className="text-xl font-bold mb-6">Gallery Archive</h3>
         <WallpaperTable wallpapers={wallpapers} categories={categories} onDelete={handleDelete} onUpdate={handleUpdate} />
       </div>

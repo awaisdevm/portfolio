@@ -118,18 +118,19 @@ export default function AdsManager() {
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       
       {/* GLOBAL MASTER KILL SWITCH */}
-      <div className={`p-6 rounded-2xl border transition-all duration-500 ${!globalSettings.ads_enabled ? 'bg-red-500/10 border-red-500/50 shadow-[0_0_30px_rgba(239,68,68,0.2)]' : 'glass-strong border-white/10'}`}>
+      <div className={`p-4 md:p-6 rounded-2xl border transition-all duration-500 ${!globalSettings.ads_enabled ? 'bg-red-500/10 border-red-500/50 shadow-[0_0_30px_rgba(239,68,68,0.2)]' : 'glass-strong border-white/10'}`}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-5">
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 ${!globalSettings.ads_enabled ? 'bg-red-500 text-white animate-pulse' : 'bg-primary/20 text-primary border border-primary/30'}`}>
-                      <ShieldAlert size={32} />
+                  <div className={`w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center transition-all duration-500 ${!globalSettings.ads_enabled ? 'bg-red-500 text-white animate-pulse' : 'bg-primary/20 text-primary border border-primary/30'}`}>
+                      <ShieldAlert size={24} className="md:hidden" />
+                      <ShieldAlert size={32} className="hidden md:block" />
                   </div>
                   <div>
-                      <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                      <h3 className="text-lg md:text-2xl font-bold text-white flex items-center gap-2 flex-wrap">
                           Global Ads Master Switch
                           {!globalSettings.ads_enabled && <span className="bg-red-500 text-[10px] px-2 py-0.5 rounded-full animate-bounce">EMERGENCY OFF</span>}
                       </h3>
-                      <p className="text-gray-400 max-w-xl">
+                      <p className="text-gray-400 max-w-xl text-sm md:text-base">
                           This switch overrides all individual app settings. If OFF, **zero ads** will be served to any mobile device, regardless of per-app configs.
                       </p>
                   </div>
@@ -149,8 +150,8 @@ export default function AdsManager() {
       </div>
       
       {/* AD NETWORK FORM SECTION */}
-      <div className="glass-strong p-6 rounded-2xl border border-white/10 shadow-xl relative overflow-hidden">
-        <h3 className="text-xl font-bold mb-6 font-inter text-primary flex items-center gap-2">
+      <div className="glass-strong p-4 md:p-6 rounded-2xl border border-white/10 shadow-xl relative overflow-hidden">
+        <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6 font-inter text-primary flex items-center gap-2">
             <Cpu className="text-primary" /> Attach Ad Network
         </h3>
         <form onSubmit={handleAddNetwork} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
@@ -198,7 +199,7 @@ export default function AdsManager() {
       </div>
 
       {/* APPS LIST (GROUPED ADS) */}
-      <h3 className="text-xl font-bold font-inter text-white mt-12 mb-6 border-b border-white/10 pb-4">Registered Apps & Configurations</h3>
+      <h3 className="text-lg md:text-xl font-bold font-inter text-white mt-8 md:mt-12 mb-4 md:mb-6 border-b border-white/10 pb-4">Registered Apps & Configurations</h3>
       <div className="space-y-6">
         {allAppNames.map(app_name => {
           const settings = appSettings[app_name] || { ads_enabled: true, features_enabled: true }

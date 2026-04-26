@@ -21,7 +21,7 @@ export async function GET(request: Request) {
     }
   }
 
-  const { data, count, error } = await wallpaperService.getPopular(page, limit)
+  const { data, count, error } = await wallpaperService.getRecent(page, limit)
 
   if (error) {
     return NextResponse.json({ error }, { status: 500 })

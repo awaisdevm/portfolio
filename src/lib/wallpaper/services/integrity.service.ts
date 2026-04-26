@@ -1,4 +1,5 @@
-import { playintegrity_v1, google } from 'googleapis';
+import { playintegrity_v1 } from 'googleapis/build/src/apis/playintegrity'
+import { GoogleAuth } from 'google-auth-library'
 
 export interface IntegrityVerdict {
   isValid: boolean;
@@ -12,7 +13,7 @@ export class IntegrityService {
   private packageName: string;
 
   constructor() {
-    const auth = new google.auth.GoogleAuth({
+    const auth = new GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
         private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
@@ -20,7 +21,7 @@ export class IntegrityService {
       scopes: ['https://www.googleapis.com/auth/playintegrity'],
     });
 
-    this.playIntegrity = google.playintegrity({ version: 'v1', auth });
+    this.playIntegrity = new playintegrity_v1.Playintegrity({ auth });
     this.packageName = process.env.GOOGLE_PLAY_PACKAGE_NAME || '';
   }
 

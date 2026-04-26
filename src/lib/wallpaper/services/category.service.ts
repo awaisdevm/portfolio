@@ -1,4 +1,5 @@
 import { categoryRepository } from '../repositories/category.repository'
+import { Category } from '../types'
 
 export class CategoryService {
   async getAll() {
@@ -12,6 +13,10 @@ export class CategoryService {
 
   async deleteCategory(id: string) {
     return await categoryRepository.delete(id)
+  }
+
+  async updateCategory(id: string, updates: Partial<Category>) {
+    return await categoryRepository.update(id, updates)
   }
 }
 

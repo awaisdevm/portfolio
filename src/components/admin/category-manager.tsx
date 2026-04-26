@@ -69,61 +69,108 @@ export default function CategoryManager() {
 
   const handleUpdate = async (id: string) => {
       if (!editName || !editSlug) return
-      const { error } = await supabase.from('categories').update({ name: editName, slug: editSlug }).eq('id', id)
-      if (error) {
-          toast.error(error.message)
-      } else {
-          toast.success('Category updated')
-          setEditingId(null)
-          fetchCategories()
+      try {
+        const res = await fetch(`/wallpaper/api/categories/admin/${id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: editName, slug: editSlug })
+        })
+        if (!res.ok) {
+          const { error } = await res.json()
+          throw new Error(error || 'Failed to update category')
+        }
+        toast.success('Category updated')
+        setEditingId(null)
+        fetchCategories()
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : 'Failed to update'
+        toast.error(message)
       }
   }
 
   const handleToggle = async (id: string, current: boolean) => {
-      const { error } = await supabase.from('categories').update({ is_active: !current }).eq('id', id)
-      if (error) toast.error(error.message)
-      else fetchCategories()
+      try {
+        const res = await fetch(`/wallpaper/api/categories/admin/${id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ is_active: !current })
+        })
+        if (!res.ok) {
+          const { error } = await res.json()
+          throw new Error(error || 'Failed to toggle category')
+        }
+        fetchCategories()
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : 'Failed to toggle'
+        toast.error(message)
+      }
   }
 
   const handleDelete = async (id: string) => {
     if (!window.confirm('Delete category? Wallpapers in this category will become uncategorized.')) return
-    const { error } = await supabase.from('categories').delete().eq('id', id)
-    if (error) toast.error(error.message)
-    else {
+    try {
+      const res = await fetch(`/wallpaper/api/categories/admin/${id}`, {
+        method: 'DELETE',
+      })
+      if (!res.ok) {
+        const { error } = await res.json()
+        throw new Error(error || 'Failed to delete category')
+      }
       toast.success('Category deleted')
       if (expandedCategory === id) setExpandedCategory(null)
       fetchCategories()
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Failed to delete'
+      toast.error(message)
     }
   }
 
   const handleWallpaperUpdate = async (id: string, updates: Partial<WallpaperWithCategory>) => {
       setCategoryWallpapers(prev => prev.map(wp => wp.id === id ? { ...wp, ...updates } : wp))
-      const { error } = await supabase.from('wallpapers').update(updates).eq('id', id)
-      if (error) {
-          toast.error(error.message)
-      } else {
-          toast.success('Updated')
-          if (expandedCategory) fetchCategoryWallpapers(expandedCategory)
-          fetchCategories() // refresh counts and state
+      try {
+        const res = await fetch(`/wallpaper/api/wallpapers/${id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(updates)
+        })
+        if (!res.ok) {
+          const { error } = await res.json()
+          throw new Error(error || 'Failed to update wallpaper')
+        }
+        toast.success('Updated')
+        if (expandedCategory) fetchCategoryWallpapers(expandedCategory)
+        fetchCategories() // refresh counts and state
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : 'Failed to update'
+        toast.error(message)
+        if (expandedCategory) fetchCategoryWallpapers(expandedCategory) // rollback
       }
   }
 
   const handleWallpaperDelete = async (id: string) => {
       if (!window.confirm('Delete this wallpaper completely?')) return
-      const { error } = await supabase.from('wallpapers').delete().eq('id', id)
-      if (error) toast.error(error.message)
-      else {
-          toast.success('Deleted')
-          if (expandedCategory) fetchCategoryWallpapers(expandedCategory)
-          fetchCategories() // update counts
+      try {
+        const res = await fetch(`/wallpaper/api/wallpapers/${id}`, {
+          method: 'DELETE',
+        })
+        if (!res.ok) {
+          const { error } = await res.json()
+          throw new Error(error || 'Failed to delete wallpaper')
+        }
+        toast.success('Deleted')
+        if (expandedCategory) fetchCategoryWallpapers(expandedCategory)
+        fetchCategories() // update counts
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : 'Failed to delete'
+        toast.error(message)
       }
   }
 
   return (
     <div className="space-y-8">
       {/* ADD SECTION */}
-      <div className="glass-strong p-6 rounded-2xl border border-white/10 max-w-3xl">
-        <h3 className="text-xl font-bold mb-4 font-inter text-primary">Create New Category</h3>
+      <div className="glass-strong p-4 md:p-6 rounded-2xl border border-white/10 max-w-3xl">
+        <h3 className="text-lg md:text-xl font-bold mb-4 font-inter text-primary">Create New Category</h3>
         <form onSubmit={handleAdd} className="flex flex-col sm:flex-row gap-4 items-end">
           <div className="flex-1 w-full">
             <label className="block text-sm text-gray-400 mb-1">Name</label>
@@ -146,13 +193,13 @@ export default function CategoryManager() {
       </div>
 
       {/* LIST SECTION */}
-      <div className="glass-subtle p-6 rounded-2xl border border-white/5">
-        <h3 className="text-xl font-bold mb-6 font-inter text-secondary">Existing Categories</h3>
+      <div className="glass-subtle p-4 md:p-6 rounded-2xl border border-white/5">
+        <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6 font-inter text-secondary">Existing Categories</h3>
         
         <div className="flex flex-col space-y-4">
           {categories.map(c => (
             <div key={c.id} className="w-full flex flex-col">
-                <div className={`p-4 rounded-xl flex items-center justify-between border transition-colors ${c.is_active ? 'bg-white/5 border-white/10 hover:border-white/20' : 'bg-black/40 border-red-500/10 opacity-70'}`}>
+                <div className={`p-3 md:p-4 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 border transition-colors ${c.is_active ? 'bg-white/5 border-white/10 hover:border-white/20' : 'bg-black/40 border-red-500/10 opacity-70'}`}>
                   
                   {editingId === c.id ? (
                      // EDITING STATE
@@ -162,9 +209,9 @@ export default function CategoryManager() {
                      </div>
                   ) : (
                      // NORMAL STATE
-                     <div className="flex items-center gap-4">
-                         <div className={`w-12 h-12 rounded-lg flex items-center justify-center border shadow-inner ${c.is_active ? 'bg-primary/10 text-primary border-primary/20' : 'bg-gray-500/10 text-gray-500 border-gray-500/20'}`}>
-                           <Tag size={20} />
+                     <div className="flex items-center gap-3 md:gap-4">
+                         <div className={`w-10 h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center border shadow-inner ${c.is_active ? 'bg-primary/10 text-primary border-primary/20' : 'bg-gray-500/10 text-gray-500 border-gray-500/20'}`}>
+                           <Tag size={18} />
                          </div>
                          <div>
                            <h4 className="font-bold text-white leading-tight">{c.name}</h4>
@@ -173,7 +220,7 @@ export default function CategoryManager() {
                      </div>
                   )}
 
-                  <div className="flex items-center gap-4 shrink-0">
+                  <div className="flex items-center gap-2 sm:gap-4 shrink-0">
                       {!editingId && (
                         <div className="hidden sm:flex items-center gap-1.5 text-sm text-gray-400 bg-black/20 px-3 py-1.5 rounded-md border border-white/5">
                             <ImageIcon size={14} />
@@ -181,7 +228,7 @@ export default function CategoryManager() {
                         </div>
                       )}
                       
-                      <div className="flex items-center gap-2 border-l border-white/10 pl-4">
+                      <div className="flex items-center gap-1.5 sm:gap-2 border-l border-white/10 pl-2 sm:pl-4">
                           {editingId === c.id ? (
                              <>
                                 <button onClick={() => handleUpdate(c.id)} className="p-2 text-green-400 hover:bg-green-400/10 rounded-lg transition-colors border border-green-400/20">

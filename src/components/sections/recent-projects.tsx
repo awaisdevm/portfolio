@@ -1,6 +1,5 @@
 "use client";
-
-import React from "react"
+import React, { memo, useState } from "react";
 import Image from "next/image";
 import portfolioData from "@/data/portfolio.json"; 
 import { motion, AnimatePresence } from "framer-motion";
@@ -18,7 +17,7 @@ interface Project {
   ctaText?: string;
 }
 
-export const RecentProjects = ({ activeTab = "All" }: { activeTab?: string }) => {
+export const RecentProjects = memo(function RecentProjects({ activeTab = "All" }: { activeTab?: string }) {
     
     // Filter projects based on the active tab matches in category, technology, or simply "All"
     const filteredProjects = portfolioData.projects.filter((project) => 
@@ -38,10 +37,10 @@ export const RecentProjects = ({ activeTab = "All" }: { activeTab?: string }) =>
         </AnimatePresence>
       </motion.div>
     );
-};
+});
 
-const ProjectCard = ({ project }: { project: Project }) => {
-    const [isHovered, setIsHovered] = React.useState(false);
+const ProjectCard = memo(function ProjectCard({ project }: { project: Project }) {
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
       <motion.div
@@ -118,9 +117,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                   className="text-white text-left font-black text-2xl sm:text-3xl tracking-tighter"
                   animate={{ x: isHovered ? 0 : -5, opacity: isHovered ? 1 : 0.8 }}
                 >
-                   {project.title.split('').map((char: string, i: number) => (
-                      <motion.span key={i} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: i * 0.02 }}>{char}</motion.span>
-                   ))}
+                   {project.title}
                 </motion.h3>
 
                 <div className={`transition-all duration-500 ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none h-0 overflow-hidden'}`}>
@@ -157,6 +154,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </div>
       </motion.div>
     );
-};
+});
 
 

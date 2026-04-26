@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
-import { createAdminClient, createClient } from '@/lib/supabase/server'
+import { createClient } from '@/lib/supabase/server'
+import { categoryService } from '@/lib/wallpaper/services/category.service'
 
 export async function PATCH(
   request: Request,
@@ -15,24 +16,11 @@ export async function PATCH(
   const { id } = await params
   const body = await request.json()
 
-  // Strip non-column fields that come from joined queries (e.g. categories object)
-  const { categories, wallpaper_count, ...cleanBody } = body
-
   try {
-    const supabaseAdmin = await createAdminClient()
-    
-    const { data, error } = await supabaseAdmin
-      .from('wallpapers')
-      .update(cleanBody)
-      .eq('id', id)
-      .select()
-      .single()
-
-    if (error) throw error
-
+    const data = await categoryService.updateCategory(id, body)
     return NextResponse.json({ data })
   } catch (err: unknown) {
-    console.error('Update error:', err)
+    console.error('Category update error:', err)
     const message = err instanceof Error ? err.message : 'Unknown error occurred'
     return NextResponse.json({ error: message }, { status: 500 })
   }
@@ -52,29 +40,10 @@ export async function DELETE(
   const { id } = await params
 
   try {
-    const supabaseAdmin = await createAdminClient()
-    
-    // Get full_res_url and thumbnail_url first to delete from storage
-    await supabaseAdmin
-      .from('wallpapers')
-      .select('full_res_url, thumbnail_url')
-      .eq('id', id)
-      .single()
-
-    // Delete from DB
-    const { error } = await supabaseAdmin
-      .from('wallpapers')
-      .delete()
-      .eq('id', id)
-
-    if (error) throw error
-
-    // Optional: Extract storage paths and delete from bucket
-    // For now, focus on DB delete stability
-
+    await categoryService.deleteCategory(id)
     return NextResponse.json({ success: true })
   } catch (err: unknown) {
-    console.error('Delete error:', err)
+    console.error('Category delete error:', err)
     const message = err instanceof Error ? err.message : 'Unknown error occurred'
     return NextResponse.json({ error: message }, { status: 500 })
   }

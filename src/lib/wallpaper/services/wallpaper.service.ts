@@ -78,8 +78,16 @@ export class WallpaperService {
     return response
   }
 
-  async getPopular() {
-    const response = await wallpaperRepository.getPopular(50)
+  async getPopular(page = 1, limit = 20) {
+    const response = await wallpaperRepository.getPopular(page, limit)
+    if (response.data) {
+      response.data = await this.signWallpapers(response.data)
+    }
+    return response
+  }
+
+  async getRecent(page = 1, limit = 20) {
+    const response = await wallpaperRepository.getRecent(page, limit)
     if (response.data) {
       response.data = await this.signWallpapers(response.data)
     }

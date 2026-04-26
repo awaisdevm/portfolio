@@ -117,10 +117,13 @@ Fetch exclusively wallpapers that have been marked as "Featured" via the Admin D
 
 ## 4. 🔥 Popular Wallpapers (Trending)
 
-Fetch wallpapers sorted automatically by their `download_count` in descending order (highest downloads first).
+Fetch wallpapers sorted automatically by their `download_count` and `view_count` in descending order (highest engagement first). This endpoint is **paginated**.
 
-- **Endpoint:** `/wallpapers/popular`
+- **Endpoint:** `/wallpapers/popular?page={page}&limit={limit}`
 - **Method:** `GET`
+- **Query Parameters:**
+  - `page` (Optional): The page number (default: `1`).
+  - `limit` (Optional): Items per page (default: `20`).
 - **Response Format:**
 ```json
 {
@@ -129,17 +132,47 @@ Fetch wallpapers sorted automatically by their `download_count` in descending or
       "id": "...",
       "title": "Dark Aesthetic",
       "download_count": 9845,
-      "view_count": 25000,
+      "view_count": 25000
       // ...
     }
   ],
-  "count": 1
+  "count": 100,
+  "page": 1,
+  "limit": 20
 }
 ```
 
 ---
 
-## 5. ⚙️ App Settings & Dynamic Ads Config
+## 5. 🆕 Recent Wallpapers (Last 7 Days)
+
+Fetch fresh wallpapers uploaded strictly within the last 1 week. This endpoint is **paginated**.
+
+- **Endpoint:** `/wallpapers/recent?page={page}&limit={limit}`
+- **Method:** `GET`
+- **Query Parameters:**
+  - `page` (Optional): The page number (default: `1`).
+  - `limit` (Optional): Items per page (default: `20`).
+- **Response Format:**
+```json
+{
+  "data": [
+    {
+      "id": "...",
+      "title": "New Arrival",
+      "created_at": "2024-03-22T..."
+      // ...
+    }
+  ],
+  "count": 45,
+  "page": 1,
+  "limit": 20
+}
+```
+
+---
+
+## 6. ⚙️ App Settings & Dynamic Ads Config
 
 Fetch the master configuration for a specific mobile application. This endpoint tells your mobile app whether ads should run, whether premium features are globally unlocked, and exactly which ad networks (AdMob, AppLovin, Unity) and unit IDs should be initialized.
 

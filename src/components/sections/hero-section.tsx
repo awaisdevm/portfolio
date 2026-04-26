@@ -1,4 +1,5 @@
 "use client";
+import { memo } from "react";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
@@ -10,7 +11,7 @@ import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { systemInitVariants } from "@/lib/animations";
 import portfolioData from '@/data/portfolio.json';
 
-export function HeroSection() {
+export const HeroSection = memo(function HeroSection() {
   const { scrollToSection } = useNav();
 
   // Mouse Parallax Values
@@ -187,4 +188,4 @@ export function HeroSection() {
       </motion.div>
     </section>
   );
-}
+});

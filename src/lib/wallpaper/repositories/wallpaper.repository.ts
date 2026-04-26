@@ -53,13 +53,36 @@ export class WallpaperRepository {
     return { data: data || [], count, error: error?.message }
   }
 
-  async getPopular(limit = 50): Promise<PaginatedResponse<Wallpaper>> {
+  async getPopular(page = 1, limit = 20): Promise<PaginatedResponse<Wallpaper>> {
     const supabase = await createAdminClient()
+    const from = (page - 1) * limit
+    const to = from + limit - 1
+
     const { data, error, count } = await supabase
       .from('wallpapers')
       .select('*', { count: 'exact' })
       .order('download_count', { ascending: false })
-      .limit(limit)
+      .order('view_count', { ascending: false })
+      .range(from, to)
+
+    return { data: data || [], count, error: error?.message }
+  }
+
+  async getRecent(page = 1, limit = 20): Promise<PaginatedResponse<Wallpaper>> {
+    const supabase = await createAdminClient()
+    const from = (page - 1) * limit
+    const to = from + limit - 1
+    
+    // Calculate date 7 days ago
+    const oneWeekAgo = new Date()
+    oneWeekAgo.setDate(oneWeekAgo.getDate() - 7)
+
+    const { data, error, count } = await supabase
+      .from('wallpapers')
+      .select('*', { count: 'exact' })
+      .gte('created_at', oneWeekAgo.toISOString())
+      .order('created_at', { ascending: false })
+      .range(from, to)
 
     return { data: data || [], count, error: error?.message }
   }
