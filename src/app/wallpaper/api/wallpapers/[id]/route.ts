@@ -16,7 +16,7 @@ export async function PATCH(
   const body = await request.json()
 
   // Strip non-column fields that come from joined queries (e.g. categories object)
-  const { categories, wallpaper_count, ...cleanBody } = body
+  const { categories: _cat, wallpaper_count: _wc, ...cleanBody } = body
 
   try {
     const supabaseAdmin = await createAdminClient()

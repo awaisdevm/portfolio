@@ -41,8 +41,10 @@ export async function GET(request: Request) {
       limit,
       category_type: category || 'all'
     })
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('API Error:', err)
-    return NextResponse.json({ error: err.message, stack: err.stack }, { status: 500 })
+    const message = err instanceof Error ? err.message : 'Unknown error'
+    const stack = err instanceof Error ? err.stack : undefined
+    return NextResponse.json({ error: message, stack }, { status: 500 })
   }
 }

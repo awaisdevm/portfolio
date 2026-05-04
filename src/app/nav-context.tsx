@@ -29,7 +29,7 @@ export const NavProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [activeSection, setActiveSection] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
   
   const updateActiveSection = useCallback((id: string) => {
     startTransition(() => {
@@ -85,7 +85,7 @@ export const NavProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       observer.disconnect();
       clearTimeout(timeoutId);
     };
-  }, []);
+  }, [updateActiveSection]);
 
   const value = useMemo(() => ({
     navItems,
