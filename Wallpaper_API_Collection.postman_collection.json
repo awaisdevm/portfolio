@@ -1,0 +1,402 @@
+{
+  "info": {
+    "name": "Wallpaper App Mobile API",
+    "description": "Postman collection for the Wallpaper App Mobile Backend APIs, complete with examples.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000/wallpaper/api",
+      "type": "string"
+    },
+    {
+      "key": "api_key",
+      "value": "awais_mobile_secure_999",
+      "type": "string"
+    },
+    {
+      "key": "app_package",
+      "value": "com.example.app",
+      "type": "string"
+    },
+    {
+      "key": "device_id",
+      "value": "device_uuid_123",
+      "type": "string"
+    },
+    {
+      "key": "integrity_token",
+      "value": "debug_token",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Categories",
+      "item": [
+        {
+          "name": "Get All Categories",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "x-api-key", "value": "{{api_key}}" },
+              { "key": "x-app-package", "value": "{{app_package}}" },
+              { "key": "x-device-id", "value": "{{device_id}}" },
+              { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/categories",
+              "host": ["{{base_url}}"],
+              "path": ["categories"]
+            }
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  { "key": "x-api-key", "value": "{{api_key}}" },
+                  { "key": "x-app-package", "value": "{{app_package}}" },
+                  { "key": "x-device-id", "value": "{{device_id}}" },
+                  { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+                ],
+                "url": { "raw": "{{base_url}}/categories", "host": ["{{base_url}}"], "path": ["categories"] }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "{\n  \"count\": 1,\n  \"categories\": [\n    {\n      \"id\": \"e2ba3...\",\n      \"name\": \"Nature\",\n      \"slug\": \"nature\",\n      \"image_url\": \"https://...\",\n      \"is_active\": true,\n      \"created_at\": \"2024-03-22T...\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Categories By App Package",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "x-api-key", "value": "{{api_key}}" },
+              { "key": "x-app-package", "value": "{{app_package}}" },
+              { "key": "x-device-id", "value": "{{device_id}}" },
+              { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/categories/{{app_package}}",
+              "host": ["{{base_url}}"],
+              "path": ["categories", "{{app_package}}"]
+            }
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  { "key": "x-api-key", "value": "{{api_key}}" },
+                  { "key": "x-app-package", "value": "{{app_package}}" },
+                  { "key": "x-device-id", "value": "{{device_id}}" },
+                  { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+                ],
+                "url": { "raw": "{{base_url}}/categories/{{app_package}}", "host": ["{{base_url}}"], "path": ["categories", "{{app_package}}"] }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "{\n  \"app_package\": \"com.example.app\",\n  \"count\": 1,\n  \"categories\": [\n    {\n      \"id\": \"e2ba3...\",\n      \"name\": \"Nature\",\n      \"slug\": \"nature\",\n      \"image_url\": \"https://...\",\n      \"is_active\": true,\n      \"created_at\": \"2024-03-22T...\"\n    }\n  ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2. Wallpapers",
+      "item": [
+        {
+          "name": "Get All or Filter by Category",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "x-api-key", "value": "{{api_key}}" },
+              { "key": "x-app-package", "value": "{{app_package}}" },
+              { "key": "x-device-id", "value": "{{device_id}}" },
+              { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wallpapers?category=nature&page=1&limit=20",
+              "host": ["{{base_url}}"],
+              "path": ["wallpapers"],
+              "query": [
+                { "key": "category", "value": "nature", "description": "Optional: slug of the category" },
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  { "key": "x-api-key", "value": "{{api_key}}" },
+                  { "key": "x-app-package", "value": "{{app_package}}" },
+                  { "key": "x-device-id", "value": "{{device_id}}" },
+                  { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/wallpapers?category=nature&page=1&limit=20",
+                  "host": ["{{base_url}}"],
+                  "path": ["wallpapers"],
+                  "query": [
+                    { "key": "category", "value": "nature" },
+                    { "key": "page", "value": "1" },
+                    { "key": "limit", "value": "20" }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"512dc...\",\n      \"title\": \"Mountain Peak\",\n      \"thumbnail_url\": \"https://...\",\n      \"full_res_url\": \"https://...\",\n      \"category_id\": \"...\",\n      \"categories\": {\n        \"name\": \"Nature\"\n      },\n      \"tags\": [\"mountain\", \"snow\", \"landscape\"],\n      \"download_count\": 125,\n      \"view_count\": 450,\n      \"is_featured\": false,\n      \"is_active\": true,\n      \"created_at\": \"2024-03-22T...\"\n    }\n  ],\n  \"count\": 1,\n  \"page\": 1,\n  \"limit\": 20,\n  \"category_type\": \"nature\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Featured Wallpapers",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "x-api-key", "value": "{{api_key}}" },
+              { "key": "x-app-package", "value": "{{app_package}}" },
+              { "key": "x-device-id", "value": "{{device_id}}" },
+              { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wallpapers/featured",
+              "host": ["{{base_url}}"],
+              "path": ["wallpapers", "featured"]
+            }
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  { "key": "x-api-key", "value": "{{api_key}}" },
+                  { "key": "x-app-package", "value": "{{app_package}}" },
+                  { "key": "x-device-id", "value": "{{device_id}}" },
+                  { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+                ],
+                "url": { "raw": "{{base_url}}/wallpapers/featured", "host": ["{{base_url}}"], "path": ["wallpapers", "featured"] }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"...\",\n      \"title\": \"Neon Cityscape\",\n      \"thumbnail_url\": \"https://...\",\n      \"full_res_url\": \"https://...\",\n      \"is_featured\": true,\n      \"download_count\": 500,\n      \"view_count\": 1200,\n      \"is_active\": true\n    }\n  ],\n  \"count\": 1\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Popular Wallpapers",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "x-api-key", "value": "{{api_key}}" },
+              { "key": "x-app-package", "value": "{{app_package}}" },
+              { "key": "x-device-id", "value": "{{device_id}}" },
+              { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wallpapers/popular?page=1&limit=20",
+              "host": ["{{base_url}}"],
+              "path": ["wallpapers", "popular"],
+              "query": [
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  { "key": "x-api-key", "value": "{{api_key}}" },
+                  { "key": "x-app-package", "value": "{{app_package}}" },
+                  { "key": "x-device-id", "value": "{{device_id}}" },
+                  { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/wallpapers/popular?page=1&limit=20",
+                  "host": ["{{base_url}}"],
+                  "path": ["wallpapers", "popular"],
+                  "query": [{ "key": "page", "value": "1" }, { "key": "limit", "value": "20" }]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"...\",\n      \"title\": \"Dark Aesthetic\",\n      \"categories\": {\n        \"name\": \"Abstract\"\n      },\n      \"download_count\": 9845,\n      \"view_count\": 25000\n    }\n  ],\n  \"count\": 100,\n  \"page\": 1,\n  \"limit\": 20\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Recent Wallpapers",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "x-api-key", "value": "{{api_key}}" },
+              { "key": "x-app-package", "value": "{{app_package}}" },
+              { "key": "x-device-id", "value": "{{device_id}}" },
+              { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/wallpapers/recent?category=nature&page=1&limit=20",
+              "host": ["{{base_url}}"],
+              "path": ["wallpapers", "recent"],
+              "query": [
+                { "key": "category", "value": "nature", "description": "Optional: slug of the category" },
+                { "key": "page", "value": "1" },
+                { "key": "limit", "value": "20" }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  { "key": "x-api-key", "value": "{{api_key}}" },
+                  { "key": "x-app-package", "value": "{{app_package}}" },
+                  { "key": "x-device-id", "value": "{{device_id}}" },
+                  { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/wallpapers/recent?category=nature&page=1&limit=20",
+                  "host": ["{{base_url}}"],
+                  "path": ["wallpapers", "recent"],
+                  "query": [{ "key": "category", "value": "nature" }, { "key": "page", "value": "1" }, { "key": "limit", "value": "20" }]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": \"...\",\n      \"title\": \"New Arrival\",\n      \"categories\": {\n        \"name\": \"Nature\"\n      },\n      \"created_at\": \"2024-03-22T...\"\n    }\n  ],\n  \"count\": 45,\n  \"page\": 1,\n  \"limit\": 20,\n  \"category_type\": \"nature\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3. Ads Configuration",
+      "item": [
+        {
+          "name": "Get Ads Configuration",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "x-api-key", "value": "{{api_key}}" },
+              { "key": "x-app-package", "value": "{{app_package}}" },
+              { "key": "x-device-id", "value": "{{device_id}}" },
+              { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/ads/{{app_package}}",
+              "host": ["{{base_url}}"],
+              "path": ["ads", "{{app_package}}"]
+            }
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  { "key": "x-api-key", "value": "{{api_key}}" },
+                  { "key": "x-app-package", "value": "{{app_package}}" },
+                  { "key": "x-device-id", "value": "{{device_id}}" },
+                  { "key": "x-integrity-token", "value": "{{integrity_token}}" }
+                ],
+                "url": { "raw": "{{base_url}}/ads/{{app_package}}", "host": ["{{base_url}}"], "path": ["ads", "{{app_package}}"] }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "{\n  \"app_name\": \"com.example.app\",\n  \"ads_enabled\": true,\n  \"global_ads_online\": true,\n  \"features_enabled\": true,\n  \"count\": 2,\n  \"networks\": [\n    {\n      \"id\": \"...\",\n      \"ad_network\": \"AdMob\",\n      \"is_active\": true,\n      \"banner_id\": \"ca-app-pub-...\",\n      \"interstitial_id\": \"ca-app-pub-...\",\n      \"app_open_id\": \"\"\n    }\n  ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4. Tracking",
+      "item": [
+        {
+          "name": "Track Download",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wallpapers/YOUR_WALLPAPER_ID_HERE/download",
+              "host": ["{{base_url}}"],
+              "path": ["wallpapers", "YOUR_WALLPAPER_ID_HERE", "download"]
+            }
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": { "raw": "{{base_url}}/wallpapers/YOUR_WALLPAPER_ID_HERE/download", "host": ["{{base_url}}"], "path": ["wallpapers", "YOUR_WALLPAPER_ID_HERE", "download"] }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Download count incremented\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Track View",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/wallpapers/YOUR_WALLPAPER_ID_HERE/view",
+              "host": ["{{base_url}}"],
+              "path": ["wallpapers", "YOUR_WALLPAPER_ID_HERE", "view"]
+            }
+          },
+          "response": [
+            {
+              "name": "Success Response",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": { "raw": "{{base_url}}/wallpapers/YOUR_WALLPAPER_ID_HERE/view", "host": ["{{base_url}}"], "path": ["wallpapers", "YOUR_WALLPAPER_ID_HERE", "view"] }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": "{\n  \"success\": true,\n  \"message\": \"View count incremented\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

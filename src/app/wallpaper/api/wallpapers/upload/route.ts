@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createAdminClient, createClient } from '@/lib/supabase/server'
 import sharp from 'sharp'
+import { notificationService } from '@/lib/wallpaper/services/notification.service'
 
 export async function POST(request: Request) {
   const supabaseAuth = await createClient()
@@ -111,6 +112,12 @@ export async function POST(request: Request) {
       // Rollback storage if DB fails
       await supabaseAdmin.storage.from('wallpapers').remove([mainPath, thumbPath])
       throw error
+    }
+
+    // 7. Send Push Notification if part of a category
+    if (folderPath !== 'uncategorized' && data?.id) {
+      // Run asynchronously without awaiting so it doesn't block the upload response
+      notificationService.sendNewWallpaperNotification(title, thumbPublicUrl.publicUrl, folderPath, data.id)
     }
 
     return NextResponse.json({ data })

@@ -1,0 +1,12 @@
+   ▲ Next.js 15.5.15 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.113:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Compiled middleware in 113ms
+ ✓ Ready in 798ms
+ ○ Compiling /wallpaper/api/wallpapers ...
+ ✓ Compiled /wallpaper/api/wallpapers in 721ms
+ GET /wallpaper/api/wallpapers 200 in 2893ms
+[?25h

@@ -6,6 +6,7 @@ export const revalidate = 30
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
+  const category = searchParams.get('category')
   const page = parseInt(searchParams.get('page') || '1', 10)
   const limit = parseInt(searchParams.get('limit') || '20', 10)
 
@@ -21,11 +22,17 @@ export async function GET(request: Request) {
     }
   }
 
-  const { data, count, error } = await wallpaperService.getRecent(page, limit)
+  const { data, count, error } = await wallpaperService.getRecent(page, limit, category)
 
   if (error) {
     return NextResponse.json({ error }, { status: 500 })
   }
 
-  return NextResponse.json({ data, count, page, limit })
+  return NextResponse.json({ 
+    data, 
+    count, 
+    page, 
+    limit, 
+    category_type: category || 'all' 
+  })
 }

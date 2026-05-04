@@ -53,17 +53,17 @@ export class WallpaperService {
     })
   }
 
-  async getAll() {
-    const response = await wallpaperRepository.getAll()
+  async getAll(page = 1, limit = 20) {
+    const response = await wallpaperRepository.getAll(page, limit)
     if (response.data) {
       response.data = await this.signWallpapers(response.data)
     }
     return response
   }
 
-  async getByCategory(slug: string) {
+  async getByCategory(slug: string, page = 1, limit = 20) {
     if (!slug) return { data: [], count: 0, error: 'Slug is required' }
-    const response = await wallpaperRepository.getByCategory(slug)
+    const response = await wallpaperRepository.getByCategory(slug, page, limit)
     if (response.data) {
       response.data = await this.signWallpapers(response.data)
     }
@@ -86,8 +86,8 @@ export class WallpaperService {
     return response
   }
 
-  async getRecent(page = 1, limit = 20) {
-    const response = await wallpaperRepository.getRecent(page, limit)
+  async getRecent(page = 1, limit = 20, categorySlug?: string | null) {
+    const response = await wallpaperRepository.getRecent(page, limit, categorySlug)
     if (response.data) {
       response.data = await this.signWallpapers(response.data)
     }

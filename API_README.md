@@ -53,15 +53,17 @@ Fetch all available, active wallpaper categories to display in your mobile app.
 
 ---
 
-## 2. 🖼️ Wallpapers by Category
+## 2. 🖼️ Wallpapers (By Category or All)
 
-Fetch all wallpapers belonging to a specific category.
+Fetch wallpapers. You can optionally filter by a specific category, otherwise, it returns all wallpapers. This endpoint is **paginated**.
 
-- **Endpoint:** `/wallpapers?category={slug}`
+- **Endpoint:** `/wallpapers?category={slug}&page={page}&limit={limit}`
 - **Method:** `GET`
-- **Security NOTE:** The `thumbnail_url` and `full_res_url` returned are **Temporary Signed URLs** that expire after 5 minutes.
+- **Security NOTE:** The `thumbnail_url` and `full_res_url` returned are **Temporary Signed URLs** that expire after 1 hour.
 - **Query Parameters:**
-  - `category` (Required): The slug of the category (e.g., `nature`, `abstract-art`).
+  - `category` (Optional): The slug of the category (e.g., `nature`, `abstract-art`). If omitted, fetches all wallpapers.
+  - `page` (Optional): The page number (default: `1`).
+  - `limit` (Optional): Items per page (default: `20`).
 - **Response Format:**
 ```json
 {
@@ -72,6 +74,9 @@ Fetch all wallpapers belonging to a specific category.
       "thumbnail_url": "https://...",
       "full_res_url": "https://...",
       "category_id": "...",
+      "categories": {
+        "name": "Nature"
+      },
       "tags": ["mountain", "snow", "landscape"],
       "download_count": 125,
       "view_count": 450,
@@ -81,7 +86,9 @@ Fetch all wallpapers belonging to a specific category.
     }
   ],
   "count": 1,
-  "category_type": "nature"
+  "page": 1,
+  "limit": 20,
+  "category_type": "nature" // or "all"
 }
 ```
 
@@ -131,6 +138,9 @@ Fetch wallpapers sorted automatically by their `download_count` and `view_count`
     {
       "id": "...",
       "title": "Dark Aesthetic",
+      "categories": {
+        "name": "Abstract"
+      },
       "download_count": 9845,
       "view_count": 25000
       // ...
@@ -146,11 +156,12 @@ Fetch wallpapers sorted automatically by their `download_count` and `view_count`
 
 ## 5. 🆕 Recent Wallpapers (Last 7 Days)
 
-Fetch fresh wallpapers uploaded strictly within the last 1 week. This endpoint is **paginated**.
+Fetch fresh wallpapers uploaded strictly within the last 1 week. This endpoint is **paginated** and optionally filtered by category.
 
-- **Endpoint:** `/wallpapers/recent?page={page}&limit={limit}`
+- **Endpoint:** `/wallpapers/recent?category={slug}&page={page}&limit={limit}`
 - **Method:** `GET`
 - **Query Parameters:**
+  - `category` (Optional): The slug of the category. If omitted, fetches recent wallpapers from all categories.
   - `page` (Optional): The page number (default: `1`).
   - `limit` (Optional): Items per page (default: `20`).
 - **Response Format:**
@@ -160,13 +171,17 @@ Fetch fresh wallpapers uploaded strictly within the last 1 week. This endpoint i
     {
       "id": "...",
       "title": "New Arrival",
+      "categories": {
+        "name": "Nature"
+      },
       "created_at": "2024-03-22T..."
       // ...
     }
   ],
   "count": 45,
   "page": 1,
-  "limit": 20
+  "limit": 20,
+  "category_type": "all"
 }
 ```
 

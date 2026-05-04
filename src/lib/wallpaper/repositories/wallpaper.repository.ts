@@ -2,12 +2,16 @@ import { createAdminClient } from '../../supabase/server'
 import { Wallpaper, PaginatedResponse } from '../types'
 
 export class WallpaperRepository {
-  async getAll(): Promise<PaginatedResponse<Wallpaper>> {
+  async getAll(page = 1, limit = 20): Promise<PaginatedResponse<Wallpaper>> {
     const supabase = await createAdminClient()
+    const from = (page - 1) * limit
+    const to = from + limit - 1
+
     const { data, error, count } = await supabase
       .from('wallpapers')
       .select('*, categories(name)', { count: 'exact' })
       .order('created_at', { ascending: false })
+      .range(from, to)
 
     return { data: data || [], count, error: error?.message }
   }
@@ -23,8 +27,11 @@ export class WallpaperRepository {
     return { data: data || [], count, error: error?.message }
   }
 
-  async getByCategory(slug: string): Promise<PaginatedResponse<Wallpaper>> {
+  async getByCategory(slug: string, page = 1, limit = 20): Promise<PaginatedResponse<Wallpaper>> {
     const supabase = await createAdminClient()
+    const from = (page - 1) * limit
+    const to = from + limit - 1
+
     const { data: category } = await supabase
       .from('categories')
       .select('id, slug')
@@ -35,9 +42,10 @@ export class WallpaperRepository {
 
     const { data, error, count } = await supabase
       .from('wallpapers')
-      .select('*', { count: 'exact' })
+      .select('*, categories(name)', { count: 'exact' })
       .eq('category_id', category.id)
       .order('created_at', { ascending: false })
+      .range(from, to)
 
     return { data: data || [], count, error: error?.message }
   }
@@ -60,7 +68,7 @@ export class WallpaperRepository {
 
     const { data, error, count } = await supabase
       .from('wallpapers')
-      .select('*', { count: 'exact' })
+      .select('*, categories(name)', { count: 'exact' })
       .order('download_count', { ascending: false })
       .order('view_count', { ascending: false })
       .range(from, to)
@@ -68,7 +76,7 @@ export class WallpaperRepository {
     return { data: data || [], count, error: error?.message }
   }
 
-  async getRecent(page = 1, limit = 20): Promise<PaginatedResponse<Wallpaper>> {
+  async getRecent(page = 1, limit = 20, categorySlug?: string | null): Promise<PaginatedResponse<Wallpaper>> {
     const supabase = await createAdminClient()
     const from = (page - 1) * limit
     const to = from + limit - 1
@@ -77,10 +85,26 @@ export class WallpaperRepository {
     const oneWeekAgo = new Date()
     oneWeekAgo.setDate(oneWeekAgo.getDate() - 7)
 
-    const { data, error, count } = await supabase
+    let query = supabase
       .from('wallpapers')
-      .select('*', { count: 'exact' })
+      .select('*, categories(name)', { count: 'exact' })
       .gte('created_at', oneWeekAgo.toISOString())
+
+    if (categorySlug) {
+      const { data: category } = await supabase
+        .from('categories')
+        .select('id')
+        .eq('slug', categorySlug)
+        .single()
+        
+      if (category) {
+        query = query.eq('category_id', category.id)
+      } else {
+        return { data: [], count: 0, error: 'Category not found' }
+      }
+    }
+
+    const { data, error, count } = await query
       .order('created_at', { ascending: false })
       .range(from, to)
 
