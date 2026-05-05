@@ -1,12 +1,13 @@
 'use client'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { LayoutDashboard, Image as ImageIcon, Tags, MonitorSmartphone, LogOut, Menu, X } from 'lucide-react'
+import { LayoutDashboard, Image as ImageIcon, Tags, MonitorSmartphone, LogOut, Menu, X, AppWindow } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useState, useEffect } from 'react'
 
 const navItems = [
   { name: 'Dashboard', href: '/wallpaper/admin', icon: LayoutDashboard },
+  { name: 'Apps', href: '/wallpaper/admin/apps', icon: AppWindow },
   { name: 'Wallpapers', href: '/wallpaper/admin/wallpapers', icon: ImageIcon },
   { name: 'Categories', href: '/wallpaper/admin/categories', icon: Tags },
   { name: 'Ads Config', href: '/wallpaper/admin/ads', icon: MonitorSmartphone },

@@ -15,7 +15,7 @@ export async function updateSession(request: NextRequest) {
   // If we are currently serving traffic on the dedicated API SUBDOMAIN
   if (apiDomain && hostname === apiDomain) {
     const isWallpaperPath = request.nextUrl.pathname.startsWith('/wallpaper')
-    
+
     // Block any attempt to view the portfolio/pages on the API subdomain
     if (!isWallpaperPath) {
       return NextResponse.redirect(new URL(mainDomain, request.url))
@@ -72,24 +72,19 @@ export async function updateSession(request: NextRequest) {
   ) {
     const apiKey = request.headers.get('x-api-key')
     const validApiKey = process.env.MOBILE_API_KEY
-    const appPackage = request.headers.get('x-app-package')
     const deviceId = request.headers.get('x-device-id')
     const integrityToken = request.headers.get('x-app-integrity')
 
     // Phase 1: Basic Authentication
     if (!apiKey || apiKey !== validApiKey) {
-      return NextResponse.json({ 
-        error: 'Unauthorized Access. Invalid or missing x-api-key.' 
+      return NextResponse.json({
+        error: 'Unauthorized Access. Invalid or missing x-api-key.'
       }, { status: 401 })
     }
 
-    if (!appPackage || !deviceId) {
-      const missing = [];
-      if (!appPackage) missing.push('x-app-package');
-      if (!deviceId) missing.push('x-device-id');
-      
-      return NextResponse.json({ 
-        error: `Unauthorized Access. Missing required mobile headers: ${missing.join(', ')}.`,
+    if (!deviceId) {
+      return NextResponse.json({
+        error: 'Unauthorized Access. Missing required header: x-device-id.',
         help: "Check API_README.md for mandatory headers."
       }, { status: 401 })
     }
@@ -97,7 +92,7 @@ export async function updateSession(request: NextRequest) {
     // Phase 2: Rate Limiting (Device-Based)
     const ratelimit = await rateLimitService.check(deviceId)
     if (!ratelimit.success) {
-      return NextResponse.json({ 
+      return NextResponse.json({
         error: 'Too many requests. Please slow down.',
         retryAfter: Math.ceil((ratelimit.reset - Date.now()) / 1000)
       }, { status: 429 })
@@ -105,10 +100,10 @@ export async function updateSession(request: NextRequest) {
 
     // Phase 3: Integrity Check (Token existence)
     const isIntegrityBypass = process.env.INTEGRITY_BYPASS === 'true'
-    
+
     if (!integrityToken && process.env.NODE_ENV === 'production' && !isIntegrityBypass) {
-      return NextResponse.json({ 
-        error: 'Security Failure. Integrity token is required for production requests.' 
+      return NextResponse.json({
+        error: 'Security Failure. Integrity token is required for production requests.'
       }, { status: 403 })
     }
   }

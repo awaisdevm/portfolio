@@ -1,105 +1,110 @@
-# Mobile App Integration Guide (OneSignal)
+# Mobile App Integration Guide (Firebase Cloud Messaging - FCM)
 
-This guide explains how to configure your Flutter mobile app to receive push notifications when new wallpapers are uploaded, and how to deep-link users directly to the specific wallpaper when they tap the notification.
+Since your backend sends push notifications directly through the Firebase v1 REST API, your Android app must use the official **Firebase Cloud Messaging** SDK.
 
-## 1. Add OneSignal to your Flutter Project
+## 1. Subscribing to Categories (Topics)
 
-First, add the OneSignal Flutter SDK to your `pubspec.yaml`:
+The backend sends notifications to specific "Topics" based on the category of the wallpaper. The format is `category_<slug>`. 
 
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  onesignal_flutter: ^5.0.0 # Use the latest version
-```
+For example, if you upload a wallpaper to the "Cars" category, it sends a push notification to the topic `category_cars`.
 
-Run `flutter pub get` to install.
+You need to subscribe the Android app to this topic. You can do this when the user opens the app or selects their preferred categories:
 
-## 2. Initialize OneSignal
+```kotlin
+import com.google.firebase.messaging.FirebaseMessaging
 
-Initialize OneSignal as early as possible in your app's lifecycle, typically in your `main.dart`:
-
-```dart
-import 'package:onesignal_flutter/onesignal_flutter.dart';
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  
-  // Initialize OneSignal
-  OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
-  OneSignal.initialize("YOUR_ONESIGNAL_APP_ID"); // Replace with your actual App ID
-  
-  // Request permission for iOS/Android 13+
-  OneSignal.Notifications.requestPermission(true);
-
-  runApp(const MyApp());
-}
-```
-
-## 3. Subscribe to Categories (Tags)
-
-The backend sends notifications based on tags. When a user is interested in a specific category (e.g., "cars"), or if your app is specifically built for a single category, you must tag the user device.
-
-You can do this at app startup, or when a user selects their preferences:
-
-```dart
-// Example: The app is dedicated to the 'cars' category
-OneSignal.User.addTagWithKey("category", "cars");
-
-// Example: The user likes multiple categories
-// In this case, you might need to adjust the backend to send to multiple topic tags,
-// but for a 1-to-1 app-to-category mapping, the above works perfectly.
-```
-
-## 4. Handle Notification Clicks (Deep Linking)
-
-When a notification is tapped, we extract the `wallpaper_id` from the custom data payload and navigate the user to the Wallpaper Details screen.
-
-Add this setup in your `main.dart` or your main navigation widget:
-
-```dart
-void setupNotificationClickListener(BuildContext context) {
-  OneSignal.Notifications.addClickListener((OSNotificationClickEvent event) {
-    // Extract the custom data payload we send from the Next.js backend
-    final data = event.notification.additionalData;
-    
-    if (data != null) {
-      final String? type = data['type'];
-      final String? wallpaperId = data['wallpaper_id'];
-      
-      // If this is a new wallpaper notification and we have the ID
-      if (type == 'new_wallpaper' && wallpaperId != null) {
-        
-        print("Tapped on new wallpaper: $wallpaperId");
-        
-        // Navigate to the specific wallpaper using your router
-        // Example using Navigator 2.0 / GoRouter:
-        // context.go('/wallpaper/$wallpaperId');
-        
-        // Example using standard Navigator:
-        /*
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => WallpaperDetailScreen(wallpaperId: wallpaperId),
-          ),
-        );
-        */
-      }
+// Example: Subscribe the app to the 'cars' category topic
+FirebaseMessaging.getInstance().subscribeToTopic("category_cars")
+    .addOnCompleteListener { task ->
+        var msg = "Subscribed to category_cars"
+        if (!task.isSuccessful) {
+            msg = "Subscribe failed"
+        }
+        println(msg)
     }
-  });
+```
+
+## 2. Handling Notification Taps (Deep Linking)
+
+When the app is in the **background** and the user taps the FCM notification, the Android system automatically starts your Launcher Activity (`MainActivity`) and delivers the data payload inside the Activity's `Intent.extras`.
+
+To navigate the user to the specific wallpaper, check for the `wallpaper_id` inside `onCreate` (and `onNewIntent` if your activity is `singleTop`):
+
+```kotlin
+import android.content.Intent
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Check if Activity was launched from a notification tap
+        handleNotificationIntent(intent)
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        // If MainActivity is already running and the user taps a notification
+        handleNotificationIntent(intent)
+    }
+
+    private fun handleNotificationIntent(intent: Intent?) {
+        val extras = intent?.extras ?: return
+
+        // Extract the data sent from the backend
+        val type = extras.getString("type")
+        val wallpaperId = extras.getString("wallpaper_id")
+
+        if (type == "new_wallpaper" && !wallpaperId.isNullOrEmpty()) {
+            println("User tapped notification for Wallpaper ID: $wallpaperId")
+
+            // Navigate to Wallpaper Detail Activity
+            val detailIntent = Intent(this, WallpaperDetailActivity::class.java).apply {
+                putExtra("WALLPAPER_ID", wallpaperId)
+            }
+            startActivity(detailIntent)
+        }
+    }
 }
 ```
 
-## 5. Summary of the Backend Payload
+## 3. Handling Notifications while App is in the Foreground
 
-For reference, this is the payload the backend sends to OneSignal. This helps you understand what is available in `event.notification.additionalData`:
+If the app is currently open, the Android system will **not** show a visual popup by default. Instead, it passes the message to your `FirebaseMessagingService`.
 
-```json
-{
-  "type": "new_wallpaper",
-  "category": "cars",
-  "wallpaper_id": "123e4567-e89b-12d3-a456-426614174000"
+If you want to handle it (e.g. show your own custom dialog or force a visual notification), override `onMessageReceived`:
+
+```kotlin
+import com.google.firebase.messaging.FirebaseMessagingService
+import com.google.firebase.messaging.RemoteMessage
+
+class MyFirebaseMessagingService : FirebaseMessagingService() {
+
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        super.onMessageReceived(remoteMessage)
+
+        // The data payload from our Next.js backend
+        val data = remoteMessage.data
+        val wallpaperId = data["wallpaper_id"]
+        val category = data["category"]
+
+        // The notification UI payload (Title, Body, Image)
+        val title = remoteMessage.notification?.title
+        val body = remoteMessage.notification?.body
+        
+        println("Foreground Notification Received! Wallpaper ID: $wallpaperId")
+        
+        // Handle it here (e.g., update a UI, or use NotificationManager to show a popup)
+    }
+    
+    override fun onNewToken(token: String) {
+        super.onNewToken(token)
+        // Send token to backend if needed (not required for Topics)
+    }
 }
 ```
 
-You can also access the image URL if needed: `event.notification.bigPicture`.
+*Don't forget to register `MyFirebaseMessagingService` in your `AndroidManifest.xml`.*

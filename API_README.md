@@ -10,16 +10,14 @@ This documentation provides all the necessary endpoints for your mobile applicat
 - **Base URL (Production):** `https://your-domain.com/wallpaper/api` *(Replace with your deployed Vercel domain)*
 - **Content-Type:** `application/json`
 
-To protect your data from public scrapers and unauthorized apps, the API has a multi-layered Security Shield. All mobile `GET` requests **MUST** include four specific HTTP Headers:
+To protect your data from public scrapers and unauthorized apps, the API has a multi-layered Security Shield. All mobile `GET` requests **MUST** include three specific HTTP Headers:
 1. `x-api-key`: Your secret API key. *(Configured via `MOBILE_API_KEY` in your `.env` file)*.
-2. `x-app-package`: The exact Package Name of your app (e.g., `com.awais.wallpapers`).
-3. `x-device-id`: A unique identifier for the phone (e.g., Android Device ID or a UUID). Used for per-device rate limiting.
-4. `x-integrity-token`: A fresh "Play Integrity" token generated on the phone. This proves the request is from a real, untampered device.
+2. `x-device-id`: A unique identifier for the phone (e.g., Android Device ID or a UUID). Used for per-device rate limiting.
+3. `x-integrity-token`: A fresh "Play Integrity" token generated on the phone. This proves the request is from a real, untampered device.
 
 final headers = {
   "Content-Type": "application/json",
   "x-api-key": "YOUR_SECRET_API_KEY",
-  "x-app-package": "com.awais.wallpapers",
   "x-device-id": "device_uuid_here",
   "x-integrity-token": "eyJhbGciOi..." // Token from Play Integrity API
 };
@@ -74,9 +72,10 @@ Fetch wallpapers. You can optionally filter by a specific category, otherwise, i
       "thumbnail_url": "https://...",
       "full_res_url": "https://...",
       "category_id": "...",
-      "categories": {
-        "name": "Nature"
-      },
+      "category_ids": [
+        "e2ba3...",
+        "f4bc5..."
+      ],
       "tags": ["mountain", "snow", "landscape"],
       "download_count": 125,
       "view_count": 450,
@@ -138,9 +137,9 @@ Fetch wallpapers sorted automatically by their `download_count` and `view_count`
     {
       "id": "...",
       "title": "Dark Aesthetic",
-      "categories": {
-        "name": "Abstract"
-      },
+      "category_ids": [
+        "..."
+      ],
       "download_count": 9845,
       "view_count": 25000
       // ...
@@ -171,9 +170,9 @@ Fetch fresh wallpapers uploaded strictly within the last 1 week. This endpoint i
     {
       "id": "...",
       "title": "New Arrival",
-      "categories": {
-        "name": "Nature"
-      },
+      "category_ids": [
+        "..."
+      ],
       "created_at": "2024-03-22T..."
       // ...
     }
@@ -229,6 +228,71 @@ When your mobile app launches, call `/ads/com.your.package`.
 1. Check `ads_enabled` and `global_ads_online`. If either is `false`, do not initialize any SDKs.
 2. **Double Safety**: The server will automatically return an **empty `networks` array** if advertisements are disabled in the dashboard.
 3. If IDs are present, loop through the `networks` array and initialize the respective SDKs.
+
+---
+
+## 7. 🛡️ Unified Config API (Recommended)
+
+> **This is the recommended single-call endpoint for mobile apps at startup.** It replaces the need to call multiple endpoints separately. One call returns everything: app status, version checking, maintenance mode, ads configuration, and extra feature flags.
+
+- **Endpoint:** `/config/{app_package_name}?v={device_version}`
+- **Method:** `GET`
+- **Path Variables:**
+  - `app_package_name` (Required): Your app's unique bundle identifier (e.g., `com.awais.wallpapers`).
+- **Query Parameters:**
+  - `v` (Optional): The current app version installed on the device (e.g., `1.2.0`). Used to compute `needs_update` and `needs_force_update`.
+- **Response Format:**
+```json
+{
+  "app": {
+    "name": "HD Wallpapers Pro",
+    "package_name": "com.awais.wallpapers",
+    "is_enabled": true,
+    "is_maintenance": false,
+    "maintenance_msg": ""
+  },
+  "version": {
+    "current": "2.1.0",
+    "minimum": "1.5.0",
+    "force_update": true,
+    "update_url": "https://play.google.com/store/apps/details?id=com.awais.wallpapers",
+    "needs_update": true,
+    "needs_force_update": false
+  },
+  "ads": {
+    "enabled": true,
+    "global_enabled": true,
+    "networks": [
+      {
+        "id": "...",
+        "ad_network": "AdMob",
+        "is_active": true,
+        "banner_id": "ca-app-pub-...",
+        "interstitial_id": "ca-app-pub-...",
+        "app_open_id": "",
+        "rewarded_id": "ca-app-pub-...",
+        "native_id": ""
+      }
+    ]
+  },
+  "extra_config": {
+    "show_premium_badge": true,
+    "max_daily_downloads": 50
+  },
+  "timestamp": "2026-05-05T10:00:00.000Z"
+}
+```
+
+### Mobile Implementation Logic for Config API:
+When your mobile app launches, call `/config/com.your.package?v=1.2.0` as the **very first API call**.
+
+1. **App Enabled Check**: If `app.is_enabled` is `false`, show a "This app has been disabled" screen and block all access.
+2. **Maintenance Check**: If `app.is_maintenance` is `true`, show the `app.maintenance_msg` in a full-screen maintenance UI.
+3. **Version Check**:
+   - If `version.needs_force_update` is `true`, show a **non-dismissible** update dialog pointing to `version.update_url`.
+   - If `version.needs_update` is `true` (but not force), show a **dismissible** "Update Available" prompt.
+4. **Ads Initialization**: If `ads.enabled` is `true`, loop through `ads.networks` and initialize each SDK with the provided IDs. If `false`, skip all ad initialization.
+5. **Extra Config**: Use `extra_config` for any custom feature flags you want to control remotely without an app update.
 
 ---
 

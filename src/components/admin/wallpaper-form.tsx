@@ -11,7 +11,7 @@ interface Category {
 
 export default function WallpaperForm({ onSuccess }: { onSuccess: () => void }) {
   const [title, setTitle] = useState('')
-  const [categoryId, setCategoryId] = useState('')
+  const [categoryIds, setCategoryIds] = useState<string[]>([])
   const [tags, setTags] = useState('')
   const [isFeatured, setIsFeatured] = useState(false)
   const [fullRes, setFullRes] = useState<File | null>(null)
@@ -38,7 +38,7 @@ export default function WallpaperForm({ onSuccess }: { onSuccess: () => void }) 
     setLoading(true)
     const formData = new FormData()
     formData.append('title', title)
-    formData.append('category_id', categoryId || '')
+    formData.append('category_ids', JSON.stringify(categoryIds))
     const parsedTags = tags.split(',').map(t => t.trim()).filter(Boolean)
     formData.append('tags', JSON.stringify(parsedTags))
     formData.append('is_featured', String(isFeatured))
@@ -56,7 +56,7 @@ export default function WallpaperForm({ onSuccess }: { onSuccess: () => void }) 
       toast.success('Success! Wallpaper and auto-thumbnail created.')
       
       setTitle('')
-      setCategoryId('')
+      setCategoryIds([])
       setTags('')
       setIsFeatured(false)
       setFullRes(null)
@@ -86,11 +86,27 @@ export default function WallpaperForm({ onSuccess }: { onSuccess: () => void }) 
               <input required value={title} onChange={e => setTitle(e.target.value)} className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary/50 transition-colors" placeholder="e.g. Midnight Cyberpunk" />
             </div>
             <div>
-              <label className="block text-sm text-gray-400 mb-1 font-medium">Target Category</label>
-              <select value={categoryId} onChange={e => setCategoryId(e.target.value)} className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primary/50 transition-colors">
-                  <option value="">No Category (Uncategorized)</option>
-                  {categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
-              </select>
+              <label className="block text-sm text-gray-400 mb-1 font-medium">Target Categories</label>
+              <div className="w-full max-h-40 overflow-y-auto bg-black/20 border border-white/10 rounded-xl p-2 focus-within:border-primary/50 transition-colors space-y-1">
+                  {categories.length === 0 && <span className="text-gray-500 text-sm p-2">No categories available</span>}
+                  {categories.map(c => (
+                    <label key={c.id} className="flex items-center gap-3 p-2 hover:bg-white/5 rounded-lg cursor-pointer transition-colors">
+                      <input 
+                        type="checkbox" 
+                        checked={categoryIds.includes(c.id)}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setCategoryIds(prev => [...prev, c.id])
+                          } else {
+                            setCategoryIds(prev => prev.filter(id => id !== c.id))
+                          }
+                        }}
+                        className="w-4 h-4 rounded bg-black/20 border-white/20 text-primary accent-primary cursor-pointer"
+                      />
+                      <span className="text-sm text-gray-300">{c.name}</span>
+                    </label>
+                  ))}
+              </div>
             </div>
             <div>
               <label className="block text-sm text-gray-400 mb-1 font-medium">Search Tags</label>

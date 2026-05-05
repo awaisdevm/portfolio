@@ -1,52 +1,66 @@
-export class NotificationService {
-  private readonly appId = process.env.ONESIGNAL_APP_ID;
-  private readonly restApiKey = process.env.ONESIGNAL_REST_API_KEY;
-  private readonly apiUrl = 'https://onesignal.com/api/v1/notifications';
+import { GoogleAuth } from 'google-auth-library';
 
+export class NotificationService {
   async sendNewWallpaperNotification(title: string, imageUrl: string, categorySlug: string, wallpaperId: string) {
-    if (!this.appId || !this.restApiKey) {
-      console.warn('OneSignal credentials are not set. Skipping notification.');
+    const serviceAccountEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+    const privateKey = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n');
+    // It's best to explicitly set FIREBASE_PROJECT_ID in your .env
+    const projectId = process.env.FIREBASE_PROJECT_ID;
+
+    if (!serviceAccountEmail || !privateKey || !projectId) {
+      console.warn('Firebase credentials or FIREBASE_PROJECT_ID are missing in .env. Skipping FCM notification.');
       return;
     }
 
-    const payload = {
-      app_id: this.appId,
-      // Target users who are subscribed to this category's topic/tag
-      // You can adjust this to send to all users if needed: included_segments: ['Subscribed Users']
-      filters: [
-        { field: 'tag', key: 'category', relation: '=', value: categorySlug },
-      ],
-      headings: { en: 'New Wallpaper Alert!' },
-      contents: { en: `A new wallpaper "${title}" was just added to ${categorySlug}!` },
-      big_picture: imageUrl,
-      // Android specific
-      android_channel_id: 'new_wallpapers',
-      // Pass custom data to the app
-      data: {
-        type: 'new_wallpaper',
-        category: categorySlug,
-        wallpaper_id: wallpaperId,
-      },
-    };
-
     try {
-      const response = await fetch(this.apiUrl, {
+      const auth = new GoogleAuth({
+        credentials: {
+          client_email: serviceAccountEmail,
+          private_key: privateKey,
+        },
+        scopes: ['https://www.googleapis.com/auth/firebase.messaging'],
+      });
+
+      const accessToken = await auth.getAccessToken();
+
+      // Ensure the topic doesn't have invalid characters
+      const cleanTopic = categorySlug.replace(/[^a-zA-Z0-9-_.~%]/g, '');
+
+      const payload = {
+        message: {
+          topic: `category_${cleanTopic}`,
+          notification: {
+            title: 'New Wallpaper Alert!',
+            body: `A new wallpaper "${title}" was just added!`,
+            image: imageUrl, // FCM supports image payloads directly
+          },
+          data: {
+            type: 'new_wallpaper',
+            category: categorySlug,
+            wallpaper_id: wallpaperId,
+            // To ensure the app can handle the background click intent directly
+            click_action: "FLUTTER_NOTIFICATION_CLICK", 
+          },
+        },
+      };
+
+      const response = await fetch(`https://fcm.googleapis.com/v1/projects/${projectId}/messages:send`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Basic ${this.restApiKey}`,
+          'Authorization': `Bearer ${accessToken}`,
         },
         body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
         const errorData = await response.json();
-        console.error('OneSignal Error:', errorData);
+        console.error('FCM Error:', JSON.stringify(errorData, null, 2));
       } else {
-        console.log(`Notification sent successfully for ${title} to ${categorySlug}`);
+        console.log(`FCM Notification sent successfully to topic: category_${cleanTopic}`);
       }
     } catch (error) {
-      console.error('Failed to send OneSignal notification:', error);
+      console.error('Failed to send FCM notification:', error);
     }
   }
 }

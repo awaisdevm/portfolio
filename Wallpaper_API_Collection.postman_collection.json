@@ -41,7 +41,6 @@
             "method": "GET",
             "header": [
               { "key": "x-api-key", "value": "{{api_key}}" },
-              { "key": "x-app-package", "value": "{{app_package}}" },
               { "key": "x-device-id", "value": "{{device_id}}" },
               { "key": "x-integrity-token", "value": "{{integrity_token}}" }
             ],
@@ -58,7 +57,6 @@
                 "method": "GET",
                 "header": [
                   { "key": "x-api-key", "value": "{{api_key}}" },
-                  { "key": "x-app-package", "value": "{{app_package}}" },
                   { "key": "x-device-id", "value": "{{device_id}}" },
                   { "key": "x-integrity-token", "value": "{{integrity_token}}" }
                 ],
@@ -78,7 +76,6 @@
             "method": "GET",
             "header": [
               { "key": "x-api-key", "value": "{{api_key}}" },
-              { "key": "x-app-package", "value": "{{app_package}}" },
               { "key": "x-device-id", "value": "{{device_id}}" },
               { "key": "x-integrity-token", "value": "{{integrity_token}}" }
             ],
@@ -95,7 +92,6 @@
                 "method": "GET",
                 "header": [
                   { "key": "x-api-key", "value": "{{api_key}}" },
-                  { "key": "x-app-package", "value": "{{app_package}}" },
                   { "key": "x-device-id", "value": "{{device_id}}" },
                   { "key": "x-integrity-token", "value": "{{integrity_token}}" }
                 ],
@@ -120,7 +116,6 @@
             "method": "GET",
             "header": [
               { "key": "x-api-key", "value": "{{api_key}}" },
-              { "key": "x-app-package", "value": "{{app_package}}" },
               { "key": "x-device-id", "value": "{{device_id}}" },
               { "key": "x-integrity-token", "value": "{{integrity_token}}" }
             ],
@@ -142,7 +137,6 @@
                 "method": "GET",
                 "header": [
                   { "key": "x-api-key", "value": "{{api_key}}" },
-                  { "key": "x-app-package", "value": "{{app_package}}" },
                   { "key": "x-device-id", "value": "{{device_id}}" },
                   { "key": "x-integrity-token", "value": "{{integrity_token}}" }
                 ],
@@ -171,7 +165,6 @@
             "method": "GET",
             "header": [
               { "key": "x-api-key", "value": "{{api_key}}" },
-              { "key": "x-app-package", "value": "{{app_package}}" },
               { "key": "x-device-id", "value": "{{device_id}}" },
               { "key": "x-integrity-token", "value": "{{integrity_token}}" }
             ],
@@ -188,7 +181,6 @@
                 "method": "GET",
                 "header": [
                   { "key": "x-api-key", "value": "{{api_key}}" },
-                  { "key": "x-app-package", "value": "{{app_package}}" },
                   { "key": "x-device-id", "value": "{{device_id}}" },
                   { "key": "x-integrity-token", "value": "{{integrity_token}}" }
                 ],
@@ -208,7 +200,6 @@
             "method": "GET",
             "header": [
               { "key": "x-api-key", "value": "{{api_key}}" },
-              { "key": "x-app-package", "value": "{{app_package}}" },
               { "key": "x-device-id", "value": "{{device_id}}" },
               { "key": "x-integrity-token", "value": "{{integrity_token}}" }
             ],
@@ -229,7 +220,6 @@
                 "method": "GET",
                 "header": [
                   { "key": "x-api-key", "value": "{{api_key}}" },
-                  { "key": "x-app-package", "value": "{{app_package}}" },
                   { "key": "x-device-id", "value": "{{device_id}}" },
                   { "key": "x-integrity-token", "value": "{{integrity_token}}" }
                 ],
@@ -254,7 +244,6 @@
             "method": "GET",
             "header": [
               { "key": "x-api-key", "value": "{{api_key}}" },
-              { "key": "x-app-package", "value": "{{app_package}}" },
               { "key": "x-device-id", "value": "{{device_id}}" },
               { "key": "x-integrity-token", "value": "{{integrity_token}}" }
             ],
@@ -276,7 +265,6 @@
                 "method": "GET",
                 "header": [
                   { "key": "x-api-key", "value": "{{api_key}}" },
-                  { "key": "x-app-package", "value": "{{app_package}}" },
                   { "key": "x-device-id", "value": "{{device_id}}" },
                   { "key": "x-integrity-token", "value": "{{integrity_token}}" }
                 ],
@@ -306,7 +294,6 @@
             "method": "GET",
             "header": [
               { "key": "x-api-key", "value": "{{api_key}}" },
-              { "key": "x-app-package", "value": "{{app_package}}" },
               { "key": "x-device-id", "value": "{{device_id}}" },
               { "key": "x-integrity-token", "value": "{{integrity_token}}" }
             ],
@@ -323,7 +310,6 @@
                 "method": "GET",
                 "header": [
                   { "key": "x-api-key", "value": "{{api_key}}" },
-                  { "key": "x-app-package", "value": "{{app_package}}" },
                   { "key": "x-device-id", "value": "{{device_id}}" },
                   { "key": "x-integrity-token", "value": "{{integrity_token}}" }
                 ],

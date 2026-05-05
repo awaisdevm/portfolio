@@ -14,7 +14,7 @@ export async function POST(request: Request) {
   try {
     const formData = await request.formData()
     const title = formData.get('title') as string
-    const category_id = formData.get('category_id') as string | null
+    const category_ids_str = formData.get('category_ids') as string | null
     const tagsStr = formData.get('tags') as string
     const is_featured = formData.get('is_featured') === 'true'
 
@@ -38,10 +38,22 @@ export async function POST(request: Request) {
       console.warn('Manual Bucket Update Notice:', updateError.message)
     }
 
-    // 1. Find category slug for clean storage path
+    // 1. Parse category_ids
+    let category_ids: string[] = []
+    if (category_ids_str && category_ids_str !== 'null') {
+      try {
+        category_ids = JSON.parse(category_ids_str)
+      } catch (e) {
+        if (typeof category_ids_str === 'string' && category_ids_str.trim().length > 0) {
+          category_ids = [category_ids_str] // Fallback for single category_id
+        }
+      }
+    }
+
+    // 2. Find primary category slug for clean storage path
     let folderPath = 'uncategorized'
-    if (category_id && category_id !== 'null') {
-      const { data: catData } = await supabaseAdmin.from('categories').select('slug').eq('id', category_id).single()
+    if (category_ids.length > 0) {
+      const { data: catData } = await supabaseAdmin.from('categories').select('slug').eq('id', category_ids[0]).single()
       if (catData?.slug) {
         folderPath = catData.slug
       }
@@ -101,7 +113,8 @@ export async function POST(request: Request) {
     // 6. Save to DB
     const { data, error } = await supabaseAdmin.from('wallpapers').insert([{
       title,
-      category_id: category_id === 'null' || !category_id ? null : category_id,
+      category_id: category_ids.length > 0 ? category_ids[0] : null, // Keep for backward compatibility if needed
+      category_ids: category_ids,
       tags: tagsStr ? JSON.parse(tagsStr) : [],
       is_featured,
       thumbnail_url: thumbPublicUrl.publicUrl,

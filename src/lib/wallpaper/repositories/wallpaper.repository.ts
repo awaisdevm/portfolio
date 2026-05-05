@@ -9,7 +9,7 @@ export class WallpaperRepository {
 
     const { data, error, count } = await supabase
       .from('wallpapers')
-      .select('*, categories(name)', { count: 'exact' })
+      .select('*', { count: 'exact' })
       .order('created_at', { ascending: false })
       .range(from, to)
 
@@ -42,8 +42,8 @@ export class WallpaperRepository {
 
     const { data, error, count } = await supabase
       .from('wallpapers')
-      .select('*, categories(name)', { count: 'exact' })
-      .eq('category_id', category.id)
+      .select('*', { count: 'exact' })
+      .contains('category_ids', [category.id])
       .order('created_at', { ascending: false })
       .range(from, to)
 
@@ -68,7 +68,7 @@ export class WallpaperRepository {
 
     const { data, error, count } = await supabase
       .from('wallpapers')
-      .select('*, categories(name)', { count: 'exact' })
+      .select('*', { count: 'exact' })
       .order('download_count', { ascending: false })
       .order('view_count', { ascending: false })
       .range(from, to)
@@ -87,7 +87,7 @@ export class WallpaperRepository {
 
     let query = supabase
       .from('wallpapers')
-      .select('*, categories(name)', { count: 'exact' })
+      .select('*', { count: 'exact' })
       .gte('created_at', oneWeekAgo.toISOString())
 
     if (categorySlug) {
@@ -98,7 +98,7 @@ export class WallpaperRepository {
         .single()
         
       if (category) {
-        query = query.eq('category_id', category.id)
+        query = query.contains('category_ids', [category.id])
       } else {
         return { data: [], count: 0, error: 'Category not found' }
       }
