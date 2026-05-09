@@ -1,0 +1,27 @@
+# Muhammad Awais - Senior Mobile Architect
+
+Muhammad Awais is a Senior Mobile Engineer with 6+ years of experience specializing in high-performance Android and Flutter ecosystems.
+
+## Core Expertise
+- **Android Native**: Expert in Kotlin, Jetpack Compose, MVVM, and Clean Architecture.
+- **Flutter**: Lead developer for cross-platform solutions using BLoC and Provider.
+- **Enterprise Solutions**: Specialized in Healthcare (Healthwire, HCloud), E-sports (DonGamers), and EdTech (Makernote).
+- **Optimization**: Significant experience in reducing RAM usage, optimizing LBS accuracy, and system uptime (99.9%).
+
+## Key Projects
+- **Healthwire**: Leading HealthTech platform in Pakistan.
+- **DonGamers**: Global e-sports community platform.
+- **HCloud**: Clinic management suite for thousands of providers.
+- **Makernote**: Cross-platform EdTech tool.
+
+## Technical Stats
+- 25+ Deployed Apps
+- 6+ Years Industry Experience
+- High-Frequency Data Systems (Socket.IO, Firebase)
+- Advanced CI/CD & Automated Testing
+
+## Contact
+- **Email**: mughal963@gmail.com
+- **LinkedIn**: https://linkedin.com/in/awaisdevm
+- **GitHub**: https://github.com/awaisdevm
+- **Location**: Lahore, Pakistan (Global Remote)

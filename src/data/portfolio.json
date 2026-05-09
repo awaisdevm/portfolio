@@ -1,0 +1,332 @@
+{
+  "seo": {
+    "title": "Awais — Senior Android & Flutter Developer",
+    "description": "Senior Mobile Architect with 6+ years in Android (Jetpack Compose) & Flutter. Expert in scalable systems for healthcare & e-sports. 25+ apps deployed.",
+    "keywords": [
+      "Awais",
+      "Muhammad Awais",
+      "Senior Developer",
+      "Android Developer",
+      "Flutter Developer",
+      "Mobile App Developer",
+      "Senior Android Developer",
+      "Senior Flutter Developer",
+      "Mobile Apps",
+      "Hire Android Developer",
+      "Hire Flutter Developer",
+      "Hire Mobile Developer",
+      "Mobile App Architect",
+      "Kotlin Developer",
+      "Jetpack Compose Expert",
+      "Android TV Developer",
+      "Cross-Platform Mobile Developer",
+      "Flutter App Development",
+      "Clean Architecture Android",
+      "Android Developer Lahore",
+      "Firebase Mobile Backend"
+    ],
+    "ogImage": "/images/og-image.png",
+    "twitterHandle": "@awaisdevm"
+  },
+  "profile": {
+    "name": "Muhammad Awais",
+    "roles": [
+      "a Senior Mobile Architect",
+      "an Android Native Expert",
+      "a Flutter Solutions Lead"
+    ],
+    "location": "Lahore, Pakistan | Global Remote",
+    "tagline": "I build high-performance mobile apps that scale to millions of users — from healthcare platforms to e-sports ecosystems. 6+ years of Kotlin, Flutter, and clean architecture expertise.",
+    "heroImage": "/images/dev-pic.avif",
+    "heroImageAlt": "Muhammad Awais — Senior Android Developer and Flutter Architect, professional portrait",
+    "aboutBio": {
+      "heading": "Architecting the Future of High-Performance Mobile",
+      "paragraphs": [
+        "With over 6 years of hands-on mobile engineering, I transform complex business requirements into production-ready Android and Flutter applications. My work spans Android TV, IoT integrations, and cross-platform solutions used by thousands daily.",
+        "I specialize in **scalable, maintainable architectures** that handle high-traffic loads without compromising speed or reliability. From reducing thermal-printing latency by 40% to engineering location-based services with 90% accuracy gains — I focus on measurable impact for healthcare, fintech, and gaming platforms."
+      ],
+      "bulletPoints": [
+        "**Strategic Optimization**: Achieved 40% thermal printing latency reduction for high-transaction platforms.",
+        "**Location Intelligence**: Engineered advanced LBS modules with a 90% accuracy boost in real-world delivery apps.",
+        "**Real-Time Ecosystems**: Expert integration of Pusher, Socket.IO, and Unity for seamless interactive experiences.",
+        "**Elite Reliability**: Maintaining a consistent 99.9% system uptime and 92% crash-free session average."
+      ]
+    },
+    "quickFacts": [
+      {
+        "label": "Operational Base",
+        "value": "Lahore (Remote Global)"
+      },
+      {
+        "label": "Expertise Level",
+        "value": "Senior Architect (6+ Yr)"
+      },
+      {
+        "label": "Engagement",
+        "value": "Full-Cycle Consult / Lead"
+      },
+      {
+        "label": "Core Strategy",
+        "value": "Scale & Reliability"
+      }
+    ],
+    "achievements": {
+      "projects": "25+ Deployed",
+      "clients": "20+ Global",
+      "followers": "4.3k+ Professional",
+      "certifications": "8+ Industry"
+    },
+    "techArsenal": [
+      "Kotlin / Java (Jetpack Compose)",
+      "Flutter / Dart (BLoC / Provider)",
+      "Android TV (Leanback & ExoPlayer)",
+      "MVVM & Clean Architecture",
+      "High-Latency System Optimization",
+      "Firebase & Cloud Infrastructure",
+      "Secure Payment Architectures",
+      "Real-time Data (Socket.IO)",
+      "Automated CI/CD Pipelines",
+      "Dagger / Hilt (Dependency Injection)",
+      "Coroutines & Reactive Flow",
+      "Advanced UI/UX Testing"
+    ],
+    "values": [
+      {
+        "icon": "Shield",
+        "title": "Architecture First",
+        "description": "Building bulletproof, scalable code that serves as a long-term technical foundation."
+      },
+      {
+        "icon": "Rocket",
+        "title": "High-Performance",
+        "description": "Obsessive focus on frame rates, latency reduction, and memory efficiency."
+      },
+      {
+        "icon": "Target",
+        "title": "Strategic Precision",
+        "description": "Aligning every pixel and line of code with primary business KPIs and user needs."
+      },
+      {
+        "icon": "Cpu",
+        "title": "Next-Gen Tech",
+        "description": "Integrating AI, IoT, and high-speed data streams to keep your product ahead of the curve."
+      }
+    ],
+    "timeline": [
+      {
+        "year": "2024 - 2026",
+        "title": "Senior Solutions Architect",
+        "company": "Egora Pvt Ltd",
+        "description": "Architecting enterprise-scale Android ecosystems. Led 40% performance gains in mission-critical hardware integrations and maintained zero-failure deployment records."
+      },
+      {
+        "year": "2022 - 2024",
+        "title": "Lead Mobile Engineer",
+        "company": "Healthwire Pvt Ltd",
+        "description": "Revolutionized healthcare delivery via advanced Google Maps intelligence. Scaled a clinic management suite to thousands of active daily providers."
+      },
+      {
+        "year": "2020 - 2022",
+        "title": "Senior Mobile Developer",
+        "company": "DonGamers",
+        "description": "Engineered high-frequency e-sports systems. Successfully handled high-latency challenges in global gaming platforms with 92% session stability."
+      },
+      {
+        "year": "2019 - 2020",
+        "title": "Android Developer",
+        "company": "Netroots Technologies",
+        "description": "Developed high-retention consumer apps with a focus on UI/UX excellence and robust RESTful API integrations."
+      }
+    ],
+    "contact": {
+      "email": "mughal963@gmail.com",
+      "linkedin": "https://linkedin.com/in/awaisdevm",
+      "github": "https://github.com/awaisdevm",
+      "phone": "+92 301 0789555",
+      "portfolio": "https://www.hackerrank.com/certificates/794ccb84d359",
+      "whatsapp": "https://wa.me/+923010789555",
+      "stackoverflow": "https://stackoverflow.com/users/15903692/awais963",
+      "upwork": "",
+      "fiverr": ""
+    }
+  },
+  "sections": {
+    "about": {
+      "id": "about",
+      "subtitle": "Who I Am",
+      "title": "About Me",
+      "description": "Senior Mobile Architect specializing in scalable Android and Flutter solutions for healthcare, fintech, and gaming industries."
+    },
+    "services": {
+      "id": "services",
+      "subtitle": "What I Offer",
+      "title": "Services",
+      "description": "Custom mobile solutions engineered for massive scalability, enterprise-grade security, and industry-leading performance metrics."
+    },
+    "projects": {
+      "id": "projects",
+      "subtitle": "Real-World Results",
+      "title": "Featured Projects",
+      "description": "Case studies of scalable mobile apps I've architected — from healthcare platforms to competitive gaming ecosystems."
+    },
+    "contact": {
+      "id": "contact",
+      "subtitle": "Let's Work Together",
+      "title": "Get in Touch",
+      "description": "Ready to scale your mobile product? Let's discuss your next high-performance app over a free consultation."
+    },
+    "testimonials": {
+      "id": "testimonials",
+      "subtitle": "Client Feedback",
+      "title": "Testimonials",
+      "description": "Don't just take my word for it. Here is what engineering leaders and founders have to say about my work."
+    }
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Healthwire: HealthTech Platform",
+      "description": "Architected Pakistan's leading healthcare app — optimizing pharmacy logistics, lab-test booking, and telemedicine for thousands of daily active users.",
+      "tech": [
+        "Kotlin Native",
+        "Jetpack Compose",
+        "Payment Architecture",
+        "LBS Optimization"
+      ],
+      "image": "/images/projects-image/healthwire.webp?height=400&width=300",
+      "gradient": "from-primary via-secondary to-accent",
+      "url": "https://play.google.com/store/apps/details?id=com.healthwire.healthwire",
+      "category": "HealthTech Infrastructure",
+      "technology": "Android Native",
+      "ctaText": "View on Google Play",
+      "altText": "Healthwire Android App — Scalable Healthcare Platform Built with Kotlin and Jetpack Compose"
+    },
+    {
+      "id": 2,
+      "title": "HCloud: Clinic Management Suite",
+      "description": "Enterprise-grade clinic operations platform serving thousands of healthcare providers with real-time prescription sync and smart appointment scheduling.",
+      "image": "/images/projects-image/hcloud.webp?height=400&width=300",
+      "tech": [
+        "Clean Architecture",
+        "Retrofit Integration",
+        "Real-time Sync",
+        "Advanced CI/CD"
+      ],
+      "gradient": "from-secondary via-primary to-accent",
+      "url": "https://play.google.com/store/apps/details?id=com.healthwire.hcloud",
+      "category": "Clinic Operations",
+      "technology": "Native Mobile Architecture",
+      "ctaText": "View on Google Play",
+      "altText": "HCloud Clinic Management App — Real-Time Medical Scheduling for Healthcare Providers"
+    },
+    {
+      "id": 3,
+      "title": "DonGamers: E-Sports Platform",
+      "description": "Built a global gaming community platform with real-time chat, tournament brackets, and Unity-powered interactive features — handling thousands of concurrent sessions.",
+      "image": "/images/projects-image/dongamers.webp?height=400&width=300",
+      "tech": [
+        "Socket.IO",
+        "Unity Integration",
+        "Reactive Flow",
+        "Scale Optimization"
+      ],
+      "gradient": "from-accent via-secondary to-primary",
+      "category": "Social Gaming Architecture",
+      "url": "https://play.google.com/store/apps/details?id=com.dongamers.dongamers",
+      "technology": "E-Sports Solutions",
+      "ctaText": "View on Google Play",
+      "altText": "DonGamers E-Sports Platform — Real-Time Gaming Chat App with Socket.IO Integration"
+    },
+    {
+      "id": 4,
+      "title": "Makernote: Cross-Platform EdTech",
+      "description": "High-performance educational app for teachers and students — built with Flutter for seamless iOS and Android delivery with real-time collaboration features.",
+      "image": "/images/projects-image/makernote.webp?height=400&width=300",
+      "tech": [
+        "Flutter Cross-Platform",
+        "Firebase Scale",
+        "BLoC Flow",
+        "Design Systems"
+      ],
+      "gradient": "from-primary via-accent to-secondary",
+      "category": "EdTech Solutions",
+      "url": "https://apps.apple.com/hk/app/makernote/id6475201417?l=en-GB",
+      "technology": "Flutter Hybrid",
+      "ctaText": "View on App Store",
+      "altText": "Makernote EdTech App — Cross-Platform Education Tool Built with Flutter and Firebase"
+    }
+  ],
+  "services": [
+    {
+      "id": "mobile-architecture",
+      "title": "Scalable Mobile Architecture",
+      "description": "Custom Android and Flutter solutions engineered for massive user scalability, enterprise-grade security, and world-class performance metrics.",
+      "technologies": [
+        "Native Android",
+        "Flutter Expert",
+        "Kotlin Specialist",
+        "Clean Architecture"
+      ],
+      "iconName": "Smartphone",
+      "gradient": "from-primary to-secondary",
+      "features": [
+        "Jetpack Compose UI Optimization",
+        "Advanced Payment System Scaling",
+        "Offline-First System Design",
+        "High-Frequency Data Integration"
+      ],
+      "iconColor": "text-primary"
+    },
+    {
+      "id": "android-tv-solutions",
+      "title": "Enterprise Android TV Solutions",
+      "description": "High-impact development for large-screen ecosystems, optimized for Leanback UI efficiency and low-latency media streaming.",
+      "technologies": [
+        "Android TV Architecture",
+        "Leanback Framework",
+        "ExoPlayer Optimization",
+        "Remote HID Events"
+      ],
+      "iconName": "Tv",
+      "gradient": "from-secondary to-accent",
+      "features": [
+        "Big-Screen Strategy & UI Audit",
+        "Seamless Media Hub Architecture",
+        "Legacy Code Refactoring",
+        "High-Refresh Rate UX Design"
+      ],
+      "iconColor": "text-secondary"
+    },
+    {
+      "id": "ai-mobile-systems",
+      "title": "AI & Intelligent Mobile Systems",
+      "description": "Empowering your business with smart mobile features through advanced machine learning integrations and predictive AI analytics.",
+      "technologies": [
+        "Machine Learning (ML Kit)",
+        "OpenAI Integration",
+        "Predictive Modeling",
+        "Data Intelligent Apps"
+      ],
+      "iconName": "Brain",
+      "gradient": "from-accent to-primary",
+      "features": [
+        "Real-Time Vision & Recognition",
+        "Automated System Intelligence",
+        "Predictive User Behavior Models",
+        "Custom Neural Model Deployment"
+      ],
+      "iconColor": "text-accent"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "clientName": "Louis Wong",
+      "clientRole": "CEO @ TacklEd Innovation Ltd",
+      "clientImage": "https://i.pravatar.cc/150?u=24",
+      "testimonial": "Working with Awais was a great experience. He optimized our application, reduced its RAM usage, and improved performance by 30%. His expertise in code optimization made a noticeable impact on our product quality.",
+      "rating": 5,
+      "verified": true
+    }
+  ]
+}
