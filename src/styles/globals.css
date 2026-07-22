@@ -73,9 +73,9 @@
   --color-border-subtle: var(--border-subtle);
   --color-border-focus: var(--border-focus);
 
-  --font-sans: Inter, system-ui, -apple-system, sans-serif;
-  --font-display: "Space Grotesk", Inter, system-ui, -apple-system, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   --radius-sm: 6px;
   --radius-md: 8px;
@@ -105,7 +105,8 @@ html {
 }
 
 body {
-  @apply flex min-h-screen flex-col bg-background font-sans text-foreground antialiased;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  @apply flex min-h-screen flex-col bg-background text-foreground antialiased;
 }
 
 h1,
@@ -248,7 +249,4 @@ a {
 
 .animate-marquee:hover {
   animation-play-state: paused;
-}
-.logo-filter-dark {
-  @apply brightness-125 contrast-110 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)] transition-all duration-500 group-hover:scale-105 group-hover:brightness-140;
 }
