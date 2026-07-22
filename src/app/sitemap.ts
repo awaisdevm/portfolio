@@ -14,11 +14,11 @@ const staticPaths = [
   "/contact",
 ];
 
-// Clean path utility jo trailing slashes ko handle karegi
-function buildAlternates(path: string) {
+// Structural Fix: Variable name changed from 'path' to 'routeUrl' to avoid collision
+function buildAlternates(routeUrl: string) {
   return Object.fromEntries(
     locales.map((locale) => {
-      const localizedPath = path === "" ? `/${locale}` : `/${locale}${path}`;
+      const localizedPath = routeUrl === "" ? `/${locale}` : `/${locale}${routeUrl}`;
       return [locale, `${siteConfig.url}${localizedPath}`];
     })
   );
