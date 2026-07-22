@@ -29,27 +29,27 @@
         },
         "dongamers": {
             "role": "Senior Android Developer",
-            "description": "Led mobile engineering for an international gaming platform[cite: 1]. Migrated legacy Java code to Kotlin, architected real-time chat infrastructure using Pusher, and optimized monetization frameworks[cite: 1].",
+            "description": "Led mobile engineering for an international gaming platform. Migrated legacy Java code to Kotlin, architected real-time chat infrastructure using Pusher, and optimized monetization frameworks.",
             "achievements": [
-                "Elevated app stability to 99% crash-free sessions and reduced production bugs by 20%[cite: 1]",
-                "Migrated app from Java to Kotlin with global availability (99% coverage)[cite: 1]",
-                "Architected real-time chat using Pusher (+15% engagement) and boosted sales by 10% via AdMob/IAP[cite: 1]"
+                "Elevated app stability to 99% crash-free sessions and reduced production bugs by 20%",
+                "Migrated app from Java to Kotlin with global availability (99% coverage)",
+                "Architected real-time chat using Pusher (+15% engagement) and boosted sales by 10% via AdMob/IAP"
             ]
         },
         "freelance": {
             "role": "Freelance Mobile Developer",
-            "description": "Architected and delivered responsive cross-platform mobile applications using Flutter and Dart for international clients, managing full lifecycle delivery from UI prototyping to API integration[cite: 1].",
+            "description": "Architected and delivered responsive cross-platform mobile applications using Flutter and Dart for international clients, managing full lifecycle delivery from UI prototyping to API integration.",
             "achievements": [
-                "Delivered high-fidelity cross-platform Flutter solutions, accelerating client time-to-market[cite: 1]",
-                "Managed end-to-end development lifecycles and stakeholder technical consultations[cite: 1]"
+                "Delivered high-fidelity cross-platform Flutter solutions, accelerating client time-to-market",
+                "Managed end-to-end development lifecycles and stakeholder technical consultations"
             ]
         },
         "netroots": {
             "role": "Android Developer Intern",
-            "description": "Developed enterprise Java applications, including a GPS-based attendance system with image validation and automated HR administrative workflows[cite: 1].",
+            "description": "Developed enterprise Java applications, including a GPS-based attendance system with image validation and automated HR administrative workflows.",
             "achievements": [
-                "Engineered Java GPS attendance system with image validation, boosting accuracy by 40%[cite: 1]",
-                "Automated HR profiling workflows, reducing manual administrative overhead by 50%[cite: 1]"
+                "Engineered Java GPS attendance system with image validation, boosting accuracy by 40%",
+                "Automated HR profiling workflows, reducing manual administrative overhead by 50%"
             ]
         }
     }

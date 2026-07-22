@@ -25,11 +25,11 @@
             "summary": "Enterprise telehealth platform with Jetpack Compose, Agora video calling, and 6-in-1 medical monitor integration.",
             "description": "Production Android telehealth app built with Jetpack Compose and MVI architecture. Features low-latency Agora video consultations, reactive device drivers for Spectra Care 6-in-1 health monitors, and secure SOAP EHR data synchronization.",
             "ctaText": "View on Google Play",
-            "altText": "Spectra Care — Android Native telehealth app with Agora video calling and Spectra IoT health monitor integration built by Muhammad Awais[cite: 1]",
+            "altText": "Spectra Care — Android Native telehealth app with Agora video calling and Spectra IoT health monitor integration built by Muhammad Awais",
             "highlights": [
-                "Agora SDK real-time video consultations[cite: 1]",
-                "Spectra Care 6-in-1 IoT health monitor sync[cite: 1]",
-                "MVI architecture with Jetpack Compose[cite: 1]"
+                "Agora SDK real-time video consultations",
+                "Spectra Care 6-in-1 IoT health monitor sync",
+                "MVI architecture with Jetpack Compose"
             ]
         },
         "zouris": {
@@ -49,27 +49,27 @@
         "egora-b2b": {
             "title": "Egora B2B: Restaurant Partner Platform",
             "category": "B2B Solutions",
-            "summary": "White-labeled partner dashboard for restaurant owners to manage orders, pick-ups, and live reservations[cite: 1].",
-            "description": "White-labeled partner platform engineered using Flutter, Dio, and GetIt[cite: 1]. Empowers restaurant owners to independently manage dine-in, pickup, QR code ordering, and thermal receipt printing with reliable payment integrations[cite: 1].",
+            "summary": "White-labeled partner dashboard for restaurant owners to manage orders, pick-ups, and live reservations.",
+            "description": "White-labeled partner platform engineered using Flutter, Dio, and GetIt. Empowers restaurant owners to independently manage dine-in, pickup, QR code ordering, and thermal receipt printing with reliable payment integrations.",
             "ctaText": "View Project Details",
-            "altText": "Egora B2B restaurant partner dashboard — order, reservation, and QR management built by Muhammad Awais[cite: 1]",
+            "altText": "Egora B2B restaurant partner dashboard — order, reservation, and QR management built by Muhammad Awais",
             "highlights": [
-                "Flutter, Dio, and GetIt architecture[cite: 1]",
-                "Independent multi-merchant dashboards[cite: 1]",
-                "Real-time order sync and notification engine[cite: 1]"
+                "Flutter, Dio, and GetIt architecture",
+                "Independent multi-merchant dashboards",
+                "Real-time order sync and notification engine"
             ]
         },
         "egora": {
             "title": "Egora: Smart Restaurant Ecosystem",
             "category": "Food & Beverage",
-            "summary": "High-scale restaurant ecosystem with QR ordering, reservation management, and Bluetooth hardware integrations[cite: 1].",
-            "description": "Scalable reservation and dining system built using Flutter and Jetpack Compose[cite: 1]. Features QR code ordering, integrated XStax payment processing (10k+ monthly transactions), and custom Bluetooth thermal printer hardware drivers achieving 100% reliability[cite: 1].",
+            "summary": "High-scale restaurant ecosystem with QR ordering, reservation management, and Bluetooth hardware integrations.",
+            "description": "Scalable reservation and dining system built using Flutter and Jetpack Compose. Features QR code ordering, integrated XStax payment processing (10k+ monthly transactions), and custom Bluetooth thermal printer hardware drivers achieving 100% reliability.",
             "ctaText": "View Project Details",
-            "altText": "Egora restaurant app — QR ordering, reservation system, and Bluetooth thermal printer integration built by Muhammad Awais[cite: 1]",
+            "altText": "Egora restaurant app — QR ordering, reservation system, and Bluetooth thermal printer integration built by Muhammad Awais",
             "highlights": [
-                "Driven 30% increase in customer adoption[cite: 1]",
-                "Bluetooth thermal printer integration with 50% reduced latency[cite: 1]",
-                "XStax payment gateway processing 10k+ monthly transactions[cite: 1]"
+                "Driven 30% increase in customer adoption",
+                "Bluetooth thermal printer integration with 50% reduced latency",
+                "XStax payment gateway processing 10k+ monthly transactions"
             ]
         },
         "makernote": {
@@ -101,40 +101,40 @@
         "hcloud": {
             "title": "HCloud: Clinic Management Suite",
             "category": "Doctors App",
-            "summary": "Enterprise operations portal for healthcare providers with appointment and prescription sync[cite: 1].",
-            "description": "Enterprise-grade clinic management application engineered for doctors[cite: 1]. Built with MVVM, Hilt, and Room DB to enable real-time prescription creation, patient records management, and offline-first appointment scheduling[cite: 1].",
+            "summary": "Enterprise operations portal for healthcare providers with appointment and prescription sync.",
+            "description": "Enterprise-grade clinic management application engineered for doctors. Built with MVVM, Hilt, and Room DB to enable real-time prescription creation, patient records management, and offline-first appointment scheduling.",
             "ctaText": "View on Google Play",
-            "altText": "HCloud clinic management suite — real-time prescription sync and appointment scheduling built by Muhammad Awais[cite: 1]",
+            "altText": "HCloud clinic management suite — real-time prescription sync and appointment scheduling built by Muhammad Awais",
             "highlights": [
-                "Dual-app architecture core[cite: 1]",
-                "Offline-first sync queue using Room DB[cite: 1]",
-                "Responsive physician clinical UI[cite: 1]"
+                "Dual-app architecture core",
+                "Offline-first sync queue using Room DB",
+                "Responsive physician clinical UI"
             ]
         },
         "healthwire": {
             "title": "Healthwire: HealthTech Ecosystem",
             "category": "Telehealth Platform",
-            "summary": "Leading healthcare application with 2M+ downloads, telemedicine, lab bookings, and secure payment integrations[cite: 1].",
-            "description": "Architected one of Pakistan's top healthcare platforms — powering pharmacy logistics, lab-test bookings, Twilio video consultations, and local payment gateways (Meezan, JazzCash, Foree) with a 99%+ crash-free session rate[cite: 1].",
+            "summary": "Leading healthcare application with 2M+ downloads, telemedicine, lab bookings, and secure payment integrations.",
+            "description": "Architected one of Pakistan's top healthcare platforms — powering pharmacy logistics, lab-test bookings, Twilio video consultations, and local payment gateways (Meezan, JazzCash, Foree) with a 99%+ crash-free session rate.",
             "ctaText": "View on Google Play",
-            "altText": "Healthwire healthcare app — pharmacy logistics, lab booking, and Twilio telemedicine built by Muhammad Awais[cite: 1]",
+            "altText": "Healthwire healthcare app — pharmacy logistics, lab booking, and Twilio telemedicine built by Muhammad Awais",
             "highlights": [
-                "2M+ downloads on Google Play Store[cite: 1]",
-                "Twilio real-time video consultations (+15% engagement)[cite: 1]",
-                "100% secure payment processing (Meezan, JazzCash, Foree)[cite: 1]"
+                "2M+ downloads on Google Play Store",
+                "Twilio real-time video consultations (+15% engagement)",
+                "100% secure payment processing (Meezan, JazzCash, Foree)"
             ]
         },
         "dongamers": {
             "title": "DonGamers: E-Sports Platform",
             "category": "E-Gaming Platform",
-            "summary": "Global gaming platform featuring real-time Pusher chat, tournament brackets, and optimized monetization[cite: 1].",
-            "description": "Engineered an international e-sports platform on Native Android[cite: 1]. Migrated codebase from Java to Kotlin, architected scalable real-time chat using Pusher (+15% engagement), and optimized In-App Purchases and Google AdMob[cite: 1].",
+            "summary": "Global gaming platform featuring real-time Pusher chat, tournament brackets, and optimized monetization.",
+            "description": "Engineered an international e-sports platform on Native Android. Migrated codebase from Java to Kotlin, architected scalable real-time chat using Pusher (+15% engagement), and optimized In-App Purchases and Google AdMob.",
             "ctaText": "View on Google Play",
-            "altText": "DonGamers e-sports platform — real-time chat and tournament tracking built by Muhammad Awais[cite: 1]",
+            "altText": "DonGamers e-sports platform — real-time chat and tournament tracking built by Muhammad Awais",
             "highlights": [
-                "99% crash-free rate across global availability[cite: 1]",
-                "Real-time chat infrastructure using Pusher[cite: 1]",
-                "Monetization optimization boosting sales by 10%[cite: 1]"
+                "99% crash-free rate across global availability",
+                "Real-time chat infrastructure using Pusher",
+                "Monetization optimization boosting sales by 10%"
             ]
         }
     }

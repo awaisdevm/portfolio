@@ -142,10 +142,16 @@ export function PreviewCard({
 
       {/* Media Block */}
       <div className="relative flex h-[45%] w-full items-center justify-center overflow-hidden border-b border-border/50 bg-surface-sunken/40">
-        <div className="relative h-full w-full flex items-center justify-center overflow-hidden transition-transform duration-500 group-hover:scale-105">
+        <div className="relative flex h-full w-full items-center justify-center p-6 brightness-125 contrast-110 drop-shadow-[0_0_12px_rgba(255,255,255,0.25)] transition-all duration-500 group-hover:scale-105">
           {media}
         </div>
       </div>
+
+      {/* <div className="relative flex h-[45%] w-full items-center justify-center overflow-hidden border-b border-border/50 bg-surface-sunken/40">
+        <div className="relative h-full w-full flex items-center justify-center overflow-hidden transition-transform duration-500 group-hover:scale-105">
+          {media}
+        </div>
+      </div>*/}
 
       {/* Bottom Content Area - Solid surface background to prevent mixing with page background */}
       <div className="relative z-40 flex flex-grow flex-col justify-end bg-surface px-5 pb-5 pt-4 sm:px-6 sm:pb-6">

@@ -8,7 +8,7 @@
         "isOnPlayStore": true,
         "isOnAppStore": false,
         "image": "/projects/spectra-care.webp",
-        "url": "https://play.google.com/store/apps/details?id=com.spectra.care",
+        "url": "https://play.google.com/store/apps/details?id=com.strl.spectracare",
         "iosUrl": "#",
         "tech": [
             "Android Native",

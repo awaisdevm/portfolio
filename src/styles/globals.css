@@ -249,3 +249,6 @@ a {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+.logo-filter-dark {
+  @apply brightness-125 contrast-110 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)] transition-all duration-500 group-hover:scale-105 group-hover:brightness-140;
+}

@@ -11,7 +11,7 @@
     },
     "about": {
         "title": "About | Muhammad Awais - Senior Mobile App Developer (6+ YOE)",
-        "description": "Learn about Muhammad Awais, a Senior Mobile Engineer with 6+ years of experience in Android, KMP, CMP, Flutter, MVI/MVVM, and high-scale systems maintaining a 99%+ crash-free rate[cite: 1].",
+        "description": "Learn about Muhammad Awais, a Senior Mobile Engineer with 6+ years of experience in Android, KMP, CMP, Flutter, MVI/MVVM, and high-scale systems maintaining a 99%+ crash-free rate.",
         "keywords": "About Muhammad Awais, Senior Android Engineer, Mobile Systems Architect, KMP specialist, Flutter developer Pakistan, Clean Architecture expert, Mobile dev background"
     },
     "contact": {
@@ -26,12 +26,12 @@
     },
     "services": {
         "title": "Mobile Engineering Services | Native Android, KMP & Flutter Consulting",
-        "description": "End-to-end mobile development services: Native Android (Kotlin), KMP/CMP cross-platform engineering, IoT hardware integrations, and legacy code modernization[cite: 1].",
+        "description": "End-to-end mobile development services: Native Android (Kotlin), KMP/CMP cross-platform engineering, IoT hardware integrations, and legacy code modernization.",
         "keywords": "Mobile App Development Services, Android Consulting, Kotlin Multiplatform Development, Flutter Development Services, Clean Architecture Consulting, IoT Mobile Integration"
     },
     "blog": {
         "title": "Engineering Blog | Mobile Architecture, KMP, CMP & Android Insights",
-        "description": "In-depth technical articles on Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP), Jetpack Compose, and clean mobile system design[cite: 1].",
+        "description": "In-depth technical articles on Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP), Jetpack Compose, and clean mobile system design.",
         "keywords": "Mobile Development Blog, Kotlin Multiplatform Tutorials, Jetpack Compose Best Practices, Mobile Architecture Insights, Clean Architecture Mobile, KMP vs Flutter"
     }
 }

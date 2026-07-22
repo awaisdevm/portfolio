@@ -17,7 +17,7 @@
         },
         "architecture": {
             "title": "Mobile Architecture & Codebase Modernization",
-            "description": "Refactoring monolithic codebases into modular Clean Architecture, migrating Java to Kotlin, and tuning app stability to achieve 99%+ crash-free session rates[cite: 1]."
+            "description": "Refactoring monolithic codebases into modular Clean Architecture, migrating Java to Kotlin, and tuning app stability to achieve 99%+ crash-free session rates."
         }
     }
 }
