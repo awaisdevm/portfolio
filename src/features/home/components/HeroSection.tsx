@@ -59,15 +59,15 @@ interface HeroSectionProps {
 // 2. SUB-COMPONENTS (Single Responsibility Principle)
 // ============================================================================
 
-/** Status indicator for availability */
+/** Status indicator for availability with fixed spacing and vertical alignment */
 function AvailabilityBadge({ text }: { text: string }) {
   return (
-    <p className="eyebrow">
-      <span className="relative flex h-2 w-2">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75 motion-reduce:animate-none" />
-        <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
+    <p className="eyebrow flex items-center gap-2.5">
+      <span className="relative flex h-2.5 w-2.5 shrink-0">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75 motion-reduce:animate-none" />
+        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
       </span>
-      {text}
+      <span>{text}</span>
     </p>
   );
 }
@@ -154,7 +154,7 @@ export default function HeroSection({ translate, homeData }: HeroSectionProps) {
       <div className={THEME_CONFIG.styles.layoutGrid}>
 
         {/* Left Side: Content & Actions */}
-        <AnimatedSection className="flex flex-col items-center justify-center text-center lg:items-start lg:text-left w-full">
+        <div className="flex flex-col items-center justify-center text-center lg:items-start lg:text-left w-full">
           <AvailabilityBadge text={availabilityText} />
 
           <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl text-heading">
@@ -189,9 +189,9 @@ export default function HeroSection({ translate, homeData }: HeroSectionProps) {
             <StatCounter value={stats.projectsCompleted} label={translate("home.stats.completed")} />
             <StatCounter value={stats.appsOnStores} label={translate("home.stats.stores")} />
           </div>
-        </AnimatedSection>
+        </div>
 
-        {/* Right Side: Portrait Visuals (Removed AnimatedSection to eliminate LCP render delay) */}
+        {/* Right Side: Portrait Visuals */}
         <div className="flex w-full items-center justify-center lg:justify-end">
           <HeroPortrait />
         </div>
