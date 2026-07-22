@@ -1,37 +1,37 @@
 {
     "home": {
-        "title": "محمد اویس | اینڈرائیڈ اور کوٹلن ملٹی پلیٹ فارم ڈویلپر",
-        "description": "فری لانس اینڈرائیڈ ڈویلپر جو کوٹلن ملٹی پلیٹ فارم، کمپوز ملٹی پلیٹ فارم اور فلٹر کے ساتھ لائیو ایپس تیار کرتا ہے۔",
-        "keywords": "اینڈرائیڈ ڈویلپر, کوٹلن ملٹی پلیٹ فارم, کمپوز ملٹی پلیٹ فارم, فلٹر, موبائل ایپ ڈویلپر, فری لانس ڈویلپر"
+        "title": "محمد اویس | Senior Mobile App Developer & Multiplatform Architect",
+        "description": "6+ سالہ تجربے کے حامل سینئر موبائل انجینئر، جو Native Android، Kotlin Multiplatform (KMP)، Compose Multiplatform (CMP) اور Flutter پر اعلیٰ معیار کی پروڈکشن ایپس تیار کرتے ہیں۔",
+        "keywords": "Senior Mobile Developer, Native Android Developer, Kotlin Multiplatform Engineer, Compose Multiplatform, Flutter Developer, Mobile Architect, Clean Architecture, Lahore Developer, سینئر موبائل ڈیولپر, لاہور ڈیولپر"
     },
     "projects": {
-        "title": "پروجیکٹس | اینڈرائیڈ اور کوٹلن ملٹی پلیٹ فارم ایپ پورٹ فولیو",
-        "description": "مکمل اور ریلیز شدہ نیٹیو اینڈرائیڈ، KMP، کمپوز ملٹی پلیٹ فارم، اور فلٹر ایپس دیکھیں۔",
-        "keywords": "موبائل ایپ پورٹ فولیو, اینڈرائیڈ پروجیکٹس, KMP ایپس, کمپوز ملٹی پلیٹ فارم, فلٹر شوکیس, مکمل شدہ ایپس"
+        "title": "پروجیکٹس پورٹ فولیو | Native Android, KMP & Flutter Apps - محمد اویس",
+        "description": "HealthTech، FinTech اور IoT ہارڈویئر انٹیگریشنز کی پروڈکشن ایپس دیکھیں، جو Jetpack Compose، Flutter اور اسکیل ایبل موبائل آرکیٹیکچر کے ساتھ تیار کی گئی ہیں۔",
+        "keywords": "Mobile app portfolio, Android app case studies, Flutter apps showcase, Jetpack Compose projects, Telehealth apps, IoT mobile integrations, Shipped mobile apps, موبائل ایپ پورٹ فولیو"
     },
     "about": {
-        "title": "ہمارے بارے میں | محمد اویس، موبائل ڈویلپر",
-        "description": "4 سال سے زائد کا تجربہ، لائیو اینڈرائیڈ ایپس اور کوٹلن ملٹی پلیٹ فارم سسٹمز کی تیاری میں۔",
-        "keywords": "محمد اویس کے بارے میں, موبائل ڈویلپر, اینڈرائیڈ ماہر, KMP ڈویلپر, سافٹ ویئر انجینئرنگ, موبائل آرکیٹیکچر"
+        "title": "تعارف | محمد اویس - سینئر موبائل ایپ ڈیولپر (6+ سالہ تجربہ)",
+        "description": "محمد اویس کے بارے میں جانیں — 6+ سالہ تجربے کے حامل سینئر موبائل انجینئر، جو Android، KMP، CMP، Flutter، MVI/MVVM اور 99%+ کریش فری ریٹ والے ہائی اسکیل سسٹمز کے ماہر ہیں۔",
+        "keywords": "About Muhammad Awais, Senior Android Engineer, Mobile Systems Architect, KMP specialist, Flutter developer Pakistan, Clean Architecture expert, Mobile dev background, محمد اویس کا تعارف"
     },
     "contact": {
-        "title": "رابطہ کریں | اینڈرائیڈ اور کوٹلن ملٹی پلیٹ فارم ڈویلپر کی خدمات حاصل کریں",
-        "description": "اپنا موبائل ایپ پروجیکٹ شروع کریں۔ اپنے پلیٹ فارم کی ضروریات شیئر کریں۔",
-        "keywords": "موبائل ڈویلپر کی خدمات, اینڈرائیڈ ماہر سے رابطہ, ایپ ڈویلپمنٹ سروسز, KMP ڈویلپر ہائر کریں, فری لانس موبائل ڈویلپر"
+        "title": "رابطہ کریں | ہائر کریں Senior Android, KMP & Flutter Developer - محمد اویس",
+        "description": "اپنا موبائل ایپ پروجیکٹ شروع کریں یا کراس پلیٹ فارم انجینئرنگ پر مشاورت حاصل کریں۔ سینئر لیول Android، KMP یا Flutter ڈیولپمنٹ کے لیے براہِ راست رابطہ کریں۔",
+        "keywords": "Hire Senior Mobile Developer, Hire Android Expert, KMP Consultant, Freelance Flutter Engineer, Mobile App Development Services, Contact Muhammad Awais, موبائل ایپ ڈیولپر ہائر کریں"
     },
     "testimonials": {
-        "title": "صارفین کی رائے | دیو اویس (Devawais)",
-        "description": "دیکھیں کہ ہمارے کلائنٹس ہماری اینڈرائیڈ، کوٹلن ملٹی پلیٹ فارم، اور فلٹر ڈویلپمنٹ سروسز کے بارے میں کیا کہتے ہیں۔",
-        "keywords": "صارفین کی رائے, کلائنٹ ریویوز, فلٹر ڈویلپمنٹ, اینڈرائیڈ ڈویلپمنٹ, KMP, موبائل ایپ کی کامیابی کی کہانیاں"
+        "title": "کلائنٹ ریویوز اور فیڈ بیک | سینئر موبائل ڈیولپر - محمد اویس",
+        "description": "فاؤنڈرز اور انجینئرنگ لیڈرز کے ریویوز اور کلائنٹ ٹیسٹیمونیئلز پڑھیں، جو Native Android، Kotlin Multiplatform اور Flutter پروجیکٹس کے بارے میں ہیں۔",
+        "keywords": "Client testimonials, devawais reviews, mobile developer recommendations, Android consultant feedback, Flutter developer reviews, software client feedback, کلائنٹ کی رائے"
     },
     "services": {
-        "title": "موبائل ایپ ڈویلپمنٹ سروسز | محمد اویس",
-        "description": "ماہرانہ موبائل انجینئرنگ سروسز بشمول نیٹیو اینڈرائیڈ، کوٹلن ملٹی پلیٹ فارم، اور پائیدار لائیو ایپس کے لیے فلٹر آرکیٹیکچر۔",
-        "keywords": "موبائل ایپ ڈویلپمنٹ, اینڈرائیڈ ڈویلپمنٹ سروسز, کوٹلن ملٹی پلیٹ فارم کنسلٹنسی, فلٹر ڈویلپمنٹ, ایپ آرکیٹیکچر, پائیدار موبائل سسٹمز"
+        "title": "موبائل انجینئرنگ سروسز | Native Android, KMP & Flutter کنسلٹنگ",
+        "description": "اینڈ ٹو اینڈ موبائل ڈیولپمنٹ سروسز: Native Android (Kotlin)، KMP/CMP کراس پلیٹ فارم انجینئرنگ، IoT ہارڈویئر انٹیگریشنز، اور سابقہ کوڈ کی جدید کاری۔",
+        "keywords": "Mobile App Development Services, Android Consulting, Kotlin Multiplatform Development, Flutter Development Services, Clean Architecture Consulting, IoT Mobile Integration, موبائل ایپ سروسز"
     },
     "blog": {
-        "title": "بلاگ | موبائل آرکیٹیکچر اور KMP معلومات",
-        "description": "تکنیکی معلومات، کوٹلن ملٹی پلیٹ فارم پر اسباق، اور مضبوط موبائل ایپلی کیشنز بنانے کے بہترین طریقے۔",
-        "keywords": "موبائل ڈویلپمنٹ بلاگ, کوٹلن ملٹی پلیٹ فارم تجاویز, اینڈرائیڈ آرکیٹیکچر, سافٹ ویئر انجینئرنگ معلومات, KMP کے بہترین طریقے, موبائل ایپ پرفارمنس"
+        "title": "انجینئرنگ بلاگ | موبائل آرکیٹیکچر، KMP، CMP اور Android انسائٹس",
+        "description": "Native Android، Kotlin Multiplatform (KMP)، Compose Multiplatform (CMP)، Jetpack Compose اور کلین موبائل سسٹم ڈیزائن پر تفصیلی تکنیکی مضامین۔",
+        "keywords": "Mobile Development Blog, Kotlin Multiplatform Tutorials, Jetpack Compose Best Practices, Mobile Architecture Insights, Clean Architecture Mobile, KMP vs Flutter, موبائل ڈیولپمنٹ بلاگ"
     }
 }

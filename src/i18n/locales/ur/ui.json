@@ -1,109 +1,109 @@
 {
     "nav": {
         "home": "ہوم",
-        "about": "ہمارے بارے میں",
+        "about": "تعارف",
         "projects": "پروجیکٹس",
         "blog": "بلاگ",
         "contact": "رابطہ",
-        "services": "خدمات",
-        "testimonials": "صارفین کی رائے"
+        "services": "سروسز",
+        "testimonials": "تاثرات"
     },
     "cta": {
-        "bookedStatus": "فی الوقت تیسری سہ ماہی (Q3) 2026 کے لیے بوکنگ جاری ہے",
-        "title": "کیا آپ کے پاس کوئی موبائل ایپ کا آئیڈیا ہے جسے لانچ کرنا ہے؟",
-        "description": "مجھے اپنی پروڈکٹ اور پلیٹ فارم کی ضروریات کے بارے میں بتائیں — میں ایک کاروباری دن کے اندر اگلے مراحل کے ساتھ جواب دوں گا۔",
+        "bookedStatus": "فی الوقت Q3 2026 کے لیے پروجیکٹ بُکنگ جاری ہے",
+        "title": "کیا آپ کے پاس ہائی اسکیل موبائل ایپ کا خیال یا ملٹی پلیٹ فارم پروجیکٹ ہے؟",
+        "description": "مجھے اپنے پروڈکٹ کے اہداف، آرکیٹیکچر کی ضروریات، یا KMP/Flutter مائیگریشن کے بارے میں بتائیں — میں ایک ورکنگ ڈے کے اندر واضح ٹیکنیکل روڈ میپ کے ساتھ جواب دوں گا۔",
         "startProject": "پروجیکٹ شروع کریں",
-        "seeWork": "میرا کام دیکھیں"
+        "seeWork": "پورٹ فولیو دیکھیں"
     },
     "footer": {
         "copyright": "© {year} محمد اویس۔ جملہ حقوق محفوظ ہیں۔",
         "poweredBy": "Next.js اور Tailwind CSS کے ساتھ تیار کردہ",
-        "navigate": "نیویگیٹ کریں",
-        "specialties": "مہارتیں",
+        "navigate": "نیویگیشن",
+        "specialties": "خصوصی مہارتیں",
         "getInTouch": "رابطہ کریں",
         "specialtiesList": [
-            "نیٹیو اینڈرائیڈ (Kotlin)",
-            "کوٹلن ملٹی پلیٹ فارم (KMP)",
-            "کمپوز ملٹی پلیٹ فارم (CMP)",
-            "فلٹر اور کراس پلیٹ فارم"
+            "Native Android (Kotlin & Java)",
+            "Kotlin Multiplatform (KMP)",
+            "Compose Multiplatform (CMP)",
+            "Flutter Cross-Platform"
         ]
     },
     "profile": {
-        "title": "موبائل ایپ ڈویلپر",
-        "subtitle": "اینڈرائیڈ • کوٹلن ملٹی پلیٹ فارم • کمپوز ملٹی پلیٹ فارم • فلٹر",
-        "bio": "4 سال سے زائد کا تجربہ رکھنے والے موبائل ڈویلپر جو لائیو ایپس تیار کر چکے ہیں۔ نیٹیو اینڈرائیڈ، کوٹلن ملٹی پلیٹ فارم (KMP)، کمپوز ملٹی پلیٹ فارم (CMP) اور فلٹر میں مہارت حاصل ہے۔ کلین آرکیٹیکچر کے ساتھ پائیدار اور آسانی سے برقرار رہنے والے کراس پلیٹ فارم سسٹم تیار کرتا ہوں۔",
-        "location": "لاہور، پاکستان",
-        "availability": "نئے مواقع کے لیے دستیاب"
+        "title": "Senior Mobile App Developer & Architect",
+        "subtitle": "Native Android • Kotlin Multiplatform (KMP) • Compose Multiplatform (CMP) • Flutter",
+        "bio": "6+ سالہ انجینئرنگ تجربے کے حامل سینئر موبائل ایپ ڈیولپر، جو HealthTech، FinTech، IoT اور E-commerce کے لیے اسکیل ایبل پروڈکشن ایپس تیار کرتے ہیں۔ Clean Architecture اور MVI/MVVM ڈیزائن پیٹرنز کے ساتھ Native Android، Kotlin Multiplatform (KMP)، Compose Multiplatform (CMP)، اور Flutter میں تخصیص حاصل ہے۔",
+        "location": "لاہور، پاکستان (عالمی سطح پر دستیاب)",
+        "availability": "سینئر عُہدوں اور اسٹریٹجک کنسلٹنگ کے لیے دستیاب"
     },
     "skills": {
-        "title": "تکنیکی مہارتیں",
-        "subtitle": "مختلف ٹیکنالوجیز میں میرا پیشہ ورانہ ٹول کٹ",
-        "languages": "زبانیں",
-        "android": "نیٹیو اینڈرائیڈ",
-        "multiplatform": "ملٹی پلیٹ فارم (KMP/CMP)",
-        "flutter": "فلٹر",
-        "architecture": "آرکیٹیکچر اور طریقے",
-        "tools": "ٹولز اور انٹیگریشنز"
+        "title": "تکنیکی مہارتیں (Technical Arsenal)",
+        "subtitle": "نیٹو اور ملٹی پلیٹ فارم ایکو سسٹمز میں میری پیشہ ورانہ ٹول کٹ",
+        "languages": "پروگرامنگ زبانیں (Kotlin, Dart, Java)",
+        "android": "Native Android (Jetpack Compose, TV, Custom UI)",
+        "multiplatform": "Multiplatform (KMP & CMP)",
+        "flutter": "Flutter (BLoC, Riverpod, GetIt)",
+        "architecture": "Architecture & Async (Clean, MVI, MVVM, Coroutines)",
+        "tools": "IoT, Payments & DevOps (Agora, Hardware SDKs, CI/CD)"
     },
     "home": {
-        "availability": "فری لانس پروجیکٹس کے لیے دستیاب",
-        "heading1": "موبائل ایپس جو ایک بار بنتی ہیں، ",
-        "heading2": "اور ہر جگہ چلتی ہیں۔",
-        "description": "میں محمد اویس ہوں، ایک موبائل ایپ ڈویلپر جس کی بنیادی مہارت نیٹیو اینڈرائیڈ (Kotlin & Java) میں ہے، اور 2 سال سے زائد کا تجربہ کوٹلن ملٹی پلیٹ فارم، کمپوز ملٹی پلیٹ فارم، اور فلٹر کے ساتھ لائیو ایپس بنانے میں ہے۔",
+        "availability": "کنٹریکٹ اور فل سائیکل ڈیولپمنٹ کے لیے دستیاب",
+        "heading1": "اعلیٰ کارکردگی کی حامل موبائل ایپس۔ ",
+        "heading2": "Native, KMP, & Flutter.",
+        "description": "میں محمد اویس ہوں — 6+ سالہ تجربے کا حامل سینئر موبائل ڈیولپر جو مضبوط موبائل سسٹمز انجینئر کرتے ہیں۔ میری تخصیص Native Android (Kotlin/Java)، Kotlin Multiplatform (KMP)، Compose Multiplatform (CMP)، اور Flutter میں ہے — اور میں نے 25+ تیار کردہ ایپلیکیشنز میں 99%+ کریش فری ریٹ برقرار رکھا ہے۔",
         "buttonStart": "پروجیکٹ شروع کریں",
-        "buttonView": "پروجیکٹس دیکھیں",
-        "skillsEyebrow": "ٹول کٹ",
+        "buttonView": "منتخب کام دیکھیں",
+        "skillsEyebrow": "ٹیک اسٹیک",
         "skillsTitle": "تکنیکی مہارتیں",
         "stats": {
-            "experience": "سال کا تجربہ",
-            "completed": "مکمل شدہ پروجیکٹس",
-            "stores": "ایپ سٹورز پر ایپس"
+            "experience": "6+ سال کا تجربہ",
+            "completed": "25+ لائیو پروجیکٹس",
+            "stores": "اسٹور پر موجود ایپس"
         },
-        "selectedWork": "منتخب کردہ کام",
-        "recentProjects": "حالیہ پروجیکٹس",
-        "allProjectsLink": "تمام پروجیکٹس",
-        "processTitle": "کام کرنے کا طریقہ کار",
-        "processSubtitle": "ایک ایسا طریقہ کار جو میٹنگز کے بجائے کام مکمل کرنے پر مرکوز ہے",
+        "selectedWork": "منتخب کام",
+        "recentProjects": "نمایاں پروڈکشن پروجیکٹس",
+        "allProjectsLink": "تمام پروجیکٹس دیکھیں",
+        "processTitle": "پروجیکٹ پر کام کا طریقہ کار",
+        "processSubtitle": "پائیدار اور اسکیل ایبل کوڈ کی ڈیلیوری کے لیے ایک عملی پراسیس",
         "processSteps": {
             "01": {
-                "title": "تحقیق و جائزہ (Discovery)",
-                "body": "ایک جامع کال جس میں سکوپ، پلیٹ فارمز، اور لانچ کے حتمی اہداف کا تعین کیا جاتا ہے۔"
+                "title": "اسکوپنگ اور تفہیم (Discovery & Scoping)",
+                "body": "پروجیکٹ کے اسکوپ، بنیادی پلیٹ فارم ضروریات (Android, iOS, KMP, یا Flutter)، اور واضح انجینئرنگ اہداف کا تفصیلی جائزہ۔"
             },
             "02": {
-                "title": "آرکیٹیکچر",
-                "body": "UI کوڈ لکھنے سے پہلے، میں ماڈیول کا ڈھانچہ — Clean Architecture لیئرز اور مشترکہ بمقابلہ پلیٹ فارم کوڈ — ڈیزائن کرتا ہوں۔"
+                "title": "آرکیٹیکچر کا تعمیر (Architecture First)",
+                "body": "ماڈیولر Clean Architecture کا قیام — شیئرڈ KMP بزنس لاجک، قابلِ پیشگوئی MVI/MVVM اسٹیٹ مینجمنٹ، اور یکجا پلیٹ فارم UI۔"
             },
             "03": {
-                "title": "تیاری (Build)",
-                "body": "ہفتہ وار بنیادوں پر ایسی بلڈز جو آپ صرف پیشرفت کی رپورٹ دیکھنے کے بجائے اصلی ڈیوائس پر انسٹال اور ٹیسٹ کر سکتے ہیں۔"
+                "title": "مرحلہ وار ڈیولپمنٹ (Iterative Build)",
+                "body": "CI/CD آٹومیشن کے ساتھ ہفتہ وار پروڈکشن گریڈ بلڈز، جنہیں آپ حقیقی ڈیوائسز پر انسٹال اور ٹیسٹ کر سکتے ہیں۔"
             },
             "04": {
-                "title": "لانچ (Ship)",
-                "body": "سٹور لسٹنگ، ریلیز پائپ لائن، اور ایسی دستاویزات جو آپ کی آئندہ ٹیم بھی باآسانی استعمال کر سکے۔"
+                "title": "لانچ اور اسکیل (Ship & Scale)",
+                "body": "اسٹور لانچ، ریلیز پائپ لائنز کا سیٹ اپ، کریش رپورٹنگ، اور طویل المدتی اسکیل ایبلٹی کے لیے مکمل ٹیکنیکل ہینڈ اوور۔"
             }
         },
-        "feedbackTitle": "کلائنٹس کی رائے",
-        "feedbackSubtitle": "کلائنٹس کیا کہتے ہیں",
-        "allTestimonialsLink": "تمام تبصرے"
+        "feedbackTitle": "کلائنٹ فیڈ بیک",
+        "feedbackSubtitle": "انجینئرنگ لیڈرز اور فاؤنڈرز کی رائے",
+        "allTestimonialsLink": "تمام تاثرات پڑھیں"
     },
     "contact": {
         "title": "رابطہ",
-        "headerTitle": "مجھے بتائیں کہ آپ کیا بنانا چاہتے ہیں۔",
-        "headerDesc": "ای میل کے ذریعے براہ راست رابطہ کریں یا پروفیشنل چینلز پر جڑیں — میں ایک کاروباری دن کے اندر ذاتی طور پر جواب دیتا ہوں۔",
+        "headerTitle": "آئیے آپ کا اگلا موبائل پروجیکٹ مل کر تیار کریں۔",
+        "headerDesc": "ای میل یا پیشہ ورانہ نیٹ ورکس کے ذریعے براہِ راست رابطہ کریں — میں ایک ورکنگ ڈے کے اندر جواب دیتا ہوں۔",
         "locationTitle": "مقام",
         "form": {
             "nameLabel": "نام",
             "emailLabel": "ای میل",
-            "platformLabel": "پلیٹ فارم",
+            "platformLabel": "پلیٹ فارم (Android / KMP / CMP / Flutter)",
             "budgetLabel": "بجٹ کی حد",
-            "detailsLabel": "پروجیکٹ کی تفصیلات",
+            "detailsLabel": "پروجیکٹ کی تفصیلات یا عہدے کا اسکوپ",
             "buttonSend": "پیغام بھیجیں",
-            "successTitle": "پیغام بھیج دیا گیا",
-            "successMessage": "رابطہ کرنے کا شکریہ — میں ہر پیغام خود پڑھتا ہوں۔"
+            "successTitle": "پیغام کامیابی سے بھیج دیا گیا",
+            "successMessage": "رابطہ کرنے کا شکریہ — میں ہر انکوائری کو توجہ سے پڑھتا ہوں اور فوری جواب دیتا ہوں۔"
         }
     },
     "notfound": {
-        "eyebrow": "404",
+        "eyebrow": "404 غلطی",
         "title": "یہ صفحہ موجود نہیں ہے۔",
         "button": "ہوم پیج پر واپس جائیں"
     }

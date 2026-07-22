@@ -1,8 +1,8 @@
 {
-    "title": "بلاگ",
-    "headerTitle": "مضامین اور معلومات",
-    "headerDesc": "اینڈرائیڈ، کوٹلن ملٹی پلیٹ فارم، اور موبائل سافٹ ویئر آرکیٹیکچر پر خیالات۔",
-    "minRead": "منٹ کے مطالعے کا وقت",
-    "readArticle": "مضمون پڑھیں",
-    "emptyState": "فی الحال کوئی مضمون نہیں ملا۔ جلد دوبارہ چیک کریں!"
+    "title": "تکنیکی مضامین اور انجینئرنگ بصیرت",
+    "headerTitle": "موبائل آرکیٹیکچر اور ٹیک انسائٹس",
+    "headerDesc": "Native Android، Kotlin Multiplatform (KMP)، Compose Multiplatform (CMP)، Flutter، اور پروڈکشن گریڈ Clean Architecture کا تفصیلی اور فنی جائزہ۔",
+    "minRead": "منٹ کا مطالعہ",
+    "readArticle": "مکمل مضمون پڑھیں",
+    "emptyState": "KMP، Compose Multiplatform اور موبائل آرکیٹیکچر پر مضامین جلد شائع کیے جائیں گے۔ اس اثنا میں، میرے منتخب پروڈکشن پروجیکٹس ملاحظہ فرمائیں!"
 }

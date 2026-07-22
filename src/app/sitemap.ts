@@ -14,18 +14,20 @@ const staticPaths = [
   "/contact",
 ];
 
+// Clean path utility jo trailing slashes ko handle karegi
 function buildAlternates(path: string) {
   return Object.fromEntries(
-    locales.map((locale) => [
-      locale,
-      `${siteConfig.url}/${locale}${path}`,
-    ])
+    locales.map((locale) => {
+      const localizedPath = path === "" ? `/${locale}` : `/${locale}${path}`;
+      return [locale, `${siteConfig.url}${localizedPath}`];
+    })
   );
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
+  // 1. Static Routes
   const staticRoutes = locales.flatMap((locale) =>
     staticPaths.map((route) => {
       const path = route === "" ? `/${locale}` : `/${locale}${route}`;
@@ -41,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
+  // 2. Dynamic Project Routes
   const projectRoutes = locales.flatMap((locale) =>
     rawProjects.map((p) => ({
       url: `${siteConfig.url}/${locale}/projects/${p.slug}`,
