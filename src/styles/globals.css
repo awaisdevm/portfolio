@@ -86,8 +86,9 @@
   --radius-full: 9999px;
 
   /* ⚡ Tailwind v4 Theme Keyframe & Animation Registration */
-  --animate-marquee: marquee 25s linear infinite;
-  --animate-marquee-rtl: marquee-rtl 25s linear infinite;
+  --animate-marquee: marquee 70s linear infinite;
+  --animate-marquee-rtl: marquee-rtl 70s linear infinite;
+
   --animate-liquid: liquid 12s ease-in-out infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -217,22 +218,20 @@ a {
 }
 
 @keyframes marquee {
-  from {
-    transform: translateX(0);
+  0% {
+    transform: translateX(0%);
   }
-
-  to {
+  100% {
     transform: translateX(-50%);
   }
 }
 
 @keyframes marquee-rtl {
-  from {
-    transform: translateX(-50%);
+  0% {
+    transform: translateX(0%);
   }
-
-  to {
-    transform: translateX(0);
+  100% {
+    transform: translateX(50%);
   }
 }
 
