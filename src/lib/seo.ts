@@ -46,7 +46,7 @@ export function buildSharedFields(locale: Locale, path: string, title: string, d
             locale: ogLocaleMap[locale],
             images: [
                 {
-                    url: `${siteConfig.url}/brand/og-image.png`,
+                    url: `${siteConfig.url}/${locale}/brand/og-image.png`,
                     width: 1200,
                     height: 630,
                     alt: title,
@@ -57,7 +57,7 @@ export function buildSharedFields(locale: Locale, path: string, title: string, d
             card: "summary_large_image",
             title,
             description,
-            images: [`${siteConfig.url}/brand/og-image.png`],
+            images: [`${siteConfig.url}/${locale}/brand/og-image.png`],
         },
         robots: {
             index: true,
