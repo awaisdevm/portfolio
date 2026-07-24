@@ -17,7 +17,9 @@
             "Spectra SDK (IoT)",
             "6-in-1 Health Monitor",
             "Doctor Appointments",
-            "Lab Test Booking"
+            "Lab Test Booking",
+            "Google Analytics",
+            "Firebase Crashlytics"
         ]
     },
     {
@@ -33,13 +35,12 @@
         "iosUrl": "https://apps.apple.com/ae/app/zouris/id6759085359",
         "tech": [
             "Flutter",
-            "Kotlin Multiplatform",
-            "Compose Multiplatform",
-            "Ktor Streaming",
             "Interactive Coaching",
             "Mindfulness Practices",
             "Decompose Navigation",
-            "SQLDelight"
+            "Audio/Video Player",
+            "Google Analytics",
+            "Firebase Crashlytics"
         ]
     },
     {
@@ -55,19 +56,25 @@
         "iosUrl": "#",
         "tech": [
             "Flutter",
-            "Kotlin Multiplatform",
-            "Compose Multiplatform",
-            "SQLDelight Cache",
+            "Mongo-dart",
             "Order Management",
-            "Reservation Control",
-            "Ktor"
+            "White Labeled",
+            "GoRouter",
+            "Cart Management",
+            "Google Maps",
+            "Socket.IO",
+            "Geolocator",
+            "Firebase",
+            "DIO",
+            "Google Analytics",
+            "Firebase Crashlytics"
         ]
     },
     {
         "id": 4,
         "updatedAt": "2026-07-17T11:52:00Z",
         "slug": "egora",
-        "technology": "Flutter (KMP)",
+        "technology": "Flutter",
         "platform": "flutter",
         "isOnPlayStore": false,
         "isOnAppStore": false,
@@ -76,20 +83,22 @@
         "iosUrl": "#",
         "tech": [
             "Flutter",
-            "Kotlin Multiplatform",
-            "Shared Business Logic",
             "QR Code Ordering Engine",
-            "Ktor HTTP Client",
+            "Google Maps",
             "Order Management",
-            "SQLDelight",
-            "Payment Integration"
+            "Payment Integration",
+            "Socket.IO",
+            "Geolocator",
+            "DIO",
+            "Google Analytics",
+            "Firebase Crashlytics"
         ]
     },
     {
         "id": 5,
         "updatedAt": "2026-07-17T11:52:00Z",
         "slug": "makernote",
-        "technology": "Flutter (KMP)",
+        "technology": "Flutter",
         "platform": "flutter",
         "isOnPlayStore": false,
         "isOnAppStore": true,
@@ -98,12 +107,11 @@
         "iosUrl": "https://apps.apple.com/hk/app/makernote/id6475201417?l=en-GB",
         "tech": [
             "Flutter",
-            "Kotlin Multiplatform",
-            "Firebase Multiplatform",
-            "MVI Architecture",
-            "Koin DI",
+            "AI/ML hand writing detection",
             "Real-time Sync",
-            "Offline Support"
+            "Clean Architecture",
+            "Google Analytics",
+            "Firebase Crashlytics"
         ]
     },
     {
@@ -120,13 +128,14 @@
         "tech": [
             "Android Native",
             "Kotlin",
-            "Jetpack Compose",
+            "XML View",
             "Barcode Scanning",
             "Recipe API Integration",
             "Nutritional Tracking",
             "Expiry Management",
-            "ML Kit",
-            "Room DB"
+            "Room DB",
+            "Google Analytics",
+            "Firebase Crashlytics"
         ]
     },
     {
@@ -144,8 +153,11 @@
             "Clean Architecture",
             "Retrofit Integration",
             "Real-time Sync",
-            "Advanced CI/CD",
-            "Kotlin"
+            "Kotlin",
+            "MVVM",
+            "Twilio SDK",
+            "Google Analytics",
+            "Firebase Crashlytics"
         ]
     },
     {
@@ -162,10 +174,26 @@
         "tech": [
             "Kotlin Native",
             "Jetpack Compose",
+            "Clean Architecture",
+            "MVVM",
+            "Hilt Dependency Injection",
+            "Room DB",
+            "WorkManager",
+            "Twilio Video Calling",
+            "Zendesk SDK / Freshchat",
+            "Firebase Cloud Messaging (FCM)",
+            "Firebase Remote Config & Dynamic Links",
+            "Google Analytics",
+            "Firebase Crashlytics",
+            "Segment Analytics",
+            "Mixpanel Analytics",
+            "Facebook SDK",
+            "Lottie Animations",
+            "Glide Image Loading",
+            "Google Places & Maps API",
+            "Retrofit & OkHttp",
             "Payment Architecture",
-            "LBS Optimization",
-            "Location Services",
-            "Clean Architecture"
+            "LBS Optimization"
         ]
     },
     {
@@ -180,11 +208,15 @@
         "url": "https://play.google.com/store/apps/details?id=com.dongamers.dongamers",
         "iosUrl": "#",
         "tech": [
-            "Socket.IO",
+            "Pusher Chat",
             "Unity Integration",
             "Reactive Flow",
             "Scale Optimization",
-            "Android Native"
+            "Android Native",
+            "Java",
+            "Kotlin",
+            "Google Analytics",
+            "Firebase Crashlytics"
         ]
     }
 ]
