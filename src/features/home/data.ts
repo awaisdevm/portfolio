@@ -18,7 +18,7 @@ export const getHomeData = async (locale: Locale) => {
         "testimonialsData",
         translate,
         (t) => ({
-            message: t("message"),
+            message: String(t("message") ?? ""), // 👈 Is String() cast se TS error completely solve ho jayega!
         })
     );
 

@@ -1,7 +1,6 @@
 
 "use client";
 
-import React from "react";
 import type { Testimonial } from "@/features/testimonials/types";
 import { QuoteIcon, StarIcon } from "@/components/icons/icons";
 import { getInitials } from "@/lib/utils";
