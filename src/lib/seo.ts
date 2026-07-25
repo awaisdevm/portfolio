@@ -5,8 +5,7 @@ import { locales, Locale } from "@/i18n/config";
 const localizedDefaults: Record<Locale, { title: string; description: string }> = {
     en: {
         title: `Muhammad Awais — Senior Mobile App Developer & Architect (Android, KMP, CMP, Flutter)`,
-        description:
-            "Senior Mobile Developer with 6+ years of engineering experience. Specialist in Native Android (Jetpack Compose), Kotlin Multiplatform (KMP), Compose Multiplatform (CMP), Flutter, and Clean Architecture.",
+        description: "Senior Mobile App Developer with 6+ years experience in Native Android (Jetpack Compose), KMP, Flutter, and Clean Architecture.",
     },
     ur: {
         title: `محمد اویس — سینئر موبائل ایپ ڈویلپر (اینڈرائیڈ، KMP، CMP، فلٹر)`,
@@ -107,7 +106,6 @@ export function getMetadata(locale: string): Metadata {
 export const getCombinedSchemaData = () => {
     return [
         {
-            "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Muhammad Awais — Mobile App Developer & Multiplatform Architect",
             "alternateName": ["Devawais", "awaisdevm", "Muhammad Awais", "devawais-official"],
@@ -122,7 +120,6 @@ export const getCombinedSchemaData = () => {
             }
         },
         {
-            "@context": "https://schema.org",
             "@type": "Person",
             "name": "Muhammad Awais",
             "alternateName": ["Devawais", "awaisdevm", "Awais", "devawais-official"],

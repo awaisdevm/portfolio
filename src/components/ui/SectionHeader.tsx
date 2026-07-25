@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRightIcon } from "../icons/icons";
 import { cn } from "@/lib/utils";
 import { AnimatedSection } from "../layout/AnimatedSection";
+import Head from "next/head";
 
 // ============================================================================
 // STYLING CONFIGURATION (Aligned with globals.css Design Tokens)
@@ -24,6 +25,7 @@ export interface SectionHeaderProps {
   actionText?: string;
   actionHref?: string;
   className?: string;
+  as?: "h1" | "h2" | "h3";
 }
 
 // ============================================================================
@@ -40,6 +42,7 @@ export default function SectionHeader({
   actionText,
   actionHref,
   className = "",
+  as: Heading = "h2"
 }: SectionHeaderProps) {
   return (
     <AnimatedSection
@@ -47,7 +50,7 @@ export default function SectionHeader({
     >
       <div>
         <p className={sectionHeaderStyles.eyebrow}>{eyebrow}</p>
-        <h2 className={sectionHeaderStyles.title}>{title}</h2>
+        <Heading className={sectionHeaderStyles.title}>{title}</Heading>
       </div>
 
       {actionText && actionHref && (

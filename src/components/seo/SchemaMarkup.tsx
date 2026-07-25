@@ -6,10 +6,16 @@ interface SchemaMarkupProps {
 }
 
 export default function SchemaMarkup({ type, data }: SchemaMarkupProps) {
-  let finalSchema;
+  let finalSchema: Record<string, any>;
 
   if (Array.isArray(data)) {
-    finalSchema = data;
+    finalSchema = {
+      "@context": "https://schema.org",
+      "@graph": data.map((item) => {
+        const { "@context": _, ...cleanItem } = item;
+        return cleanItem;
+      }),
+    };
   } else {
     finalSchema = {
       "@context": "https://schema.org",

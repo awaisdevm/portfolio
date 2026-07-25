@@ -1,5 +1,3 @@
-
-
 import SectionHeader from "@/components/ui/SectionHeader";
 import ProjectGridCard from "@/features/projects/components/ProjectGridCard";
 import { getProjectsGridConfig } from "@/features/projects/configs/projects-config";
@@ -9,17 +7,11 @@ import { AnimatedSection } from "@/components/layout/AnimatedSection";
 import type { TranslateFn } from "@/i18n/translation-core";
 import type { Project } from "@/features/projects/data";
 
-// ============================================================================
-// TYPES
-// ============================================================================
 interface FeaturedProjectsProps {
     translate: TranslateFn;
     homeData: MappedHomeData;
 }
 
-// ============================================================================
-// COMPONENT
-// ============================================================================
 export default function FeaturedProjects({
     translate,
     homeData,
@@ -41,7 +33,7 @@ export default function FeaturedProjects({
                     {featuredProjects.map((project, index) => (
                         <AnimatedSection key={project.slug} delay={index * 0.08}>
                             <ProjectGridCard
-                                project={project as Project}
+                                project={project as unknown as Project}
                                 labels={gridConfig.labels}
                             />
                         </AnimatedSection>

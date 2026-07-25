@@ -99,13 +99,14 @@ function HeroPortrait() {
       >
         <Image
           src="/brand/dev-pic.webp"
-          alt="Muhammad Awais, mobile app developer"
+          alt="Muhammad Awais — Senior Mobile App Developer and Multiplatform Architect in Lahore Pakistan"
           fill
           sizes="(max-width: 640px) 260px, (max-width: 768px) 320px, 370px"
           className="object-cover object-top transition-transform duration-500 hover:scale-105"
           priority
           fetchPriority="high"
         />
+
       </div>
 
       {/* Floating Stack Badges Bar */}

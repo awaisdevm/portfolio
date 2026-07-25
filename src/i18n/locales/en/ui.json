@@ -47,9 +47,9 @@
     },
     "home": {
         "availability": "Available for contract & full-cycle development",
-        "heading1": "High-performance mobile apps. ",
-        "heading2": "Native, KMP, & Flutter.",
-        "description": "I'm Muhammad Awais, a Senior Mobile Developer with 6+ years of experience engineering robust mobile systems. I specialize in Native Android (Kotlin/Java), Kotlin Multiplatform (KMP), Compose Multiplatform (CMP), and Flutter—maintaining a 99%+ crash-free rate across 25+ deployed applications.",
+        "heading1": "Architecting Scalable",
+        "heading2": "Mobile & Multiplatform Solutions",
+        "description": "Senior Mobile Developer & Architect with 6+ years experience in Native Android (Jetpack Compose), KMP, CMP, and Flutter. Specialist in Clean Architecture & high-performance apps.",
         "buttonStart": "Start a project",
         "buttonView": "View selected work",
         "skillsEyebrow": "Tech Stack",

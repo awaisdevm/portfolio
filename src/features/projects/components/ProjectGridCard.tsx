@@ -43,7 +43,7 @@ export default function ProjectGridCard({
       <div className="relative z-10 h-32 w-32 transition-transform duration-500 group-hover:scale-105">
         <Image
           src={project.image}
-          alt={`${project.title} preview`}
+          alt={project.altText}
           fill
           className="object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)]"
           sizes="128px"

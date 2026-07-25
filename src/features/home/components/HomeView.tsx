@@ -1,5 +1,4 @@
 
-import React from "react";
 import HeroSection from "./HeroSection";
 import FeaturedProjects from "./FeaturedProjects";
 import ProcessSection from "./ProcessSection";

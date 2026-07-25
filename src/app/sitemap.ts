@@ -16,12 +16,18 @@ const staticPaths = [
 
 // Structural Fix: Variable name changed from 'path' to 'routeUrl' to avoid collision
 function buildAlternates(routeUrl: string) {
-  return Object.fromEntries(
+  const languages = Object.fromEntries(
     locales.map((locale) => {
       const localizedPath = routeUrl === "" ? `/${locale}` : `/${locale}${routeUrl}`;
       return [locale, `${siteConfig.url}${localizedPath}`];
     })
   );
+
+  return {
+    ...languages,
+    // ⚡ SEO BEST PRACTICE: Add x-default fallback to English
+    "x-default": `${siteConfig.url}${routeUrl === "" ? "/en" : `/en${routeUrl}`}`,
+  };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {

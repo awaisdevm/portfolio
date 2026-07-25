@@ -34,7 +34,7 @@ export function createTranslator(dictionary: Dictionary, fallback?: Dictionary):
         }
 
         if (value === undefined) {
-            return key as T;
+            return (options?.returnObjects ? undefined : "") as T; // ⚡ Key return karne ki jagah empty string return karega
         }
 
         if (options?.returnObjects) {

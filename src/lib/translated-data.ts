@@ -7,16 +7,18 @@ export function withTranslatedFields<
     raw: Raw,
     namespace: string,
     translate: TranslateFn,
-    buildFields: (scopedTranslate: TranslateFn) => Fields
+    buildFields: (scopedTranslate: TranslateFn, raw: Raw) => Fields
 ): Raw & Fields {
     const scopedTranslate: TranslateFn = (key: string, options) => {
         const cleanKey = key.startsWith(".") ? key.slice(1) : key;
-        return translate(`${namespace}.${raw.slug}.${cleanKey}`, options);
+        // Search inside projects.items.[slug].[cleanKey] OR projects.[slug].[cleanKey]
+        const fullKey = namespace ? `${namespace}.${raw.slug}.${cleanKey}` : `${raw.slug}.${cleanKey}`;
+        return translate(fullKey, options);
     };
 
     return {
         ...raw,
-        ...buildFields(scopedTranslate),
+        ...buildFields(scopedTranslate, raw),
     };
 }
 
