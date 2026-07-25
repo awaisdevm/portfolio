@@ -1,0 +1,31 @@
+{
+    "title": "Kundenbewertungen & Referenzen",
+    "headerTitle": "Geschätzt von Engineering Leadern, Gründern & Produkt-Teams",
+    "headerDesc": "Authentisches Feedback von technischen Gründern, Produktleitern und Gesundheitspartnern zur Entwicklung skalierbarer Android-, Kotlin Multiplatform- und Flutter-Anwendungen.",
+    "items": {
+        "louis-wong": {
+            "name": "Louis Wong",
+            "role": "Product Lead & Engineering Partner",
+            "project": "Mobile Performance-Optimierung",
+            "message": "Die Zusammenarbeit mit Awais war eine großartige Erfahrung. Er hat unsere Anwendung optimiert, den Arbeitsspeicher-Verbrauch (RAM) reduziert und die Performance um 30 % gesteigert. Seine Expertise in der Code-Optimierung und in Shared-Architekturen hat die Qualität unseres Produkts spürbar verbessert."
+        },
+        "nasir": {
+            "name": "Nasir",
+            "role": "Software-Architekt & Kunde",
+            "project": "Android & KMP Architektur",
+            "message": "Awais hat hervorragende Arbeit bei unserer App geleistet. Seine Liebe zum Detail, eine saubere Architektur und sein Fokus auf nachhaltigen, wartbaren Code haben den gesamten Entwicklungsprozess von Anfang bis Ende reibungslos gestaltet. Sehr zu empfehlen für jedes anspruchsvolle Android- oder Kotlin Multiplatform-Projekt."
+        },
+        "ahsan": {
+            "name": "Ahsan",
+            "role": "Produktgründer",
+            "project": "Eco Grocery App",
+            "message": "Awais hat unsere Eco Grocery App End-to-End entwickelt – vom Barcode-Scanner bis zur Rezeptempfehlungs-Engine. Die App läuft extrem flüssig, die Architektur ist sauber und sie hat die Art und Weise, wie unsere Nutzer ihre Einkäufe und Haltbarkeiten verwalten, nachhaltig verbessert."
+        },
+        "spectra-care": {
+            "name": "Spectra Care Engineering Team",
+            "role": "Healthcare- & Telehealth-Partner",
+            "project": "Spectra Care Telehealth & IoT Plattform",
+            "message": "Awais hat eine herausragende Telehealth-App für unser Krankenhaus geliefert und dabei Videokonsultationen sowie IoT-Gesundheitsmonitordaten zuverlässig integriert. Unsere Patienten und Ärzte verlassen sich täglich auf die App, und sie hat sich im klinischen Alltag tadellos bewährt."
+        }
+    }
+}

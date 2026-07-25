@@ -1,0 +1,31 @@
+{
+    "title": "Müşteri Değerlendirmeleri ve Tavsiyeler",
+    "headerTitle": "Mühendislik Liderleri, Kurucular ve Ürün Takımları Tarafından Güvenilen",
+    "headerDesc": "Ölçeklenebilir Android, Kotlin Multiplatform ve Flutter uygulamalarının geliştirilmesinde teknik kuruculardan, ürün liderlerinden ve sağlık sektörü ortaklarından gelen özgün geri bildirimler.",
+    "items": {
+        "louis-wong": {
+            "name": "Louis Wong",
+            "role": "Ürün Lideri ve Mühendislik Ortağı",
+            "project": "Mobil Performans Optimizasyonu",
+            "message": "Awais ile çalışmak harika bir deneyimdi. Uygulamamızı optimize etti, RAM kullanımını düşürdü ve performansı %30 artırdı. Kod optimizasyonu ve paylaşımlı mimariler konusundaki uzmanlığı, ürün kalitemiz üzerinde gözle görülür bir etki yarattı."
+        },
+        "nasir": {
+            "name": "Nasir",
+            "role": "Yazılım Mimarisi Uzmanı ve Müşteri",
+            "project": "Android ve KMP Mimarisi",
+            "message": "Awais uygulamamızda harika bir iş çıkardı. Detaylara gösterdiği özen, temiz mimari anlayışı ve sağlam, sürdürülebilir koda odaklanması tüm geliştirme sürecini baştan sona sorunsuz hale getirdi. Ciddi her türlü Android veya Kotlin Multiplatform projesi için kesinlikle tavsiye ederim."
+        },
+        "ahsan": {
+            "name": "Ahsan",
+            "role": "Ürün Kurucusu",
+            "project": "Eco Grocery Uygulaması",
+            "message": "Awais, Eco Grocery uygulamamızı barkod tarayıcıdan tarif öneri motoruna kadar uçtan uca inşa etti. Uygulama son derece akıcı çalışıyor, mimarisi çok temiz ve kullanıcılarımızın market alışverişlerini ile son kullanma tarihlerini takip etme biçimini gerçekten iyileştirdi."
+        },
+        "spectra-care": {
+            "name": "Spectra Care Mühendislik Takımı",
+            "role": "Sağlık ve Tele-Sağlık Ortağı",
+            "project": "Spectra Care Tele-Sağlık ve IoT Platformu",
+            "message": "Awais, hastanemiz için görüntülü görüşmeleri ve IoT sağlık monitörü verilerini güvenilir bir şekilde entegre eden olağanüstü bir tele-sağlık uygulaması sundu. Hem hastalarımız hem de doktorlarımız her gün bu uygulamaya güveniyor ve gerçek klinik kullanım şartlarında kusursuz bir performans sergiledi."
+        }
+    }
+}

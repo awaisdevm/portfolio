@@ -1,0 +1,111 @@
+{
+    "nav": {
+        "home": "ホーム",
+        "about": "概要",
+        "projects": "プロジェクト",
+        "blog": "ブログ",
+        "contact": "お問い合わせ",
+        "services": "サービス",
+        "testimonials": "評価・推薦文"
+    },
+    "cta": {
+        "bookedStatus": "現在 2026年第3四半期 の案件を受付中",
+        "title": "大規模なモバイルアプリのアイデアやマルチプラットフォームプロジェクトをお持ちですか？",
+        "description": "プロダクトの目標、アーキテクチャのニーズ、KMP/Flutterへの移行についてお気軽にご相談ください。1営業日以内に明確な技術ロードマップをご提案します。",
+        "startProject": "プロジェクトを開始する",
+        "seeWork": "ポートフォリオを見る"
+    },
+    "footer": {
+        "copyright": "© {year} Muhammad Awais. All rights reserved.",
+        "poweredBy": "Built with Next.js & Tailwind CSS",
+        "navigate": "ナビゲーション",
+        "specialties": "専門分野",
+        "getInTouch": "お問い合わせ",
+        "specialtiesList": [
+            "ネイティブAndroid (Kotlin & Java)",
+            "Kotlin Multiplatform (KMP)",
+            "Compose Multiplatform (CMP)",
+            "Flutter クロスプラットフォーム"
+        ]
+    },
+    "profile": {
+        "title": "シニアモバイルアプリデベロッパー ＆ アーキテクト",
+        "subtitle": "ネイティブAndroid • Kotlin Multiplatform (KMP) • Compose Multiplatform (CMP) • Flutter",
+        "bio": "ヘルステック、フィンテック、IoT、EC分野で拡張性の高い商用アプリをリリースしてきた6年以上の開発実績を持つシニアモバイルアプリデベロッパー。クリーンアーキテクチャとMVI/MVVMデザインパターンを用いたネイティブAndroid、Kotlin Multiplatform (KMP)、Compose Multiplatform (CMP)、Flutter開発に特化。",
+        "location": "パキスタン、ラホール（グローバル対応可能）",
+        "availability": "シニアポジションおよび戦略的コンサルティングを受付中"
+    },
+    "skills": {
+        "title": "テクニカルツールキット",
+        "subtitle": "ネイティブおよびマルチプラットフォームエコシステムにおけるプロフェッショナルツール",
+        "languages": "プログラミング言語 (Kotlin, Dart, Java)",
+        "android": "ネイティブAndroid (Jetpack Compose, TV, カスタムUI)",
+        "multiplatform": "マルチプラットフォーム (KMP & CMP)",
+        "flutter": "Flutter (BLoC, Riverpod, GetIt)",
+        "architecture": "アーキテクチャ & 非同期処理 (Clean, MVI, MVVM, Coroutines)",
+        "tools": "IoT、決済 & DevOps (Agora, ハードウェアSDK, CI/CD)"
+    },
+    "home": {
+        "availability": "契約案件およびフルサイクル開発に対応可能",
+        "heading1": "拡張性の高いアーキテクチャの構築",
+        "heading2": "モバイル ＆ マルチプラットフォームソリューション",
+        "description": "ネイティブAndroid（Jetpack Compose）、KMP、CMP、Flutterにおいて6年以上の実績を持つシニアモバイルデベロッパー＆アーキテクト。クリーンアーキテクチャと高性能アプリ構築のエキスパート。",
+        "buttonStart": "プロジェクトを開始する",
+        "buttonView": "代表的な実績を見る",
+        "skillsEyebrow": "技術スタック",
+        "portraitAlt": "ムハンマド・アワイス — パキスタン・ラホールのシニアモバイルアプリデベロッパー兼マルチプラットフォームアーキテクト",
+        "skillsTitle": "技術スキル",
+        "stats": {
+            "experience": "6年以上の実務経験",
+            "completed": "25以上のプロジェクト導入実績",
+            "stores": "ストア公開アプリ多数"
+        },
+        "selectedWork": "選定されたプロジェクト",
+        "recentProjects": "注目の開発実績",
+        "allProjectsLink": "すべてのプロジェクトを見る",
+        "processTitle": "開発・連携プロセス",
+        "processSubtitle": "堅牢で拡張性の高いコードの提供を中心とした実用的なプロセス",
+        "processSteps": {
+            "01": {
+                "title": "要件ヒアリング & スコープ定義",
+                "body": "プロジェクトのスコープ、主要なプラットフォーム要件（Android、iOS、KMP、Flutter）、および明確な開発マイルストーンを深掘りします。"
+            },
+            "02": {
+                "title": "アーキテクチャファースト",
+                "body": "共有KMPビジネスロジック、予測可能なMVI/MVVM状態管理、分離されたプラットフォームUIを備えたモジュール化クリーンアーキテクチャを設計します。"
+            },
+            "03": {
+                "title": "反復的な開発・ビルド",
+                "body": "CI/CD自動化に支えられた、実機でインストール・テスト可能な製品レベルのビルドを毎週提供します。"
+            },
+            "04": {
+                "title": "リリース & スケール",
+                "body": "ストア公開、リリースパイプラインの設定、クラッシュレポートの導入、そして長期的な拡張性を考慮した包括的な技術ハンドオーバーを行います。"
+            }
+        },
+        "feedbackTitle": "クライアントの評価",
+        "feedbackSubtitle": "エンジニアリングリーダーやファウンダーからの声",
+        "allTestimonialsLink": "すべての推薦文を読む"
+    },
+    "contact": {
+        "title": "お問い合わせ",
+        "headerTitle": "次のモバイルマイルストーンを共に構築しましょう。",
+        "headerDesc": "メールや各種プロフェッショナルチャネルから直接ご連絡いただけます。1営業日以内にご返信いたします。",
+        "locationTitle": "拠点",
+        "form": {
+            "nameLabel": "お名前",
+            "emailLabel": "メールアドレス",
+            "platformLabel": "プラットフォーム (Android / KMP / CMP / Flutter)",
+            "budgetLabel": "ご予算",
+            "detailsLabel": "プロジェクトの詳細または役割の範囲",
+            "buttonSend": "メッセージを送信",
+            "successTitle": "メッセージが正常に送信されました",
+            "successMessage": "お問い合わせありがとうございます。内容を確認のうえ、迅速にご返信いたします。"
+        }
+    },
+    "notfound": {
+        "eyebrow": "404 エラー",
+        "title": "お探しのページは見つかりませんでした。",
+        "button": "ホームに戻る"
+    }
+}

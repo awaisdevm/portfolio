@@ -1,0 +1,37 @@
+{
+    "home": {
+        "title": "ムハンマド・アワイス | シニアモバイルアプリデベロッパー＆マルチプラットフォームアーキテクト",
+        "description": "ネイティブAndroid、Kotlin Multiplatform（KMP）、Compose Multiplatform（CMP）、Flutterにおいて6年以上の商用アプリ構築経験を持つシニアモバイルエンジニア。",
+        "keywords": "シニアモバイルデベロッパー, ネイティブAndroidデベロッパー, Kotlin Multiplatformエンジニア, Compose Multiplatform, Flutterデベロッパー, モバイルアーキテクト, クリーンアーキテクチャ, ラホール デベロッパー"
+    },
+    "projects": {
+        "title": "プロジェクトポートフォリオ | ムハンマド・アワイスによるネイティブAndroid、KMP＆Flutterアプリ",
+        "description": "Jetpack Compose、Flutter、拡張性の高いモバイルアーキテクチャで構築された、ヘルステック、フィンテック、IoTハードウェア連携などの商用リリースアプリ事例をご紹介。",
+        "keywords": "モバイルアプリポートフォリオ, Androidアプリケーススタディ, Flutterアプリ実績, Jetpack Composeプロジェクト, 遠隔診療アプリ, IoTモバイル連携, リリース済みモバイルアプリ"
+    },
+    "about": {
+        "title": "概要 | ムハンマド・アワイス - シニアモバイルアプリデベロッパー（実務経験6年以上）",
+        "description": "Android、KMP、CMP、Flutter、MVI/MVVM、および99%以上のクラッシュフリー率を維持する大規模システムにおいて6年以上の実績を持つシニアモバイルエンジニア、ムハンマド・アワイスの経歴をご紹介。",
+        "keywords": "ムハンマド・アワイスについて, シニアAndroidエンジニア, モバイルシステムアーキテクト, KMPスペシャリスト, パキスタン Flutterデベロッパー, クリーンアーキテクチャ エキスパート, モバイル開発経歴"
+    },
+    "contact": {
+        "title": "お問い合わせ | シニアAndroid・KMP・Flutterデベロッパーの採用 - ムハンマド・アワイス",
+        "description": "モバイルアプリ開発プロジェクトの開始やクロスプラットフォームエンジニアリングに関するご相談。シニアレベルのAndroid、KMP、Flutter開発のお問い合わせはこちら。",
+        "keywords": "シニアモバイルデベロッパー採用, Androidエキスパート採用, KMPコンサルタント, フリーランスFlutterエンジニア, モバイルアプリ開発サービス, ムハンマド・アワイスへ連絡"
+    },
+    "testimonials": {
+        "title": "クライアントの評価・フィードバック | シニアモバイルデベロッパー - ムハンマド・アワイス",
+        "description": "ネイティブAndroid、Kotlin Multiplatform、Flutterのモバイルプロジェクトに関する、ファウンダーやエンジニアリングリーダーからのレビューとクライアントの推薦文をご紹介。",
+        "keywords": "クライアントの評判, devawais レビュー, モバイルデベロッパー推薦, Androidコンサルタント評価, Flutterデベロッパー評価, ソフトウェアクライアントの感想"
+    },
+    "services": {
+        "title": "モバイルエンジニアリングサービス | ネイティブAndroid・KMP・Flutterコンサルティング",
+        "description": "エンドツーエンドのモバイル開発サービス：ネイティブAndroid（Kotlin）、KMP/CMPクロスプラットフォームエンジニアリング、IoTハードウェア連携、およびレガシーコードのモダン化。",
+        "keywords": "モバイルアプリ開発サービス, Androidコンサルティング, Kotlin Multiplatform開発, Flutter開発サービス, クリーンアーキテクチャコンサルティング, IoTモバイル連携"
+    },
+    "blog": {
+        "title": "エンジニアリングブログ | モバイルアーキテクチャ・KMP・CMP・Androidのインサイト",
+        "description": "ネイティブAndroid、Kotlin Multiplatform（KMP）、Compose Multiplatform（CMP）、Jetpack Compose、クリーンなモバイルシステム設計に関する技術記事。",
+        "keywords": "モバイル開発ブログ, Kotlin Multiplatform チュートリアル, Jetpack Compose ベストプラクティス, モバイルアーキテクチャ インサイト, クリーンアーキテクチャ モバイル, KMP vs Flutter"
+    }
+}

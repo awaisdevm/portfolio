@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -12,17 +11,11 @@ import { ObfuscatedContact } from "../ui/ObfuscatedContact";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 
-// ============================================================================
-// TYPES & PROPS
-// ============================================================================
 interface DesktopNavbarProps {
   getLocalizedHref: (href: string) => string;
   translate: (key: string) => string;
 }
 
-// ============================================================================
-// MAIN COMPONENT
-// ============================================================================
 export default function DesktopNavbar({
   getLocalizedHref,
   translate,
@@ -37,7 +30,8 @@ export default function DesktopNavbar({
 
   return (
     <nav className="hidden items-center gap-6 md:flex">
-      <div className="liquid-glass flex items-center gap-1 rounded-full px-3 py-1.5 shadow-xl">
+      {/* ADDED: max-w-full aur overflow-x-auto safety for long dynamic translations */}
+      <div className="liquid-glass flex max-w-full items-center gap-0.5 rounded-full px-2 py-1.5 shadow-xl sm:px-3">
         {/* Navigation Links */}
         {navLinks.map((link) => {
           const active = isActive(link.href);
@@ -46,7 +40,8 @@ export default function DesktopNavbar({
               <Link
                 href={getLocalizedHref(link.href)}
                 className={cn(
-                  "relative z-10 rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 focus:outline-none",
+                  /* ADDED: whitespace-nowrap & responsive text sizes & adjusted horizontal paddings */
+                  "relative z-10 block whitespace-nowrap rounded-full px-2.5 py-1.5 text-xs font-medium transition-colors duration-200 focus:outline-none lg:px-3.5 lg:text-sm",
                   active
                     ? "font-bold text-heading"
                     : "text-muted hover:text-heading"
@@ -69,7 +64,7 @@ export default function DesktopNavbar({
         })}
 
         {/* Social Links & Contact Action */}
-        <div className="ml-2 flex items-center gap-1 border-l border-border-subtle pl-3">
+        <div className="ml-1 flex items-center gap-0.5 border-l border-border-subtle pl-2 lg:ml-2 lg:pl-3">
           {socialLinks.map((social) => (
             <Magnetic key={social.label} strength={0.3}>
               {social.isEmail ? (

@@ -31,14 +31,9 @@ export default function SectionWrapper({
         <section id={id} className={cn("relative overflow-hidden", className)}>
             {showBlobs && (
                 <>
-                    <GradientBlob
-                        color={blobColorRight}
-                        className="right-[-10%] top-[-10%] h-[500px] w-[500px] opacity-40 blur-[120px]"
-                    />
-                    <GradientBlob
-                        color={blobColorLeft}
-                        className="bottom-[-10%] left-[-10%] h-[450px] w-[450px] opacity-40 blur-[120px]"
-                    />
+                    <GradientBlob className="-left-32 -top-32" />
+                    <GradientBlob color="var(--accent)" className="-bottom-40 -right-40" size={600} />
+
                 </>
             )}
 

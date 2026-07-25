@@ -1,0 +1,26 @@
+{
+    "title": "من أنا",
+    "headerTitle": "مرحباً، أنا محمد أويس — كبير مطوري تطبيقات الجوال ومهندس الأنظمة متعددة المنصات.",
+    "headerDesc": "مهندس برمجيات وتطبيقات جوال بخبرة تزيد عن 6 سنوات في بناء أنظمة عالية الأداء وقابلة للتوسع باستخدام Native Android (Kotlin/Java)، وKotlin Multiplatform (KMP)، وCompose Multiplatform (CMP)، وFlutter — مدعومة بمعمارية Clean Architecture وأنماط تصميم MVI/MVVM.",
+    "expertiseTitle": "الخبرات الأساسية",
+    "expertiseSubtitle": "هندسة تطبيقات جوال عالية التأثير، هندسة الأنظمة متعددة المنصات، وتصميم الأنظمة التفاعلية",
+    "experienceTitle": "المسيرة المهنية",
+    "experienceSubtitle": "هندسة وبناء تطبيقات مرنة عبر قطاعات الرعاية الصحية، التكنولوجيا المالية (FinTech)، أجهزة إنترنت الأشياء (IoT)، والمنصات الفورية",
+    "infoTitle": "المقر",
+    "infoLocation": "لاهور، باكستان",
+    "infoFocus": "التخصص الأساسي",
+    "infoFocusVal": "Android • KMP • CMP • Flutter",
+    "role": "الدور الحالي",
+    "roleVal": "كبير مطوري تطبيقات الجوال",
+    "availability": "متاح للفرص والتعاون",
+    "githubFollowers": "مجتمع GitHub",
+    "githubStars": "نجوم المستودعات البرمجية",
+    "linkedinConnections": "الشبكة المهنية",
+    "downloadCv": "تحميل السيرة الذاتية (CV)",
+    "stats": {
+        "experience": "+6 سنوات خبرة",
+        "completed": "تطبيقات حية في الإنتاج",
+        "satisfied": "عملاء راضون",
+        "stores": "تطبيقات منشورة"
+    }
+}

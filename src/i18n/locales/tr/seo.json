@@ -1,0 +1,37 @@
+{
+    "home": {
+        "title": "Muhammad Awais | Kıdemli Mobil Uygulama Geliştiricisi & Çoklu Platform Mimarı",
+        "description": "Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP) ve Flutter ile canlı ortam uygulamaları geliştiren 6+ yıllık deneyime sahip Kıdemli Mobil Yazılım Mühendisi.",
+        "keywords": "Kıdemli Mobil Geliştirici, Native Android Geliştirici, Kotlin Multiplatform Mühendisi, Compose Multiplatform, Flutter Geliştirici, Mobil Mimar, Temiz Mimari, Lahor Geliştirici"
+    },
+    "projects": {
+        "title": "Proje Portföyü | Native Android, KMP ve Flutter Uygulamaları - Muhammad Awais",
+        "description": "Jetpack Compose, Flutter ve ölçeklenebilir mobil mimari ile inşa edilmiş Sağlık Teknolojileri, FinTek ve IoT donanım entegrasyonlarına sahip canlı ortam uygulamalarını inceleyin.",
+        "keywords": "Mobil uygulama portföyü, Android uygulama vaka çalışmaları, Flutter uygulamaları vitrini, Jetpack Compose projeleri, Tele-sağlık uygulamaları, IoT mobil entegrasyonları, Yayınlanmış mobil uygulamalar"
+    },
+    "about": {
+        "title": "Hakkımda | Muhammad Awais - Kıdemli Mobil Uygulama Geliştiricisi (6+ Yıl Deneyim)",
+        "description": "Android, KMP, CMP, Flutter, MVI/MVVM ve %99+ çökmesiz çalışma oranını koruyan büyük ölçekli sistemlerde 6+ yıllık deneyime sahip Kıdemli Mobil Mühendis Muhammad Awais hakkında bilgi edinin.",
+        "keywords": "Muhammad Awais Hakkında, Kıdemli Android Mühendisi, Mobil Sistemler Mimarı, KMP uzmanı, Pakistan Flutter geliştiricisi, Temiz Mimari uzmanı, Mobil geliştirici geçmişi"
+    },
+    "contact": {
+        "title": "İletişim | Kıdemli Android, KMP & Flutter Geliştiricisi Kirala - Muhammad Awais",
+        "description": "Mobil uygulama projenizi başlatın veya çoklu platform mühendisliği konusunda danışmanlık alın. Kıdemli düzeyde Android, KMP veya Flutter geliştirme hizmetleri için doğrudan iletişime geçin.",
+        "keywords": "Kıdemli Mobil Geliştirici Kirala, Android Uzmanı Kirala, KMP Danışmanı, Serbest Flutter Mühendisi, Mobil Uygulama Geliştirme Hizmetleri, Muhammad Awais İletişim"
+    },
+    "testimonials": {
+        "title": "Müşteri Değerlendirmeleri ve Geri Bildirimler | Kıdemli Mobil Geliştirici - Muhammad Awais",
+        "description": "Native Android, Kotlin Multiplatform ve Flutter mobil projeleri hakkında kuruculardan ve mühendislik liderlerinden gelen müşteri yorumlarını ve tavsiyelerini okuyun.",
+        "keywords": "Müşteri tavsiyeleri, devawais yorumları, mobil geliştirici önerileri, Android danışmanı geri bildirimleri, Flutter geliştirici yorumları, yazılım müşterisi değerlendirmeleri"
+    },
+    "services": {
+        "title": "Mobil Mühendislik Hizmetleri | Native Android, KMP & Flutter Danışmanlığı",
+        "description": "Uçtan uca mobil geliştirme hizmetleri: Native Android (Kotlin), KMP/CMP çoklu platform mühendisliği, IoT donanım entegrasyonları ve eski kod tabanı modernizasyonu.",
+        "keywords": "Mobil Uygulama Geliştirme Hizmetleri, Android Danışmanlığı, Kotlin Multiplatform Geliştirme, Flutter Geliştirme Hizmetleri, Temiz Mimari Danışmanlığı, IoT Mobil Entegrasyonu"
+    },
+    "blog": {
+        "title": "Mühendislik Bloğu | Mobil Mimari, KMP, CMP & Android İpuçları",
+        "description": "Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP), Jetpack Compose ve temiz mobil sistem tasarımı üzerine derinlemesine teknik makaleler.",
+        "keywords": "Mobil Geliştirme Bloğu, Kotlin Multiplatform Rehberleri, Jetpack Compose En İyi Uygulamaları, Mobil Mimari İpuçları, Mobil Temiz Mimari, KMP mi Flutter mı"
+    }
+}

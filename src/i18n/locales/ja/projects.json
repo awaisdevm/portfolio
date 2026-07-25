@@ -1,0 +1,141 @@
+{
+    "title": "プロジェクト",
+    "headerTitle": "ネイティブAndroidおよびFlutterエコシステムでの開発・リリース実績",
+    "headerDesc": "プラットフォームで絞り込み、最適なパフォーマンス、セキュリティ、リアルタイム接続を実現するために、アーキテクチャや技術スタックがどのように適応しているかをご覧いただけます。",
+    "noProjectsFound": "このカテゴリーのプロジェクトは見つかりませんでした。",
+    "backToProjects": "すべてのプロジェクト",
+    "techStack": "技術スタック",
+    "filters": {
+        "all": "すべて",
+        "android": "Android",
+        "flutter": "Flutter",
+        "ios": "iOS",
+        "kmp": "KMP",
+        "cmp": "CMP"
+    },
+    "ctas": {
+        "playStore": "Google Play",
+        "appStore": "App Store",
+        "details": "詳細を見る"
+    },
+    "items": {
+        "spectra-care": {
+            "title": "Spectra Care: 遠隔診療・IoTプラットフォーム",
+            "category": "遠隔医療 & IoT",
+            "summary": "Jetpack Compose、Agoraビデオ通話、6-in-1医療用モニター連携を備えたエンタープライズ向け遠隔診療プラットフォーム。",
+            "description": "Jetpack ComposeおよびMVIアーキテクチャで構築された商用Android遠隔診療アプリ。低遅延のAgoraビデオ診療、Spectra Care 6-in-1健康モニター用のリアクティブなデバイスドライバ、安全なSOAP EHRデータ同期機能を搭載。",
+            "ctaText": "Google Playで見る",
+            "altText": "Spectra Care — ムハンマド・アワイスが構築した、Agoraビデオ通話およびSpectra IoT健康モニター連携を備えたネイティブAndroid遠隔診療アプリ",
+            "highlights": [
+                "Agora SDKによるリアルタイムビデオ診療",
+                "Spectra Care 6-in-1 IoT健康モニター同期",
+                "Jetpack Composeを用いたMVIアーキテクチャ"
+            ]
+        },
+        "zouris": {
+            "title": "Zouris: ホリスティックウェルネスプラットフォーム",
+            "category": "ヘルス & ウェルネス",
+            "summary": "ガイドセッション、音声配信、アファメーションを提供するクロスプラットフォーム向けウェルネスアプリ。",
+            "description": "ZourisはFlutterを用いて構築されたホリスティックウェルネスプラットフォームで、認定コーチやプラクティショナーがAndroidおよびiOS上でネイティブ並みのパフォーマンスを発揮し、ガイド付きセッション、メディテーション、リアルタイム音声配信を提供します。",
+            "ctaText": "Google Play",
+            "iosCtaText": "App Store",
+            "altText": "Zouris ウェルネスコーチングアプリ — ムハンマド・アワイスが構築したクロスプラットフォーム対応の瞑想・音声ストリーミングプラットフォーム",
+            "highlights": [
+                "クロスプラットフォームFlutterアーキテクチャ",
+                "低遅延のリアルタイム音声ストリーミング",
+                "BLoCによるクリーンな状態管理"
+            ]
+        },
+        "egora-b2b": {
+            "title": "Egora B2B: レストランパートナープラットフォーム",
+            "category": "B2Bソリューション",
+            "summary": "飲食店オーナーが注文、テイクアウト、ライブ予約を管理できるホワイトレーベルのパートナーダッシュボード。",
+            "description": "Flutter、Dio、GetItを用いて開発されたホワイトレーベルのパートナープラットフォーム。飲食店オーナーが店内飲食、テイクアウト、QRコード注文、感熱紙領収書印刷を信頼性の高い決済連携とともに独立して管理できるようにサポート。",
+            "ctaText": "プロジェクトの詳細を見る",
+            "altText": "Egora B2B レストランパートナーダッシュボード — ムハンマド・アワイスが構築した注文・予約・QR管理システム",
+            "highlights": [
+                "Flutter、Dio、GetItアーキテクチャ",
+                "独立したマルチマーチャントダッシュボード",
+                "リアルタイム注文同期＆通知エンジン"
+            ]
+        },
+        "egora": {
+            "title": "Egora: スマートレストランエコシステム",
+            "category": "フード & ドリンク",
+            "summary": "QR注文、予約管理、Bluetooth機器連携を備えた大規模レストランエコシステム。",
+            "description": "FlutterおよびJetpack Composeで構築された拡張性の高い予約・飲食店システム。QRコード注文、統合されたXStax決済処理（月間1万件以上の取引）、100%の信頼性を達成したカスタムBluetooth感熱プリンタードライバを搭載。",
+            "ctaText": "プロジェクトの詳細を見る",
+            "altText": "Egora レストランアプリ — ムハンマド・アワイスが構築したQR注文・予約システム・Bluetooth感熱プリンター連携",
+            "highlights": [
+                "顧客利用率30%向上を達成",
+                "レイテンシを50%削減したBluetooth感熱プリンター連携",
+                "月間1万件以上の取引を処理するXStax決済ゲートウェイ"
+            ]
+        },
+        "makernote": {
+            "title": "Makernote: インタラクティブEdTech",
+            "category": "教育アプリ",
+            "summary": "リアルタイムコラボレーションとオフライン同期を備えた教育プラットフォーム。",
+            "description": "教師と生徒のための高性能教育プラットフォーム — リアルタイムのコラボレーション、即時のノート同期、シームレスなオフラインデータ保持を実現するクリーンアーキテクチャで構築。",
+            "ctaText": "App Storeで見る",
+            "altText": "Makernote EdTechアプリ — ムハンマド・アワイスが構築したリアルタイムコラボレーションおよびオフライン同期機能",
+            "highlights": [
+                "リアルタイムの複数ユーザーコラボレーション",
+                "オフラインファーストのローカルストレージ",
+                "クリーンなMVVMアーキテクチャ"
+            ]
+        },
+        "eco-grocery": {
+            "title": "Eco Grocery: スマート在庫トラッカー",
+            "category": "スマートユーティリティ",
+            "summary": "バーコードスキャン、レシピ提案、賞味期限アラートを備えたスマート食料品トラッキングアプリ。",
+            "description": "レシピ提案エンジンと連携した動的な買い物リストに加え、即時のアイテムカタログ化と賞味期限管理のためのカメラバーコードスキャン機能を備えたインテリジェントなAndroidユーティリティアプリ。",
+            "ctaText": "プロジェクトの詳細を見る",
+            "altText": "Eco Grocery Androidアプリ — ムハンマド・アワイスが構築したバーコードスキャン食料品トラッカー",
+            "highlights": [
+                "カメラバーコードスキャナー連携",
+                "スマート通知 & 賞味期限管理システム",
+                "リアクティブなUI状態管理"
+            ]
+        },
+        "hcloud": {
+            "title": "HCloud: クリニック管理スイート",
+            "category": "医師向けアプリ",
+            "summary": "予約および処方箋同期機能を備えた医療従事者向けエンタープライズ運用ポータル。",
+            "description": "医師向けに開発されたエンタープライズグレードのクリニック管理アプリケーション。MVVM、Hilt、Room DBで構築され、リアルタイムの処方箋作成、患者記録管理、オフラインファーストの予約管理を実現。",
+            "ctaText": "Google Playで見る",
+            "altText": "HCloud クリニック管理スイート — ムハンマド・アワイスが構築したリアルタイム処方箋同期および予約スケジュール管理",
+            "highlights": [
+                "デュアルアプリアーキテクチャコア",
+                "Room DBを使用したオフラインファーストの同期キュー",
+                "レスポンシブな医師用臨床UI"
+            ]
+        },
+        "healthwire": {
+            "title": "Healthwire: ヘルスケアエコシステム",
+            "category": "遠隔診療プラットフォーム",
+            "summary": "200万以上のダウンロード実績を持つ主要ヘルスケアアプリ。遠隔医療、検査予約、安全な決済連携を完備。",
+            "description": "パキスタン有数のヘルスケアプラットフォームのアーキテクチャを設計 — 99%以上のクラッシュフリーセッション率で、薬局ロジスティクス、検査予約、Twilioビデオ診療、ローカル決済ゲートウェイ（Meezan、JazzCash、Foree）を運用。",
+            "ctaText": "Google Playで見る",
+            "altText": "Healthwire ヘルスケアアプリ — ムハンマド・アワイスが構築した薬局ロジスティクス、検査予約、Twilio遠隔診療機能",
+            "highlights": [
+                "Google Playストアで200万以上のダウンロード実績",
+                "Twilioリアルタイムビデオ診療（エンゲージメント+15%）",
+                "100%安全な決済処理（Meezan、JazzCash、Foree）"
+            ]
+        },
+        "dongamers": {
+            "title": "DonGamers: eスポーツプラットフォーム",
+            "category": "eゲームプラットフォーム",
+            "summary": "リアルタイムPusherチャット、トーナメント表、最適化されたマネタイズを備えたグローバルゲームプラットフォーム。",
+            "description": "ネイティブAndroid上に国際的なeスポーツプラットフォームを構築。コードベースをJavaからKotlinに移行し、Pusherを用いた拡張性の高いリアルタイムチャットを設計（エンゲージメント+15%）、アプリ内課金とGoogle AdMobを最適化。",
+            "ctaText": "Google Playで見る",
+            "altText": "DonGamers eスポーツプラットフォーム — ムハンマド・アワイスが構築したリアルタイムチャットおよびトーナメント追跡機能",
+            "highlights": [
+                "グローバル展開で99%のクラッシュフリー率を実現",
+                "Pusherを使用したリアルタイムチャット基盤",
+                "マネタイズの最適化により売上を10%向上"
+            ]
+        }
+    }
+}

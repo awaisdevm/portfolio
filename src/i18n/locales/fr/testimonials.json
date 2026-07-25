@@ -1,0 +1,31 @@
+{
+    "title": "Avis & Témoignages clients",
+    "headerTitle": "La confiance des leaders techniques, fondateurs & équipes produit",
+    "headerDesc": "Retours authentiques de fondateurs techniques, chefs de produit et partenaires de santé sur le déploiement d'applications Android, Kotlin Multiplatform et Flutter évolutives.",
+    "items": {
+        "louis-wong": {
+            "name": "Louis Wong",
+            "role": "Product Lead & Partenaire Ingénierie",
+            "project": "Optimisation des performances mobiles",
+            "message": "Travailler avec Awais a été une excellente expérience. Il a optimisé notre application, réduit son utilisation de RAM et amélioré les performances de 30 %. Son expertise en optimisation de code et en architectures partagées a eu un impact remarquable sur la qualité de notre produit."
+        },
+        "nasir": {
+            "name": "Nasir",
+            "role": "Architecte Logiciel & Client",
+            "project": "Architecture Android & KMP",
+            "message": "Awais a fait un travail formidable sur notre application. Son souci du détail, son architecture propre et son accent sur du code solide et maintenable ont rendu tout le processus de développement fluide du début à la fin. Hautement recommandé pour tout projet sérieux sous Android ou Kotlin Multiplatform."
+        },
+        "ahsan": {
+            "name": "Ahsan",
+            "role": "Fondateur de produit",
+            "project": "App Eco Grocery",
+            "message": "Awais a développé notre application Eco Grocery de bout en bout, du scanner de codes-barres au moteur de recommandation de recettes. L'application tourne sans accroc, l'architecture est propre et cela a véritablement amélioré la façon dont nos utilisateurs gèrent leurs courses et le suivi des péremptions."
+        },
+        "spectra-care": {
+            "name": "Équipe d'ingénierie Spectra Care",
+            "role": "Partenaire Santé & Télésanté",
+            "project": "Plateforme Télésanté & IoT Spectra Care",
+            "message": "Awais a livré une application de télésanté remarquable pour notre hôpital, intégrant de manière fiable les consultations vidéo et les données de moniteurs de santé IoT. Nos patients et médecins comptent quotidiennement sur l'application, et elle s'est avérée irréprochable en usage clinique réel."
+        }
+    }
+}

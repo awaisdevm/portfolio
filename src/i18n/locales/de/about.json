@@ -1,0 +1,26 @@
+{
+    "title": "Über mich",
+    "headerTitle": "Hi, ich bin Muhammad Awais — Senior Mobile App Developer & Multiplatform Architekt.",
+    "headerDesc": "Senior Mobile Engineer mit 6+ Jahren Erfahrung in der Entwicklung hochperformanter, skalierbarer Systeme mit Native Android (Kotlin/Java), Kotlin Multiplatform (KMP), Compose Multiplatform (CMP) und Flutter — getrieben von Clean Architecture und MVI/MVVM Entwurfsmustern.",
+    "expertiseTitle": "Kernkompetenzen",
+    "expertiseSubtitle": "Erstklassige Mobile-Architektur, Cross-Platform-Engineering und reaktives Systemdesign",
+    "experienceTitle": "Beruflicher Werdegang",
+    "experienceSubtitle": "Entwicklung robuster Apps in den Bereichen HealthTech, FinTech, IoT-Hardware und Echtzeit-Plattformen",
+    "infoTitle": "Standort",
+    "infoLocation": "Lahore, Pakistan",
+    "infoFocus": "Spezialisierung",
+    "infoFocusVal": "Android • KMP • CMP • Flutter",
+    "role": "Derzeitige Rolle",
+    "roleVal": "Senior Mobile App Developer",
+    "availability": "Offen für Angebote",
+    "githubFollowers": "GitHub Community",
+    "githubStars": "Repository-Sterne",
+    "linkedinConnections": "Professionelles Netzwerk",
+    "downloadCv": "Lebenslauf / CV Herunterladen",
+    "stats": {
+        "experience": "6+ Jahre Erfahrung",
+        "completed": "Production Apps",
+        "satisfied": "Zufriedene Kunden",
+        "stats": "Veröffentlichte Apps"
+    }
+}

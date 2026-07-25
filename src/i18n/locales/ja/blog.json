@@ -1,0 +1,8 @@
+{
+    "title": "技術記事・エンジニアリング インサイト",
+    "headerTitle": "モバイルアーキテクチャ & テックインサイト",
+    "headerDesc": "ネイティブAndroid、Kotlin Multiplatform（KMP）、Compose Multiplatform（CMP）、Flutter、および商用レベルのクリーンアーキテクチャに関する深い考察。",
+    "minRead": "分で読める",
+    "readArticle": "記事全文を読む",
+    "emptyState": "KMP、Compose Multiplatform、モバイルアーキテクチャに関する記事は準備中です。それまでの間、代表的な開発プロジェクトをご覧ください！"
+}

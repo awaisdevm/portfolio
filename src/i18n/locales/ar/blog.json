@@ -1,0 +1,8 @@
+{
+    "title": "المقالات التقنية والرؤى الهندسية",
+    "headerTitle": "هندسة الجوال والرؤى التقنية",
+    "headerDesc": "تحليلات عميقة في Native Android، وKotlin Multiplatform (KMP)، وCompose Multiplatform (CMP)، وFlutter، ومعمارية Clean Architecture الجاهزة للإنتاج.",
+    "minRead": "دقائق قراءة",
+    "readArticle": "قراءة المقال كاملاً",
+    "emptyState": "المقالات حول KMP، وCompose Multiplatform، وهندسة الجوال قادمة قريباً. في هذه الأثناء، استكشف مشاريعي المميزة في بيئة الإنتاج!"
+}

@@ -1,0 +1,56 @@
+{
+    "items": {
+        "quickgem": {
+            "role": "Kıdemli Mobil Uygulama Geliştiricisi",
+            "description": "Jetpack Compose ve MVI mimarisi kullanarak eski doktor ve hasta uygulamalarını tek bir kod tabanında birleştirip büyük ölçekli, çok kiracılı (multitenant) bir HealthTech ekosistemi tasarladı. Düşük gecikmeli Agora SDK tele-sağlık özelliklerini ve 6'sı 1 arada tıbbi monitörler için reaktif donanım sürücülerini entegre etti.",
+            "achievements": [
+                "Eski doktor ve hasta uygulamalarını tek bir Jetpack Compose ve MVI kod tabanında birleştirdi",
+                "Düşük gecikmeli görüntülü görüşmeler ve gerçek zamanlı doktor-hasta sohbeti için Agora SDK entegrasyonu sağladı",
+                "Spectra Care 6'sı 1 arada tıbbi donanım ve EHR SOAP API'leri için reaktif entegrasyonlar mimarisini kurdu"
+            ]
+        },
+        "egora": {
+            "role": "Kıdemli Mobil Uygulama Geliştiricisi",
+            "description": "Flutter, Dio ve GetIt kullanarak müşteri kullanımını %30 artıran büyük ölçekli rezervasyon modülleri geliştirdi. Bluetooth termal yazıcılar için Jetpack Compose uygulamaları tasarladı ve yüksek işlem hacimli ödeme ağ geçitlerini entegre etti.",
+            "achievements": [
+                "Flutter ile müşteri kullanımında %30 artış sağlayan temel rezervasyon sistemini geliştirdi",
+                "%100 güvenilirlik ve sorgu gecikmesinde %50 azalma sağlayan Bluetooth termal yazıcı entegrasyonunu mimarisini kurdu",
+                "%99 çalışma süresi (uptime) ile aylık 10 bin+ işlemi işleyen XStax ödeme ağ geçidini entegre etti"
+            ]
+        },
+        "healthwire": {
+            "role": "Yazılım Mühendisi, Android Geliştirici",
+            "description": "MVVM, Hilt/Dagger, Coroutines ve Flow kullanarak hasta/doktor ikili uygulama ekosistemini geliştirdi. Twilio video aracılığıyla tele-sağlık kapasitesini büyüttü, yerel ödeme ağ geçitlerinin güvenliğini sağladı ve eski UI mimarisini Jetpack Compose'a taşıdı.",
+            "achievements": [
+                "Twilio video konsültasyonları ve derin bağlantı (deep-link) navigasyonu ile kullanıcı etkileşimini %15 artırdı",
+                "Firebase Crashlytics ve Room DB optimizasyonu sayesinde her iki uygulamada %99+'lık çökmesiz (crash-free) oturum oranını korudu",
+                "%100 güvenlik uyumluluğu ile Meezan, JazzCash ve Foree ödeme ağ geçitlerini entegre etti"
+            ]
+        },
+        "dongamers": {
+            "role": "Kıdemli Android Geliştirici",
+            "description": "Uluslararası bir oyun platformunun mobil mühendisliğine liderlik etti. Eski Java kodunu Kotlin'e taşıdı, Pusher kullanarak gerçek zamanlı sohbet altyapısını tasarladı ve gelir modellerini (monetization) optimize etti.",
+            "achievements": [
+                "Uygulama kararlılığını %99 çökmesiz oturum seviyesine çıkardı ve canlı ortam hatalarını %20 azalttı",
+                "Küresel erişilebilirlik (%99 kapsama) ile uygulamayı Java'dan Kotlin'e taşıdı",
+                "Pusher kullanarak gerçek zamanlı sohbet altyapısını kurdu (+%15 etkileşim) ve AdMob/IAP ile satışları %10 artırdı"
+            ]
+        },
+        "freelance": {
+            "role": "Serbest (Freelance) Mobil Geliştirici",
+            "description": "Uluslararası müşteriler için Flutter ve Dart kullanarak duyarlı, çapraz platform mobil uygulamalar tasarladı ve sundu; UI prototiplemeden API entegrasyonuna kadar tüm yaşam döngüsü sürecini yönetti.",
+            "achievements": [
+                "Müşterilerin pazara sunma süresini hızlandıran yüksek kaliteli çapraz platform Flutter çözümleri sundu",
+                "Uçtan uca geliştirme yaşam döngülerini ve paydaş teknik danışmanlıklarını yönetti"
+            ]
+        },
+        "netroots": {
+            "role": "Android Geliştirici Stajyeri",
+            "description": "Görsel doğrulamalı GPS tabanlı devam takip sistemi ve otomatikleştirilmiş İK idari iş akışları dahil olmak üzere kurumsal Java uygulamaları geliştirdi.",
+            "achievements": [
+                "Görsel doğrulamalı Java GPS devam takip sistemini tasarlayarak doğruluğu %40 artırdı",
+                "İK profil çıkarma iş akışlarını otomatikleştirerek manuel idari yükü %50 azalttı"
+            ]
+        }
+    }
+}

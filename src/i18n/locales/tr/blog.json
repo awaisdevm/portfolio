@@ -1,0 +1,8 @@
+{
+    "title": "Teknik Makaleler ve Mühendislik İpuçları",
+    "headerTitle": "Mobil Mimari ve Teknoloji Analizleri",
+    "headerDesc": "Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP), Flutter ve üretim seviyesinde Temiz Mimari (Clean Architecture) üzerine derinlemesine incelemeler.",
+    "minRead": "dk okuma",
+    "readArticle": "Makalenin tamamını oku",
+    "emptyState": "KMP, Compose Multiplatform ve mobil mimari üzerine makaleler çok yakında geliyor. Bu sırada öne çıkan canlı projelerimi keşfedebilirsiniz!"
+}

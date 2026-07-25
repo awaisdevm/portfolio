@@ -1,0 +1,8 @@
+{
+    "title": "Artículos técnicos y perspectivas de ingeniería",
+    "headerTitle": "Arquitectura móvil y visión técnica",
+    "headerDesc": "Análisis profundos sobre Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP), Flutter y Clean Architecture lista para producción.",
+    "minRead": "min de lectura",
+    "readArticle": "Leer artículo completo",
+    "emptyState": "Próximamente habrá artículos sobre KMP, Compose Multiplatform y arquitectura móvil. Mientras tanto, ¡explora mis proyectos de producción destacados!"
+}

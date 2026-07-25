@@ -1,0 +1,37 @@
+{
+    "home": {
+        "title": "Muhammad Awais | Desarrollador Senior de Apps Móviles y Arquitecto Multiplataforma",
+        "description": "Ingeniero móvil senior con más de 6 años de experiencia desarrollando aplicaciones en producción en Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP) y Flutter.",
+        "keywords": "Desarrollador móvil senior, Desarrollador Android nativo, Ingeniero Kotlin Multiplatform, Compose Multiplatform, Desarrollador Flutter, Arquitecto móvil, Clean Architecture, Desarrollador Lahore"
+    },
+    "projects": {
+        "title": "Portafolio de Proyectos | Apps Native Android, KMP y Flutter por Muhammad Awais",
+        "description": "Explora aplicaciones en producción de HealthTech, FinTech e integraciones de hardware IoT construidas con Jetpack Compose, Flutter y arquitectura móvil escalable.",
+        "keywords": "Portafolio de apps móviles, Casos de estudio Android, Showcase de apps Flutter, Proyectos Jetpack Compose, Apps de telesalud, Integraciones IoT móviles, Apps móviles lanzadas"
+    },
+    "about": {
+        "title": "Sobre Mí | Muhammad Awais - Desarrollador Senior de Apps Móviles (+6 años exp.)",
+        "description": "Conoce a Muhammad Awais, ingeniero móvil senior con más de 6 años de experiencia en Android, KMP, CMP, Flutter, MVI/MVVM y sistemas a gran escala manteniendo una tasa libre de fallos superior al 99%.",
+        "keywords": "Sobre Muhammad Awais, Ingeniero Android senior, Arquitecto de sistemas móviles, Especialista KMP, Desarrollador Flutter Pakistán, Experto en Clean Architecture, Trayectoria dev móvil"
+    },
+    "contact": {
+        "title": "Contacto | Contratar Desarrollador Senior Android, KMP y Flutter - Muhammad Awais",
+        "description": "Inicia tu proyecto de app móvil o consulta sobre ingeniería multiplataforma. Contáctame directamente para desarrollo senior en Android, KMP o Flutter.",
+        "keywords": "Contratar desarrollador móvil senior, Contratar experto Android, Consultor KMP, Ingeniero Flutter freelance, Servicios de desarrollo de apps móviles, Contactar Muhammad Awais"
+    },
+    "testimonials": {
+        "title": "Reseñas y Opiniones de Clientes | Desarrollador Móvil Senior - Muhammad Awais",
+        "description": "Lee reseñas y testimonios de fundadores y líderes de ingeniería sobre proyectos móviles en Native Android, Kotlin Multiplatform y Flutter.",
+        "keywords": "Testimonios de clientes, reseñas devawais, recomendaciones de desarrollador móvil, retroalimentación de consultor Android, reseñas de desarrollador Flutter, feedback de clientes de software"
+    },
+    "services": {
+        "title": "Servicios de Ingeniería Móvil | Consultoría Native Android, KMP y Flutter",
+        "description": "Servicios de desarrollo móvil de extremo a extremo: Native Android (Kotlin), ingeniería multiplataforma KMP/CMP, integraciones de hardware IoT y modernización de código heredado.",
+        "keywords": "Servicios de desarrollo de apps móviles, Consultoría Android, Desarrollo Kotlin Multiplatform, Servicios de desarrollo Flutter, Consultoría Clean Architecture, Integración IoT móvil"
+    },
+    "blog": {
+        "title": "Blog Técnico | Arquitectura Móvil, KMP, CMP y Perspectivas Android",
+        "description": "Artículos técnicos profundos sobre Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP), Jetpack Compose y diseño de sistemas móviles limpios.",
+        "keywords": "Blog de desarrollo móvil, Tutoriales Kotlin Multiplatform, Mejores prácticas Jetpack Compose, Perspectivas de arquitectura móvil, Clean Architecture móvil, KMP vs Flutter"
+    }
+}

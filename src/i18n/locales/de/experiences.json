@@ -1,0 +1,56 @@
+{
+    "items": {
+        "quickgem": {
+            "role": "Sr. Mobile Application Developer",
+            "description": "Architektur eines hochskalierbaren, mandantenfähigen HealthTech-Ökosystems durch Konsolidierung mehrerer Legacy-Arzt- und Patienten-Apps in eine einheitliche Codebasis mit Jetpack Compose und MVI-Architektur. Integration von Agora SDK Telehealth-Funktionen mit geringer Latenz und reaktiven Hardware-Treibern für 6-in-1 Medizinmonitore.",
+            "achievements": [
+                "Konsolidierung ehemaliger Arzt- und Patienten-Apps in eine einheitliche Jetpack Compose & MVI Codebasis",
+                "Integration des Agora SDKs für latenzarme Videoanrufe und Echtzeit-Chat zwischen Arzt und Patient",
+                "Architektur reaktiver Integrationen für Spectra Care 6-in-1 Medizin-Hardware und EHR SOAP APIs"
+            ]
+        },
+        "egora": {
+            "role": "Sr. Mobile Application Developer",
+            "description": "Entwicklung hochskalierbarer Reservierungsmodule mit Flutter, Dio und GetIt, was zu einer Steigerung der Kundennutzung um 30 % führte. Architektur von Jetpack Compose Apps für Bluetooth-Thermodruck und Integration von High-Throughput-Payment-Gateways.",
+            "achievements": [
+                "Entwicklung des Kern-Reservierungssystems in Flutter mit einer Steigerung der Kundennutzung um 30 %",
+                "Architektur einer Bluetooth-Thermodrucker-Integration mit 100 % Zuverlässigkeit und 50 % reduzierter Abfragen-Latenz",
+                "Integration des XStax Payment Gateways zur Verarbeitung von 10k+ monatlichen Transaktionen bei 99 % Uptime"
+            ]
+        },
+        "healthwire": {
+            "role": "Software Engineer, Android Developer",
+            "description": "Entwicklung eines dualen Patienten/Arzt-Ökosystems mit MVVM, Hilt/Dagger, Coroutines und Flow. Skalierung von Telehealth-Funktionen über Twilio Video, Absicherung lokaler Payment-Gateways und Migration der Legacy-UI auf Jetpack Compose.",
+            "achievements": [
+                "Steigerung des User-Engagements um 15 % durch Twilio Video-Konsultationen und Deep-Link-Navigation",
+                "Aufrechterhaltung einer absturzfreien Rate von 99 %+ über beide Apps mittels Firebase Crashlytics und Room DB Optimierung",
+                "Sichere und 100 % konforme Integration der Payment-Gateways Meezan, JazzCash und Foree"
+            ]
+        },
+        "dongamers": {
+            "role": "Senior Android Developer",
+            "description": "Leitung der Mobile-Entwicklung für eine internationale Gaming-Plattform. Migration von Legacy-Java-Code auf Kotlin, Architektur der Echtzeit-Chat-Infrastruktur mit Pusher und Optimierung der Monetarisierungs-Frameworks.",
+            "achievements": [
+                "Erhöhung der App-Stabilität auf 99 % absturzfreie Sessions und Reduzierung von Production-Bugs um 20 %",
+                "Vollständige Migration der App von Java auf Kotlin mit globaler Verfügbarkeit (99 % Abdeckung)",
+                "Architektur des Echtzeit-Chats mit Pusher (+15 % Engagement) und Erhöhung des Umsatzes um 10 % via AdMob/IAP"
+            ]
+        },
+        "freelance": {
+            "role": "Freelance Mobile Developer",
+            "description": "Architektur und Bereitstellung responsiver plattformübergreifender Mobile-Apps mit Flutter und Dart für internationale Kunden, inklusive Steuerung des gesamten Entwicklungslebenszyklus vom UI-Prototyping bis zur API-Integration.",
+            "achievements": [
+                "Bereitstellung hochpräziser Cross-Platform-Lösungen mit Flutter zur Beschleunigung der Time-to-Market für Kunden",
+                "End-to-End-Steuerung von Entwicklungslebenszyklen und technische Beratung von Stakeholdern"
+            ]
+        },
+        "netroots": {
+            "role": "Android Developer Intern",
+            "description": "Entwicklung von Enterprise-Java-Anwendungen, einschließlich eines GPS-basierten Zeiterfassungssystems mit Bildvalidierung und automatisierten HR-Verwaltungsprozessen.",
+            "achievements": [
+                "Entwicklung eines Java-GPS-Zeiterfassungssystems mit Bildvalidierung und Steigerung der Genauigkeit um 40 %",
+                "Automatisierung von HR-Profilierungsprozessen mit einer Reduzierung des manuellen Verwaltungsaufwands um 50 %"
+            ]
+        }
+    }
+}

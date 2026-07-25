@@ -1,0 +1,56 @@
+{
+    "items": {
+        "quickgem": {
+            "role": "Desarrollador Senior de Apps Móviles",
+            "description": "Arquitectura de un ecosistema HealthTech multitenant a gran escala mediante la consolidación de aplicaciones heredadas de médicos y pacientes en una base de código unificada utilizando Jetpack Compose y la arquitectura MVI. Integración de funciones de telesalud con baja latencia de Agora SDK y controladores de hardware reactivos para monitores médicos 6 en 1.",
+            "achievements": [
+                "Unificación de apps legacy de médicos y pacientes en una sola base de código con Jetpack Compose y MVI",
+                "Integración de Agora SDK para videollamadas de baja latencia y chat en tiempo real entre médico y paciente",
+                "Arquitectura de integraciones reactivas para hardware médico Spectra Care 6 en 1 y APIs SOAP de EHR"
+            ]
+        },
+        "egora": {
+            "role": "Desarrollador Senior de Apps Móviles",
+            "description": "Desarrollo de módulos de reserva a gran escala utilizando Flutter, Dio y GetIt, impulsando un aumento del 30% en la adopción de clientes. Arquitectura de apps en Jetpack Compose para impresión térmica Bluetooth e integración de pasarelas de pago de alto rendimiento.",
+            "achievements": [
+                "Desarrollo del sistema de reservas principal en Flutter, impulsando un aumento del 30% en la adopción de clientes",
+                "Arquitectura de integración de impresora térmica Bluetooth logrando 100% de fiabilidad y 50% de reducción en latencia de consultas",
+                "Integración de la pasarela de pago XStax procesando más de 10k transacciones mensuales con 99% de uptime"
+            ]
+        },
+        "healthwire": {
+            "role": "Ingeniero de Software, Desarrollador Android",
+            "description": "Desarrollo de un ecosistema de doble aplicación Paciente/Médico usando MVVM, Hilt/Dagger, Coroutines y Flow. Escalado de capacidades de telesalud mediante video de Twilio, aseguramiento de pasarelas de pago locales y migración de UI heredada a Jetpack Compose.",
+            "achievements": [
+                "Aumento del compromiso del usuario en un 15% mediante consultas en video de Twilio y navegación por deep-link",
+                "Mantenimiento de una tasa libre de fallos superior al 99% en ambas apps mediante Firebase Crashlytics y optimización de Room DB",
+                "Integración de pasarelas de pago Meezan, JazzCash y Foree con cumplimiento de seguridad del 100%"
+            ]
+        },
+        "dongamers": {
+            "role": "Desarrollador Android Senior",
+            "description": "Liderazgo en ingeniería móvil para una plataforma de juegos internacional. Migración de código Java heredado a Kotlin, arquitectura de infraestructura de chat en tiempo real usando Pusher y optimización de frameworks de monetización.",
+            "achievements": [
+                "Elevación de la estabilidad de la app al 99% de sesiones sin fallos y reducción de bugs de producción en un 20%",
+                "Migración de la aplicación de Java a Kotlin con disponibilidad global (99% de cobertura)",
+                "Arquitectura de chat en tiempo real usando Pusher (+15% de engagement) y aumento de ventas en un 10% vía AdMob/IAP"
+            ]
+        },
+        "freelance": {
+            "role": "Desarrollador Móvil Freelance",
+            "description": "Arquitectura y entrega de aplicaciones móviles multiplataforma responsivas usando Flutter y Dart para clientes internacionales, gestionando el ciclo de vida completo desde el prototipado de UI hasta la integración de APIs.",
+            "achievements": [
+                "Entrega de soluciones Flutter multiplataforma de alta fidelidad, acelerando el tiempo de comercialización del cliente",
+                "Gestión de ciclos de vida de desarrollo de extremo a extremo y consultas técnicas con partes interesadas"
+            ]
+        },
+        "netroots": {
+            "role": "Pasante de Desarrollador Android",
+            "description": "Desarrollo de aplicaciones empresariales en Java, incluyendo un sistema de asistencia basado en GPS con validación de imágenes y flujos de trabajo administrativos de recursos humanos automatizados.",
+            "achievements": [
+                "Desarrollo de sistema de asistencia GPS en Java con validación de imágenes, aumentando la precisión en un 40%",
+                "Automatización de flujos de trabajo de perfilado de RRHH, reduciendo la carga administrativa manual en un 50%"
+            ]
+        }
+    }
+}

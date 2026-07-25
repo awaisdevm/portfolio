@@ -1,0 +1,26 @@
+{
+    "title": "Hakkımda",
+    "headerTitle": "Merhaba, Ben Muhammad Awais — Kıdemli Mobil Uygulama Geliştiricisi ve Çoklu Platform Mimarı.",
+    "headerDesc": "Native Android (Kotlin/Java), Kotlin Multiplatform (KMP), Compose Multiplatform (CMP) ve Flutter kullanarak yüksek performanslı, ölçeklenebilir sistemler geliştiren 6+ yıllık deneyime sahip Kıdemli Mobil Yazılım Mühendisi — Temiz Mimari (Clean Architecture) ve MVI/MVVM tasarım kalıplarıyla hareket eder.",
+    "expertiseTitle": "Temel Uzmanlıklar",
+    "expertiseSubtitle": "Yüksek etkili mobil mimari, çapraz platform mühendisliği ve reaktif sistem tasarımı",
+    "experienceTitle": "Kariyer Yolculuğu",
+    "experienceSubtitle": "Sağlık Teknolojileri (HealthTech), FinTech, IoT donanımları ve gerçek zamanlı platformlarda dayanıklı uygulamalar mühendisliği",
+    "infoTitle": "Konum",
+    "infoLocation": "Lahor, Pakistan",
+    "infoFocus": "Uzmanlık Alanı",
+    "infoFocusVal": "Android • KMP • CMP • Flutter",
+    "role": "Mevcut Rol",
+    "roleVal": "Kıdemli Mobil Uygulama Geliştiricisi",
+    "availability": "Yeni Fırsatlara Açık",
+    "githubFollowers": "GitHub Topluluğu",
+    "githubStars": "Depo Yıldızları",
+    "linkedinConnections": "Profesyonel Ağı",
+    "downloadCv": "Özgeçmiş / CV İndir",
+    "stats": {
+        "experience": "6+ Yıl Deneyim",
+        "completed": "Canlıdaki Uygulamalar",
+        "satisfied": "Memnun Müşteriler",
+        "stores": "Yayınlanan Uygulamalar"
+    }
+}

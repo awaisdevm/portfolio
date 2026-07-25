@@ -1,0 +1,56 @@
+{
+    "items": {
+        "quickgem": {
+            "role": "Développeur d'applications mobiles senior",
+            "description": "Conception d'un écosystème HealthTech multi-tenant à grande échelle en regroupant des applications héritées de médecins et de patients en une seule base de code unifiée avec Jetpack Compose et l'architecture MVI. Intégration de fonctionnalités de télésanté Agora SDK à faible latence et de pilotes matériels réactifs pour moniteurs médicaux 6-en-1.",
+            "achievements": [
+                "Unification des applications legacy de médecins et patients en une seule base de code Jetpack Compose & MVI",
+                "Intégration d'Agora SDK pour des appels vidéo à faible latence et du chat en temps réel",
+                "Architecture d'intégrations réactives pour le matériel médical Spectra Care 6-en-1 et les API SOAP EHR"
+            ]
+        },
+        "egora": {
+            "role": "Développeur d'applications mobiles senior",
+            "description": "Développement de modules de réservation à grande échelle avec Flutter, Dio et GetIt, entraînant une hausse de 30 % de l'adoption par les clients. Conception d'applications Jetpack Compose pour l'impression thermique Bluetooth et intégration de passerelles de paiement à haut débit.",
+            "achievements": [
+                "Conception du système de réservation principal sous Flutter, stimulant de 30 % l'adoption client",
+                "Architecture d'une intégration d'imprimante thermique Bluetooth (fiabilité 100 %, réduction de 50 % de la latence)",
+                "Intégration de la passerelle de paiement XStax traitant plus de 10k transactions mensuelles avec 99 % d'uptime"
+            ]
+        },
+        "healthwire": {
+            "role": "Ingénieur logiciel, Développeur Android",
+            "description": "Développement d'un écosystème double application Patient/Médecin utilisant MVVM, Hilt/Dagger, Coroutines et Flow. Extension des capacités de télésanté via Twilio video, sécurisation des passerelles de paiement locales et migration de l'UI legacy vers Jetpack Compose.",
+            "achievements": [
+                "Augmentation de l'engagement utilisateur de 15 % via les consultations vidéo Twilio et la navigation deep-link",
+                "Maintien d'un taux sans crash supérieur à 99 % sur les deux apps via Firebase Crashlytics et Room DB",
+                "Intégration des passerelles de paiement Meezan, JazzCash et Foree avec une conformité de sécurité à 100 %"
+            ]
+        },
+        "dongamers": {
+            "role": "Développeur Android senior",
+            "description": "Direction de l'ingénierie mobile pour une plateforme de jeu internationale. Migration du code Java vers Kotlin, architecture d'une infrastructure de chat temps réel avec Pusher et optimisation des frameworks de monétisation.",
+            "achievements": [
+                "Élévation de la stabilité à 99 % de sessions sans crash et réduction des bugs de production de 20 %",
+                "Migration de l'application de Java vers Kotlin avec une disponibilité mondiale (couverture 99 %)",
+                "Architecture du chat temps réel avec Pusher (+15 % d'engagement) et hausse des ventes de 10 % via AdMob/IAP"
+            ]
+        },
+        "freelance": {
+            "role": "Développeur mobile freelance",
+            "description": "Conception et livraison d'applications mobiles multiplateformes réactives en Flutter et Dart pour des clients internationaux, gérant tout le cycle de vie du prototypage UI à l'intégration d'API.",
+            "achievements": [
+                "Livraison de solutions Flutter multiplateformes haute fidélité, accélérant le time-to-market",
+                "Gestion de cycles de vie de développement complets et conseil technique auprès des parties prenantes"
+            ]
+        },
+        "netroots": {
+            "role": "Stagiaire Développeur Android",
+            "description": "Développement d'applications d'entreprise en Java, incluant un système de pointage GPS avec validation par image et automatisation des flux RH administratifs.",
+            "achievements": [
+                "Conception d'un système de pointage GPS en Java avec validation photo, augmentant la précision de 40 %",
+                "Automatisation des workflows de profilage RH, réduisant la charge administrative manuelle de 50 %"
+            ]
+        }
+    }
+}

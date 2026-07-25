@@ -3,7 +3,6 @@
 
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
-import { HUDFrame } from "./HUDFrame";
 
 // ============================================================================
 // TYPES
@@ -111,9 +110,6 @@ export function PreviewCard({
       onPointerLeave={() => setIsHovered(false)}
       onTouchStart={() => setIsHovered((prev) => !prev)}
     >
-      {/* HUD Effect overlay */}
-      <HUDFrame isHovered={isHovered} />
-
       {/* Dynamic hover overlay highlight */}
       <div
         aria-hidden="true"
@@ -147,11 +143,6 @@ export function PreviewCard({
         </div>
       </div>
 
-      {/* <div className="relative flex h-[45%] w-full items-center justify-center overflow-hidden border-b border-border/50 bg-surface-sunken/40">
-        <div className="relative h-full w-full flex items-center justify-center overflow-hidden transition-transform duration-500 group-hover:scale-105">
-          {media}
-        </div>
-      </div>*/}
 
       {/* Bottom Content Area - Solid surface background to prevent mixing with page background */}
       <div className="relative z-40 flex flex-grow flex-col justify-end bg-surface px-5 pb-5 pt-4 sm:px-6 sm:pb-6">

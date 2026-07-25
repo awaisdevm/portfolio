@@ -1,0 +1,111 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "about": "À propos",
+        "projects": "Projets",
+        "blog": "Blog",
+        "contact": "Contact",
+        "services": "Services",
+        "testimonials": "Témoignages"
+    },
+    "cta": {
+        "bookedStatus": "Réservations actuellement ouvertes pour le T3 2026",
+        "title": "Vous avez un projet d'application mobile à grande échelle ou multiplateforme ?",
+        "description": "Parlez-moi de vos objectifs produit, de vos besoins en architecture ou de votre migration KMP/Flutter — je vous répondrai sous un jour ouvrable avec une feuille de route technique claire.",
+        "startProject": "Démarrer un projet",
+        "seeWork": "Explorer le portfolio"
+    },
+    "footer": {
+        "copyright": "© {year} Muhammad Awais. Tous droits réservés.",
+        "poweredBy": "Développé avec Next.js & Tailwind CSS",
+        "navigate": "Navigation",
+        "specialties": "Spécialités",
+        "getInTouch": "Restons en contact",
+        "specialtiesList": [
+            "Android natif (Kotlin & Java)",
+            "Kotlin Multiplatform (KMP)",
+            "Compose Multiplatform (CMP)",
+            "Flutter Multiplateforme"
+        ]
+    },
+    "profile": {
+        "title": "Développeur d'applications mobiles senior & Architecte",
+        "subtitle": "Native Android • Kotlin Multiplatform (KMP) • Compose Multiplatform (CMP) • Flutter",
+        "bio": "Développeur d'applications mobiles senior avec plus de 6 ans d'expérience dans la création d'applications de production évolutives pour la santé, la fintech, l'IoT et le e-commerce. Spécialisé en Android natif, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP) et Flutter avec Clean Architecture et les design patterns MVI/MVVM.",
+        "location": "Lahore, Pakistan (Disponible mondialement)",
+        "availability": "Ouvert aux rôles senior et au conseil stratégique"
+    },
+    "skills": {
+        "title": "Arsenal technique",
+        "subtitle": "Mon écosystème d'outils professionnels pour le natif et le multiplateforme",
+        "languages": "Langages (Kotlin, Dart, Java)",
+        "android": "Android natif (Jetpack Compose, TV, Custom UI)",
+        "multiplatform": "Multiplateforme (KMP & CMP)",
+        "flutter": "Flutter (BLoC, Riverpod, GetIt)",
+        "architecture": "Architecture & Asynchrone (Clean, MVI, MVVM, Coroutines)",
+        "tools": "IoT, Paiements & DevOps (Agora, SDK matériels, CI/CD)"
+    },
+    "home": {
+        "availability": "Disponible pour des contrats et du développement complet",
+        "heading1": "Conception de solutions",
+        "heading2": "Mobiles et Multiplateformes évolutives",
+        "description": "Développeur mobile senior et architecte avec plus de 6 ans d'expérience en Android natif (Jetpack Compose), KMP, CMP et Flutter. Spécialiste en Clean Architecture et applications haute performance.",
+        "buttonStart": "Démarrer un projet",
+        "buttonView": "Voir les travaux sélectionnés",
+        "portraitAlt": "Muhammad Awais — Développeur d'applications mobiles senior & Architecte multiplateforme à Lahore, Pakistan",
+        "skillsEyebrow": "Stack technique",
+        "skillsTitle": "Compétences techniques",
+        "stats": {
+            "experience": "6+ ans d'expérience",
+            "completed": "25+ Projets déployés",
+            "stores": "Apps sur les stores"
+        },
+        "selectedWork": "Travaux sélectionnés",
+        "recentProjects": "Projets de production en vedette",
+        "allProjectsLink": "Voir tous les projets",
+        "processTitle": "Déroulement d'une collaboration",
+        "processSubtitle": "Un processus pragmatique axé sur la livraison de code résilient et évolutif",
+        "processSteps": {
+            "01": {
+                "title": "Découverte & Cadrage",
+                "body": "Une analyse approfondie du périmètre, des exigences clés de la plateforme (Android, iOS, KMP ou Flutter) et des jalons techniques clairs."
+            },
+            "02": {
+                "title": "L'architecture d'abord",
+                "body": "Conception d'une Clean Architecture modulaire — logique métier KMP partagée, gestion d'état MVI/MVVM prévisible et UI découplée."
+            },
+            "03": {
+                "title": "Développement itératif",
+                "body": "Builds de production hebdomadaires installables et testables sur des appareils physiques, soutenus par l'automatisation CI/CD."
+            },
+            "04": {
+                "title": "Lancement & Passage à l'échelle",
+                "body": "Publication sur les stores, configuration des pipelines de release, suivi des crashs et passation technique complète pour une évolutivité à long terme."
+            }
+        },
+        "feedbackTitle": "Avis clients",
+        "feedbackSubtitle": "Ce que disent les responsables techniques et fondateurs",
+        "allTestimonialsLink": "Lire tous les témoignages"
+    },
+    "contact": {
+        "title": "Contact",
+        "headerTitle": "Concevons ensemble votre prochain jalon mobile.",
+        "headerDesc": "Contactez-moi directement par e-mail ou via les réseaux professionnels — je réponds en un jour ouvrable.",
+        "locationTitle": "Localisation",
+        "form": {
+            "nameLabel": "Nom",
+            "emailLabel": "E-mail",
+            "platformLabel": "Plateforme (Android / KMP / CMP / Flutter)",
+            "budgetLabel": "Fourchette budgétaire",
+            "detailsLabel": "Détails du projet ou rôle recherché",
+            "buttonSend": "Envoyer le message",
+            "successTitle": "Message envoyé avec succès",
+            "successMessage": "Merci pour votre message — je lis et réponds à chaque demande rapidement."
+        }
+    },
+    "notfound": {
+        "eyebrow": "Erreur 404",
+        "title": "Cet écran n'existe pas.",
+        "button": "Retour à l'accueil"
+    }
+}

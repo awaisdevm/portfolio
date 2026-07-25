@@ -6,19 +6,18 @@ import { Button } from "@/components/ui/button";
 import { MappedHomeData } from "./HomeView";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import { AndroidIcon, ArrowUpRightIcon, FlutterIcon, KotlinIcon } from "@/components/icons/icons";
-import { AnimatedSection } from "@/components/layout/AnimatedSection";
 
 // ============================================================================
-// 1. THEME & CONFIGURATION LAYER (Theme separated, but kept in same file)
+// 1. THEME & CONFIGURATION LAYER
 // ============================================================================
 const THEME_CONFIG = {
   shapes: {
     squircleRadius: "42% 58% 63% 37% / 41% 45% 55% 59%",
   },
   styles: {
-    sectionWrapper: "pb-8 pt-24 sm:pt-28 lg:pt-24",
+    /* FIXED: Increased top-padding (pt-32 sm:pt-36 lg:pt-36) so the top badge doesn't overlap with the header */
+    sectionWrapper: "pb-8 pt-24 sm:pt-28 lg:pt-28",
     layoutGrid: "container-page grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]",
-
     headingGradient: "text-gradient-brand",
     portraitMaskBg: "bg-gradient-to-br from-primary-subtle to-transparent",
     portraitEchoOuter: "pointer-events-none absolute inset-0 -rotate-3 scale-[0.98] border border-border-subtle md:-rotate-6",
@@ -56,7 +55,7 @@ interface HeroSectionProps {
 }
 
 // ============================================================================
-// 2. SUB-COMPONENTS (Single Responsibility Principle)
+// 2. SUB-COMPONENTS
 // ============================================================================
 
 /** Status indicator for availability with fixed spacing and vertical alignment */
@@ -75,7 +74,7 @@ function AvailabilityBadge({ text }: { text: string }) {
 // ============================================================================
 // MAIN HERO PORTRAIT COMPONENT
 // ============================================================================
-function HeroPortrait() {
+function HeroPortrait({ translate }: { translate: (key: string) => string }) {
   const { shapes, styles, data } = THEME_CONFIG;
 
   return (
@@ -99,14 +98,13 @@ function HeroPortrait() {
       >
         <Image
           src="/brand/dev-pic.webp"
-          alt="Muhammad Awais — Senior Mobile App Developer and Multiplatform Architect in Lahore Pakistan"
+          alt={translate("home.portraitAlt")}
           fill
           sizes="(max-width: 640px) 260px, (max-width: 768px) 320px, 370px"
           className="object-cover object-top transition-transform duration-500 hover:scale-105"
           priority
           fetchPriority="high"
         />
-
       </div>
 
       {/* Floating Stack Badges Bar */}
@@ -145,7 +143,7 @@ function TechBadgeItem({ badge }: { badge: StackBadge }) {
 }
 
 // ============================================================================
-// 3. MAIN HERO COMPONENT (Assembles UI independently of theme data)
+// 3. MAIN HERO COMPONENT
 // ============================================================================
 export default function HeroSection({ translate, homeData }: HeroSectionProps) {
   const { stats, availabilityText, contactPath, projectsPath } = homeData;
@@ -156,23 +154,31 @@ export default function HeroSection({ translate, homeData }: HeroSectionProps) {
 
         {/* Left Side: Content & Actions */}
         <div className="flex flex-col items-center justify-center text-center lg:items-start lg:text-left w-full">
+          {/* Availability Badge */}
           <AvailabilityBadge text={availabilityText} />
 
-          <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl text-heading">
-            {translate("home.heading1")}
-            <br className="hidden sm:block" />
-            <span className={THEME_CONFIG.styles.headingGradient}>
-              {" "}{translate("home.heading2")}
+          {/* Fixed Heading Structure */}
+          <h1 className="mt-5 font-display text-3xl font-bold leading-[1.12] tracking-tight text-heading sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[58px]">
+            {/* REMOVED: whitespace-nowrap to prevent Japanese text from overflowing screens */}
+            <span className="block text-heading [text-wrap:balance]">
+              {translate("home.heading1")}
+            </span>
+
+            {/* Heading 2: Styled Accent Text */}
+            <span className={`block mt-1 sm:mt-2 ${THEME_CONFIG.styles.headingGradient} [text-wrap:balance]`}>
+              {translate("home.heading2")}
             </span>
           </h1>
 
-          <p className="mt-6 max-w-lg text-base text-muted sm:text-lg">
+          {/* Description */}
+          <p className="mt-6 max-w-xl font-normal text-base leading-relaxed text-muted sm:text-lg sm:leading-relaxed">
             {translate("home.description")}
           </p>
 
-          <div className="mt-8 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row lg:justify-start">
+          {/* Action CTA Buttons */}
+          <div className="mt-8 flex w-full flex-col items-center justify-center gap-3.5 sm:w-auto sm:flex-row lg:justify-start">
             <Button asChild variant="solid" className="btn-primary w-full sm:w-auto">
-              <Link href={contactPath}>
+              <Link href={contactPath} className="inline-flex items-center justify-center gap-2">
                 {translate("home.buttonStart")} <ArrowUpRightIcon size={16} />
               </Link>
             </Button>
@@ -185,7 +191,7 @@ export default function HeroSection({ translate, homeData }: HeroSectionProps) {
           </div>
 
           {/* Stats Bar */}
-          <div className="mt-12 grid w-full grid-cols-3 gap-6 border-t border-border pt-8">
+          <div className="mt-12 grid w-full grid-cols-3 gap-6 border-t border-border/50 pt-8">
             <StatCounter value={stats.yearsExperience} label={translate("home.stats.experience")} />
             <StatCounter value={stats.projectsCompleted} label={translate("home.stats.completed")} />
             <StatCounter value={stats.appsOnStores} label={translate("home.stats.stores")} />
@@ -193,8 +199,8 @@ export default function HeroSection({ translate, homeData }: HeroSectionProps) {
         </div>
 
         {/* Right Side: Portrait Visuals */}
-        <div className="flex w-full items-center justify-center lg:justify-end">
-          <HeroPortrait />
+        <div className="flex h-full w-full items-center justify-center lg:justify-end lg:self-center">
+          <HeroPortrait translate={translate} />
         </div>
 
       </div>

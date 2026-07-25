@@ -40,7 +40,7 @@ export default function AboutTimeline({ experiences }: AboutTimelineProps) {
               {/* Left Column: Role Meta */}
               <div className="flex flex-col gap-1 md:col-span-1">
                 <span className="mb-2 w-fit rounded-md border border-primary/20 bg-primary/10 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-primary-light">
-                  {exp.duration}
+                  {renderDurationWithTime(exp.duration)}
                 </span>
                 <h3 className="font-display text-base font-bold leading-snug text-heading">
                   {exp.role}
@@ -82,4 +82,22 @@ export default function AboutTimeline({ experiences }: AboutTimelineProps) {
       </div>
     </section>
   );
+}
+
+// Helper function to render semantic <time> tags
+function renderDurationWithTime(duration: string) {
+  const parts = duration.split("-").map((p) => p.trim());
+  if (parts.length === 2) {
+    const startYear = parts[0];
+    const endYear = parts[1];
+    return (
+      <>
+        <time dateTime={startYear}>{startYear}</time> -{" "}
+        <time dateTime={endYear === "Present" ? new Date().getFullYear().toString() : endYear}>
+          {endYear}
+        </time>
+      </>
+    );
+  }
+  return <time dateTime={duration}>{duration}</time>;
 }

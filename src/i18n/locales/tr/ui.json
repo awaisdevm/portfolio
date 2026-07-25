@@ -1,0 +1,111 @@
+{
+    "nav": {
+        "home": "Ana Sayfa",
+        "about": "Hakkımda",
+        "projects": "Projeler",
+        "blog": "Blog",
+        "contact": "İletişim",
+        "services": "Hizmetler",
+        "testimonials": "Referanslar"
+    },
+    "cta": {
+        "bookedStatus": "Şu anda 2026 3. Çeyrek projeleri için randevu alınıyor",
+        "title": "Büyük ölçekli bir mobil uygulama fikriniz veya çoklu platform projeniz mi var?",
+        "description": "Ürün hedeflerinizi, mimari ihtiyaçlarınızı veya KMP/Flutter taşıma sürecinizi anlatın — net bir teknik yol haritasıyla 1 iş günü içinde yanıt vereyim.",
+        "startProject": "Projeyi Başlat",
+        "seeWork": "Portföyü İncele"
+    },
+    "footer": {
+        "copyright": "© {year} Muhammad Awais. Tüm hakları saklıdır.",
+        "poweredBy": "Next.js & Tailwind CSS ile geliştirilmiştir",
+        "navigate": "Gezinti",
+        "specialties": "Uzmanlık Alanları",
+        "getInTouch": "İletişime Geçin",
+        "specialtiesList": [
+            "Native Android (Kotlin & Java)",
+            "Kotlin Multiplatform (KMP)",
+            "Compose Multiplatform (CMP)",
+            "Flutter Çapraz Platform"
+        ]
+    },
+    "profile": {
+        "title": "Kıdemli Mobil Uygulama Geliştiricisi & Mimar",
+        "subtitle": "Native Android • Kotlin Multiplatform (KMP) • Compose Multiplatform (CMP) • Flutter",
+        "bio": "Sağlık Teknolojileri, FinTek, IoT ve E-Ticaret alanlarında ölçeklenebilir canlı ortam uygulamaları geliştiren 6+ yıllık deneyime sahip Kıdemli Mobil Uygulama Geliştiricisi. Temiz Mimari ve MVI/MVVM tasarım kalıpları ile Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP) ve Flutter konularında uzman.",
+        "location": "Lahor, Pakistan (Küresel Olarak Müsait)",
+        "availability": "Kıdemli Pozisyonlar ve Stratejik Danışmanlık İçin Müsait"
+    },
+    "skills": {
+        "title": "Teknik Yetkinlikler",
+        "subtitle": "Native ve çoklu platform ekosistemlerindeki profesyonel araç setim",
+        "languages": "Programlama Dilleri (Kotlin, Dart, Java)",
+        "android": "Native Android (Jetpack Compose, TV, Özel Arayüzler)",
+        "multiplatform": "Çoklu Platform (KMP & CMP)",
+        "flutter": "Flutter (BLoC, Riverpod, GetIt)",
+        "architecture": "Mimari & Asenkron (Clean, MVI, MVVM, Coroutines)",
+        "tools": "IoT, Ödeme Sistemleri & DevOps (Agora, Donanım SDK'ları, CI/CD)"
+    },
+    "home": {
+        "availability": "Sözleşmeli & tam döngü geliştirme için müsait",
+        "heading1": "Ölçeklenebilir",
+        "heading2": "Mobil & Çoklu Platform Çözümleri Mimarisi",
+        "description": "Native Android (Jetpack Compose), KMP, CMP ve Flutter konularında 6+ yıllık deneyime sahip Kıdemli Mobil Geliştirici & Mimar. Temiz Mimari ve yüksek performanslı uygulamalar uzmanı.",
+        "buttonStart": "Projeyi Başlat",
+        "buttonView": "Öne Çıkan Çalışmaları Gör",
+        "skillsEyebrow": "Teknoloji Yığını",
+        "portraitAlt": "Muhammad Awais — Lahor Pakistan'da Kıdemli Mobil Uygulama Geliştiricisi ve Çoklu Platform Mimarı",
+        "skillsTitle": "Teknik Beceriler",
+        "stats": {
+            "experience": "6+ Yıllık Deneyim",
+            "completed": "25+ Canlıya Alınan Proje",
+            "stores": "Magazalardaki Uygulamalar"
+        },
+        "selectedWork": "Seçilen Çalışmalar",
+        "recentProjects": "Öne Çıkan Üretim Projeleri",
+        "allProjectsLink": "Tüm projeleri gör",
+        "processTitle": "Süreç Nasıl İşler",
+        "processSubtitle": "Esnek ve ölçeklenebilir kod teslimi etrafında kurgulanmış pratik bir süreç",
+        "processSteps": {
+            "01": {
+                "title": "Keşif & Kapsam Belirleme",
+                "body": "Proje kapsamı, temel platform gereksinimleri (Android, iOS, KMP veya Flutter) ve net mühendislik kilometre taşları üzerine derinlemesine analiz."
+            },
+            "02": {
+                "title": "Önce Mimari",
+                "body": "Modüler Temiz Mimari tasarımı — ortak KMP iş mantığı, öngörülebilir MVI/MVVM durum yönetimi ve bağımsız platform kullanıcı arayüzü."
+            },
+            "03": {
+                "title": "Yinelemeli Geliştirme",
+                "body": "CI/CD otomasyonu ile desteklenen, fiziksel cihazlarda yükleyip test edebileceğiniz haftalık üretim kalitesinde derlemeler."
+            },
+            "04": {
+                "title": "Yayınlama & Ölçekleme",
+                "body": "Mağaza lansmanı, yayın hatlarının kurulumu, çökme raporlaması ve uzun vadeli ölçeklenebilirlik için kapsamlı teknik devir."
+            }
+        },
+        "feedbackTitle": "Müşteri Geri Bildirimleri",
+        "feedbackSubtitle": "Mühendislik liderleri ve kurucular ne diyor",
+        "allTestimonialsLink": "Tüm referansları oku"
+    },
+    "contact": {
+        "title": "İletişim",
+        "headerTitle": "Bir sonraki mobil projenizi birlikte inşa edelim.",
+        "headerDesc": "E-posta veya profesyonel kanallar aracılığıyla doğrudan ulaşın — 1 iş günü içinde yanıt veriyorum.",
+        "locationTitle": "Konum",
+        "form": {
+            "nameLabel": "Adınız",
+            "emailLabel": "E-posta Adresiniz",
+            "platformLabel": "Platform (Android / KMP / CMP / Flutter)",
+            "budgetLabel": "Bütçe Aralığı",
+            "detailsLabel": "Proje Detayları veya Rol Kapsamı",
+            "buttonSend": "Mesaj Gönder",
+            "successTitle": "Mesaj başarıyla gönderildi",
+            "successMessage": "İletişime geçtiğiniz için teşekkürler — her talebi dikkatle okuyor ve en kısa sürede yanıtlıyorum."
+        }
+    },
+    "notfound": {
+        "eyebrow": "404 Hatası",
+        "title": "Bu ekran mevcut değil.",
+        "button": "Ana Sayfaya Dön"
+    }
+}

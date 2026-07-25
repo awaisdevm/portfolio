@@ -1,0 +1,23 @@
+{
+    "title": "Hizmetler ve Çözümler",
+    "headerTitle": "Ölçeklenebilirlik, performans ve kararlılık için tasarlanmış özel mobil mühendislik.",
+    "headerDesc": "Çoklu platform sistem mimarisinden KMP/CMP paylaşılan mantığına, uçtan uca Native Android ve Flutter canlı ortam uygulama lansmanlarına kadar.",
+    "items": {
+        "android-native": {
+            "title": "Native Android ve Donanım Entegrasyonu",
+            "description": "Jetpack Compose, Kotlin ve MVI/MVVM desenleriyle geliştirilmiş yüksek performanslı native Android uygulamaları. IoT tıbbi donanım sürücüleri, Agora/Twilio video SDK'ları, Android TV ve güvenli ödeme sistemleri alanında uzmanlık."
+        },
+        "kmp": {
+            "title": "Kotlin ve Compose Multiplatform (KMP/CMP)",
+            "description": "Kotlin Multiplatform (KMP) ve Compose Multiplatform (CMP) kullanarak Android ve iOS arasında paylaşılan iş mantığı ve reaktif kullanıcı arayüzü — %100 native çalışma hızını korurken kod tekrarını ortadan kaldırır."
+        },
+        "flutter": {
+            "title": "Flutter Çapraz Platform Mühendisliği",
+            "description": "Flutter, BLoC/Riverpod ve Dio ile inşa edilmiş ölçeklenebilir, yüksek kaliteli çapraz platform uygulamaları. Hızlı pazara sunma süresi, karmaşık REST/SOAP entegrasyonları ve yüksek dönüşüm sağlayan kullanıcı deneyimi (UI/UX) için tasarlandı."
+        },
+        "architecture": {
+            "title": "Mobil Mimari ve Kod Tabanı Modernizasyonu",
+            "description": "Monolitik kod tabanlarını modüler Temiz Mimari'ye (Clean Architecture) dönüştürme, Java'dan Kotlin'e geçiş ve %99+ çökmesiz (crash-free) oturum oranına ulaşmak için uygulama kararlılığı optimizasyonu."
+        }
+    }
+}

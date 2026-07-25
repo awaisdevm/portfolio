@@ -63,7 +63,7 @@ export default function ContactView({ labels, location }: ContactViewProps) {
       {/* Main Content Layout */}
       <section className="pb-20 md:pb-28">
         <div className="container-page">
-          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
+          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
             {/* Left Panel: Location & Status */}
             <motion.div
               initial="hidden"

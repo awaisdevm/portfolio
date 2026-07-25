@@ -4,22 +4,53 @@ import { locales, Locale } from "@/i18n/config";
 
 const localizedDefaults: Record<Locale, { title: string; description: string }> = {
     en: {
-        title: `Muhammad Awais — Senior Mobile App Developer & Architect (Android, KMP, CMP, Flutter)`,
-        description: "Senior Mobile App Developer with 6+ years experience in Native Android (Jetpack Compose), KMP, Flutter, and Clean Architecture.",
+        title: `M. Awais | Android & Cross-Platform Architect`,
+        description: `M. Awais — Senior Android & Cross-Platform Developer (KMP, CMP, Flutter) with 6+ years building scalable apps using Clean Architecture, MVI & SOLID.`,
+
     },
     ur: {
-        title: `محمد اویس — سینئر موبائل ایپ ڈویلپر (اینڈرائیڈ، KMP، CMP، فلٹر)`,
-        description:
-            "محمد اویس (Devawais) — 6+ سالہ تجربہ کار سینئر موبائل ایپ ڈویلپر اور آرکیٹیکٹ۔ اینڈرائیڈ، فلٹر، کوٹلن ملٹی پلیٹ فارم (KMP) اور کمپوز ملٹی پلیٹ فارم (CMP) کے ماہر۔",
+        title: "محمد اویس | اینڈرائیڈ اور کراس پلیٹ فارم آرکیٹیکٹ",
+        description: "محمد اویس — 6+ سالہ تجربہ کار سینئر اینڈرائیڈ و کراس پلیٹ فارم ڈویلپر (KMP, CMP, Flutter)۔ کلین آرکیٹیکچر، MVI اور SOLID کے ماہر۔",
+    },
+    de: {
+        title: "M. Awais | Android & Cross-Platform Architekt",
+        description: "M. Awais — Senior Android & Cross-Platform Entwickler (KMP, CMP, Flutter) mit 6+ Jahren Erfahrung in skalierbarer Clean Architecture & MVI.",
+    },
+    ar: {
+        title: "محمد أويس | مهندس تطبيقات أندرويد وتطبيقات متعددة المنصات",
+        description: "محمد أويس — مهندس برمجيات وتطبيقات أندرويد وتطبيقات متعددة المنصات (KMP, CMP, Flutter) بخبرة أكثر من 6 سنوات في بناء تطبيقات قابلة للتوسع باستخدام Clean Architecture و MVI.",
+    },
+    fr: {
+        title: "M. Awais | Architecte Mobile Android & Multiplateforme",
+        description: "M. Awais — Développeur Mobile Senior Android & Multiplateforme (KMP, CMP, Flutter) avec 6+ ans d'expérience en Clean Architecture et MVI."
+    },
+    es: {
+        title: "M. Awais | Arquitecto Móvil Android y Multiplataforma",
+        description: "M. Awais — Desarrollador Senior Móvil y Multiplataforma (KMP, CMP, Flutter) con más de 6 años construyendo aplicaciones escalables usando Clean Architecture, MVI y SOLID."
+    },
+    ja: {
+        title: `M. Awais | Android & クロスプラットフォーム アーキテクト`,
+        description: `M. Awais — Clean Architecture、MVI、SOLIDを用いて拡張性の高いアプリを開発する、6年以上の実績を持つシニアAndroid & クロスプラットフォームデベロッパー（KMP、CMP、Flutter）。`,
+    },
+    tr: {
+        title: `M. Awais | Android ve Çapraz Platform Mimarı`,
+        description: `M. Awais — Clean Architecture, MVI ve SOLID kullanarak ölçeklenebilir uygulamalar geliştiren 6+ yıl deneyimli Kıdemli Android ve Çapraz Platform Geliştiricisi (KMP, CMP, Flutter).`,
     },
 };
 
 const ogLocaleMap: Record<Locale, string> = {
     en: "en_US",
     ur: "ur_PK",
+    de: "de_DE",
+    ar: "ar_SA",
+    fr: "fr_FR",
+    es: "es_ES",
+    ja: "ja_JP",
+    tr: "tr_TR",
+
 };
 
-export const rtlLocales: Locale[] = ["ur"];
+export const rtlLocales: Locale[] = ["ur", "ar"];
 
 export function buildSharedFields(locale: Locale, path: string, title: string, description: string): Metadata {
     const languageAlternates = Object.fromEntries(

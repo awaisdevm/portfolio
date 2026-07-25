@@ -1,0 +1,141 @@
+{
+    "title": "Projekte",
+    "headerTitle": "Veröffentlichte Apps im Native Android- und Flutter-Ökosystem.",
+    "headerDesc": "Filtern Sie nach Plattform, um zu sehen, wie sich Architektur und Tech-Stack anpassen, um optimale Performance, Sicherheit und Echtzeit-Konnektivität zu liefern.",
+    "noProjectsFound": "Keine Projekte für diese Kategorie gefunden.",
+    "backToProjects": "Alle Projekte",
+    "techStack": "Tech-Stack",
+    "filters": {
+        "all": "Alle",
+        "android": "Android",
+        "flutter": "Flutter",
+        "ios": "iOS",
+        "kmp": "KMP",
+        "cmp": "CMP"
+    },
+    "ctas": {
+        "playStore": "Google Play",
+        "appStore": "App Store",
+        "details": "Details anzeigen"
+    },
+    "items": {
+        "spectra-care": {
+            "title": "Spectra Care: Telehealth- & Hardware-Plattform",
+            "category": "Telehealth & IoT",
+            "summary": "Enterprise-Telehealth-Plattform mit Jetpack Compose, Agora-Videoanrufen und Integration von 6-in-1 Medizinmonitoren.",
+            "description": "Production Android-Telehealth-App, entwickelt mit Jetpack Compose und MVI-Architektur. Bietet latenzarme Agora-Videokonsultationen, reaktive Gerätetreiber für Spectra Care 6-in-1 Gesundheitsmonitore und sichere SOAP EHR-Datensynchronisation.",
+            "ctaText": "Auf Google Play ansehen",
+            "altText": "Spectra Care — Android Native Telehealth-App mit Agora-Videoanrufen und Spectra IoT-Gesundheitsmonitor-Integration entwickelt von Muhammad Awais",
+            "highlights": [
+                "Echtzeit-Videokonsultationen via Agora SDK",
+                "Synchronisation mit Spectra Care 6-in-1 IoT-Gesundheitsmonitoren",
+                "MVI-Architektur mit Jetpack Compose"
+            ]
+        },
+        "zouris": {
+            "title": "Zouris: Ganzheitliche Wellness-Plattform",
+            "category": "Gesundheit & Wellness",
+            "summary": "Plattformübergreifende Wellness-App für angeleitete Sessions, Audio-Streams und Affirmationen.",
+            "description": "Zouris ist eine ganzheitliche Wellness-Plattform, entwickelt mit Flutter, auf der zertifizierte Coaches und Experten angeleitete Sessions, Meditationen und Echtzeit-Audio-Streams mit nativer UX-Performance für Android und iOS bereitstellen.",
+            "ctaText": "Google Play",
+            "iosCtaText": "App Store",
+            "altText": "Zouris Wellness-Coaching-App — plattformübergreifende Meditations- und Audio-Streaming-Plattform entwickelt von Muhammad Awais",
+            "highlights": [
+                "Plattformübergreifende Flutter-Architektur",
+                "Latenzarmes Echtzeit-Audio-Streaming",
+                "Sauberes Statusmanagement mit BLoC"
+            ]
+        },
+        "egora-b2b": {
+            "title": "Egora B2B: Restaurant-Partner-Plattform",
+            "category": "B2B-Lösungen",
+            "summary": "White-Label-Partner-Dashboard für Restaurantbesitzer zur Verwaltung von Bestellungen, Abholungen und Live-Reservierungen.",
+            "description": "White-Label-Partner-Plattform, entwickelt mit Flutter, Dio und GetIt. Ermöglicht Restaurantbesitzern die selbstständige Verwaltung von Vor-Ort-Verzehr, Abholung, QR-Code-Bestellungen und Thermobelegdruck mit zuverlässigen Zahlungsintegrationen.",
+            "ctaText": "Projektdetails anzeigen",
+            "altText": "Egora B2B Restaurant-Partner-Dashboard — Bestell-, Reservierungs- und QR-Verwaltung entwickelt von Muhammad Awais",
+            "highlights": [
+                "Flutter-, Dio- und GetIt-Architektur",
+                "Unabhängige Multi-Händler-Dashboards",
+                "Echtzeit-Bestellsynchronisation und Benachrichtigungs-Engine"
+            ]
+        },
+        "egora": {
+            "title": "Egora: Smartes Restaurant-Ökosystem",
+            "category": "Gastronomie & Verpflegung",
+            "summary": "Hochskalierbares Restaurant-Ökosystem mit QR-Bestellung, Reservierungsverwaltung und Bluetooth-Hardware-Integrationen.",
+            "description": "Skalierbares Reservierungs- und Gastronomiesystem, entwickelt mit Flutter und Jetpack Compose. Bietet QR-Code-Bestellung, integrierte XStax-Zahlungsabwicklung (10k+ monatliche Transaktionen) und eigene Bluetooth-Thermodrucker-Hardwaretreiber mit 100 % Zuverlässigkeit.",
+            "ctaText": "Projektdetails anzeigen",
+            "altText": "Egora Restaurant-App — QR-Bestellung, Reservierungssystem und Bluetooth-Thermodrucker-Integration entwickelt von Muhammad Awais",
+            "highlights": [
+                "30 % Steigerung der Kundennutzung erzielt",
+                "Bluetooth-Thermodrucker-Integration mit 50 % reduzierter Latenz",
+                "XStax Payment Gateway verarbeitet 10k+ monatliche Transaktionen"
+            ]
+        },
+        "makernote": {
+            "title": "Makernote: Interaktives EdTech",
+            "category": "Bildungs-App",
+            "summary": "Bildungsplattform mit Echtzeit-Zusammenarbeit und Offline-Synchronisation.",
+            "description": "Hochperformante Bildungsplattform für Lehrkräfte und Lernende — entwickelt mit Clean Architecture für Echtzeit-Zusammenarbeit, sofortige Notizsynchronisation und nahtlose Offline-Datenspeicherung.",
+            "ctaText": "Im App Store ansehen",
+            "altText": "Makernote EdTech-App — Echtzeit-Zusammenarbeit und Offline-Synchronisation entwickelt von Muhammad Awais",
+            "highlights": [
+                "Echtzeit-Zusammenarbeit für mehrere Nutzer",
+                "Offline-First lokaler Speicher",
+                "Saubere MVVM-Architektur"
+            ]
+        },
+        "eco-grocery": {
+            "title": "Eco Grocery: Smarter Inventar-Tracker",
+            "category": "Smart Utility",
+            "summary": "Smarte Lebensmittel-Tracker-App mit Barcode-Scanning, Rezeptempfehlungen und Ablaufwarnungen.",
+            "description": "Intelligente Android-Utility-App mit dynamischer Einkaufsliste, verknüpft mit einer Rezeptempfehlungs-Engine, kombiniert mit integriertem Kamera-Barcode-Scanning zur sofortigen Artikelerfassung und Ablaufverfolgung.",
+            "ctaText": "Projektdetails anzeigen",
+            "altText": "Eco Grocery Android-App — Barcode-Scanning Lebensmittel-Tracker entwickelt von Muhammad Awais",
+            "highlights": [
+                "Kamera-Barcode-Scanner-Integration",
+                "Smartes Benachrichtigungs- & Ablaufwarnsystem",
+                "Reaktive UI-Statusverarbeitung"
+            ]
+        },
+        "hcloud": {
+            "title": "HCloud: Praxisverwaltungs-Suite",
+            "category": "Ärzte-App",
+            "summary": "Enterprise-Betriebsportal für Gesundheitsdienstleister mit Termin- und Rezept-Synchronisation.",
+            "description": "Enterprise-Praxisverwaltungsanwendung für Ärzte. Entwickelt mit MVVM, Hilt und Room DB zur Echtzeit-Rezepterstellung, Patientenaktenverwaltung und Offline-First-Terminplanung.",
+            "ctaText": "Auf Google Play ansehen",
+            "altText": "HCloud Praxisverwaltungs-Suite — Echtzeit-Rezept-Sync und Terminplanung entwickelt von Muhammad Awais",
+            "highlights": [
+                "Duale App-Architektur im Kern",
+                "Offline-First-Synchronisationswarteschlange mit Room DB",
+                "Responsives klinisches UI für Ärzte"
+            ]
+        },
+        "healthwire": {
+            "title": "Healthwire: HealthTech-Ökosystem",
+            "category": "Telehealth-Plattform",
+            "summary": "Führende Gesundheitsanwendung mit 2M+ Downloads, Telemedizin, Laborbuchungen und sicheren Zahlungsintegrationen.",
+            "description": "Architektur einer der führenden Gesundheitsplattformen Pakistans — betreibt Apothekenlogistik, Laborbuchungen, Twilio-Videokonsultationen und lokale Payment-Gateways (Meezan, JazzCash, Foree) mit einer absturzfreien Rate von 99 %+.",
+            "ctaText": "Auf Google Play ansehen",
+            "altText": "Healthwire Gesundheits-App — Apothekenlogistik, Laborbuchung und Twilio-Telemedizin entwickelt von Muhammad Awais",
+            "highlights": [
+                "2M+ Downloads im Google Play Store",
+                "Twilio Echtzeit-Videokonsultationen (+15 % Engagement)",
+                "100 % sichere Zahlungsabwicklung (Meezan, JazzCash, Foree)"
+            ]
+        },
+        "dongamers": {
+            "title": "DonGamers: E-Sports-Plattform",
+            "category": "E-Gaming-Plattform",
+            "summary": "Globale Gaming-Plattform mit Echtzeit-Pusher-Chat, Turnierbäumen und optimierter Monetarisierung.",
+            "description": "Entwicklung einer internationalen E-Sports-Plattform auf Native Android. Migration der Codebasis von Java zu Kotlin, Architektur eines skalierbaren Echtzeit-Chats mit Pusher (+15 % Engagement) und Optimierung von In-App-Käufen sowie Google AdMob.",
+            "ctaText": "Auf Google Play ansehen",
+            "altText": "DonGamers E-Sports-Plattform — Echtzeit-Chat und Turnier-Verfolgung entwickelt von Muhammad Awais",
+            "highlights": [
+                "99 % absturzfreie Rate bei globaler Verfügbarkeit",
+                "Echtzeit-Chat-Infrastruktur mit Pusher",
+                "Monetarisierungsoptimierung steigert Umsatz um 10 %"
+            ]
+        }
+    }
+}

@@ -59,9 +59,13 @@ export default function BlogCard({ post, priority = false }: BlogCardProps) {
         <div className="flex flex-1 flex-col p-5">
           {/* Date & Category Row */}
           <div className="mb-3 flex items-center justify-between gap-2">
-            <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-muted">
+            <time
+              dateTime={new Date(post.publishDate).toISOString()}
+              itemProp="datePublished"
+              className="font-mono text-[10px] font-bold uppercase tracking-widest text-muted"
+            >
               {formatFullDateTime(post.publishDate)}
-            </span>
+            </time>
             {post.category && (
               <span className="rounded-full border border-primary/20 bg-primary/10 px-2.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider text-primary-light">
                 {post.category}

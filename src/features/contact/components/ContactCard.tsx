@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -59,10 +58,10 @@ export default function ContactCard({ option, variants }: ContactCardProps) {
         </p>
       </div>
 
-      {/* Action Arrow Badge */}
+      {/* Action Arrow Badge (Parent explicitly tracks group hover state) */}
       <div className="ml-4 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border/20 bg-surface-sunken/40 opacity-70 transition-all duration-300 group-hover:scale-110 group-hover:border-primary/40 group-hover:bg-primary/10 group-hover:opacity-100">
         <ArrowUpRightIcon
-          className="h-4 w-4 text-primary-light transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+          className="h-4 w-4 text-primary-light transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
           aria-hidden="true"
         />
       </div>
@@ -71,7 +70,7 @@ export default function ContactCard({ option, variants }: ContactCardProps) {
 
   if (isObfuscated) {
     return (
-      <motion.div variants={variants}>
+      <motion.div variants={variants} className="block w-full">
         <ObfuscatedContact
           type={obfuscateType}
           value={displayContent}

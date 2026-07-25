@@ -1,0 +1,26 @@
+{
+    "title": "概要",
+    "headerTitle": "こんにちは、ムハンマド・アワイスです — シニアモバイルアプリデベロッパー＆マルチプラットフォームアーキテクト",
+    "headerDesc": "ネイティブAndroid（Kotlin/Java）、Kotlin Multiplatform（KMP）、Compose Multiplatform（CMP）、Flutterを活用し、クリーンアーキテクチャとMVI/MVVMデザインパターンに基づいた高性能で拡張性の高いシステム構築において6年以上の実績を持つシニアモバイルエンジニア。",
+    "expertiseTitle": "コア技術・専門領域",
+    "expertiseSubtitle": "インパクトの大きいモバイルアーキテクチャ、クロスプラットフォームエンジニアリング、リアクティブシステム設計",
+    "experienceTitle": "職務経歴・実績",
+    "experienceSubtitle": "ヘルステック、フィンテック、IoTハードウェア、リアルタイムプラットフォームにおける堅牢なアプリ開発",
+    "infoTitle": "拠点",
+    "infoLocation": "パキスタン、ラホール",
+    "infoFocus": "専門分野",
+    "infoFocusVal": "Android • KMP • CMP • Flutter",
+    "role": "現在の役職",
+    "roleVal": "シニアモバイルアプリデベロッパー",
+    "availability": "新規案件・オファー受付中",
+    "githubFollowers": "GitHubコミュニティ",
+    "githubStars": "リポジトリStar数",
+    "linkedinConnections": "プロフェッショナルネットワーク",
+    "downloadCv": "職務経歴書 / CVをダウンロード",
+    "stats": {
+        "experience": "6年以上の実務経験",
+        "completed": "商用アプリ開発実績",
+        "satisfied": "クライアント満足度",
+        "stores": "ストア公開アプリ数"
+    }
+}

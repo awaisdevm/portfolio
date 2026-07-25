@@ -1,0 +1,141 @@
+{
+    "title": "Projeler",
+    "headerTitle": "Native Android ve Flutter ekosistemlerinde yayınlanmış uygulamalar.",
+    "headerDesc": "Optimum performans, güvenlik ve gerçek zamanlı bağlantı sağlamak için mimarinin ve teknoloji yığınının nasıl uyarlandığını görmek için platforma göre filtreleyin.",
+    "noProjectsFound": "Bu kategoriye ait proje bulunamadı.",
+    "backToProjects": "Tüm projeler",
+    "techStack": "Teknoloji yığını",
+    "filters": {
+        "all": "Tümü",
+        "android": "Android",
+        "flutter": "Flutter",
+        "ios": "iOS",
+        "kmp": "KMP",
+        "cmp": "CMP"
+    },
+    "ctas": {
+        "playStore": "Google Play",
+        "appStore": "App Store",
+        "details": "Detayları gör"
+    },
+    "items": {
+        "spectra-care": {
+            "title": "Spectra Care: Tele-sağlık ve Donanım Platformu",
+            "category": "Tele-sağlık ve IoT",
+            "summary": "Jetpack Compose, Agora görüntülü arama ve 6'sı 1 arada tıbbi monitör entegrasyonuna sahip kurumsal tele-sağlık platformu.",
+            "description": "Jetpack Compose ve MVI mimarisi ile inşa edilmiş canlı ortam Android tele-sağlık uygulaması. Düşük gecikmeli Agora görüntülü görüşmeleri, Spectra Care 6'sı 1 arada sağlık monitörleri için reaktif cihaz sürücüleri ve güvenli SOAP EHR veri senkronizasyonu içerir.",
+            "ctaText": "Google Play'de Gör",
+            "altText": "Spectra Care — Muhammad Awais tarafından geliştirilen Agora görüntülü arama ve Spectra IoT sağlık monitörü entegrasyonlu Android Native tele-sağlık uygulaması",
+            "highlights": [
+                "Agora SDK gerçek zamanlı görüntülü görüşmeler",
+                "Spectra Care 6'sı 1 arada IoT sağlık monitörü senkronizasyonu",
+                "Jetpack Compose ile MVI mimarisi"
+            ]
+        },
+        "zouris": {
+            "title": "Zouris: Bütünsel Yaşam ve Sağlık Platformu",
+            "category": "Sağlık ve Yaşam",
+            "summary": "Rehberli seanslar, ses yayınları ve olumlamalar sunan çoklu platform sağlık uygulaması.",
+            "description": "Zouris, sertifikalı koçların ve uzmanların rehberli seanslar, meditasyonlar ve gerçek zamanlı ses yayınlarını Android ve iOS genelinde native kullanıcı deneyimi performansıyla paylaştığı, Flutter kullanılarak tasarlanmış bütünsel bir yaşam platformudur.",
+            "ctaText": "Google Play",
+            "iosCtaText": "App Store",
+            "altText": "Zouris yaşam koçluğu uygulaması — Muhammad Awais tarafından geliştirilen çoklu platform meditasyon ve ses akış platformu",
+            "highlights": [
+                "Çoklu platform Flutter mimarisi",
+                "Düşük gecikmeli gerçek zamanlı ses akışı",
+                "BLoC ile temiz durum yönetimi (state management)"
+            ]
+        },
+        "egora-b2b": {
+            "title": "Egora B2B: Restoran Partner Platformu",
+            "category": "B2B Çözümleri",
+            "summary": "Restoran sahiplerinin siparişleri, gel-al işlemlerini ve canlı rezervasyonları yönetmesi için özel markalanabilir (white-labeled) partner paneli.",
+            "description": "Flutter, Dio ve GetIt kullanılarak geliştirilmiş özel markalanabilir partner platformu. Restoran sahiplerinin masa içi sipariş, gel-al, QR kod ile sipariş ve termal fiş yazdırma süreçlerini güvenilir ödeme entegrasyonlarıyla bağımsız olarak yönetmelerini sağlar.",
+            "ctaText": "Proje Detaylarını Gör",
+            "altText": "Egora B2B restoran partner paneli — Muhammad Awais tarafından geliştirilen sipariş, rezervasyon ve QR yönetim sistemi",
+            "highlights": [
+                "Flutter, Dio ve GetIt mimarisi",
+                "Bağımsız çoklu üye işyeri panelleri",
+                "Gerçek zamanlı sipariş senkronizasyonu ve bildirim motoru"
+            ]
+        },
+        "egora": {
+            "title": "Egora: Akıllı Restoran Ekosistemi",
+            "category": "Yiyecek ve İçecek",
+            "summary": "QR sipariş, rezervasyon yönetimi ve Bluetooth donanım entegrasyonlarına sahip büyük ölçekli restoran ekosistemi.",
+            "description": "Flutter ve Jetpack Compose kullanılarak inşa edilmiş ölçeklenebilir rezervasyon ve yemek sistemi. QR kod ile sipariş, entegre XStax ödeme işleme (aylık 10 bin+ işlem) ve %100 güvenilirlik sağlayan özel Bluetooth termal yazıcı donanım sürücüleri içerir.",
+            "ctaText": "Proje Detaylarını Gör",
+            "altText": "Egora restoran uygulaması — Muhammad Awais tarafından geliştirilen QR sipariş, rezervasyon sistemi ve Bluetooth termal yazıcı entegrasyonu",
+            "highlights": [
+                "Müşteri kullanımında %30 artış sağlandı",
+                "%50 azaltılmış gecikme süresi ile Bluetooth termal yazıcı entegrasyonu",
+                "Aylık 10 bin+ işlem gerçekleştiren XStax ödeme ağ geçidi"
+            ]
+        },
+        "makernote": {
+            "title": "Makernote: İnteraktif Eğitim Teknolojisi (EdTech)",
+            "category": "Eğitim Uygulaması",
+            "summary": "Gerçek zamanlı iş birliği ve çevrimdışı senkronizasyona sahip eğitim platformu.",
+            "description": "Öğretmenler ve öğrenciler için yüksek performanslı eğitim platformu — gerçek zamanlı iş birliği, anında not senkronizasyonu ve kesintisiz çevrimdışı veri depolama için Temiz Mimari ile geliştirilmiştir.",
+            "ctaText": "App Store'da Gör",
+            "altText": "Makernote EdTech uygulaması — Muhammad Awais tarafından geliştirilen gerçek zamanlı iş birliği ve çevrimdışı senkronizasyon",
+            "highlights": [
+                "Gerçek zamanlı çok kullanıcılı iş birliği",
+                "Çevrimdışı öncelikli (offline-first) yerel depolama",
+                "Temiz MVVM mimarisi"
+            ]
+        },
+        "eco-grocery": {
+            "title": "Eco Grocery: Akıllı Envanter Takibi",
+            "category": "Akıllı Araçlar",
+            "summary": "Barkod tarama, tarif önerileri ve son kullanma tarihi uyarıları içeren akıllı market takip uygulaması.",
+            "description": "Anında ürün kataloglama ve son kullanma tarihi yönetimi için dahili kamera barkod taraması ile eşleştirilmiş, yemek tarifi öneri motoruna bağlı dinamik bir market listesi sunan akıllı Android araç uygulaması.",
+            "ctaText": "Proje Detaylarını Gör",
+            "altText": "Eco Grocery Android uygulaması — Muhammad Awais tarafından geliştirilen barkod taramalı market takip uygulaması",
+            "highlights": [
+                "Kamera barkod tarayıcı entegrasyonu",
+                "Akıllı bildirim ve son kullanma tarihi sistemi",
+                "Reaktif UI durum yönetimi"
+            ]
+        },
+        "hcloud": {
+            "title": "HCloud: Klinik Yönetim Paketi",
+            "category": "Doktor Uygulaması",
+            "summary": "Randevu ve reçete senkronizasyonuna sahip sağlık hizmeti sağlayıcıları için kurumsal operasyon portalı.",
+            "description": "Doktorlar için tasarlanmış kurumsal düzeyde klinik yönetim uygulaması. Gerçek zamanlı reçete oluşturma, hasta kayıtları yönetimi ve çevrimdışı öncelikli randevu planlamasını sağlamak için MVVM, Hilt ve Room DB ile inşa edilmiştir.",
+            "ctaText": "Google Play'de Gör",
+            "altText": "HCloud klinik yönetim paketi — Muhammad Awais tarafından geliştirilen gerçek zamanlı reçete senkronizasyonu ve randevu planlama",
+            "highlights": [
+                "Çift uygulamalı mimari çekirdeği",
+                "Room DB kullanarak çevrimdışı öncelikli senkronizasyon kuyruğu",
+                "Duyarlı klinik doktor arayüzü"
+            ]
+        },
+        "healthwire": {
+            "title": "Healthwire: Sağlık Teknolojileri Ekosistemi",
+            "category": "Tele-sağlık Platformu",
+            "summary": "2 Milyondan fazla indirme, tele-tıp, laboratuvar randevusu ve güvenli ödeme entegrasyonlarına sahip öncü sağlık uygulaması.",
+            "description": "Eczane lojistiği, laboratuvar testi randevuları, Twilio görüntülü görüşmeleri ve yerel ödeme ağ geçitlerini (Meezan, JazzCash, Foree) %99+ çökmesiz oturum oranıyla destekleyen, Pakistan'ın lider sağlık platformlarından birinin mimarisini kurdu.",
+            "ctaText": "Google Play'de Gör",
+            "altText": "Healthwire sağlık uygulaması — Muhammad Awais tarafından geliştirilen eczane lojistiği, laboratuvar randevusu ve Twilio tele-tıp çözümü",
+            "highlights": [
+                "Google Play Store'da 2 Milyondan fazla indirme",
+                "Twilio gerçek zamanlı görüntülü görüşmeler (+%15 etkileşim)",
+                "%100 güvenli ödeme işleme (Meezan, JazzCash, Foree)"
+            ]
+        },
+        "dongamers": {
+            "title": "DonGamers: E-Spor Platformu",
+            "category": "E-Oyun Platformu",
+            "summary": "Gerçek zamanlı Pusher sohbeti, turnuva eşleşmeleri ve optimize edilmiş gelir modelleri sunan küresel oyun platformu.",
+            "description": "Native Android üzerinde uluslararası bir e-spor platformu geliştirdi. Kod tabanını Java'dan Kotlin'e taşıdı, Pusher kullanarak ölçeklenebilir gerçek zamanlı sohbet altyapısı tasarladı (+%15 etkileşim) ve Uygulama İçi Satın Almalar ile Google AdMob'u optimize etti.",
+            "ctaText": "Google Play'de Gör",
+            "altText": "DonGamers e-spor platformu — Muhammad Awais tarafından geliştirilen gerçek zamanlı sohbet ve turnuva takibi",
+            "highlights": [
+                "Küresel erişilebilirlikte %99 çökmesiz oturum oranı",
+                "Pusher kullanan gerçek zamanlı sohbet altyapısı",
+                "Satışları %10 artıran gelir modeli optimizasyonu"
+            ]
+        }
+    }
+}

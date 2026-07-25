@@ -1,0 +1,23 @@
+{
+    "title": "サービス & ソリューション",
+    "headerTitle": "拡張性、パフォーマンス、安定性を追求したカスタムモバイルエンジニアリング",
+    "headerDesc": "マルチプラットフォームのシステムアーキテクチャやKMP/CMPによるロジック共有から、エンドツーエンドのネイティブAndroidおよびFlutterアプリの開発・リリースまで対応します。",
+    "items": {
+        "android-native": {
+            "title": "ネイティブAndroid & ハードウェア連携",
+            "description": "Jetpack Compose、Kotlin、MVI/MVVMパターンを用いて構築された高品質なネイティブAndroidアプリ。IoT医療機器ドライバ、Agora/TwilioビデオSDK、Android TV、安全な決済処理に特化。"
+        },
+        "kmp": {
+            "title": "Kotlin & Compose Multiplatform (KMP/CMP)",
+            "description": "Kotlin Multiplatform (KMP) と Compose Multiplatform (CMP) を活用し、AndroidとiOSの間でビジネスロジックとリアクティブUIを共有。100%ネイティブの実行速度を維持しながら、コードベースの重複を削減します。"
+        },
+        "flutter": {
+            "title": "Flutter クロスプラットフォームエンジニアリング",
+            "description": "Flutter、BLoC/Riverpod、Dioで構築された、拡張性が高く忠実度の高いクロスプラットフォームアプリ。迅速な市場投入、複雑なREST/SOAP連携、高コンバージョンなUI/UXを実現設計。"
+        },
+        "architecture": {
+            "title": "モバイルアーキテクチャ & コードベースモダン化",
+            "description": "モノリシックなコードベースをモジュール化されたクリーンアーキテクチャへリファクタリングし、JavaからKotlinへの移行を推進。アプリの安定性をチューニングし、99%以上のクラッシュフリー率を達成します。"
+        }
+    }
+}

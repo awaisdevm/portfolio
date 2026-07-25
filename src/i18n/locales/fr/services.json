@@ -1,0 +1,23 @@
+{
+    "title": "Services et Solutions",
+    "headerTitle": "Ingénierie mobile sur mesure conçue pour la performance, la stabilité et l'évolutivité.",
+    "headerDesc": "De l'architecture système multiplateforme et la logique partagée KMP/CMP aux lancements d'applications de production Android natif et Flutter de bout en bout.",
+    "items": {
+        "android-native": {
+            "title": "Android Natif et Intégration Matérielle",
+            "description": "Applications Android natives haute performance conçues avec Jetpack Compose, Kotlin et les patterns MVI/MVVM. Spécialisé dans les pilotes de matériel médical IoT, les SDK vidéo Agora/Twilio, Android TV et le traitement de paiements sécurisés."
+        },
+        "kmp": {
+            "title": "Kotlin & Compose Multiplatform (KMP/CMP)",
+            "description": "Logique métier partagée et UI réactive entre Android et iOS grâce à Kotlin Multiplatform (KMP) et Compose Multiplatform (CMP) — réduisant la duplication de code tout en conservant une vitesse d'exécution 100 % native."
+        },
+        "flutter": {
+            "title": "Ingénierie Multiplateforme Flutter",
+            "description": "Applications multiplateformes évolutives et haute fidélité construites avec Flutter, BLoC/Riverpod et Dio. Conçues pour un time-to-market rapide, des intégrations REST/SOAP complexes et une UI/UX à forte conversion."
+        },
+        "architecture": {
+            "title": "Architecture Mobile et Modernisation de Codebase",
+            "description": "Refactoring de bases de code monolithiques vers une Clean Architecture modulaire, migration de Java vers Kotlin et optimisation de la stabilité pour atteindre plus de 99 % de sessions sans crash."
+        }
+    }
+}

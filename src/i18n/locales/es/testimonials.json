@@ -1,0 +1,31 @@
+{
+    "title": "Reseñas y Testimonios de Clientes",
+    "headerTitle": "Con la confianza de Líderes de Ingeniería, Fundadores y Equipos de Producto",
+    "headerDesc": "Comentarios auténticos de fundadores técnicos, líderes de producto y socios de salud sobre el lanzamiento de aplicaciones escalables en Android, Kotlin Multiplatform y Flutter.",
+    "items": {
+        "louis-wong": {
+            "name": "Louis Wong",
+            "role": "Líder de Producto y Socio de Ingeniería",
+            "project": "Optimización de Rendimiento Móvil",
+            "message": "Trabajar con Awais fue una gran experiencia. Optimizó nuestra aplicación, redujo su uso de RAM y mejoró el rendimiento en un 30%. Su experiencia en optimización de código y arquitecturas compartidas tuvo un impacto notable en la calidad de nuestro producto."
+        },
+        "nasir": {
+            "name": "Nasir",
+            "role": "Arquitecto de Software y Cliente",
+            "project": "Arquitectura Android y KMP",
+            "message": "Awais hizo un gran trabajo en nuestra aplicación. Su atención al detalle, su arquitectura limpia y su enfoque en código sólido y mantenible hicieron que todo el proceso de desarrollo fuera fluido de principio a fin. Altamente recomendado para cualquier proyecto serio de Android o Kotlin Multiplatform."
+        },
+        "ahsan": {
+            "name": "Ahsan",
+            "role": "Fundador de Producto",
+            "project": "App Eco Grocery",
+            "message": "Awais construyó nuestra aplicación Eco Grocery de extremo a extremo, desde el escáner de códigos de barras hasta el motor de recomendación de recetas. La app funciona sin problemas, la arquitectura es limpia y ha mejorado genuina y notablemente la forma en que nuestros usuarios gestionan sus compras y el control de caducidad."
+        },
+        "spectra-care": {
+            "name": "Equipo de Ingeniería de Spectra Care",
+            "role": "Socio de Salud y Telesalud",
+            "project": "Plataforma de Telesalud e IoT Spectra Care",
+            "message": "Awais entregó una aplicación de telesalud sobresaliente para nuestro hospital, integrando de manera confiable consultas por video y datos de monitores de salud IoT. Tanto nuestros pacientes como nuestros médicos dependen de la app a diario, y ha funcionado de manera impecable en el uso clínico del mundo real."
+        }
+    }
+}
