@@ -5,10 +5,12 @@ import { locales, defaultLocale } from "./i18n/config";
 export function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
+    // 1. STATIC ASSETS & IMAGES BYPASS
     if (
         pathname.startsWith("/_next") ||
         pathname.startsWith("/api") ||
-        pathname.includes(".")
+        pathname.includes(".") || // Skip all files with extensions like .png, .svg, .ico
+        pathname === "/og-image.png"
     ) {
         return NextResponse.next();
     }
@@ -56,6 +58,9 @@ export function proxy(request: NextRequest) {
     return response;
 }
 
+// ⚡ 2. UPDATED MATCHER: Ignore static files, images, favicon, and og-image.png
 export const config = {
-    matcher: ["/((?!_next/static|_next/image|favicon.ico|api).*)"],
+    matcher: [
+        "/((?!_next/static|_next/image|favicon.ico|og-image.png|.*\\..*|api).*)",
+    ],
 };
