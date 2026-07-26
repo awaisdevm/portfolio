@@ -1,97 +1,178 @@
-
 "use client";
 
+import React from "react";
 import { motion, type Variants } from "framer-motion";
-import PageHeader from "@/components/ui/PageHeader";
 import type { StandardPageLabels } from "@/lib/utils";
 import { transformSocialLinksToOptions } from "../configs/contact-options";
-import SystemStatusPanel from "./SystemStatusPanel";
 import ContactCard from "./ContactCard";
+import ContactForm from "./ContactForm";
+import { ObfuscatedContact } from "@/components/ui/ObfuscatedContact";
+import { MailIcon, MapPinIcon } from "@/components/icons/icons";
+import SectionWrapper from "@/components/layout/SectionWrapper";
+import { ContactFormLabels } from "../types";
+import { siteConfig } from "@/lib/site-config";
+import PageHeader from "@/components/ui/PageHeader";
 
-// ============================================================================
-// TYPES & PROPS
-// ============================================================================
 interface ContactViewProps {
   labels: StandardPageLabels;
   location: string;
+  formLabels: ContactFormLabels;
 }
 
-// ============================================================================
-// ANIMATION VARIANTS
-// ============================================================================
 const containerVariants: Variants = {
-  hidden: { opacity: 0, y: 12 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      staggerChildren: 0.08,
-    },
+    transition: { staggerChildren: 0.05 },
   },
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 10, filter: "blur(4px)" },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: {
-      type: "spring",
-      stiffness: 120,
-      damping: 18,
-    },
-  },
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0 },
 };
 
-// ============================================================================
-// MAIN VIEW COMPONENT
-// ============================================================================
-export default function ContactView({ labels, location }: ContactViewProps) {
-  const contactOptions = transformSocialLinksToOptions();
+export default function ContactView({ labels, location, formLabels }: ContactViewProps) {
+  const allSocialOptions = transformSocialLinksToOptions() || [];
+
+  const whatsappOption = allSocialOptions.find((opt) => {
+    const val = String(opt.value || "").toLowerCase();
+    const lbl = String(opt.label || "").toLowerCase();
+    return val === "whatsapp" || lbl === "whatsapp";
+  });
+
+  const primaryCards = [
+    {
+      id: "email",
+      label: formLabels.emailLabel || "Email",
+      value: siteConfig.email,
+      icon: MailIcon,
+      isObfuscated: true,
+      obfuscateType: "email" as const,
+    },
+    ...(whatsappOption
+      ? [
+          {
+            ...whatsappOption,
+            id: "whatsapp",
+            obfuscateType: "whatsapp" as const,
+          },
+        ]
+      : []),
+    {
+      id: "location",
+      label: (labels as any).contact?.locationTitle || "Location",
+      value: location || siteConfig.location,
+      icon: MapPinIcon,
+      isObfuscated: false,
+    },
+  ];
+
+  const socialIconsList = allSocialOptions.filter((opt) => {
+    const val = String(opt.value || "").toLowerCase();
+    const lbl = String(opt.label || "").toLowerCase();
+    return val !== "whatsapp" && lbl !== "whatsapp";
+  });
 
   return (
-    <>
-      {/* Top Section Header */}
-      <PageHeader
-        eyebrow={labels.title}
-        title={labels.headerTitle}
-        description={labels.headerDesc}
-      />
+    <SectionWrapper 
+      watermarkText={labels.title || "CONTACT"} 
+      className="flex min-h-[85vh] flex-col justify-center pt-28 pb-16 md:pt-36"
+    >
+      <div className="container-page py-4">
+        {/* Top Header */}
+        <PageHeader 
+          eyebrow={labels.title} 
+          title={labels.headerTitle} 
+          description={labels.headerDesc}
+        />
 
-      {/* Main Content Layout */}
-      <section className="pb-20 md:pb-28">
-        <div className="container-page">
-          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
-            {/* Left Panel: Location & Status */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={cardVariants}
-              className="lg:col-span-5"
-            >
-              <SystemStatusPanel location={location} />
-            </motion.div>
-
-            {/* Right Panel: Interactive Contact Cards */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={containerVariants}
-              className="grid gap-4 lg:col-span-7"
-            >
-              {contactOptions.map((option) => (
+        {/* Form and Cards Grid */}
+        <div className="mt-10 grid grid-cols-1 items-start gap-12 lg:mt-14 lg:grid-cols-12">
+          
+          {/* Left Panel: Primary Contact Cards & Social Profiles */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+            className="flex flex-col gap-6 lg:col-span-5"
+          >
+            {/* Primary Cards */}
+            <motion.div variants={containerVariants} className="grid gap-3.5">
+              {primaryCards.map((option: any) => (
                 <ContactCard
-                  key={option.value}
+                  key={option.id || option.value}
                   option={option}
                   variants={cardVariants}
                 />
               ))}
             </motion.div>
-          </div>
+
+            {/* Social Profiles with Label Below Icon */}
+            {socialIconsList.length > 0 && (
+              <motion.div variants={cardVariants} className="pt-2">
+                <p className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">
+                  Social Profiles
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {socialIconsList.map((social) => {
+                    const Icon = social.icon;
+                    const key = social.value || social.label;
+                    const socialName = social.label || social.value;
+
+                    if (!Icon) return null;
+
+                    return social.isObfuscated ? (
+                      <ObfuscatedContact
+                        key={key}
+                        type={social.obfuscateType}
+                        value={social.meta || social.value}
+                        className="group flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/40 bg-surface/40 p-3.5 text-muted backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:bg-surface hover:text-heading hover:shadow-md"
+                      >
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-elevated/80 border border-border/30 group-hover:border-primary/40 group-hover:text-primary transition-colors">
+                          <Icon className="h-5 w-5" aria-hidden="true" />
+                        </div>
+                        <span className="font-mono text-[11px] font-medium tracking-wide capitalize group-hover:text-heading">
+                          {socialName}
+                        </span>
+                      </ObfuscatedContact>
+                    ) : (
+                      <a
+                        key={key}
+                        href={social.href || "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={socialName}
+                        className="group flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/40 bg-surface/40 p-3.5 text-muted backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:bg-surface hover:text-heading hover:shadow-md"
+                      >
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-elevated/80 border border-border/30 group-hover:border-primary/40 group-hover:text-primary transition-colors">
+                          <Icon className="h-5 w-5" aria-hidden="true" />
+                        </div>
+                        <span className="font-mono text-[11px] font-medium tracking-wide capitalize group-hover:text-heading">
+                          {socialName}
+                        </span>
+                      </a>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            )}
+          </motion.div>
+
+          {/* Right Panel: Form */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={cardVariants}
+            className="flex justify-center lg:col-span-7 lg:justify-end"
+          >
+            <div className="w-full max-w-[520px]">
+              <ContactForm labels={formLabels} />
+            </div>
+          </motion.div>
+
         </div>
-      </section>
-    </>
+      </div>
+    </SectionWrapper>
   );
 }

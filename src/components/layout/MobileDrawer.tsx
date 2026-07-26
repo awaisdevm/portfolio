@@ -94,7 +94,7 @@ export default function MobileDrawer({
 
   const isActive = (href: string) => {
     const localized = getLocalizedHref(href);
-    return pathname === localized;
+    return pathname === localized; 
   };
 
   return createPortal(

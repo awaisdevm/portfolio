@@ -1,5 +1,3 @@
-
-
 import type { ComponentType } from "react";
 
 export interface ContactOption {
@@ -14,4 +12,12 @@ export interface ContactOption {
     href: string;
     isObfuscated: boolean;
     obfuscateType: "email" | "phone";
+}
+
+
+export interface ContactFormLabels {
+    nameLabel: string;
+    emailLabel: string;
+    messageLabel: string;
+    buttonSend: string;
 }

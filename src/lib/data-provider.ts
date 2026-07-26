@@ -1,6 +1,6 @@
 import { getTranslationServer } from "@/i18n/i18n-server";
 import { Locale } from "@/i18n/config";
-
+import { withTranslatedList, withTranslatedFields } from "@/i18n/data-mapper";
 
 import rawProjects from "@/data/projects.json";
 import rawTestimonials from "@/data/testimonials.json";
@@ -10,49 +10,35 @@ import rawServices from "@/data/services.json";
 export function getLocalizedPortfolioData(locale: Locale) {
     const t = getTranslationServer(locale);
 
-
-    const projects = rawProjects.map((project) => {
-        const baseKey = `projectsData.${project.slug}`;
-        return {
-            ...project,
-            title: t(`${baseKey}.title`),
-            category: t(`${baseKey}.category`),
-            summary: t(`${baseKey}.summary`),
-            description: t(`${baseKey}.description`),
-            ctaText: t(`${baseKey}.ctaText`),
-            altText: t(`${baseKey}.altText`),
-
-            highlights: [0, 1, 2].map((id) => t(`${baseKey}.highlights.${id}`)),
-        };
-    });
-
-
-    const testimonials = rawTestimonials.map((item) => ({
-        ...item,
-        message: t(`testimonialsData.${item.slug}.message`),
+    // 1. Projects: Using List + Field mapping
+     const projects = withTranslatedList(rawProjects, "projectsData", t, (scopedT, project) => ({
+        title: scopedT("title"),
+        category: scopedT("category"),
+        summary: scopedT("summary"),
+        description: scopedT("description"),
+        ctaText: scopedT("ctaText"),
+        altText: scopedT("altText"),
+        highlights: [0, 1, 2].map((id) => scopedT(`highlights.${id}`)),
     }));
 
+    // 2. Testimonials: Simple Mapping
+    const testimonials = withTranslatedList(rawTestimonials, "testimonialsData", t, (scopedT, item) => ({
+        message: scopedT("message"),
+    }));
 
-    const experiences = rawExperiences.map((exp) => {
-        const baseKey = `experiencesData.${exp.slug}`;
-        return {
-            ...exp,
-            role: t(`${baseKey}.role`),
-            description: t(`${baseKey}.description`),
+    // 3. Experiences: Using List + Field mapping
+    const experiences = withTranslatedList(rawExperiences, "experiencesData", t, (scopedT, exp) => ({
+        role: scopedT("role"),
+        description: scopedT("description"),
+        achievements: [0, 1, 2].map((id) => scopedT(`achievements.${id}`)),
+    }));
 
-            achievements: [0, 1, 2].map((id) => t(`${baseKey}.achievements.${id}`)),
-        };
-    });
-
-
-    const services = rawServices.map((service) => {
-        const baseKey = `servicesData.${service.slug}`;
-        return {
-            ...service,
-            title: t(`${baseKey}.title`),
-            description: t(`${baseKey}.description`),
-        };
-    });
+    // 4. Services: Simple Mapping
+    
+    const services = withTranslatedList(rawServices, "servicesData", t, (scopedT, service) => ({
+        title: scopedT("title"),
+        description: scopedT("description"),
+    }));
 
     return {
         projects,

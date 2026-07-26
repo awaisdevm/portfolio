@@ -1,6 +1,6 @@
 import { SiteConfig, NavLink } from "@/types/site";
 import data from "@/data/personal-data.json";
-import { GithubIcon, LinkedinIcon, MediumIcon, StackOverflowIcon, XIcon } from "@/components/icons/icons";
+import { FiverrIcon, GithubIcon, LinkedinIcon, MediumIcon, StackOverflowIcon, UpworkIcon, XIcon } from "@/components/icons/icons";
 
 const SITE_URL = "https://devawais.com";
 
@@ -56,14 +56,14 @@ export const socialLinks = [
     label: "LinkedIn",
     isEmail: false
   },
-  ...(personalData.usernames.twitter ? [{
-    id: "twitter",
-    href: `${personalData.socialBaseUrls.twitter}${personalData.usernames.twitter}`,
-    displayValue: `@${personalData.usernames.twitter}`,
-    icon: XIcon,
-    label: "Twitter",
-    isEmail: false
-  }] : []),
+  // ...(personalData.usernames.twitter ? [{
+  //   id: "twitter",
+  //   href: `${personalData.socialBaseUrls.twitter}${personalData.usernames.twitter}`,
+  //   displayValue: `@${personalData.usernames.twitter}`,
+  //   icon: XIcon,
+  //   label: "Twitter",
+  //   isEmail: false
+  // }] : []),
   ...(personalData.usernames.stackoverflow ? [{
     id: "stackoverflow",
     href: `${personalData.socialBaseUrls.stackoverflow}${personalData.usernames.stackoverflow}`,
@@ -79,6 +79,35 @@ export const socialLinks = [
     icon: MediumIcon,
     label: "Medium",
     isEmail: false
+  }] : []),
+
+  ...(personalData.usernames.fiverr ? [{
+    id: "fiverr",
+    href: `${personalData.socialBaseUrls.fiverr}${personalData.usernames.fiverr}`,
+    displayValue: `@${personalData.usernames.fiverr}`,
+    icon: FiverrIcon, // Replace with the actual Fiverr icon if available
+    label: "Fiverr",
+    isEmail: false
+  }] : []),
+
+  // NEW: Add Upwork if username exists
+  ...(personalData.usernames.upwork ? [{
+    id: "upwork",
+    href: `${personalData.socialBaseUrls.upwork}${personalData.usernames.upwork}`,
+    displayValue: `@${personalData.usernames.upwork}`,
+    icon: UpworkIcon, // Replace with the actual Upwork icon if available
+    label: "Upwork",
+    isEmail: false
+  }] : []),
+
+  // NEW: Add WhatsApp (Special Case: uses phone number from contact object)
+  ...(personalData.contact?.whatsapp ? [{
+    id: "whatsapp",
+    href: `${personalData.socialBaseUrls.whatsapp}${personalData.contact.whatsapp}`,
+    displayValue: personalData.contact.whatsapp,
+    icon: MediumIcon,
+    label: "WhatsApp",
+    isEmail: true // This triggers the ObfuscatedContact component you already have!
   }] : [])
 ];
 

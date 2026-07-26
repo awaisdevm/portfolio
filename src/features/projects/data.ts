@@ -1,10 +1,7 @@
-
-
 import { rawProjects } from "@/data";
 import { getTranslationServer } from "@/i18n/i18n-server";
 import type { Locale } from "@/i18n/config";
-import { withTranslatedFields } from "@/lib/translated-data";
-
+import { withTranslatedFields } from "@/i18n/data-mapper";
 
 export interface RawProject {
     id: number;

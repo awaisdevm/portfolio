@@ -5,7 +5,7 @@ import TestimonialCard from "@/features/testimonials/components/TestimonialCard"
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import { AnimatedSection } from "@/components/layout/AnimatedSection";
 import type { MappedHomeData } from "./HomeView";
-import type { TranslateFn } from "@/i18n/translation-core";
+import { TranslateFn } from "@/i18n/types";
 
 interface TestimonialsSectionProps {
     translate: TranslateFn;

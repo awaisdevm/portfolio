@@ -1,6 +1,6 @@
 
 
-import type { TranslateFn } from "@/i18n/translation-core";
+import { TranslateFn } from "@/i18n/types";
 
 export const PROJECT_FILTER_KEYS = [
     "android",

@@ -12,14 +12,15 @@ import { cn } from "@/lib/utils";
 import DesktopNavbar from "./DesktopNavbar";
 import MobileDrawer from "./MobileDrawer";
 import { MenuIcon, XIcon } from "../icons/icons";
+import { Locale, locales } from "@/i18n/config";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const [mounted, setMounted] = useState(false);
 
-  const pathname = usePathname();
-  const { translate, locale } = useI18n();
+const pathname = usePathname(); 
+  const { translate, locale: contextLocale } = useI18n(); 
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
@@ -39,12 +40,17 @@ export default function Header() {
     });
   }, [pathname]);
 
-  const getLocalizedHref = useMemo(() => {
-    return (href: string) => {
-      const activeLocale = locale || "en";
-      return href === "/" ? `/${activeLocale}` : `/${activeLocale}${href}`;
-    };
-  }, [locale]);
+const getLocalizedHref = useMemo(() => {
+  return (href: string) => {
+   
+    const segments = pathname.split('/');
+    const activeLocale = (locales.includes(segments[1] as any) ? segments[1] : contextLocale) as Locale;
+
+    const cleanPath = href.startsWith('/') ? href.substring(1) : href;
+    
+    return cleanPath ? `/${activeLocale}/${cleanPath}` : `/${activeLocale}`;
+  };
+}, [pathname, contextLocale, locales]);
 
   if (!mounted) return null;
 
@@ -60,7 +66,7 @@ export default function Header() {
         {/* BRAND LOGO */}
         <Magnetic strength={0.2}>
           <Link
-            href={`/${locale}`}
+            href={`/${contextLocale}`}
             className="group relative flex items-center focus:outline-none"
             aria-label={`Go to ${siteConfig.name} home`}
           >
@@ -73,7 +79,7 @@ export default function Header() {
 
         {/* DESKTOP NAVBAR */}
         <DesktopNavbar
-          key={`desktop-nav-${locale}`}
+          key={`desktop-nav-${contextLocale}`}
           getLocalizedHref={getLocalizedHref}
           translate={translate}
         />
@@ -97,7 +103,7 @@ export default function Header() {
 
       {/* MOBILE DRAWER */}
       <MobileDrawer
-        key={`mobile-nav-${locale}`}
+        key={`mobile-nav-${contextLocale}`}
         isOpen={mobileMenuOpen}
         getLocalizedHref={getLocalizedHref}
         translate={translate}

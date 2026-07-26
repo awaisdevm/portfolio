@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { Locale, defaultLocale, translations, resolveLocale } from "./config";
-import { createTranslator, TranslateFn, Dictionary } from "./translation-core";
+import { createTranslator } from "./engine";
+import { TranslateFn, Dictionary } from "./types";
 
 export async function getLocaleServer(): Promise<Locale> {
   try {
@@ -19,10 +20,9 @@ export function getDictionaryServer(locale: Locale): Dictionary {
 export function getTranslationServer(locale: Locale): TranslateFn {
   const currentLocale = translations[locale] ? locale : defaultLocale;
   const dictionary = (translations[currentLocale] ?? {}) as Dictionary;
-  const fallback =
-    currentLocale !== defaultLocale
-      ? ((translations[defaultLocale] ?? {}) as Dictionary)
-      : undefined;
+  const fallback = currentLocale !== defaultLocale 
+    ? ((translations[defaultLocale] ?? {}) as Dictionary) 
+    : undefined;
 
   return createTranslator(dictionary, fallback);
 }

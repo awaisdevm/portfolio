@@ -2,8 +2,9 @@
 
 import React, { createContext, useContext, useState, useEffect, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { Locale, isLocale } from "./config";
-import { createTranslator, TranslateFn, Dictionary } from "./translation-core";
+import { Locale, isLocale }  from "./config";
+import { createTranslator } from "./engine";
+import { TranslateFn, Dictionary } from "./types";
 
 interface I18nContextType {
     locale: Locale;
@@ -14,11 +15,7 @@ interface I18nContextType {
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
-export function I18nProvider({
-    children,
-    initialLocale,
-    pageDictionary,
-}: {
+export function I18nProvider({ children, initialLocale, pageDictionary }: {
     children: React.ReactNode;
     initialLocale: Locale;
     pageDictionary: Dictionary;
@@ -37,14 +34,9 @@ export function I18nProvider({
 
     function changeLocale(newLocale: Locale) {
         if (newLocale === locale) return;
-
         document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
         setLocale(newLocale);
-
-
-        startTransition(() => {
-            router.refresh();
-        });
+        startTransition(() => { router.refresh(); });
     }
 
     const translate = createTranslator(pageDictionary);
@@ -58,8 +50,6 @@ export function I18nProvider({
 
 export function useI18n() {
     const context = useContext(I18nContext);
-    if (!context) {
-        throw new Error("useI18n must be used within an I18nProvider");
-    }
+    if (!context) throw new Error("useI18n must be used within an I18nProvider");
     return context;
 }

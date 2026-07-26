@@ -4,8 +4,8 @@ import { getProjectsGridConfig } from "@/features/projects/configs/projects-conf
 import { MappedHomeData } from "./HomeView";
 import SectionWrapper from "@/components/layout/SectionWrapper";
 import { AnimatedSection } from "@/components/layout/AnimatedSection";
-import type { TranslateFn } from "@/i18n/translation-core";
 import type { Project } from "@/features/projects/data";
+import { TranslateFn } from "@/i18n/types";
 
 interface FeaturedProjectsProps {
     translate: TranslateFn;

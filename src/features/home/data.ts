@@ -1,7 +1,7 @@
 import { stats, testimonials, rawProjects } from "@/data/index";
 import { getTranslationServer } from "@/i18n/i18n-server";
 import { Locale } from "@/i18n/config";
-import { withTranslatedList } from "@/lib/translated-data";
+import { withTranslatedList } from "@/i18n/data-mapper";
 import { mapToLocalizedProject } from "@/features/projects/data";
 
 export const getHomeData = async (locale: Locale) => {

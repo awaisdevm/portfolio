@@ -5,8 +5,8 @@ import expertise from "@/data/expertise.json";
 import experiencesMeta from "@/data/experiences.json";
 import { getTranslationServer } from "@/i18n/i18n-server";
 import { Locale } from "@/i18n/config";
-import { withTranslatedList } from "@/lib/translated-data";
 import type { AboutData } from "./types";
+import { withTranslatedList } from "@/i18n/data-mapper";
 
 export const getAboutData = (locale: Locale): AboutData => {
     const translate = getTranslationServer(locale);

@@ -96,8 +96,8 @@
             "nameLabel": "Name",
             "emailLabel": "Email",
             "platformLabel": "Platform (Android / KMP / CMP / Flutter)",
-            "budgetLabel": "Budget range",
-            "detailsLabel": "Project details or role scope",
+            "messageLabel": "Message",
+
             "buttonSend": "Send message",
             "successTitle": "Message sent successfully",
             "successMessage": "Thanks for reaching out — I read and respond to every inquiry promptly."

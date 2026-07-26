@@ -1,4 +1,4 @@
-
+"use server";
 
 export interface GitHubStats {
     followers: number;

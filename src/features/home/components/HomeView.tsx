@@ -6,7 +6,8 @@ import TestimonialsSection from "./TestimonialsSection";
 
 import type { getHomeData } from "@/features/home/data";
 import type { Locale } from "@/i18n/config";
-import type { TranslateFn } from "@/i18n/translation-core";
+import { TranslateFn } from "@/i18n/types";
+
 import TechMarquee from "@/components/sections/TechMarquee";
 
 // ============================================================================

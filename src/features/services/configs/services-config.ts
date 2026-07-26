@@ -1,6 +1,6 @@
 
 
-import type { TranslateFn } from "@/i18n/translation-core";
+import { TranslateFn } from "@/i18n/types";
 import {
     AndroidIcon,
     ComposeMultiplatformIcon,

@@ -45,16 +45,15 @@ function ActionLink({ action }: { action: CardAction }) {
   const isPrimary = action.variant === "primary";
   const href = action.href || "#";
 
-  const baseStyles =
+ const baseStyles =
     "relative inline-flex items-center justify-center gap-1.5 rounded-full px-3.5 py-1.5 font-mono text-[10px] font-bold uppercase tracking-wider transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary active:scale-95 no-underline";
 
-  // Explicitly enforcing text colors and overriding any global anchor styles
+  // Using Design System Tokens: Primary vs Surface-Elevated
   const variantStyles = isPrimary
     ? "border border-primary bg-primary text-primary-foreground shadow-md hover:bg-primary/90"
     : "border border-border-strong bg-surface-elevated text-heading shadow-sm hover:border-primary hover:bg-surface";
-
-
-  const textStyles = isPrimary ? "!text-primary-foreground font-extrabold" : "!text-heading hover:!text-accent";
+  
+    const textStyles = isPrimary ? "!text-primary-foreground font-extrabold" : "!text-heading hover:!text-accent";
   const iconColorClass = isPrimary ? "[&_svg]:text-primary-foreground [&_svg]:fill-primary-foreground" : "[&_svg]:text-accent";
 
   if (action.isExternal) {
@@ -104,7 +103,7 @@ export function PreviewCard({
 
   return (
     <div
-      className={`group relative flex aspect-[4/5] w-full flex-col justify-between overflow-hidden rounded-2xl border border-border bg-surface shadow-xl transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 ${isHovered ? "is-hovered" : ""
+      className={`group relative flex aspect-[4/5] w-full flex-col justify-between overflow-cap rounded-2xl border border-border bg-surface shadow-xl transition-all duration-500 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10 ${isHovered ? "is-hovered" : ""
         } ${className}`}
       onPointerEnter={() => setIsHovered(true)}
       onPointerLeave={() => setIsHovered(false)}
@@ -124,10 +123,11 @@ export function PreviewCard({
             return (
               <span
                 key={idx}
-                className={`rounded-full border px-2.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest transition-all duration-300 ${isPrimary
-                  ? "border-accent/40 bg-accent text-accent-foreground shadow-sm shadow-accent/20"
-                  : "border-primary/40 bg-primary text-primary-foreground shadow-sm shadow-primary/20"
-                  }`}
+                className={`rounded-full border px-2.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-widest transition-all duration-300 ${
+                  isPrimary
+                    ? "border-primary/40 bg-primary/10 text-primary shadow-sm" 
+                    : "border-border-strong bg-surface-elevated text-foreground/70"
+                }`}
               >
                 {badge.text}
               </span>
