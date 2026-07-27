@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -14,9 +13,6 @@ import {
   SmartphoneIcon,
 } from "@/components/icons/icons";
 
-// ============================================================================
-// TYPES & PROPS
-// ============================================================================
 interface ProjectGridCardProps {
   project: Project;
   labels: {
@@ -24,43 +20,53 @@ interface ProjectGridCardProps {
     ctaAppStore: string;
     ctaDetails: string;
   };
+  priority?: boolean;
 }
 
-// ============================================================================
-// MAIN COMPONENT
-// ============================================================================
 export default function ProjectGridCard({
   project,
   labels,
+  priority = false,
 }: ProjectGridCardProps) {
+  const themeColor = project.themeColor || "var(--color-primary, #3b82f6)";
 
   const media = project.image ? (
-    <div className="relative flex h-full w-full flex-col items-center justify-center pb-4 pt-8">
+    <div className="relative flex h-full w-full items-center justify-center p-6">
+      {/* 1. Subtle Glow in the background */}
       <div
-        className="pointer-events-none absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-100"
+        className="pointer-events-none absolute h-28 w-28 rounded-full opacity-30 blur-2xl transition-all duration-500 group-hover:scale-125 group-hover:opacity-50"
+        style={{ backgroundColor: themeColor }}
         aria-hidden="true"
       />
-      <div className="relative z-10 h-32 w-32 transition-transform duration-500 group-hover:scale-105">
+
+      {/* 2. Light Tinted Glass Container for Maximum Logo Visibility */}
+      <div 
+        className="relative z-10 flex h-28 w-28 items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-slate-800/80 p-3.5 shadow-2xl backdrop-blur-xl transition-all duration-500 group-hover:scale-105 group-hover:bg-slate-700/80"
+        style={{ 
+          borderColor: `${themeColor}50`,
+          boxShadow: `0 8px 24px -6px ${themeColor}25`
+        }}
+      >
+        {/* Soft White Inset Highlight to Lift Dark Logos */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/15 to-transparent opacity-80" />
+
         <Image
           src={project.image}
-          alt={project.altText}
-          fill
-          className="object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.35)]"
-          sizes="128px"
+          alt={project.slug || "Project Logo"}
+          width={96}
+          height={96}
+          priority={priority}
+          className="relative z-10 h-full w-full object-contain brightness-110 contrast-105 drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-110"
         />
       </div>
     </div>
   ) : (
-    <div
-      aria-hidden="true"
-      className="flex h-full w-full items-center justify-center pb-4 pt-8"
-    >
-      <div className="flex h-28 w-28 items-center justify-center rounded-2xl border border-border/20 bg-surface-sunken/40 shadow-inner backdrop-blur-sm">
-        <SmartphoneIcon size={40} className="opacity-40 text-primary" />
+    <div className="flex h-full w-full items-center justify-center p-6">
+      <div className="flex h-28 w-28 items-center justify-center rounded-2xl border border-border bg-surface-sunken shadow-inner backdrop-blur-md">
+        <SmartphoneIcon size={40} className="text-primary/60" />
       </div>
     </div>
   );
-
 
   const badges: CardBadge[] = [
     { text: project.platform, variant: "primary" },
@@ -71,16 +77,13 @@ export default function ProjectGridCard({
   const actions: CardAction[] = [];
   const storeIconStyle = "h-3.5 w-3.5 shrink-0";
 
+  const playStoreUrl = [project.url, project.iosUrl].find((link) =>
+    link?.includes("play.google.com")
+  ) ?? null;
 
-  const playStoreUrl =
-    [project.url, project.iosUrl].find((link) =>
-      link?.includes("play.google.com")
-    ) ?? null;
-
-  const appStoreUrl =
-    [project.iosUrl, project.url].find((link) =>
-      link?.includes("apps.apple.com")
-    ) ?? null;
+  const appStoreUrl = [project.iosUrl, project.url].find((link) =>
+    link?.includes("apps.apple.com")
+  ) ?? null;
 
   if (project.isOnPlayStore && playStoreUrl) {
     actions.push({
@@ -117,7 +120,7 @@ export default function ProjectGridCard({
   return (
     <GenericCard
       href={projectDetailHref}
-      title={project.title}
+      title={project.title || project.slug.replace("-", " ").toUpperCase()}
       summary={project.summary}
       media={media}
       badges={badges}

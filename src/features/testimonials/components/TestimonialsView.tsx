@@ -1,4 +1,3 @@
-
 "use client";
 
 import PageHeader from "@/components/ui/PageHeader";
@@ -32,11 +31,20 @@ export default function TestimonialsView({
 
       <section className="section-pad pt-0">
         <div className="container-page grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {testimonials.map((testimonial, i) => (
-            <AnimatedSection key={testimonial.slug} delay={i * 0.06}>
-              <TestimonialCard testimonial={testimonial} />
-            </AnimatedSection>
-          ))}
+          {testimonials.map((testimonial, i) => {
+            // First 2 cards above the fold on mobile should NOT wait for Framer Motion animation (Instant LCP Fix)
+            const isAboveFold = i < 2;
+
+            return isAboveFold ? (
+              <div key={testimonial.slug || i}>
+                <TestimonialCard testimonial={testimonial} />
+              </div>
+            ) : (
+              <AnimatedSection key={testimonial.slug || i} delay={(i - 2) * 0.05}>
+                <TestimonialCard testimonial={testimonial} />
+              </AnimatedSection>
+            );
+          })}
         </div>
       </section>
     </>

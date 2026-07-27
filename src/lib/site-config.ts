@@ -95,7 +95,7 @@ export const socialLinks = [
     id: "upwork",
     href: `${personalData.socialBaseUrls.upwork}${personalData.usernames.upwork}`,
     displayValue: `@${personalData.usernames.upwork}`,
-    icon: UpworkIcon, // Replace with the actual Upwork icon if available
+    icon: UpworkIcon, 
     label: "Upwork",
     isEmail: false
   }] : []),

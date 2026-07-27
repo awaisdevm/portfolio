@@ -1,4 +1,3 @@
-
 "use client";
 
 import PageHeader from "@/components/ui/PageHeader";
@@ -29,11 +28,21 @@ export default function ServicesView({ labels, services }: ServicesViewProps) {
 
       <section className="section-pad pt-0">
         <div className="container-page grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
-          {services.map((service, index) => (
-            <AnimatedSection key={service.id} delay={index * 0.08}>
-              <ServiceCard service={service} />
-            </AnimatedSection>
-          ))}
+          {services.map((service, index) => {
+            // ⚡ LCP OPTIMIZATION:
+            // Top 2 Cards fast render hone chahiye bina delay animation ke (Instant LCP Paint)
+            const isTopSection = index < 2;
+
+            if (isTopSection) {
+              return <ServiceCard key={service.id} service={service} />;
+            }
+
+            return (
+              <AnimatedSection key={service.id} delay={0.05}>
+                <ServiceCard service={service} />
+              </AnimatedSection>
+            );
+          })}
         </div>
       </section>
     </>

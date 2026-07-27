@@ -65,6 +65,7 @@ export default function ContactView({ labels, location, formLabels }: ContactVie
       value: location || siteConfig.location,
       icon: MapPinIcon,
       isObfuscated: false,
+      href: `https://maps.google.com/?q=${encodeURIComponent(location || siteConfig.location)}`,
     },
   ];
 
@@ -77,7 +78,7 @@ export default function ContactView({ labels, location, formLabels }: ContactVie
   return (
     <SectionWrapper 
       watermarkText={labels.title || "CONTACT"} 
-      className="flex min-h-[85vh] flex-col justify-center pt-28 pb-16 md:pt-36"
+      className="flex min-h-[85vh] flex-col justify-center pt-24 pb-16 md:pt-4"
     >
       <div className="container-page py-4">
         {/* Top Header */}
@@ -88,7 +89,7 @@ export default function ContactView({ labels, location, formLabels }: ContactVie
         />
 
         {/* Form and Cards Grid */}
-        <div className="mt-10 grid grid-cols-1 items-start gap-12 lg:mt-14 lg:grid-cols-12">
+        <div className="mt-8 grid grid-cols-1 items-start gap-10 lg:mt-14 lg:grid-cols-12">
           
           {/* Left Panel: Primary Contact Cards & Social Profiles */}
           <motion.div
@@ -98,7 +99,7 @@ export default function ContactView({ labels, location, formLabels }: ContactVie
             className="flex flex-col gap-6 lg:col-span-5"
           >
             {/* Primary Cards */}
-            <motion.div variants={containerVariants} className="grid gap-3.5">
+            <motion.div variants={containerVariants} className="grid gap-4">
               {primaryCards.map((option: any) => (
                 <ContactCard
                   key={option.id || option.value}
@@ -108,17 +109,19 @@ export default function ContactView({ labels, location, formLabels }: ContactVie
               ))}
             </motion.div>
 
-            {/* Social Profiles with Label Below Icon */}
+            {/* Social Profiles with Optimized Mobile Tap Targets */}
             {socialIconsList.length > 0 && (
               <motion.div variants={cardVariants} className="pt-2">
                 <p className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">
                   Social Profiles
                 </p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {/* Gap increased to 3.5 & padded for touch target compliance */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
                   {socialIconsList.map((social) => {
                     const Icon = social.icon;
                     const key = social.value || social.label;
                     const socialName = social.label || social.value;
+                    const socialHref = social.href || "#";
 
                     if (!Icon) return null;
 
@@ -127,9 +130,9 @@ export default function ContactView({ labels, location, formLabels }: ContactVie
                         key={key}
                         type={social.obfuscateType}
                         value={social.meta || social.value}
-                        className="group flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/40 bg-surface/40 p-3.5 text-muted backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:bg-surface hover:text-heading hover:shadow-md"
+                        className="group flex min-h-[68px] flex-col items-center justify-center gap-1.5 rounded-2xl border border-border/40 bg-surface/40 p-4 text-muted backdrop-blur-md transition-all duration-300 active:scale-95 hover:border-primary/50 hover:bg-surface hover:text-heading"
                       >
-                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-elevated/80 border border-border/30 group-hover:border-primary/40 group-hover:text-primary transition-colors">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-surface-elevated/80 border border-border/30 group-hover:border-primary/40 group-hover:text-primary transition-colors">
                           <Icon className="h-5 w-5" aria-hidden="true" />
                         </div>
                         <span className="font-mono text-[11px] font-medium tracking-wide capitalize group-hover:text-heading">
@@ -139,13 +142,13 @@ export default function ContactView({ labels, location, formLabels }: ContactVie
                     ) : (
                       <a
                         key={key}
-                        href={social.href || "#"}
+                        href={socialHref}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={socialName}
-                        className="group flex flex-col items-center justify-center gap-2 rounded-2xl border border-border/40 bg-surface/40 p-3.5 text-muted backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:bg-surface hover:text-heading hover:shadow-md"
+                        className="group flex min-h-[68px] flex-col items-center justify-center gap-1.5 rounded-2xl border border-border/40 bg-surface/40 p-4 text-muted backdrop-blur-md transition-all duration-300 active:scale-95 hover:border-primary/50 hover:bg-surface hover:text-heading"
                       >
-                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-elevated/80 border border-border/30 group-hover:border-primary/40 group-hover:text-primary transition-colors">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-surface-elevated/80 border border-border/30 group-hover:border-primary/40 group-hover:text-primary transition-colors">
                           <Icon className="h-5 w-5" aria-hidden="true" />
                         </div>
                         <span className="font-mono text-[11px] font-medium tracking-wide capitalize group-hover:text-heading">

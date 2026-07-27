@@ -11,6 +11,7 @@ export interface RawProject {
     url?: string;
     isOnPlayStore: boolean;
     isOnAppStore: boolean;
+    themeColor?: string;
     iosUrl?: string;
     tech: string[];
     technology?: string;
@@ -34,13 +35,11 @@ export function mapToLocalizedProject(
         const title = (st("title") ?? "") as string;
         const summary = (st("summary") ?? "") as string;
         const category = (st("category") ?? "") as string;
-
         // ⚡ FIX: Direct key fetch + safe variable fallback
         const fetchedAlt = st("altText");
         const altText = (fetchedAlt && typeof fetchedAlt === "string" && fetchedAlt.length > 0)
             ? fetchedAlt
             : `${title || "Project"} preview by Muhammad Awais`;
-
         return {
             title,
             summary,

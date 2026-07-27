@@ -1,4 +1,3 @@
-// src/features/contact/components/ContactCard.tsx
 "use client";
 
 import React from "react";
@@ -9,7 +8,6 @@ import { ArrowUpRightIcon } from "@/components/icons/icons";
 import { clsx, type ClassValue } from "clsx"; 
 import { twMerge } from "tailwind-merge";
 
-// Utility for cleaner class management
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -17,12 +15,15 @@ function cn(...inputs: ClassValue[]) {
 interface ContactCardProps {
   option: ContactOption;
   variants?: Variants;
-  className?: string; // Added to allow scaling in DirectActionGroup
+  className?: string;
 }
 
 export default function ContactCard({ option, variants, className }: ContactCardProps) {
   const { icon: Icon, label, meta, value, themeStyles, href, isObfuscated, obfuscateType } = option;
   const displayContent = meta || value || label; 
+
+  // FIX 1: Ensure href is valid for crawlers
+  const validHref = href || (value && value.includes("@") ? `mailto:${value}` : "#");
 
   const CardContent = (
     <div className={cn(
@@ -40,10 +41,13 @@ export default function ContactCard({ option, variants, className }: ContactCard
       </div>
 
       <div className="flex-1 min-w-0">
-        <h3 className="mb-0.5 font-mono text-[10px] uppercase tracking-[0.2em] text-muted">{label}</h3>
+        {/* FIX 2: Changed <h3> to <p> to fix Heading Hierarchy accessibility issue */}
+        <p className="mb-0.5 font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-muted">
+          {label}
+        </p>
         <p className={cn(
           "truncate font-display text-base font-semibold tracking-tight transition-colors group-hover:text-primary-light",
-          className?.includes("p-8") ? "text-xl" : "text-lg" // Larger text for primary cards
+          className?.includes("p-8") ? "text-xl" : "text-lg"
         )}>
           {displayContent}
         </p>
@@ -66,7 +70,14 @@ export default function ContactCard({ option, variants, className }: ContactCard
   }
 
   return (
-    <motion.a variants={variants} href={href} target="_blank" rel="noopener noreferrer" className="block w-full">
+    <motion.a 
+      variants={variants} 
+      href={validHref} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      aria-label={`${label}: ${displayContent}`}
+      className="block w-full"
+    >
       {CardContent}
     </motion.a>
   );

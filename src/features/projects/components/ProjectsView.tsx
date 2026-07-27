@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo } from "react";
@@ -11,18 +10,12 @@ import type { getProjectsGridConfig } from "../configs/projects-config";
 import type { StandardPageLabels } from "@/lib/utils";
 import type { Project } from "@/features/projects/data";
 
-// ============================================================================
-// TYPES & PROPS
-// ============================================================================
 interface ProjectsViewProps {
   projects: Project[];
   labels: StandardPageLabels;
   gridConfig: ReturnType<typeof getProjectsGridConfig>;
 }
 
-// ============================================================================
-// MAIN VIEW COMPONENT
-// ============================================================================
 export default function ProjectsView({
   projects,
   labels,
@@ -30,11 +23,15 @@ export default function ProjectsView({
 }: ProjectsViewProps) {
   const mappedGridItems: FilterGridItem[] = useMemo(
     () =>
-      projects.map((project) => ({
+      projects.map((project, index) => ({
         id: project.slug,
         filterValue: project.platform,
         content: (
-          <ProjectGridCard project={project} labels={gridConfig.labels} />
+          <ProjectGridCard 
+            project={project} 
+            labels={gridConfig.labels} 
+            priority={index < 2} // 👈 First 2 mobile cards load instantly (LCP Fix)
+          />
         ),
       })),
     [projects, gridConfig.labels]

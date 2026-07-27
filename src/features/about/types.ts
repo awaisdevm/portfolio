@@ -18,6 +18,7 @@ export interface Stats {
     projectsCompleted: string;
     clientsSatisfied: string;
     appsOnStores: string;
+    followers:string
 }
 
 export interface AboutData {

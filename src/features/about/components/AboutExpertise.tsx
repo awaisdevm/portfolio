@@ -9,23 +9,16 @@ import {
   StackOutlinedIcon,
   ToolIcon,
 } from "@/components/icons/icons";
-import { AnimatedSection } from "@/components/layout/AnimatedSection";
 import type { ExpertiseGroup } from "../types";
 
-// ============================================================================
-// TYPES & PROPS
-// ============================================================================
 interface AboutExpertiseProps {
   expertiseGroups: ExpertiseGroup[];
 }
 
-// ============================================================================
-// ICON LOOKUP MAP (FIXED ICON BUG)
-// ============================================================================
 const getGroupIcon = (label: string) => {
   const cleanLabel = label.toLowerCase();
   const iconProps = {
-    className: "shrink-0 text-sm text-primary",
+    className: "shrink-0 text-sm text-primary-light",
     "aria-hidden": true,
   };
 
@@ -48,15 +41,11 @@ const getGroupIcon = (label: string) => {
   return <AndroidIcon {...iconProps} />;
 };
 
-// ============================================================================
-// MAIN COMPONENT
-// ============================================================================
 export default function AboutExpertise({ expertiseGroups }: AboutExpertiseProps) {
   const { translate } = useI18n();
 
   return (
     <div className="flex h-full flex-col justify-between pt-1">
-      {/* Section Header with Proper Spacing Alignment */}
       <div className="mb-6">
         <SectionHeader
           eyebrow={translate("about.expertiseTitle")}
@@ -64,22 +53,27 @@ export default function AboutExpertise({ expertiseGroups }: AboutExpertiseProps)
         />
       </div>
 
-      {/* Expertise Grid */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {expertiseGroups.map((group, i) => (
-          <AnimatedSection
+        {expertiseGroups.map((group) => (
+          <div
             key={group.label}
-            delay={i * 0.05}
-            className="group relative flex min-h-[140px] flex-col justify-between overflow-hidden rounded-xl border border-border/20 bg-surface/40 p-5 backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:bg-surface/70"
+            className="group relative flex min-h-[140px] flex-col justify-between overflow-hidden rounded-2xl 
+                       border border-white/10 border-t-white/25 
+                       bg-gradient-to-b from-white/[0.08] to-white/[0.02] 
+                       p-5 backdrop-blur-sm sm:backdrop-blur-md 
+                       shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] 
+                       transition-all duration-300 hover:-translate-y-0.5 
+                       hover:border-primary/50 hover:from-white/[0.12] hover:to-white/[0.04] 
+                       [content-visibility:auto]"
           >
-            {/* Ambient Hover Glow */}
+            {/* Liquid Glow Accent */}
             <div
-              className="pointer-events-none absolute -right-4 -top-4 h-12 w-12 rounded-full bg-primary/5 blur-xl transition-all duration-300 group-hover:bg-primary/15"
+              className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-primary/10 blur-xl opacity-50 transition-opacity duration-300 group-hover:opacity-100"
               aria-hidden="true"
             />
 
-            {/* Header: Dynamic Icon + Category Label */}
-            <div className="flex items-center gap-2 border-b border-border/15 pb-2.5">
+            {/* Header: Icon + Category */}
+            <div className="relative z-10 flex items-center gap-2 border-b border-white/10 pb-2.5">
               {getGroupIcon(group.label)}
               <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-accent">
                 {group.label}
@@ -87,17 +81,17 @@ export default function AboutExpertise({ expertiseGroups }: AboutExpertiseProps)
             </div>
 
             {/* Tag Pills */}
-            <div className="mt-4 flex flex-wrap gap-1.5">
+            <div className="relative z-10 mt-4 flex flex-wrap gap-1.5">
               {group.items.map((item, itemIdx) => (
                 <span
                   key={`${group.label}-${item}-${itemIdx}`}
-                  className="rounded-lg border border-border/20 bg-surface/80 px-2.5 py-1 font-mono text-[11px] font-medium text-foreground transition-all duration-300 hover:border-primary/40 hover:bg-primary/15 hover:text-primary-light"
+                  className="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1 font-mono text-[11px] font-medium text-foreground transition-all duration-300 hover:border-white/20 hover:bg-white/10"
                 >
                   {item}
                 </span>
               ))}
             </div>
-          </AnimatedSection>
+          </div>
         ))}
       </div>
     </div>
