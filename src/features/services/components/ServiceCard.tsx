@@ -37,15 +37,16 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       />
 
       {/* Upper Content */}
+      {/* UPPER CONTENT */}
       <div className="relative z-10">
         {/* Glass Icon Container */}
         <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-primary-light shadow-inner backdrop-blur-md transition-transform duration-500 group-hover:scale-105 group-hover:border-primary/40">
           <IconComponent size={22} aria-hidden="true" />
         </div>
 
-        <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-heading transition-colors duration-300 group-hover:text-primary-light">
+        <h2 className="mt-5 font-display text-xl font-bold tracking-tight text-heading transition-colors duration-300 group-hover:text-primary-light">
           {service.title}
-        </h3>
+        </h2>
 
         <p className="mt-2.5 text-sm leading-relaxed text-foreground/80">
           {service.description}

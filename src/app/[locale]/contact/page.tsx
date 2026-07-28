@@ -23,7 +23,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
   const translate = await  getTranslationServer(locale);
   const formLabels = getContactFormLabels(translate);
 
-  const resolvedLocation = translate("aboutData.infoLocation") || "Lahore, Pakistan";
+  const resolvedLocation = translate("about.infoLocation") || "Lahore, Pakistan";
   const labels = getStandardPageLabels(translate, "contact");
 
   return <ContactView labels={labels} location={resolvedLocation} formLabels={formLabels} />;
