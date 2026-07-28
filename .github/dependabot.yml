@@ -1,0 +1,7 @@
+version: 2
+updates:
+  - package-ecosystem: "npm" # Package manager (npm/yarn/pnpm ke liye 'npm' hi use hota hai)
+    directory: "/" # Root folder jahan package.json majood hai
+    schedule:
+      interval: "weekly" # Har hafte automatically updates check karega
+    open-pull-requests-limit: 5 # Ek waqt mein ziada se ziada 5 PRs kholega
