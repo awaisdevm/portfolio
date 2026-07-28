@@ -1,7 +1,6 @@
 import "@/styles/globals.css";
 
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
-import Analytics from "@/components/seo/Analytics";
 import Header from "@/components/layout/Header";
 
 import dynamic from "next/dynamic";
