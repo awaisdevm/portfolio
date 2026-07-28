@@ -14,6 +14,8 @@ import { getDictionaryServer } from "@/i18n/i18n-server";
 import { Locale, locales, defaultLocale } from "@/i18n/config";
 // 1. Import FramerMotionProvider
 import { FramerMotionProvider } from "@/components/providers/FramerMotionProvider";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Dynamically imported footer sections with SSR preserved
 const CTASection = dynamic(() => import("@/components/sections/CTASection"), {
@@ -99,6 +101,8 @@ export default async function RootLayout({
             <Footer />
           </FramerMotionProvider>
         </I18nProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
