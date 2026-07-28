@@ -11,7 +11,7 @@
     },
     "dependencies": {
         "@next/bundle-analyzer": "^16.2.10",
-        "@paper-design/shaders": "^0.0.77",
+        "@paper-design/shaders": "^0.0.78",
         "@vercel/analytics": "^2.0.1",
         "@vercel/speed-insights": "^2.0.0",
         "clsx": "2.1.1",
