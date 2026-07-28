@@ -1,0 +1,433 @@
+{
+    "nav": {
+        "home": "ہوم",
+        "about": "تعارف",
+        "projects": "پروجیکٹس",
+        "blog": "بلاگ",
+        "contact": "رابطہ",
+        "services": "سروسز",
+        "testimonials": "تاثرات"
+    },
+    "seo": {
+        "home": {
+            "title": "محمد اویس | Senior Mobile App Developer & Multiplatform Architect",
+            "description": "6+ سالہ تجربے کے حامل سینئر موبائل انجینئر، جو Native Android، Kotlin Multiplatform (KMP)، Compose Multiplatform (CMP) اور Flutter پر اعلیٰ معیار کی پروڈکشن ایپس تیار کرتے ہیں۔",
+            "keywords": "Senior Mobile Developer, Native Android Developer, Kotlin Multiplatform Engineer, Compose Multiplatform, Flutter Developer, Mobile Architect, Clean Architecture, Lahore Developer, سینئر موبائل ڈیولپر, لاہور ڈیولپر"
+        },
+        "projects": {
+            "title": "پروجیکٹس پورٹ فولیو | Native Android, KMP & Flutter Apps - محمد اویس",
+            "description": "HealthTech، FinTech اور IoT ہارڈویئر انٹیگریشنز کی پروڈکشن ایپس دیکھیں، جو Jetpack Compose، Flutter اور اسکیل ایبل موبائل آرکیٹیکچر کے ساتھ تیار کی گئی ہیں۔",
+            "keywords": "Mobile app portfolio, Android app case studies, Flutter apps showcase, Jetpack Compose projects, Telehealth apps, IoT mobile integrations, Shipped mobile apps, موبائل ایپ پورٹ فولیو"
+        },
+        "about": {
+            "title": "تعارف | محمد اویس - سینئر موبائل ایپ ڈیولپر (6+ سالہ تجربہ)",
+            "description": "محمد اویس کے بارے میں جانیں — 6+ سالہ تجربے کے حامل سینئر موبائل انجینئر، جو Android، KMP، CMP، Flutter، MVI/MVVM اور 99%+ کریش فری ریٹ والے ہائی اسکیل سسٹمز کے ماہر ہیں۔",
+            "keywords": "About Muhammad Awais, Senior Android Engineer, Mobile Systems Architect, KMP specialist, Flutter developer Pakistan, Clean Architecture expert, Mobile dev background, محمد اویس کا تعارف"
+        },
+        "contact": {
+            "title": "رابطہ کریں | ہائر کریں Senior Android, KMP & Flutter Developer - محمد اویس",
+            "description": "اپنا موبائل ایپ پروجیکٹ شروع کریں یا کراس پلیٹ فارم انجینئرنگ پر مشاورت حاصل کریں۔ سینئر لیول Android، KMP یا Flutter ڈیولپمنٹ کے لیے براہِ راست رابطہ کریں۔",
+            "keywords": "Hire Senior Mobile Developer, Hire Android Expert, KMP Consultant, Freelance Flutter Engineer, Mobile App Development Services, Contact Muhammad Awais, موبائل ایپ ڈیولپر ہائر کریں"
+        },
+        "testimonials": {
+            "title": "کلائنٹ ریویوز اور فیڈ بیک | سینئر موبائل ڈیولپر - محمد اویس",
+            "description": "فاؤنڈرز اور انجینئرنگ لیڈرز کے ریویوز اور کلائنٹ ٹیسٹیمونیئلز پڑھیں، جو Native Android، Kotlin Multiplatform اور Flutter پروجیکٹس کے بارے میں ہیں۔",
+            "keywords": "Client testimonials, devawais reviews, mobile developer recommendations, Android consultant feedback, Flutter developer reviews, software client feedback, کلائنٹ کی رائے"
+        },
+        "services": {
+            "title": "موبائل انجینئرنگ سروسز | Native Android, KMP & Flutter کنسلٹنگ",
+            "description": "اینڈ ٹو اینڈ موبائل ڈیولپمنٹ سروسز: Native Android (Kotlin)، KMP/CMP کراس پلیٹ فارم انجینئرنگ، IoT ہارڈویئر انٹیگریشنز، اور سابقہ کوڈ کی جدید کاری۔",
+            "keywords": "Mobile App Development Services, Android Consulting, Kotlin Multiplatform Development, Flutter Development Services, Clean Architecture Consulting, IoT Mobile Integration, موبائل ایپ سروسز"
+        },
+        "blog": {
+            "title": "انجینئرنگ بلاگ | موبائل آرکیٹیکچر، KMP، CMP اور Android انسائٹس",
+            "description": "Native Android، Kotlin Multiplatform (KMP)، Compose Multiplatform (CMP)، Jetpack Compose اور کلین موبائل سسٹم ڈیزائن پر تفصیلی تکنیکی مضامین۔",
+            "keywords": "Mobile Development Blog, Kotlin Multiplatform Tutorials, Jetpack Compose Best Practices, Mobile Architecture Insights, Clean Architecture Mobile, KMP vs Flutter, موبائل ڈیولپمنٹ بلاگ"
+        }
+    },
+    "profile": {
+        "title": "Senior Mobile App Developer & Architect",
+        "subtitle": "Native Android • Kotlin Multiplatform (KMP) • Compose Multiplatform (CMP) • Flutter",
+        "bio": "6+ سالہ انجینئرنگ تجربے کے حامل سینئر موبائل ایپ ڈیولپر، جو HealthTech، FinTech، IoT اور E-commerce کے لیے اسکیل ایبل پروڈکشن ایپس تیار کرتے ہیں۔ Clean Architecture اور MVI/MVVM ڈیزائن پیٹرنز کے ساتھ Native Android، Kotlin Multiplatform (KMP)، Compose Multiplatform (CMP)، اور Flutter میں تخصیص حاصل ہے۔",
+        "location": "لاہور، پاکستان (عالمی سطح پر دستیاب)",
+        "availability": "سینئر عُہدوں اور اسٹریٹجک کنسلٹنگ کے لیے دستیاب"
+    },
+    "skills": {
+        "title": "تکنیکی مہارتیں (Technical Arsenal)",
+        "subtitle": "نیٹو اور ملٹی پلیٹ فارم ایکو سسٹمز میں میری پیشہ ورانہ ٹول کٹ",
+        "languages": "پروگرامنگ زبانیں (Kotlin, Dart, Java)",
+        "android": "Native Android (Jetpack Compose, TV, Custom UI)",
+        "multiplatform": "Multiplatform (KMP & CMP)",
+        "flutter": "Flutter (BLoC, Riverpod, GetIt)",
+        "architecture": "Architecture & Async (Clean, MVI, MVVM, Coroutines)",
+        "tools": "IoT, Payments & DevOps (Agora, Hardware SDKs, CI/CD)"
+    },
+    "home": {
+        "availability": "کنٹریکٹ اور فل سائیکل ڈیولپمنٹ کے لیے دستیاب",
+        "heading1": "اعلیٰ کارکردگی کی حامل موبائل ایپس۔ ",
+        "heading2": "Native, KMP, & Flutter.",
+        "description": "میں محمد اویس ہوں — 6+ سالہ تجربے کا حامل سینئر موبائل ڈیولپر جو مضبوط موبائل سسٹمز انجینئر کرتے ہیں۔ میری تخصیص Native Android (Kotlin/Java)، Kotlin Multiplatform (KMP)، Compose Multiplatform (CMP)، اور Flutter میں ہے — اور میں نے 25+ تیار کردہ ایپلیکیشنز میں 99%+ کریش فری ریٹ برقرار رکھا ہے۔",
+        "buttonStart": "پروجیکٹ شروع کریں",
+        "portraitAlt": "محمد اویس — سینئر موبائل ایپ ڈویلپر اور ملٹی پلیٹ فارم آرکیٹیکٹ، لاہور پاکستان میں",
+        "buttonView": "منتخب کام دیکھیں",
+        "skillsEyebrow": "ٹیک اسٹیک",
+        "skillsTitle": "تکنیکی مہارتیں",
+        "stats": {
+            "experience": "6+ سال کا تجربہ",
+            "completed": "25+ لائیو پروجیکٹس",
+            "stores": "اسٹور پر موجود ایپس"
+        },
+        "selectedWork": "منتخب کام",
+        "recentProjects": "نمایاں پروڈکشن پروجیکٹس",
+        "allProjectsLink": "تمام پروجیکٹس دیکھیں",
+        "processTitle": "پروجیکٹ پر کام کا طریقہ کار",
+        "processSubtitle": "پائیدار اور اسکیل ایبل کوڈ کی ڈیلیوری کے لیے ایک عملی پراسیس",
+        "processSteps": {
+            "01": {
+                "title": "اسکوپنگ اور تفہیم (Discovery & Scoping)",
+                "body": "پروجیکٹ کے اسکوپ، بنیادی پلیٹ فارم ضروریات (Android, iOS, KMP, یا Flutter)، اور واضح انجینئرنگ اہداف کا تفصیلی جائزہ۔"
+            },
+            "02": {
+                "title": "آرکیٹیکچر کا تعمیر (Architecture First)",
+                "body": "ماڈیولر Clean Architecture کا قیام — شیئرڈ KMP بزنس لاجک، قابلِ پیشگوئی MVI/MVVM اسٹیٹ مینجمنٹ، اور یکجا پلیٹ فارم UI۔"
+            },
+            "03": {
+                "title": "مرحلہ وار ڈیولپمنٹ (Iterative Build)",
+                "body": "CI/CD آٹومیشن کے ساتھ ہفتہ وار پروڈکشن گریڈ بلڈز، جنہیں آپ حقیقی ڈیوائسز پر انسٹال اور ٹیسٹ کر سکتے ہیں۔"
+            },
+            "04": {
+                "title": "لانچ اور اسکیل (Ship & Scale)",
+                "body": "اسٹور لانچ، ریلیز پائپ لائنز کا سیٹ اپ، کریش رپورٹنگ، اور طویل المدتی اسکیل ایبلٹی کے لیے مکمل ٹیکنیکل ہینڈ اوور۔"
+            }
+        },
+        "feedbackTitle": "کلائنٹ فیڈ بیک",
+        "feedbackSubtitle": "انجینئرنگ لیڈرز اور فاؤنڈرز کی رائے",
+        "allTestimonialsLink": "تمام تاثرات پڑھیں"
+    },
+    "about": {
+        "title": "تعارف",
+        "headerTitle": "سلام، میں محمد اویس ہوں — سینئر موبائل ایپ ڈیولپر اور ملٹی پلیٹ فارم آرکیٹیکٹ",
+        "headerDesc": "6+ سالہ تجربے کے حامل سینئر موبائل انجینئر، جو Native Android (Kotlin/Java)، Kotlin Multiplatform (KMP)، Compose Multiplatform (CMP) اور Flutter کے ذریعے اعلیٰ کارکردگی اور اسکیل ایبل سسٹمز تیار کرتے ہیں۔ تمام تر ڈیولپمنٹ Clean Architecture اور MVI/MVVM ڈیزائن پیٹرنز کے اصولوں پر مبنی ہے۔",
+        "expertiseTitle": "بنیادی مہارت (Core Expertise)",
+        "expertiseSubtitle": "اعلیٰ معیار کی موبائل آرکیٹیکچر، کراس پلیٹ فارم انجینئرنگ، اور ری ایکٹو سسٹم ڈیزائن",
+        "experienceTitle": "پیشہ ورانہ سفر",
+        "experienceSubtitle": "HealthTech، FinTech، IoT ہارڈویئر، اور رئیل ٹائم پلیٹ فارمز کے لیے پائیدار ایپس کی انجینئرنگ",
+        "infoTitle": "مقام",
+        "infoLocation": "لاہور، پاکستان",
+        "infoFocus": "بنیادی تخصیص",
+        "infoFocusVal": "Android • KMP • CMP • Flutter",
+        "role": "موجودہ عہدہ",
+        "roleVal": "Senior Mobile App Developer",
+        "availability": "نئے مواقع کے لیے دستیاب",
+        "githubFollowers": "GitHub کمیونٹی",
+        "githubStars": "ریپازیٹری اسٹارز",
+        "linkedinConnections": "پیشہ ورانہ نیٹ ورک",
+        "downloadCv": "ریزومے / CV ڈاؤن لوڈ کریں",
+        "stats": {
+            "experience": "6+ سال کا تجربہ",
+            "completed": "پروڈکشن ایپس",
+            "satisfied": "مطمئن کلائنٹس",
+            "stores": "پبلش شدہ ایپس"
+        }
+    },
+    "blog": {
+        "title": "تکنیکی مضامین اور انجینئرنگ بصیرت",
+        "headerTitle": "موبائل آرکیٹیکچر اور ٹیک انسائٹس",
+        "headerDesc": "Native Android، Kotlin Multiplatform (KMP)، Compose Multiplatform (CMP)، Flutter، اور پروڈکشن گریڈ Clean Architecture کا تفصیلی اور فنی جائزہ۔",
+        "minRead": "منٹ کا مطالعہ",
+        "readArticle": "مکمل مضمون پڑھیں",
+        "emptyState": "KMP، Compose Multiplatform اور موبائل آرکیٹیکچر پر مضامین جلد شائع کیے جائیں گے۔ اس اثنا میں، میرے منتخب پروڈکشن پروجیکٹس ملاحظہ فرمائیں!"
+    },
+    "experiences": {
+        "items": {
+            "quickgem": {
+                "role": "Senior Mobile Application Developer",
+                "description": "Jetpack Compose اور MVI آرکیٹیکچر کا استعمال کرتے ہوئے سابقہ ڈاکٹر اور پیشنٹ ایپس کو ایک واحد کوڈ بیس میں ضم کر کے ایک ہائی اسکیل، ملٹی ٹیننٹ HealthTech ایکو سسٹم کی تشکیل۔ 6-in-1 میڈیکل مانیٹرز کے لیے ری ایکٹو ہارڈویئر ڈرائیورز اور کم لیٹنسی والے Agora SDK ٹیلی ہیلتھ فیچرز کی انٹیگریشن۔",
+                "achievements": [
+                    "سابقہ ڈاکٹر اور پیشنٹ ایپس کو ایک واحد Jetpack Compose اور MVI کوڈ بیس میں ضم کیا",
+                    "کم لیٹنسی ویڈیو کالز اور رئیل ٹائم ڈاکٹر-پیشنٹ چیٹ کے لیے Agora SDK انٹیگریٹ کیا",
+                    "Spectra Care 6-in-1 میڈیکل ہارڈویئر اور EHR SOAP APIs کے لیے ری ایکٹو انٹیگریشنز ڈیزائن کیں"
+                ]
+            },
+            "egora": {
+                "role": "Senior Mobile Application Developer",
+                "description": "Flutter، Dio اور GetIt کا استعمال کرتے ہوئے ہائی اسکیل ریزرویشن ماڈیولز انجینئر کیے، جس سے کسٹمر اڈاپشن میں 30% اضافہ ہوا—بلوٹوتھ تھرمل پرنٹنگ کے لیے Jetpack Compose ایپس کی آرکیٹیکچر تیار کی اور ہائی تھرو پٹ پیمنٹ گیٹ ویز انٹیگریٹ کیے۔",
+                "achievements": [
+                    "Flutter میں بنیادی ریزرویشن سسٹم انجینئر کیا، جس سے کسٹمر اڈاپشن میں 30% اضافہ ہوا",
+                    "بلوٹوتھ تھرمل پرنٹر انٹیگریشن کی آرکیٹیکچر تیار کی، جس نے 100% ریلائیبلٹی اور کوئری لیٹنسی میں 50% کمی حاصل کی",
+                    "XStax پیمنٹ گیٹ وے انٹیگریٹ کیا، جو 99% اپ ٹائم کے ساتھ ماہانہ 10,000+ ٹرانزیکشنز پروسیس کرتا ہے"
+                ]
+            },
+            "healthwire": {
+                "role": "Software Engineer, Android Developer",
+                "description": "MVVM، Hilt/Dagger، Coroutines اور Flow کا استعمال کرتے ہوئے ڈوئل ایپ Patient/Doctor ایکو سسٹم تیار کیا۔ Twilio ویڈیو کے ذریعے ٹیلی ہیلتھ صلاحیتوں کو اسکیل کیا، مقامی پیمنٹ گیٹ ویز محفوظ بنائے اور سابقہ UI کو Jetpack Compose پر منتقل کیا۔",
+                "achievements": [
+                    "Twilio ویڈیو کنسلٹیشنز اور ڈیپ لنک نیویگیشن کے ذریعے یوزر انگیجمنٹ میں 15% اضافہ کیا",
+                    "Firebase Crashlytics اور Room DB کی اپٹمائزیشن کے ذریعے دونوں ایپس میں 99%+ کریش فری ریٹ برقرار رکھا",
+                    "100% سیکورٹی تعمیل کے ساتھ Meezan، JazzCash اور Foree پیمنٹ گیٹ ویز انٹیگریٹ کیے"
+                ]
+            },
+            "dongamers": {
+                "role": "Senior Android Developer",
+                "description": "ایک بین الاقوامی گیمنگ پلیٹ فارم کے لیے موبائل انجینئرنگ کی قیادت کی۔ سابقہ Java کوڈ کو Kotlin میں مائیگریٹ کیا، Pusher کا استعمال کرتے ہوئے رئیل ٹائم چیٹ انفراسٹرکچر ڈیزائن کیا اور مونیٹائزیشن فریم ورکس کو اپٹمائز کیا۔",
+                "achievements": [
+                    "ایپ اسٹیبلٹی کو 99% کریش فری سیشنز تک بڑھایا اور پروڈکشن بگز میں 20% کمی کی",
+                    "عالمی دستیابی (99% کوریج) کے ساتھ ایپ کو Java سے Kotlin پر مائیگریٹ کیا",
+                    "Pusher کا استعمال کرتے ہوئے رئیل ٹائم چیٹ کی آرکیٹیکچر ڈیزائن کی (+15% انگیجمنٹ) اور AdMob/IAP کے ذریعے سیلز میں 10% اضافہ کیا"
+                ]
+            },
+            "freelance": {
+                "role": "Freelance Mobile Developer",
+                "description": "بین الاقوامی کلائنٹس کے لیے Flutter اور Dart کا استعمال کرتے ہوئے رسپانسو کراس پلیٹ فارم موبائل ایپلیکیشنز کی آرکیٹیکچر تیار کی اور ڈیلیور کی، جس میں UI پروٹو ٹائپنگ سے لے کر API انٹیگریشن تک مکمل لائف سائیکل کی ڈیلیوری شامل ہے۔",
+                "achievements": [
+                    "اعلیٰ معیار کے کراس پلیٹ فارم Flutter سلوشنز ڈیلیور کیے، جس سے کلائنٹس کے لیے ٹائم ٹو مارکیٹ تیز ہوا",
+                    "اینڈ ٹو اینڈ ڈیولپمنٹ لائف سائیکلز اور اسٹیک ہولڈرز کی ٹیکنیکل کنسلٹیشنز کو سنبھالا"
+                ]
+            },
+            "netroots": {
+                "role": "Android Developer Intern",
+                "description": "انٹرپرائز Java ایپلیکیشنز ڈیولپ کیں، جن میں امیج ویلیڈیشن اور آٹومیٹڈ HR ایڈمنسٹریٹو ورک فلوز کے ساتھ GPS پر مبنی اٹینڈنس سسٹم شامل ہے۔",
+                "achievements": [
+                    "امیج ویلیڈیشن کے ساتھ Java GPS اٹینڈنس سسٹم انجینئر کیا، جس نے درستگی میں 40% اضافہ کیا",
+                    "HR پروفائلنگ ورک فلوز کو آٹومیٹ کیا، جس سے دستی ایڈمنسٹریٹو اوور ہیڈ میں 50% کمی آئی"
+                ]
+            }
+        }
+    },
+    "projects": {
+        "title": "پروجیکٹس",
+        "headerTitle": "Native Android اور Flutter ایکو سسٹمز میں تیار کردہ ایپس",
+        "headerDesc": "بہترین پرفارمنس، سیکورٹی اور رئیل ٹائم کنیکٹیوٹی فراہم کرنے کے لیے پلیٹ فارم کے لحاظ سے فلٹر کریں اور دیکھیں۔",
+        "noProjectsFound": "اس کیٹیگری میں کوئی پروجیکٹ نہیں ملا۔",
+        "backToProjects": "تمام پروجیکٹس",
+        "techStack": "ٹیک اسٹیک",
+        "filters": {
+            "all": "تمام",
+            "android": "Android",
+            "flutter": "Flutter",
+            "ios": "iOS",
+            "kmp": "KMP",
+            "cmp": "CMP"
+        },
+        "ctas": {
+            "playStore": "Google Play",
+            "appStore": "App Store",
+            "details": "تفصیلا ت دیکھیں"
+        },
+        "items": {
+            "spectra-care": {
+                "title": "Spectra Care: ٹیلی ہیلتھ اور ہارڈویئر پلیٹ فارم",
+                "category": "ٹیلی ہیلتھ اور IoT",
+                "summary": "Jetpack Compose، Agora ویڈیو کالنگ اور 6-in-1 میڈیکل مانیٹر انٹیگریشن کے ساتھ انٹرپرائز ٹیلی ہیلتھ پلیٹ فارم۔",
+                "description": "Jetpack Compose اور MVI آرکیٹیکچر کے ساتھ تیار کردہ پروڈکشن Android ٹیلی ہیلتھ ایپ۔ اس میں کم لیٹنسی والی Agora ویڈیو کنسلٹیشنز، Spectra Care 6-in-1 ہیلتھ مانیٹرز کے لیے ری ایکٹو ڈیوائس ڈرائیورز، اور محفوظ SOAP EHR ڈیٹا سنکرونائزیشن شامل ہیں۔",
+                "ctaText": "Google Play پر دیکھیں",
+                "altText": "Spectra Care — Muhammad Awais کی تیار کردہ Android Native ٹیلی ہیلتھ ایپ بمع Agora ویڈیو کالنگ اور Spectra IoT ہیلتھ مانیٹر انٹیگریشن",
+                "highlights": [
+                    "Agora SDK رئیل ٹائم ویڈیو کنسلٹیشنز",
+                    "Spectra Care 6-in-1 IoT ہیلتھ مانیٹر سنک",
+                    "Jetpack Compose کے ساتھ MVI آرکیٹیکچر"
+                ]
+            },
+            "zouris": {
+                "title": "Zouris: ہولسٹک ویلنس پلیٹ فارم",
+                "category": "ہیلتھ اور ویلنس",
+                "summary": "رہنما سیشنز، آڈیو اسٹریمز اور افارمیشنز فراہم کرنے والی کراس پلیٹ فارم ویلنس ایپ۔",
+                "description": "Zouris ایک ہولسٹک ویلنس پلیٹ فارم ہے جسے Flutter کے ذریعے تیار کیا گیا ہے، جہاں تصدیق شدہ کوچز اور ماہرین Android اور iOS پر نیٹو UX پرفارمنس کے ساتھ گائیڈڈ سیشنز، میڈیٹیشنز اور رئیل ٹائم آڈیو اسٹریمز شیئر کرتے ہیں۔",
+                "ctaText": "Google Play",
+                "iosCtaText": "App Store",
+                "altText": "Zouris wellness coaching app — Muhammad Awais کا تیار کردہ کراس پلیٹ فارم میڈیٹیشن اور آڈیو اسٹریمنگ پلیٹ فارم",
+                "highlights": [
+                    "کراس پلیٹ فارم Flutter آرکیٹیکچر",
+                    "کم لیٹنسی رئیل ٹائم آڈیو اسٹریمنگ",
+                    "BLoC کے ساتھ کلین اسٹیٹ مینجمنٹ"
+                ]
+            },
+            "egora-b2b": {
+                "title": "Egora B2B: ریسٹورنٹ پارٹنر پلیٹ فارم",
+                "category": "B2B سلوشنز",
+                "summary": "ریسٹورنٹ مالکان کے لیے آرڈرز، پک اپس، اور لائیو ریزرویشنز کا نظم کرنے کا وائٹ لیبل پارٹنر ڈیش بورڈ۔",
+                "description": "Flutter، Dio اور GetIt کا استعمال کرتے ہوئے انجینئر کیا گیا وائٹ لیبل پارٹنر پلیٹ فارم۔ یہ ریسٹورنٹ مالکان کو ڈائن ان، پک اپ، QR کوڈ آرڈرنگ، اور قابل اعتماد پیمنٹ انٹیگریشنز کے ساتھ تھرمل رسیپٹ پرنٹنگ کے آزادانہ انتظام کی سہولت دیتا ہے۔",
+                "ctaText": "پروجیکٹ کی تفصیلات دیکھیں",
+                "altText": "Egora B2B ریسٹورنٹ پارٹنر ڈیش بورڈ — Muhammad Awais کا تیار کردہ آرڈر، ریزرویشن اور QR مینجمنٹ سسٹم",
+                "highlights": [
+                    "Flutter، Dio اور GetIt آرکیٹیکچر",
+                    "خود مختار ملٹی مرچنٹ ڈیش بورڈز",
+                    "رئیل ٹائم آرڈر سنک اور نوٹیفکیشن انجن"
+                ]
+            },
+            "egora": {
+                "title": "Egora: اسمارٹ ریسٹورنٹ ایکو سسٹم",
+                "category": "فوڈ اینڈ بیوریج",
+                "summary": "QR آرڈرنگ، ریزرویشن مینجمنٹ اور بلوٹوتھ ہارڈویئر انٹیگریشنز کا حامل ہائی اسکیل ریسٹورنٹ ایکو سسٹم۔",
+                "description": "Flutter اور Jetpack Compose کے ساتھ تیار کردہ اسکیل ایبل ریزرویشن اور ڈائننگ سسٹم۔ اس میں QR کوڈ آرڈرنگ، انٹیگریٹڈ XStax پیمنٹ پروسیسنگ (ماہانہ 10,000+ ٹرانزیکشنز)، اور 100% ریلائیبلٹی کے ساتھ کسٹم بلوٹوتھ تھرمل پرنٹر ہارڈویئر ڈرائیورز شامل ہیں۔",
+                "ctaText": "پروجیکٹ کی تفصیلات دیکھیں",
+                "altText": "Egora ریسٹورنٹ ایپ — Muhammad Awais کی تیار کردہ QR آرڈرنگ، ریزرویشن سسٹم اور بلوٹوتھ تھرمل پرنٹر انٹیگریشن",
+                "highlights": [
+                    "کسٹمر اڈاپشن میں 30% اضافہ حاصل کیا",
+                    "50% کم لیٹنسی کے ساتھ بلوٹوتھ تھرمل پرنٹر انٹیگریشن",
+                    "XStax پیمنٹ گیٹ وے جس سے ماہانہ 10,000+ ٹرانزیکشنز پروسیس ہوتی ہیں"
+                ]
+            },
+            "makernote": {
+                "title": "Makernote: انٹرایکٹو EdTech",
+                "category": "ایجوکیشن ایپ",
+                "summary": "رئیل ٹائم تعاون اور آف لائن سنکرونائزیشن کے ساتھ تعلیمی پلیٹ فارم۔",
+                "description": "اساتذہ اور طلباء کے لیے اعلیٰ پرفارمنس کا تعلیمی پلیٹ فارم — جو رئیل ٹائم تعاون، انسٹنٹ نوٹ سنکرونائزیشن، اور بغیر کسی رکاوٹ کے آف لائن ڈیٹا پرسٹینس کے لیے Clean Architecture پر ڈیزائن کیا گیا ہے۔",
+                "ctaText": "App Store پر دیکھیں",
+                "altText": "Makernote EdTech ایپ — Muhammad Awais کی تیار کردہ رئیل ٹائم کولیبریشن اور آف لائن سنکرونائزیشن ایپ",
+                "highlights": [
+                    "رئیل ٹائم ملٹی یوزر تعاون",
+                    "آف لائن فرسٹ لوکل اسٹوریج",
+                    "کلین MVVM آرکیٹیکچر"
+                ]
+            },
+            "eco-grocery": {
+                "title": "Eco Grocery: اسمارٹ انوینٹری ٹریکر",
+                "category": "اسمارٹ یوٹیلیٹی",
+                "summary": "بار کوڈ اسکیننگ، ریسیپی تجاویز اور ایکسپائری الرٹس کے ساتھ اسمارٹ گروسری ٹریکنگ ایپ۔",
+                "description": "ایک ذہین Android یوٹیلیٹی ایپ جس میں ریسیپی ریکمنڈیشن انجن سے منسلک ڈائنامک گروسری لسٹ، اور فوری آئٹم کیٹلاگنگ و ایکسپائری مینجمنٹ کے لیے کیمرہ بار کوڈ اسکیننگ انٹیگریٹڈ ہے۔",
+                "ctaText": "پروجیکٹ کی تفصیلات دیکھیں",
+                "altText": "Eco Grocery Android ایپ — Muhammad Awais کا تیار کردہ بار کوڈ اسکیننگ گروسری ٹریکر",
+                "highlights": [
+                    "کیمرہ بار کوڈ اسکینر انٹیگریشن",
+                    "اسمارٹ نوٹیفکیشن اور ایکسپائری سسٹم",
+                    "ری ایکٹو UI اسٹیٹ ہینڈلنگ"
+                ]
+            },
+            "hcloud": {
+                "title": "HCloud: کلینک مینجمنٹ سویٹ",
+                "category": "ڈاکٹرز ایپ",
+                "summary": "اپائنٹمنٹ اور پرسکریپشن سنک کے ساتھ ہیلتھ کیئر پرووائیڈرز کے لیے انٹرپرائز آپریشنز پورٹل۔",
+                "description": "ڈاکٹروں کے لیے تیار کردہ انٹرپرائز گریڈ کلینک مینجمنٹ ایپلیکیشن۔ MVVM، Hilt اور Room DB کے ساتھ بنائی گئی ہے تاکہ رئیل ٹائم پرسکریپشن کی تیاری، مریضوں کے ریکارڈ کا انتظام، اور آف لائن فرسٹ اپائنٹمنٹ شیڈولنگ ممکن ہو سکے۔",
+                "ctaText": "Google Play پر دیکھیں",
+                "altText": "HCloud کلینک مینجمنٹ سویٹ — Muhammad Awais کا تیار کردہ رئیل ٹائم پرسکریپشن سنک اور اپائنٹمنٹ شیڈولنگ سسٹم",
+                "highlights": [
+                    "ڈوئل ایپ آرکیٹیکچر کور",
+                    "Room DB کا استعمال کرتے ہوئے آف لائن فرسٹ سنک کیو",
+                    "رسپانسو فزیشن کلینیکل UI"
+                ]
+            },
+            "healthwire": {
+                "title": "Healthwire: ہیلتھ ٹیک ایکو سسٹم",
+                "category": "ٹیلی ہیلتھ پلیٹ فارم",
+                "summary": "20 لاکھ سے زائد ڈاؤن لوڈز، ٹیلی میڈیسن، لیب بکنگز اور محفوظ پیمنٹ انٹیگریشنز کے ساتھ معروف ہیلتھ کیئر ایپلیکیشن۔",
+                "description": "پاکستان کے اعلیٰ ترین ہیلتھ کیئر پلیٹ فارمز میں سے ایک کی آرکیٹیکچر ڈیزائن کی — جو فارمیسی لاجسٹکس، لیب ٹیسٹ بکنگز، Twilio ویڈیو کنسلٹیشنز، اور مقامی پیمنٹ گیٹ ویز (Meezan, JazzCash, Foree) کو 99%+ کریش فری سیشن ریٹ کے ساتھ پاور کرتا ہے۔",
+                "ctaText": "Google Play پر دیکھیں",
+                "altText": "Healthwire ہیلتھ کیئر ایپ — Muhammad Awais کی تیار کردہ فارمیسی لاجسٹکس، لیب بکنگ اور Twilio ٹیلی میڈیسن ایپ",
+                "highlights": [
+                    "Google Play Store پر 2M+ (20 لاکھ سے زائد) ڈاؤن لوڈز",
+                    "Twilio رئیل ٹائم ویڈیو کنسلٹیشنز (+15% انگیجمنٹ)",
+                    "100% محفوظ پیمنٹ پروسیسنگ (Meezan، JazzCash، Foree)"
+                ]
+            },
+            "dongamers": {
+                "title": "DonGamers: ای اسپورٹس پلیٹ فارم",
+                "category": "ای گیمنگ پلیٹ فارم",
+                "summary": "رئیل ٹائم Pusher چیٹ، ٹورنامنٹ بریکٹس، اور اپٹمائزڈ مونیٹائزیشن کا حامل عالمی گیمنگ پلیٹ فارم۔",
+                "description": "Native Android پر ایک بین الاقوامی ای اسپورٹس پلیٹ فارم انجینئر کیا۔ کوڈ بیس کو Java سے Kotlin پر منتقل کیا، Pusher کا استعمال کرتے ہوئے اسکیل ایبل رئیل ٹائم چیٹ کی آرکیٹیکچر ڈیزائن کی (+15% انگیجمنٹ)، اور In-App Purchases و Google AdMob کو اپٹمائز کیا۔",
+                "ctaText": "Google Play پر دیکھیں",
+                "altText": "DonGamers ای اسپورٹس پلیٹ فارم — Muhammad Awais کا تیار کردہ رئیل ٹائم چیٹ اور ٹورنامنٹ ٹریکنگ سسٹم",
+                "highlights": [
+                    "عالمی دستیابی کے ساتھ 99% کریش فری ریٹ",
+                    "Pusher کا استعمال کرتے ہوئے رئیل ٹائم چیٹ انفراسٹرکچر",
+                    "مونیٹائزیشن کی اپٹمائزیشن سے سیلز میں 10% اضافہ"
+                ]
+            }
+        }
+    },
+    "services": {
+        "title": "سروسز اور تکنیکی حل",
+        "headerTitle": "اسکیل، بہترین پرفارمنس اور پائیداری کے لیے کسٹم موبائل انجینئرنگ۔",
+        "headerDesc": "ملٹی پلیٹ فارم سسٹم آرکیٹیکچر اور KMP/CMP شیئرڈ لاجک سے لے کر اینڈ ٹو اینڈ Native Android اور Flutter پروڈکشن ایپس کے لانچ تک۔",
+        "items": {
+            "android-native": {
+                "title": "Native Android اور ہارڈویئر انٹیگریشن",
+                "description": "Jetpack Compose، Kotlin اور MVI/MVVM پیٹرنز کے ساتھ تیار کردہ ہائی پرفارمنس نیٹو اینڈرائیڈ ایپس۔ IoT میڈیکل ہارڈویئر ڈرائیورز، Agora/Twilio ویڈیو SDKs، Android TV، اور محفوظ پیمنٹ پروسیسنگ میں خصوصی مہارت۔"
+            },
+            "kmp": {
+                "title": "Kotlin & Compose Multiplatform (KMP/CMP)",
+                "description": "Kotlin Multiplatform (KMP) اور Compose Multiplatform (CMP) کے ذریعے Android اور iOS کے لیے شیئرڈ بزنس لاجک اور ری ایکٹو UI — جو 100% نیٹو ایگزیکیوشن اسپیڈ برقرار رکھتے ہوئے کوڈ بیس کی ڈپلیکیشن کو ختم کرتا ہے۔"
+            },
+            "flutter": {
+                "title": "Flutter کراس پلیٹ فارم انجینئرنگ",
+                "description": "Flutter، BLoC/Riverpod اور Dio کے ساتھ بنائی گئی اسکیل ایبل اور ہائی فیڈیلیٹی کراس پلیٹ فارم ایپس۔ تیز ترین ٹائم ٹو مارکیٹ، پیچیدہ REST/SOAP انٹیگریشنز، اور اعلیٰ کنورژن والے UI/UX کے لیے ڈیزائن کردہ۔"
+            },
+            "architecture": {
+                "title": "موبائل آرکیٹیکچر اور کوڈ بیس کی جدید کاری",
+                "description": "مونو لیتھک کوڈ بیسز کو ماڈیولر Clean Architecture میں ری فیکٹر کرنا، Java سے Kotlin پر مائیگریشن، اور 99%+ کریش فری سیشن ریٹ حاصل کرنے کے لیے ایپ اسٹیبلٹی کو اپٹمائز کرنا۔"
+            }
+        }
+    },
+    "testimonials": {
+        "title": "کلائنٹ ریویوز اور تاثرات",
+        "headerTitle": "انجینئرنگ لیڈرز، فاؤنڈرز اور پروڈکٹ ٹیموں کا قابلِ اعتماد انتخاب",
+        "headerDesc": "اسکیل ایبل Android، Kotlin Multiplatform اور Flutter ایپلیکیشنز کی کامیاب لانچ کے بارے میں ٹیکنیکل فاؤنڈرز، پروڈکٹ لیڈز اور ہیلتھ کیئر پارٹنرز کی مستند رائے۔",
+        "items": {
+            "louis-wong": {
+                "name": "Louis Wong",
+                "role": "پروڈکٹ لیڈ اور انجینئرنگ پارٹنر",
+                "project": "موبائل پرفارمنس اپٹمائزیشن",
+                "message": "اویس کے ساتھ کام کرنے کا تجربہ بہترین رہا۔ انہوں نے ہماری ایپلیکیشن کو اپٹمائز کیا، اس کی RAM کا استعمال کم کیا اور پرفارمنس کو 30% تک بہتر بنایا۔ کوڈ اپٹمائزیشن اور شیئرڈ آرکیٹیکچرز میں ان کی مہارت نے ہماری پروڈکٹ کی کوالٹی میں نمایاں بہتری پیدا کی۔"
+            },
+            "nasir": {
+                "name": "Nasir",
+                "role": "سافٹ ویئر آرکیٹیکٹ اور کلائنٹ",
+                "project": "Android اور KMP آرکیٹیکچر",
+                "message": "اویس نے ہماری ایپ پر بہترین کام کیا۔ باریک بینی پر ان کی نظر، Clean Architecture اور پائیدار و قابلِ اعتماد کوڈ پر ان کی توجہ نے شروع سے آخر تک ڈیولپمنٹ کے تمام پراسیس کو انتہائی ہموار بنایا۔ کسی بھی سنجیدہ Android یا Kotlin Multiplatform پروجیکٹ کے لیے اویس انتہائی قابلِ سفارش ہیں۔"
+            },
+            "ahsan": {
+                "name": "Ahsan",
+                "role": "پروڈکٹ فاؤنڈر",
+                "project": "Eco Grocery ایپ",
+                "message": "اویس نے بار کوڈ اسکینر سے لے کر ریسیپی ریکمنڈیشن انجن تک ہماری Eco Grocery ایپ اینڈ ٹو اینڈ تیار کی۔ ایپ انتہائی ہموار چلتی ہے، اس کا آرکیٹیکچر کلین ہے، اور اس نے ہمارے صارفین کے لیے گروسری کے انتظام اور ایکسپائری ٹریکنگ کو واقعی آسان بنایا ہے۔"
+            },
+            "spectra-care": {
+                "name": "Spectra Care انجینئرنگ ٹیم",
+                "role": "ہیلتھ کیئر اور ٹیلی ہیلتھ پارٹنر",
+                "project": "Spectra Care ٹیلی ہیلتھ اور IoT پلیٹ فارم",
+                "message": "اویس نے ہمارے ہسپتال کے لیے ایک بہترین ٹیلی ہیلتھ ایپ تیار کی، جس میں ویڈیو کنسلٹیشنز اور IoT ہیلتھ مانیٹر ڈیٹا کو نہایت قابلِ اعتماد طریقے سے انٹیگریٹ کیا۔ ہمارے مریض اور ڈاکٹرز دونوں روزانہ اس ایپ کو استعمال کرتے ہیں، اور حقیقی کلینیکل حالات میں اس نے شاندار اور بلا تاخیر کارکردگی دکھائی ہے۔"
+            }
+        }
+    },
+    "contact": {
+        "title": "رابطہ",
+        "headerTitle": "آئیے آپ کا اگلا موبائل پروجیکٹ مل کر تیار کریں۔",
+        "headerDesc": "ای میل یا پیشہ ورانہ نیٹ ورکس کے ذریعے براہِ راست رابطہ کریں — میں ایک ورکنگ ڈے کے اندر جواب دیتا ہوں۔",
+        "locationTitle": "مقام",
+        "form": {
+            "nameLabel": "نام",
+            "emailLabel": "ای میل",
+            "platformLabel": "پلیٹ فارم (Android / KMP / CMP / Flutter)",
+            "budgetLabel": "بجٹ کی حد",
+            "detailsLabel": "پروجیکٹ کی تفصیلات یا عہدے کا اسکوپ",
+            "buttonSend": "پیغام بھیجیں",
+            "successTitle": "پیغام کامیابی سے بھیج دیا گیا",
+            "successMessage": "رابطہ کرنے کا شکریہ — میں ہر انکوائری کو توجہ سے پڑھتا ہوں اور فوری جواب دیتا ہوں۔"
+        }
+    },
+    "cta": {
+        "bookedStatus": "فی الوقت Q3 2026 کے لیے پروجیکٹ بُکنگ جاری ہے",
+        "title": "کیا آپ کے پاس ہائی اسکیل موبائل ایپ کا خیال یا ملٹی پلیٹ فارم پروجیکٹ ہے؟",
+        "description": "مجھے اپنے پروڈکٹ کے اہداف، آرکیٹیکچر کی ضروریات، یا KMP/Flutter مائیگریشن کے بارے میں بتائیں — میں ایک ورکنگ ڈے کے اندر واضح ٹیکنیکل روڈ میپ کے ساتھ جواب دوں گا۔",
+        "startProject": "پروجیکٹ شروع کریں",
+        "seeWork": "پورٹ فولیو دیکھیں"
+    },
+    "footer": {
+        "copyright": "© {year} محمد اویس۔ جملہ حقوق محفوظ ہیں۔",
+        "poweredBy": "Next.js اور Tailwind CSS کے ساتھ تیار کردہ",
+        "navigate": "نیویگیشن",
+        "specialties": "خصوصی مہارتیں",
+        "getInTouch": "رابطہ کریں",
+        "specialtiesList": [
+            "Native Android (Kotlin & Java)",
+            "Kotlin Multiplatform (KMP)",
+            "Compose Multiplatform (CMP)",
+            "Flutter Cross-Platform"
+        ]
+    },
+    "notfound": {
+        "eyebrow": "404 غلطی",
+        "title": "یہ صفحہ موجود نہیں ہے۔",
+        "button": "ہوم پیج پر واپس جائیں"
+    }
+}

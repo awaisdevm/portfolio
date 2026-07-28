@@ -1,0 +1,433 @@
+{
+    "nav": {
+        "home": "Ana Sayfa",
+        "about": "Hakkımda",
+        "projects": "Projeler",
+        "blog": "Blog",
+        "contact": "İletişim",
+        "services": "Hizmetler",
+        "testimonials": "Referanslar"
+    },
+    "seo": {
+        "home": {
+            "title": "Muhammad Awais | Kıdemli Mobil Uygulama Geliştiricisi & Çoklu Platform Mimarı",
+            "description": "Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP) ve Flutter ile canlı ortam uygulamaları geliştiren 6+ yıllık deneyime sahip Kıdemli Mobil Yazılım Mühendisi.",
+            "keywords": "Kıdemli Mobil Geliştirici, Native Android Geliştirici, Kotlin Multiplatform Mühendisi, Compose Multiplatform, Flutter Geliştirici, Mobil Mimar, Temiz Mimari, Lahor Geliştirici"
+        },
+        "projects": {
+            "title": "Proje Portföyü | Native Android, KMP ve Flutter Uygulamaları - Muhammad Awais",
+            "description": "Jetpack Compose, Flutter ve ölçeklenebilir mobil mimari ile inşa edilmiş Sağlık Teknolojileri, FinTek ve IoT donanım entegrasyonlarına sahip canlı ortam uygulamalarını inceleyin.",
+            "keywords": "Mobil uygulama portföyü, Android uygulama vaka çalışmaları, Flutter uygulamaları vitrini, Jetpack Compose projeleri, Tele-sağlık uygulamaları, IoT mobil entegrasyonları, Yayınlanmış mobil uygulamalar"
+        },
+        "about": {
+            "title": "Hakkımda | Muhammad Awais - Kıdemli Mobil Uygulama Geliştiricisi (6+ Yıl Deneyim)",
+            "description": "Android, KMP, CMP, Flutter, MVI/MVVM ve %99+ çökmesiz çalışma oranını koruyan büyük ölçekli sistemlerde 6+ yıllık deneyime sahip Kıdemli Mobil Mühendis Muhammad Awais hakkında bilgi edinin.",
+            "keywords": "Muhammad Awais Hakkında, Kıdemli Android Mühendisi, Mobil Sistemler Mimarı, KMP uzmanı, Pakistan Flutter geliştiricisi, Temiz Mimari uzmanı, Mobil geliştirici geçmişi"
+        },
+        "contact": {
+            "title": "İletişim | Kıdemli Android, KMP & Flutter Geliştiricisi Kirala - Muhammad Awais",
+            "description": "Mobil uygulama projenizi başlatın veya çoklu platform mühendisliği konusunda danışmanlık alın. Kıdemli düzeyde Android, KMP veya Flutter geliştirme hizmetleri için doğrudan iletişime geçin.",
+            "keywords": "Kıdemli Mobil Geliştirici Kirala, Android Uzmanı Kirala, KMP Danışmanı, Serbest Flutter Mühendisi, Mobil Uygulama Geliştirme Hizmetleri, Muhammad Awais İletişim"
+        },
+        "testimonials": {
+            "title": "Müşteri Değerlendirmeleri ve Geri Bildirimler | Kıdemli Mobil Geliştirici - Muhammad Awais",
+            "description": "Native Android, Kotlin Multiplatform ve Flutter mobil projeleri hakkında kuruculardan ve mühendislik liderlerinden gelen müşteri yorumlarını ve tavsiyelerini okuyun.",
+            "keywords": "Müşteri tavsiyeleri, devawais yorumları, mobil geliştirici önerileri, Android danışmanı geri bildirimleri, Flutter geliştirici yorumları, yazılım müşterisi değerlendirmeleri"
+        },
+        "services": {
+            "title": "Mobil Mühendislik Hizmetleri | Native Android, KMP & Flutter Danışmanlığı",
+            "description": "Uçtan uca mobil geliştirme hizmetleri: Native Android (Kotlin), KMP/CMP çoklu platform mühendisliği, IoT donanım entegrasyonları ve eski kod tabanı modernizasyonu.",
+            "keywords": "Mobil Uygulama Geliştirme Hizmetleri, Android Danışmanlığı, Kotlin Multiplatform Geliştirme, Flutter Geliştirme Hizmetleri, Temiz Mimari Danışmanlığı, IoT Mobil Entegrasyonu"
+        },
+        "blog": {
+            "title": "Mühendislik Bloğu | Mobil Mimari, KMP, CMP & Android İpuçları",
+            "description": "Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP), Jetpack Compose ve temiz mobil sistem tasarımı üzerine derinlemesine teknik makaleler.",
+            "keywords": "Mobil Geliştirme Bloğu, Kotlin Multiplatform Rehberleri, Jetpack Compose En İyi Uygulamaları, Mobil Mimari İpuçları, Mobil Temiz Mimari, KMP mi Flutter mı"
+        }
+    },
+    "profile": {
+        "title": "Kıdemli Mobil Uygulama Geliştiricisi & Mimar",
+        "subtitle": "Native Android • Kotlin Multiplatform (KMP) • Compose Multiplatform (CMP) • Flutter",
+        "bio": "Sağlık Teknolojileri, FinTek, IoT ve E-Ticaret alanlarında ölçeklenebilir canlı ortam uygulamaları geliştiren 6+ yıllık deneyime sahip Kıdemli Mobil Uygulama Geliştiricisi. Temiz Mimari ve MVI/MVVM tasarım kalıpları ile Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP) ve Flutter konularında uzman.",
+        "location": "Lahor, Pakistan (Küresel Olarak Müsait)",
+        "availability": "Kıdemli Pozisyonlar ve Stratejik Danışmanlık İçin Müsait"
+    },
+    "skills": {
+        "title": "Teknik Yetkinlikler",
+        "subtitle": "Native ve çoklu platform ekosistemlerindeki profesyonel araç setim",
+        "languages": "Programlama Dilleri (Kotlin, Dart, Java)",
+        "android": "Native Android (Jetpack Compose, TV, Özel Arayüzler)",
+        "multiplatform": "Çoklu Platform (KMP & CMP)",
+        "flutter": "Flutter (BLoC, Riverpod, GetIt)",
+        "architecture": "Mimari & Asenkron (Clean, MVI, MVVM, Coroutines)",
+        "tools": "IoT, Ödeme Sistemleri & DevOps (Agora, Donanım SDK'ları, CI/CD)"
+    },
+    "home": {
+        "availability": "Sözleşmeli & tam döngü geliştirme için müsait",
+        "heading1": "Ölçeklenebilir",
+        "heading2": "Mobil & Çoklu Platform Çözümleri Mimarisi",
+        "description": "Native Android (Jetpack Compose), KMP, CMP ve Flutter konularında 6+ yıllık deneyime sahip Kıdemli Mobil Geliştirici & Mimar. Temiz Mimari ve yüksek performanslı uygulamalar uzmanı.",
+        "buttonStart": "Projeyi Başlat",
+        "buttonView": "Öne Çıkan Çalışmaları Gör",
+        "skillsEyebrow": "Teknoloji Yığını",
+        "portraitAlt": "Muhammad Awais — Lahor Pakistan'da Kıdemli Mobil Uygulama Geliştiricisi ve Çoklu Platform Mimarı",
+        "skillsTitle": "Teknik Beceriler",
+        "stats": {
+            "experience": "6+ Yıllık Deneyim",
+            "completed": "25+ Canlıya Alınan Proje",
+            "stores": "Magazalardaki Uygulamalar"
+        },
+        "selectedWork": "Seçilen Çalışmalar",
+        "recentProjects": "Öne Çıkan Üretim Projeleri",
+        "allProjectsLink": "Tüm projeleri gör",
+        "processTitle": "Süreç Nasıl İşler",
+        "processSubtitle": "Esnek ve ölçeklenebilir kod teslimi etrafında kurgulanmış pratik bir süreç",
+        "processSteps": {
+            "01": {
+                "title": "Keşif & Kapsam Belirleme",
+                "body": "Proje kapsamı, temel platform gereksinimleri (Android, iOS, KMP veya Flutter) ve net mühendislik kilometre taşları üzerine derinlemesine analiz."
+            },
+            "02": {
+                "title": "Önce Mimari",
+                "body": "Modüler Temiz Mimari tasarımı — ortak KMP iş mantığı, öngörülebilir MVI/MVVM durum yönetimi ve bağımsız platform kullanıcı arayüzü."
+            },
+            "03": {
+                "title": "Yinelemeli Geliştirme",
+                "body": "CI/CD otomasyonu ile desteklenen, fiziksel cihazlarda yükleyip test edebileceğiniz haftalık üretim kalitesinde derlemeler."
+            },
+            "04": {
+                "title": "Yayınlama & Ölçekleme",
+                "body": "Mağaza lansmanı, yayın hatlarının kurulumu, çökme raporlaması ve uzun vadeli ölçeklenebilirlik için kapsamlı teknik devir."
+            }
+        },
+        "feedbackTitle": "Müşteri Geri Bildirimleri",
+        "feedbackSubtitle": "Mühendislik liderleri ve kurucular ne diyor",
+        "allTestimonialsLink": "Tüm referansları oku"
+    },
+    "about": {
+        "title": "Hakkımda",
+        "headerTitle": "Merhaba, Ben Muhammad Awais — Kıdemli Mobil Uygulama Geliştiricisi ve Çoklu Platform Mimarı.",
+        "headerDesc": "Native Android (Kotlin/Java), Kotlin Multiplatform (KMP), Compose Multiplatform (CMP) ve Flutter kullanarak yüksek performanslı, ölçeklenebilir sistemler geliştiren 6+ yıllık deneyime sahip Kıdemli Mobil Yazılım Mühendisi — Temiz Mimari (Clean Architecture) ve MVI/MVVM tasarım kalıplarıyla hareket eder.",
+        "expertiseTitle": "Temel Uzmanlıklar",
+        "expertiseSubtitle": "Yüksek etkili mobil mimari, çapraz platform mühendisliği ve reaktif sistem tasarımı",
+        "experienceTitle": "Kariyer Yolculuğu",
+        "experienceSubtitle": "Sağlık Teknolojileri (HealthTech), FinTech, IoT donanımları ve gerçek zamanlı platformlarda dayanıklı uygulamalar mühendisliği",
+        "infoTitle": "Konum",
+        "infoLocation": "Lahor, Pakistan",
+        "infoFocus": "Uzmanlık Alanı",
+        "infoFocusVal": "Android • KMP • CMP • Flutter",
+        "role": "Mevcut Rol",
+        "roleVal": "Kıdemli Mobil Uygulama Geliştiricisi",
+        "availability": "Yeni Fırsatlara Açık",
+        "githubFollowers": "GitHub Topluluğu",
+        "githubStars": "Depo Yıldızları",
+        "linkedinConnections": "Profesyonel Ağı",
+        "downloadCv": "Özgeçmiş / CV İndir",
+        "stats": {
+            "experience": "6+ Yıl Deneyim",
+            "completed": "Canlıdaki Uygulamalar",
+            "satisfied": "Memnun Müşteriler",
+            "stores": "Yayınlanan Uygulamalar"
+        }
+    },
+    "blog": {
+        "title": "Teknik Makaleler ve Mühendislik İpuçları",
+        "headerTitle": "Mobil Mimari ve Teknoloji Analizleri",
+        "headerDesc": "Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP), Flutter ve üretim seviyesinde Temiz Mimari (Clean Architecture) üzerine derinlemesine incelemeler.",
+        "minRead": "dk okuma",
+        "readArticle": "Makalenin tamamını oku",
+        "emptyState": "KMP, Compose Multiplatform ve mobil mimari üzerine makaleler çok yakında geliyor. Bu sırada öne çıkan canlı projelerimi keşfedebilirsiniz!"
+    },
+    "experiences": {
+        "items": {
+            "quickgem": {
+                "role": "Kıdemli Mobil Uygulama Geliştiricisi",
+                "description": "Jetpack Compose ve MVI mimarisi kullanarak eski doktor ve hasta uygulamalarını tek bir kod tabanında birleştirip büyük ölçekli, çok kiracılı (multitenant) bir HealthTech ekosistemi tasarladı. Düşük gecikmeli Agora SDK tele-sağlık özelliklerini ve 6'sı 1 arada tıbbi monitörler için reaktif donanım sürücülerini entegre etti.",
+                "achievements": [
+                    "Eski doktor ve hasta uygulamalarını tek bir Jetpack Compose ve MVI kod tabanında birleştirdi",
+                    "Düşük gecikmeli görüntülü görüşmeler ve gerçek zamanlı doktor-hasta sohbeti için Agora SDK entegrasyonu sağladı",
+                    "Spectra Care 6'sı 1 arada tıbbi donanım ve EHR SOAP API'leri için reaktif entegrasyonlar mimarisini kurdu"
+                ]
+            },
+            "egora": {
+                "role": "Kıdemli Mobil Uygulama Geliştiricisi",
+                "description": "Flutter, Dio ve GetIt kullanarak müşteri kullanımını %30 artıran büyük ölçekli rezervasyon modülleri geliştirdi. Bluetooth termal yazıcılar için Jetpack Compose uygulamaları tasarladı ve yüksek işlem hacimli ödeme ağ geçitlerini entegre etti.",
+                "achievements": [
+                    "Flutter ile müşteri kullanımında %30 artış sağlayan temel rezervasyon sistemini geliştirdi",
+                    "%100 güvenilirlik ve sorgu gecikmesinde %50 azalma sağlayan Bluetooth termal yazıcı entegrasyonunu mimarisini kurdu",
+                    "%99 çalışma süresi (uptime) ile aylık 10 bin+ işlemi işleyen XStax ödeme ağ geçidini entegre etti"
+                ]
+            },
+            "healthwire": {
+                "role": "Yazılım Mühendisi, Android Geliştirici",
+                "description": "MVVM, Hilt/Dagger, Coroutines ve Flow kullanarak hasta/doktor ikili uygulama ekosistemini geliştirdi. Twilio video aracılığıyla tele-sağlık kapasitesini büyüttü, yerel ödeme ağ geçitlerinin güvenliğini sağladı ve eski UI mimarisini Jetpack Compose'a taşıdı.",
+                "achievements": [
+                    "Twilio video konsültasyonları ve derin bağlantı (deep-link) navigasyonu ile kullanıcı etkileşimini %15 artırdı",
+                    "Firebase Crashlytics ve Room DB optimizasyonu sayesinde her iki uygulamada %99+'lık çökmesiz (crash-free) oturum oranını korudu",
+                    "%100 güvenlik uyumluluğu ile Meezan, JazzCash ve Foree ödeme ağ geçitlerini entegre etti"
+                ]
+            },
+            "dongamers": {
+                "role": "Kıdemli Android Geliştirici",
+                "description": "Uluslararası bir oyun platformunun mobil mühendisliğine liderlik etti. Eski Java kodunu Kotlin'e taşıdı, Pusher kullanarak gerçek zamanlı sohbet altyapısını tasarladı ve gelir modellerini (monetization) optimize etti.",
+                "achievements": [
+                    "Uygulama kararlılığını %99 çökmesiz oturum seviyesine çıkardı ve canlı ortam hatalarını %20 azalttı",
+                    "Küresel erişilebilirlik (%99 kapsama) ile uygulamayı Java'dan Kotlin'e taşıdı",
+                    "Pusher kullanarak gerçek zamanlı sohbet altyapısını kurdu (+%15 etkileşim) ve AdMob/IAP ile satışları %10 artırdı"
+                ]
+            },
+            "freelance": {
+                "role": "Serbest (Freelance) Mobil Geliştirici",
+                "description": "Uluslararası müşteriler için Flutter ve Dart kullanarak duyarlı, çapraz platform mobil uygulamalar tasarladı ve sundu; UI prototiplemeden API entegrasyonuna kadar tüm yaşam döngüsü sürecini yönetti.",
+                "achievements": [
+                    "Müşterilerin pazara sunma süresini hızlandıran yüksek kaliteli çapraz platform Flutter çözümleri sundu",
+                    "Uçtan uca geliştirme yaşam döngülerini ve paydaş teknik danışmanlıklarını yönetti"
+                ]
+            },
+            "netroots": {
+                "role": "Android Geliştirici Stajyeri",
+                "description": "Görsel doğrulamalı GPS tabanlı devam takip sistemi ve otomatikleştirilmiş İK idari iş akışları dahil olmak üzere kurumsal Java uygulamaları geliştirdi.",
+                "achievements": [
+                    "Görsel doğrulamalı Java GPS devam takip sistemini tasarlayarak doğruluğu %40 artırdı",
+                    "İK profil çıkarma iş akışlarını otomatikleştirerek manuel idari yükü %50 azalttı"
+                ]
+            }
+        }
+    },
+    "projects": {
+        "title": "Projeler",
+        "headerTitle": "Native Android ve Flutter ekosistemlerinde yayınlanmış uygulamalar.",
+        "headerDesc": "Optimum performans, güvenlik ve gerçek zamanlı bağlantı sağlamak için mimarinin ve teknoloji yığınının nasıl uyarlandığını görmek için platforma göre filtreleyin.",
+        "noProjectsFound": "Bu kategoriye ait proje bulunamadı.",
+        "backToProjects": "Tüm projeler",
+        "techStack": "Teknoloji yığını",
+        "filters": {
+            "all": "Tümü",
+            "android": "Android",
+            "flutter": "Flutter",
+            "ios": "iOS",
+            "kmp": "KMP",
+            "cmp": "CMP"
+        },
+        "ctas": {
+            "playStore": "Google Play",
+            "appStore": "App Store",
+            "details": "Detayları gör"
+        },
+        "items": {
+            "spectra-care": {
+                "title": "Spectra Care: Tele-sağlık ve Donanım Platformu",
+                "category": "Tele-sağlık ve IoT",
+                "summary": "Jetpack Compose, Agora görüntülü arama ve 6'sı 1 arada tıbbi monitör entegrasyonuna sahip kurumsal tele-sağlık platformu.",
+                "description": "Jetpack Compose ve MVI mimarisi ile inşa edilmiş canlı ortam Android tele-sağlık uygulaması. Düşük gecikmeli Agora görüntülü görüşmeleri, Spectra Care 6'sı 1 arada sağlık monitörleri için reaktif cihaz sürücüleri ve güvenli SOAP EHR veri senkronizasyonu içerir.",
+                "ctaText": "Google Play'de Gör",
+                "altText": "Spectra Care — Muhammad Awais tarafından geliştirilen Agora görüntülü arama ve Spectra IoT sağlık monitörü entegrasyonlu Android Native tele-sağlık uygulaması",
+                "highlights": [
+                    "Agora SDK gerçek zamanlı görüntülü görüşmeler",
+                    "Spectra Care 6'sı 1 arada IoT sağlık monitörü senkronizasyonu",
+                    "Jetpack Compose ile MVI mimarisi"
+                ]
+            },
+            "zouris": {
+                "title": "Zouris: Bütünsel Yaşam ve Sağlık Platformu",
+                "category": "Sağlık ve Yaşam",
+                "summary": "Rehberli seanslar, ses yayınları ve olumlamalar sunan çoklu platform sağlık uygulaması.",
+                "description": "Zouris, sertifikalı koçların ve uzmanların rehberli seanslar, meditasyonlar ve gerçek zamanlı ses yayınlarını Android ve iOS genelinde native kullanıcı deneyimi performansıyla paylaştığı, Flutter kullanılarak tasarlanmış bütünsel bir yaşam platformudur.",
+                "ctaText": "Google Play",
+                "iosCtaText": "App Store",
+                "altText": "Zouris yaşam koçluğu uygulaması — Muhammad Awais tarafından geliştirilen çoklu platform meditasyon ve ses akış platformu",
+                "highlights": [
+                    "Çoklu platform Flutter mimarisi",
+                    "Düşük gecikmeli gerçek zamanlı ses akışı",
+                    "BLoC ile temiz durum yönetimi (state management)"
+                ]
+            },
+            "egora-b2b": {
+                "title": "Egora B2B: Restoran Partner Platformu",
+                "category": "B2B Çözümleri",
+                "summary": "Restoran sahiplerinin siparişleri, gel-al işlemlerini ve canlı rezervasyonları yönetmesi için özel markalanabilir (white-labeled) partner paneli.",
+                "description": "Flutter, Dio ve GetIt kullanılarak geliştirilmiş özel markalanabilir partner platformu. Restoran sahiplerinin masa içi sipariş, gel-al, QR kod ile sipariş ve termal fiş yazdırma süreçlerini güvenilir ödeme entegrasyonlarıyla bağımsız olarak yönetmelerini sağlar.",
+                "ctaText": "Proje Detaylarını Gör",
+                "altText": "Egora B2B restoran partner paneli — Muhammad Awais tarafından geliştirilen sipariş, rezervasyon ve QR yönetim sistemi",
+                "highlights": [
+                    "Flutter, Dio ve GetIt mimarisi",
+                    "Bağımsız çoklu üye işyeri panelleri",
+                    "Gerçek zamanlı sipariş senkronizasyonu ve bildirim motoru"
+                ]
+            },
+            "egora": {
+                "title": "Egora: Akıllı Restoran Ekosistemi",
+                "category": "Yiyecek ve İçecek",
+                "summary": "QR sipariş, rezervasyon yönetimi ve Bluetooth donanım entegrasyonlarına sahip büyük ölçekli restoran ekosistemi.",
+                "description": "Flutter ve Jetpack Compose kullanılarak inşa edilmiş ölçeklenebilir rezervasyon ve yemek sistemi. QR kod ile sipariş, entegre XStax ödeme işleme (aylık 10 bin+ işlem) ve %100 güvenilirlik sağlayan özel Bluetooth termal yazıcı donanım sürücüleri içerir.",
+                "ctaText": "Proje Detaylarını Gör",
+                "altText": "Egora restoran uygulaması — Muhammad Awais tarafından geliştirilen QR sipariş, rezervasyon sistemi ve Bluetooth termal yazıcı entegrasyonu",
+                "highlights": [
+                    "Müşteri kullanımında %30 artış sağlandı",
+                    "%50 azaltılmış gecikme süresi ile Bluetooth termal yazıcı entegrasyonu",
+                    "Aylık 10 bin+ işlem gerçekleştiren XStax ödeme ağ geçidi"
+                ]
+            },
+            "makernote": {
+                "title": "Makernote: İnteraktif Eğitim Teknolojisi (EdTech)",
+                "category": "Eğitim Uygulaması",
+                "summary": "Gerçek zamanlı iş birliği ve çevrimdışı senkronizasyona sahip eğitim platformu.",
+                "description": "Öğretmenler ve öğrenciler için yüksek performanslı eğitim platformu — gerçek zamanlı iş birliği, anında not senkronizasyonu ve kesintisiz çevrimdışı veri depolama için Temiz Mimari ile geliştirilmiştir.",
+                "ctaText": "App Store'da Gör",
+                "altText": "Makernote EdTech uygulaması — Muhammad Awais tarafından geliştirilen gerçek zamanlı iş birliği ve çevrimdışı senkronizasyon",
+                "highlights": [
+                    "Gerçek zamanlı çok kullanıcılı iş birliği",
+                    "Çevrimdışı öncelikli (offline-first) yerel depolama",
+                    "Temiz MVVM mimarisi"
+                ]
+            },
+            "eco-grocery": {
+                "title": "Eco Grocery: Akıllı Envanter Takibi",
+                "category": "Akıllı Araçlar",
+                "summary": "Barkod tarama, tarif önerileri ve son kullanma tarihi uyarıları içeren akıllı market takip uygulaması.",
+                "description": "Anında ürün kataloglama ve son kullanma tarihi yönetimi için dahili kamera barkod taraması ile eşleştirilmiş, yemek tarifi öneri motoruna bağlı dinamik bir market listesi sunan akıllı Android araç uygulaması.",
+                "ctaText": "Proje Detaylarını Gör",
+                "altText": "Eco Grocery Android uygulaması — Muhammad Awais tarafından geliştirilen barkod taramalı market takip uygulaması",
+                "highlights": [
+                    "Kamera barkod tarayıcı entegrasyonu",
+                    "Akıllı bildirim ve son kullanma tarihi sistemi",
+                    "Reaktif UI durum yönetimi"
+                ]
+            },
+            "hcloud": {
+                "title": "HCloud: Klinik Yönetim Paketi",
+                "category": "Doktor Uygulaması",
+                "summary": "Randevu ve reçete senkronizasyonuna sahip sağlık hizmeti sağlayıcıları için kurumsal operasyon portalı.",
+                "description": "Doktorlar için tasarlanmış kurumsal düzeyde klinik yönetim uygulaması. Gerçek zamanlı reçete oluşturma, hasta kayıtları yönetimi ve çevrimdışı öncelikli randevu planlamasını sağlamak için MVVM, Hilt ve Room DB ile inşa edilmiştir.",
+                "ctaText": "Google Play'de Gör",
+                "altText": "HCloud klinik yönetim paketi — Muhammad Awais tarafından geliştirilen gerçek zamanlı reçete senkronizasyonu ve randevu planlama",
+                "highlights": [
+                    "Çift uygulamalı mimari çekirdeği",
+                    "Room DB kullanarak çevrimdışı öncelikli senkronizasyon kuyruğu",
+                    "Duyarlı klinik doktor arayüzü"
+                ]
+            },
+            "healthwire": {
+                "title": "Healthwire: Sağlık Teknolojileri Ekosistemi",
+                "category": "Tele-sağlık Platformu",
+                "summary": "2 Milyondan fazla indirme, tele-tıp, laboratuvar randevusu ve güvenli ödeme entegrasyonlarına sahip öncü sağlık uygulaması.",
+                "description": "Eczane lojistiği, laboratuvar testi randevuları, Twilio görüntülü görüşmeleri ve yerel ödeme ağ geçitlerini (Meezan, JazzCash, Foree) %99+ çökmesiz oturum oranıyla destekleyen, Pakistan'ın lider sağlık platformlarından birinin mimarisini kurdu.",
+                "ctaText": "Google Play'de Gör",
+                "altText": "Healthwire sağlık uygulaması — Muhammad Awais tarafından geliştirilen eczane lojistiği, laboratuvar randevusu ve Twilio tele-tıp çözümü",
+                "highlights": [
+                    "Google Play Store'da 2 Milyondan fazla indirme",
+                    "Twilio gerçek zamanlı görüntülü görüşmeler (+%15 etkileşim)",
+                    "%100 güvenli ödeme işleme (Meezan, JazzCash, Foree)"
+                ]
+            },
+            "dongamers": {
+                "title": "DonGamers: E-Spor Platformu",
+                "category": "E-Oyun Platformu",
+                "summary": "Gerçek zamanlı Pusher sohbeti, turnuva eşleşmeleri ve optimize edilmiş gelir modelleri sunan küresel oyun platformu.",
+                "description": "Native Android üzerinde uluslararası bir e-spor platformu geliştirdi. Kod tabanını Java'dan Kotlin'e taşıdı, Pusher kullanarak ölçeklenebilir gerçek zamanlı sohbet altyapısı tasarladı (+%15 etkileşim) ve Uygulama İçi Satın Almalar ile Google AdMob'u optimize etti.",
+                "ctaText": "Google Play'de Gör",
+                "altText": "DonGamers e-spor platformu — Muhammad Awais tarafından geliştirilen gerçek zamanlı sohbet ve turnuva takibi",
+                "highlights": [
+                    "Küresel erişilebilirlikte %99 çökmesiz oturum oranı",
+                    "Pusher kullanan gerçek zamanlı sohbet altyapısı",
+                    "Satışları %10 artıran gelir modeli optimizasyonu"
+                ]
+            }
+        }
+    },
+    "services": {
+        "title": "Hizmetler ve Çözümler",
+        "headerTitle": "Ölçeklenebilirlik, performans ve kararlılık için tasarlanmış özel mobil mühendislik.",
+        "headerDesc": "Çoklu platform sistem mimarisinden KMP/CMP paylaşılan mantığına, uçtan uca Native Android ve Flutter canlı ortam uygulama lansmanlarına kadar.",
+        "items": {
+            "android-native": {
+                "title": "Native Android ve Donanım Entegrasyonu",
+                "description": "Jetpack Compose, Kotlin ve MVI/MVVM desenleriyle geliştirilmiş yüksek performanslı native Android uygulamaları. IoT tıbbi donanım sürücüleri, Agora/Twilio video SDK'ları, Android TV ve güvenli ödeme sistemleri alanında uzmanlık."
+            },
+            "kmp": {
+                "title": "Kotlin ve Compose Multiplatform (KMP/CMP)",
+                "description": "Kotlin Multiplatform (KMP) ve Compose Multiplatform (CMP) kullanarak Android ve iOS arasında paylaşılan iş mantığı ve reaktif kullanıcı arayüzü — %100 native çalışma hızını korurken kod tekrarını ortadan kaldırır."
+            },
+            "flutter": {
+                "title": "Flutter Çapraz Platform Mühendisliği",
+                "description": "Flutter, BLoC/Riverpod ve Dio ile inşa edilmiş ölçeklenebilir, yüksek kaliteli çapraz platform uygulamaları. Hızlı pazara sunma süresi, karmaşık REST/SOAP entegrasyonları ve yüksek dönüşüm sağlayan kullanıcı deneyimi (UI/UX) için tasarlandı."
+            },
+            "architecture": {
+                "title": "Mobil Mimari ve Kod Tabanı Modernizasyonu",
+                "description": "Monolitik kod tabanlarını modüler Temiz Mimari'ye (Clean Architecture) dönüştürme, Java'dan Kotlin'e geçiş ve %99+ çökmesiz (crash-free) oturum oranına ulaşmak için uygulama kararlılığı optimizasyonu."
+            }
+        }
+    },
+    "testimonials": {
+        "title": "Müşteri Değerlendirmeleri ve Tavsiyeler",
+        "headerTitle": "Mühendislik Liderleri, Kurucular ve Ürün Takımları Tarafından Güvenilen",
+        "headerDesc": "Ölçeklenebilir Android, Kotlin Multiplatform ve Flutter uygulamalarının geliştirilmesinde teknik kuruculardan, ürün liderlerinden ve sağlık sektörü ortaklarından gelen özgün geri bildirimler.",
+        "items": {
+            "louis-wong": {
+                "name": "Louis Wong",
+                "role": "Ürün Lideri ve Mühendislik Ortağı",
+                "project": "Mobil Performans Optimizasyonu",
+                "message": "Awais ile çalışmak harika bir deneyimdi. Uygulamamızı optimize etti, RAM kullanımını düşürdü ve performansı %30 artırdı. Kod optimizasyonu ve paylaşımlı mimariler konusundaki uzmanlığı, ürün kalitemiz üzerinde gözle görülür bir etki yarattı."
+            },
+            "nasir": {
+                "name": "Nasir",
+                "role": "Yazılım Mimarisi Uzmanı ve Müşteri",
+                "project": "Android ve KMP Mimarisi",
+                "message": "Awais uygulamamızda harika bir iş çıkardı. Detaylara gösterdiği özen, temiz mimari anlayışı ve sağlam, sürdürülebilir koda odaklanması tüm geliştirme sürecini baştan sona sorunsuz hale getirdi. Ciddi her türlü Android veya Kotlin Multiplatform projesi için kesinlikle tavsiye ederim."
+            },
+            "ahsan": {
+                "name": "Ahsan",
+                "role": "Ürün Kurucusu",
+                "project": "Eco Grocery Uygulaması",
+                "message": "Awais, Eco Grocery uygulamamızı barkod tarayıcıdan tarif öneri motoruna kadar uçtan uca inşa etti. Uygulama son derece akıcı çalışıyor, mimarisi çok temiz ve kullanıcılarımızın market alışverişlerini ile son kullanma tarihlerini takip etme biçimini gerçekten iyileştirdi."
+            },
+            "spectra-care": {
+                "name": "Spectra Care Mühendislik Takımı",
+                "role": "Sağlık ve Tele-Sağlık Ortağı",
+                "project": "Spectra Care Tele-Sağlık ve IoT Platformu",
+                "message": "Awais, hastanemiz için görüntülü görüşmeleri ve IoT sağlık monitörü verilerini güvenilir bir şekilde entegre eden olağanüstü bir tele-sağlık uygulaması sundu. Hem hastalarımız hem de doktorlarımız her gün bu uygulamaya güveniyor ve gerçek klinik kullanım şartlarında kusursuz bir performans sergiledi."
+            }
+        }
+    },
+    "contact": {
+        "title": "İletişim",
+        "headerTitle": "Bir sonraki mobil projenizi birlikte inşa edelim.",
+        "headerDesc": "E-posta veya profesyonel kanallar aracılığıyla doğrudan ulaşın — 1 iş günü içinde yanıt veriyorum.",
+        "locationTitle": "Konum",
+        "form": {
+            "nameLabel": "Adınız",
+            "emailLabel": "E-posta Adresiniz",
+            "platformLabel": "Platform (Android / KMP / CMP / Flutter)",
+            "budgetLabel": "Bütçe Aralığı",
+            "detailsLabel": "Proje Detayları veya Rol Kapsamı",
+            "buttonSend": "Mesaj Gönder",
+            "successTitle": "Mesaj başarıyla gönderildi",
+            "successMessage": "İletişime geçtiğiniz için teşekkürler — her talebi dikkatle okuyor ve en kısa sürede yanıtlıyorum."
+        }
+    },
+    "cta": {
+        "bookedStatus": "Şu anda 2026 3. Çeyrek projeleri için randevu alınıyor",
+        "title": "Büyük ölçekli bir mobil uygulama fikriniz veya çoklu platform projeniz mi var?",
+        "description": "Ürün hedeflerinizi, mimari ihtiyaçlarınızı veya KMP/Flutter taşıma sürecinizi anlatın — net bir teknik yol haritasıyla 1 iş günü içinde yanıt vereyim.",
+        "startProject": "Projeyi Başlat",
+        "seeWork": "Portföyü İncele"
+    },
+    "footer": {
+        "copyright": "© {year} Muhammad Awais. Tüm hakları saklıdır.",
+        "poweredBy": "Next.js & Tailwind CSS ile geliştirilmiştir",
+        "navigate": "Gezinti",
+        "specialties": "Uzmanlık Alanları",
+        "getInTouch": "İletişime Geçin",
+        "specialtiesList": [
+            "Native Android (Kotlin & Java)",
+            "Kotlin Multiplatform (KMP)",
+            "Compose Multiplatform (CMP)",
+            "Flutter Çapraz Platform"
+        ]
+    },
+    "notfound": {
+        "eyebrow": "404 Hatası",
+        "title": "Bu ekran mevcut değil.",
+        "button": "Ana Sayfaya Dön"
+    }
+}

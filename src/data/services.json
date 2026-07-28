@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "slug": "android-native",
+        "icon": "android",
+        "tech": [
+            "Kotlin",
+            "Jetpack Compose",
+            "Material Design 3",
+            "Clean Architecture"
+        ]
+    },
+    {
+        "id": 2,
+        "slug": "kmp",
+        "icon": "compose",
+        "tech": [
+            "KMP",
+            "CMP",
+            "Shared Core",
+            "SQLDelight"
+        ]
+    },
+    {
+        "id": 3,
+        "slug": "flutter",
+        "icon": "flutter",
+        "tech": [
+            "Flutter",
+            "Dart",
+            "Firebase",
+            "State Management"
+        ]
+    },
+    {
+        "id": 4,
+        "slug": "architecture",
+        "icon": "architecture",
+        "tech": [
+            "Clean Architecture",
+            "MVVM/MVI",
+            "SOLID",
+            "Performance"
+        ]
+    }
+]

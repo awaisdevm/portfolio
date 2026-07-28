@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "slug": "egora",
+        "company": "Egora Pvt Ltd",
+        "duration": "2024 - 2026"
+    },
+    {
+        "id": 2,
+        "slug": "healthwire",
+        "company": "Healthwire Pvt Ltd",
+        "duration": "2022 - 2024"
+    },
+    {
+        "id": 3,
+        "slug": "dongamers",
+        "company": "DonGamers",
+        "duration": "2020 - 2022"
+    },
+    {
+        "id": 4,
+        "slug": "netroots",
+        "company": "Netroots Technologies",
+        "duration": "2019 - 2020"
+    }
+]

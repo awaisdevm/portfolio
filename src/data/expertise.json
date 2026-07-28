@@ -1,0 +1,42 @@
+{
+    "languages": [
+        "Kotlin",
+        "Java",
+        "Dart"
+    ],
+    "android": [
+        "Jetpack Compose",
+        "Material Design 3",
+        "Coroutines",
+        "Flow",
+        "Room DB",
+        "Hilt",
+        "MVVM/MVI"
+    ],
+    "multiplatform": [
+        "Kotlin Multiplatform (KMP)",
+        "Compose Multiplatform (CMP)",
+        "SQLDelight",
+        "Ktor"
+    ],
+    "flutter": [
+        "Dart",
+        "State Management (BLoC/Provider)",
+        "Firebase",
+        "Custom Widgets"
+    ],
+    "architecture": [
+        "Clean Architecture",
+        "SOLID Principles",
+        "DRY Principle",
+        "Modular Design"
+    ],
+    "tools": [
+        "Android Studio",
+        "Git",
+        "CI/CD",
+        "Firebase",
+        "Retrofit",
+        "GraphQL"
+    ]
+}

@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   TAILWIND CSS V4 - GLOBAL DESIGN SYSTEM TOKENS (JUNGLE GREEN & BEIGE)
+   ========================================================================== */
+:root {
+  /* Deep Navy & Slate Blue Base (from UI palette) */
+  --background: #151828;
+  --surface: #2d3250;
+  --surface-elevated: #424769;
+  --surface-sunken: #10121d;
+
+  /* Typography Contrast Tokens */
+  --heading: #ffffff;
+  --foreground: #d0d3e2;
+  --muted: #aab2cd;
+  --inverse: #151828;
+  --link: #f9b17a;
+
+  /* Warm Peach Brand Accent (#f9b17a) */
+  --brand: #f9b17a;
+  --brand-dark: #e09a63;
+  --brand-light: #ffc99e;
+  --brand-subtle: color-mix(in srgb, var(--brand) 15%, transparent);
+  --brand-foreground: #151828;
+
+  --primary: var(--brand);
+  --primary-dark: var(--brand-dark);
+  --primary-light: var(--brand-light);
+  --primary-subtle: var(--brand-subtle);
+  --primary-foreground: var(--brand-foreground);
+
+  /* Accent Tokens */
+  --accent: #f9b17a;
+  --accent-dark: #e09a63;
+  --accent-light: #ffc99e;
+  --accent-subtle: color-mix(in srgb, var(--accent) 15%, transparent);
+  --accent-foreground: #151828;
+
+  /* Pure Tokenized Clean Borders */
+  --border: color-mix(in srgb, var(--surface-elevated) 60%, transparent);
+  --border-strong: color-mix(in srgb, var(--brand) 40%, transparent);
+  --border-subtle: color-mix(in srgb, var(--surface-elevated) 30%, transparent);
+  --border-focus: var(--accent);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-sunken: var(--surface-sunken);
+
+  --color-heading: var(--heading);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-inverse: var(--inverse);
+  --color-link: var(--link);
+
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-primary-subtle: var(--primary-subtle);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-light: var(--accent-light);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-focus: var(--border-focus);
+
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
+
+  /* ⚡ Tailwind v4 Theme Keyframe & Animation Registration */
+  --animate-marquee: marquee 70s linear infinite;
+  --animate-marquee-rtl: marquee-rtl 70s linear infinite;
+
+  --animate-liquid: liquid 12s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ==========================================================================
+   BASE STYLES & DEFAULTS
+   ========================================================================== */
+* {
+  @apply border-border;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  @apply flex min-h-screen flex-col bg-background text-foreground antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-display font-bold text-heading;
+}
+
+a {
+  @apply text-link transition-colors hover:text-accent-light;
+}
+
+::selection {
+  @apply bg-primary/30 text-heading;
+}
+
+/* ==========================================================================
+   COMPONENT UTILITIES
+   ========================================================================== */
+.container-page {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+
+.section-pad {
+  @apply py-12 md:py-16 lg:py-20;
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-primary-light;
+}
+
+.liquid-glass {
+  @apply border border-border-subtle bg-surface/40 backdrop-blur-md;
+}
+
+.card-surface {
+  @apply rounded-xl border border-border/40 bg-surface/60 backdrop-blur-md transition-all duration-300 hover:border-border-strong hover:bg-surface/80;
+}
+
+.input-base {
+  @apply w-full rounded-lg border border-border/50 bg-surface-sunken/80 px-4 py-3 text-sm text-heading outline-none transition-all duration-300 focus:border-accent focus:ring-1 focus:ring-accent;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 font-mono text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300 hover:scale-[1.02] hover:bg-primary-light hover:text-primary-foreground active:scale-95;
+}
+
+.text-gradient-brand {
+  @apply -mb-1.5 inline-block bg-gradient-to-r from-primary to-heading bg-clip-text pb-3 pt-1 text-transparent;
+}
+
+.badge-icon {
+  @apply relative z-10 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-primary-subtle text-primary-light transition-all duration-300 hover:bg-primary hover:text-primary-foreground;
+}
+
+.layout-glow-layer {
+  @apply pointer-events-none fixed inset-0 -z-10 opacity-30;
+  background-image: radial-gradient(circle at center, var(--primary-subtle) 0%, transparent 70%);
+}
+
+.main-content-stream {
+  @apply flex flex-grow flex-col pt-24 sm:pt-28;
+}
+
+/* ==========================================================================
+   KEYFRAME ANIMATIONS & MARQUEE BEHAVIOR
+   ========================================================================== */
+@keyframes liquid {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 40% 60% 70% 30%;
+  }
+
+  50% {
+    transform: translate(20px, -30px) scale(1.1) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(-10px, 20px) scale(0.95) rotate(360deg);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
+/* Marquee Utility & RTL/Hover handling */
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: var(--animate-marquee);
+}
+
+[dir="rtl"] .animate-marquee {
+  animation: var(--animate-marquee-rtl);
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

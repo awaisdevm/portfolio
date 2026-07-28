@@ -1,0 +1,433 @@
+{
+    "nav": {
+        "home": "ホーム",
+        "about": "概要",
+        "projects": "プロジェクト",
+        "blog": "ブログ",
+        "contact": "お問い合わせ",
+        "services": "サービス",
+        "testimonials": "評価・推薦文"
+    },
+    "seo": {
+        "home": {
+            "title": "ムハンマド・アワイス | シニアモバイルアプリデベロッパー＆マルチプラットフォームアーキテクト",
+            "description": "ネイティブAndroid、Kotlin Multiplatform（KMP）、Compose Multiplatform（CMP）、Flutterにおいて6年以上の商用アプリ構築経験を持つシニアモバイルエンジニア。",
+            "keywords": "シニアモバイルデベロッパー, ネイティブAndroidデベロッパー, Kotlin Multiplatformエンジニア, Compose Multiplatform, Flutterデベロッパー, モバイルアーキテクト, クリーンアーキテクチャ, ラホール デベロッパー"
+        },
+        "projects": {
+            "title": "プロジェクトポートフォリオ | ムハンマド・アワイスによるネイティブAndroid、KMP＆Flutterアプリ",
+            "description": "Jetpack Compose、Flutter、拡張性の高いモバイルアーキテクチャで構築された、ヘルステック、フィンテック、IoTハードウェア連携などの商用リリースアプリ事例をご紹介。",
+            "keywords": "モバイルアプリポートフォリオ, Androidアプリケーススタディ, Flutterアプリ実績, Jetpack Composeプロジェクト, 遠隔診療アプリ, IoTモバイル連携, リリース済みモバイルアプリ"
+        },
+        "about": {
+            "title": "概要 | ムハンマド・アワイス - シニアモバイルアプリデベロッパー（実務経験6年以上）",
+            "description": "Android、KMP、CMP、Flutter、MVI/MVVM、および99%以上のクラッシュフリー率を維持する大規模システムにおいて6年以上の実績を持つシニアモバイルエンジニア、ムハンマド・アワイスの経歴をご紹介。",
+            "keywords": "ムハンマド・アワイスについて, シニアAndroidエンジニア, モバイルシステムアーキテクト, KMPスペシャリスト, パキスタン Flutterデベロッパー, クリーンアーキテクチャ エキスパート, モバイル開発経歴"
+        },
+        "contact": {
+            "title": "お問い合わせ | シニアAndroid・KMP・Flutterデベロッパーの採用 - ムハンマド・アワイス",
+            "description": "モバイルアプリ開発プロジェクトの開始やクロスプラットフォームエンジニアリングに関するご相談。シニアレベルのAndroid、KMP、Flutter開発のお問い合わせはこちら。",
+            "keywords": "シニアモバイルデベロッパー採用, Androidエキスパート採用, KMPコンサルタント, フリーランスFlutterエンジニア, モバイルアプリ開発サービス, ムハンマド・アワイスへ連絡"
+        },
+        "testimonials": {
+            "title": "クライアントの評価・フィードバック | シニアモバイルデベロッパー - ムハンマド・アワイス",
+            "description": "ネイティブAndroid、Kotlin Multiplatform、Flutterのモバイルプロジェクトに関する、ファウンダーやエンジニアリングリーダーからのレビューとクライアントの推薦文をご紹介。",
+            "keywords": "クライアントの評判, devawais レビュー, モバイルデベロッパー推薦, Androidコンサルタント評価, Flutterデベロッパー評価, ソフトウェアクライアントの感想"
+        },
+        "services": {
+            "title": "モバイルエンジニアリングサービス | ネイティブAndroid・KMP・Flutterコンサルティング",
+            "description": "エンドツーエンドのモバイル開発サービス：ネイティブAndroid（Kotlin）、KMP/CMPクロスプラットフォームエンジニアリング、IoTハードウェア連携、およびレガシーコードのモダン化。",
+            "keywords": "モバイルアプリ開発サービス, Androidコンサルティング, Kotlin Multiplatform開発, Flutter開発サービス, クリーンアーキテクチャコンサルティング, IoTモバイル連携"
+        },
+        "blog": {
+            "title": "エンジニアリングブログ | モバイルアーキテクチャ・KMP・CMP・Androidのインサイト",
+            "description": "ネイティブAndroid、Kotlin Multiplatform（KMP）、Compose Multiplatform（CMP）、Jetpack Compose、クリーンなモバイルシステム設計に関する技術記事。",
+            "keywords": "モバイル開発ブログ, Kotlin Multiplatform チュートリアル, Jetpack Compose ベストプラクティス, モバイルアーキテクチャ インサイト, クリーンアーキテクチャ モバイル, KMP vs Flutter"
+        }
+    },
+    "profile": {
+        "title": "シニアモバイルアプリデベロッパー ＆ アーキテクト",
+        "subtitle": "ネイティブAndroid • Kotlin Multiplatform (KMP) • Compose Multiplatform (CMP) • Flutter",
+        "bio": "ヘルステック、フィンテック、IoT、EC分野で拡張性の高い商用アプリをリリースしてきた6年以上の開発実績を持つシニアモバイルアプリデベロッパー。クリーンアーキテクチャとMVI/MVVMデザインパターンを用いたネイティブAndroid、Kotlin Multiplatform (KMP)、Compose Multiplatform (CMP)、Flutter開発に特化。",
+        "location": "パキスタン、ラホール（グローバル対応可能）",
+        "availability": "シニアポジションおよび戦略的コンサルティングを受付中"
+    },
+    "skills": {
+        "title": "テクニカルツールキット",
+        "subtitle": "ネイティブおよびマルチプラットフォームエコシステムにおけるプロフェッショナルツール",
+        "languages": "プログラミング言語 (Kotlin, Dart, Java)",
+        "android": "ネイティブAndroid (Jetpack Compose, TV, カスタムUI)",
+        "multiplatform": "マルチプラットフォーム (KMP & CMP)",
+        "flutter": "Flutter (BLoC, Riverpod, GetIt)",
+        "architecture": "アーキテクチャ & 非同期処理 (Clean, MVI, MVVM, Coroutines)",
+        "tools": "IoT、決済 & DevOps (Agora, ハードウェアSDK, CI/CD)"
+    },
+    "home": {
+        "availability": "契約案件およびフルサイクル開発に対応可能",
+        "heading1": "拡張性の高いアーキテクチャの構築",
+        "heading2": "モバイル ＆ マルチプラットフォームソリューション",
+        "description": "ネイティブAndroid（Jetpack Compose）、KMP、CMP、Flutterにおいて6年以上の実績を持つシニアモバイルデベロッパー＆アーキテクト。クリーンアーキテクチャと高性能アプリ構築のエキスパート。",
+        "buttonStart": "プロジェクトを開始する",
+        "buttonView": "代表的な実績を見る",
+        "skillsEyebrow": "技術スタック",
+        "portraitAlt": "ムハンマド・アワイス — パキスタン・ラホールのシニアモバイルアプリデベロッパー兼マルチプラットフォームアーキテクト",
+        "skillsTitle": "技術スキル",
+        "stats": {
+            "experience": "6年以上の実務経験",
+            "completed": "25以上のプロジェクト導入実績",
+            "stores": "ストア公開アプリ多数"
+        },
+        "selectedWork": "選定されたプロジェクト",
+        "recentProjects": "注目の開発実績",
+        "allProjectsLink": "すべてのプロジェクトを見る",
+        "processTitle": "開発・連携プロセス",
+        "processSubtitle": "堅牢で拡張性の高いコードの提供を中心とした実用的なプロセス",
+        "processSteps": {
+            "01": {
+                "title": "要件ヒアリング & スコープ定義",
+                "body": "プロジェクトのスコープ、主要なプラットフォーム要件（Android、iOS、KMP、Flutter）、および明確な開発マイルストーンを深掘りします。"
+            },
+            "02": {
+                "title": "アーキテクチャファースト",
+                "body": "共有KMPビジネスロジック、予測可能なMVI/MVVM状態管理、分離されたプラットフォームUIを備えたモジュール化クリーンアーキテクチャを設計します。"
+            },
+            "03": {
+                "title": "反復的な開発・ビルド",
+                "body": "CI/CD自動化に支えられた、実機でインストール・テスト可能な製品レベルのビルドを毎週提供します。"
+            },
+            "04": {
+                "title": "リリース & スケール",
+                "body": "ストア公開、リリースパイプラインの設定、クラッシュレポートの導入、そして長期的な拡張性を考慮した包括的な技術ハンドオーバーを行います。"
+            }
+        },
+        "feedbackTitle": "クライアントの評価",
+        "feedbackSubtitle": "エンジニアリングリーダーやファウンダーからの声",
+        "allTestimonialsLink": "すべての推薦文を読む"
+    },
+    "contact": {
+        "title": "お問い合わせ",
+        "headerTitle": "次のモバイルマイルストーンを共に構築しましょう。",
+        "headerDesc": "メールや各種プロフェッショナルチャネルから直接ご連絡いただけます。1営業日以内にご返信いたします。",
+        "locationTitle": "拠点",
+        "form": {
+            "nameLabel": "お名前",
+            "emailLabel": "メールアドレス",
+            "platformLabel": "プラットフォーム (Android / KMP / CMP / Flutter)",
+            "budgetLabel": "ご予算",
+            "detailsLabel": "プロジェクトの詳細または役割の範囲",
+            "buttonSend": "メッセージを送信",
+            "successTitle": "メッセージが正常に送信されました",
+            "successMessage": "お問い合わせありがとうございます。内容を確認のうえ、迅速にご返信いたします。"
+        }
+    },
+    "about": {
+        "title": "概要",
+        "headerTitle": "こんにちは、ムハンマド・アワイスです — シニアモバイルアプリデベロッパー＆マルチプラットフォームアーキテクト",
+        "headerDesc": "ネイティブAndroid（Kotlin/Java）、Kotlin Multiplatform（KMP）、Compose Multiplatform（CMP）、Flutterを活用し、クリーンアーキテクチャとMVI/MVVMデザインパターンに基づいた高性能で拡張性の高いシステム構築において6年以上の実績を持つシニアモバイルエンジニア。",
+        "expertiseTitle": "コア技術・専門領域",
+        "expertiseSubtitle": "インパクトの大きいモバイルアーキテクチャ、クロスプラットフォームエンジニアリング、リアクティブシステム設計",
+        "experienceTitle": "職務経歴・実績",
+        "experienceSubtitle": "ヘルステック、フィンテック、IoTハードウェア、リアルタイムプラットフォームにおける堅牢なアプリ開発",
+        "infoTitle": "拠点",
+        "infoLocation": "パキスタン、ラホール",
+        "infoFocus": "専門分野",
+        "infoFocusVal": "Android • KMP • CMP • Flutter",
+        "role": "現在の役職",
+        "roleVal": "シニアモバイルアプリデベロッパー",
+        "availability": "新規案件・オファー受付中",
+        "githubFollowers": "GitHubコミュニティ",
+        "githubStars": "リポジトリStar数",
+        "linkedinConnections": "プロフェッショナルネットワーク",
+        "downloadCv": "職務経歴書 / CVをダウンロード",
+        "stats": {
+            "experience": "6年以上の実務経験",
+            "completed": "商用アプリ開発実績",
+            "satisfied": "クライアント満足度",
+            "stores": "ストア公開アプリ数"
+        }
+    },
+    "blog": {
+        "title": "技術記事・エンジニアリング インサイト",
+        "headerTitle": "モバイルアーキテクチャ & テックインサイト",
+        "headerDesc": "ネイティブAndroid、Kotlin Multiplatform（KMP）、Compose Multiplatform（CMP）、Flutter、および商用レベルのクリーンアーキテクチャに関する深い考察。",
+        "minRead": "分で読める",
+        "readArticle": "記事全文を読む",
+        "emptyState": "KMP、Compose Multiplatform、モバイルアーキテクチャに関する記事は準備中です。それまでの間、代表的な開発プロジェクトをご覧ください！"
+    },
+    "experiences": {
+        "items": {
+            "quickgem": {
+                "role": "シニアモバイルアプリケーションデベロッパー",
+                "description": "Jetpack ComposeとMVIアーキテクチャを用いて既存の医師用・患者用アプリを単一のコードベースに統合し、大規模かつマルチテナントなヘルスケアエコシステムを構築。低遅延のAgora SDKテレビ診療機能と6-in-1医療用モニター用のリアクティブなハードウェアドライバを統合。",
+                "achievements": [
+                    "既存の医師・患者向けアプリを単一のJetpack ComposeおよびMVIコードベースに統合",
+                    "低遅延ビデオ通話およびリアルタイムな医師・患者間チャットのためにAgora SDKを統合",
+                    "Spectra Care 6-in-1医療ハードウェアおよびEHR SOAP API向けのリアクティブな連携を設計"
+                ]
+            },
+            "egora": {
+                "role": "シニアモバイルアプリケーションデベロッパー",
+                "description": "Flutter、Dio、GetItを用いて大規模な予約モジュールを構築し、顧客利用率を30%向上。Bluetooth感熱印刷用のJetpack Composeアプリを設計し、高スループットの決済ゲートウェイを統合。",
+                "achievements": [
+                    "Flutterで中核となる予約システムを開発し、顧客利用率を30%向上",
+                    "100%の信頼性とクエリレイテンシ50%削減を実現するBluetooth感熱プリンター連携を設計",
+                    "月間1万件以上の取引を99%の稼働率で処理するXStax決済ゲートウェイを統合"
+                ]
+            },
+            "healthwire": {
+                "role": "ソフトウェアエンジニア / Androidデベロッパー",
+                "description": "MVVM、Hilt/Dagger、Coroutines、Flowを使用して患者・医師向けのデュアルアプリエコシステムを開発。Twilioビデオによる遠隔診療機能を拡張し、ローカル決済ゲートウェイのセキュリティを確保、レガシーUIをJetpack Composeに移行。",
+                "achievements": [
+                    "Twilioビデオ診療とディープリンクナビゲーションにより、ユーザーエンゲージメントを15%向上",
+                    "Firebase CrashlyticsとRoom DBの最適化により、両アプリで99%以上のクラッシュフリー率を維持",
+                    "Meezan、JazzCash、Foree決済ゲートウェイを100%のセキュリティコンプライアンスで統合"
+                ]
+            },
+            "dongamers": {
+                "role": "シニアAndroidデベロッパー",
+                "description": "国際的なゲーミングプラットフォームのモバイルエンジニアリングを牽引。レガシーJavaコードをKotlinに移行し、Pusherを使用したリアルタイムチャット基盤を設計、マネタイズフレームワークを最適化。",
+                "achievements": [
+                    "アプリの安定性をクラッシュフリーセッション99%まで向上させ、本番バグを20%削減",
+                    "アプリをJavaからKotlinへ移行し、グローバル対応（カバー率99%）を実現",
+                    "Pusherを使用したリアルタイムチャットを設計（エンゲージメント+15%）、AdMob/アプリ内課金により売上を10%増加"
+                ]
+            },
+            "freelance": {
+                "role": "フリーランスモバイルデベロッパー",
+                "description": "海外クライアント向けにFlutterとDartを用いたレスポンシブなクロスプラットフォームアプリを設計・提供。UIプロトタイピングからAPI連携まで、ライフサイクル全体のデリバリーを管理。",
+                "achievements": [
+                    "高品質なクロスプラットフォームFlutterソリューションを提供し、クライアントの市場投入期間を短縮",
+                    "エンドツーエンドの開発ライフサイクル管理およびステークホルダーとの技術コンサルティングを実施"
+                ]
+            },
+            "netroots": {
+                "role": "Androidデベロッパーインターン",
+                "description": "画像検証機能を備えたGPSベースの出退勤管理システムを含むエンタープライズ向けJavaアプリケーションの開発およびHR管理ワークフローの自動化を推進。",
+                "achievements": [
+                    "画像検証機能を備えたJava GPS出退勤管理システムを構築し、精度を40%向上",
+                    "HRプロファイリングワークフローを自動化し、手作業による管理コストを50%削減"
+                ]
+            }
+        }
+    },
+    "projects": {
+        "title": "プロジェクト",
+        "headerTitle": "ネイティブAndroidおよびFlutterエコシステムでの開発・リリース実績",
+        "headerDesc": "プラットフォームで絞り込み、最適なパフォーマンス、セキュリティ、リアルタイム接続を実現するために、アーキテクチャや技術スタックがどのように適応しているかをご覧いただけます。",
+        "noProjectsFound": "このカテゴリーのプロジェクトは見つかりませんでした。",
+        "backToProjects": "すべてのプロジェクト",
+        "techStack": "技術スタック",
+        "filters": {
+            "all": "すべて",
+            "android": "Android",
+            "flutter": "Flutter",
+            "ios": "iOS",
+            "kmp": "KMP",
+            "cmp": "CMP"
+        },
+        "ctas": {
+            "playStore": "Google Play",
+            "appStore": "App Store",
+            "details": "詳細を見る"
+        },
+        "items": {
+            "spectra-care": {
+                "title": "Spectra Care: 遠隔診療・IoTプラットフォーム",
+                "category": "遠隔医療 & IoT",
+                "summary": "Jetpack Compose、Agoraビデオ通話、6-in-1医療用モニター連携を備えたエンタープライズ向け遠隔診療プラットフォーム。",
+                "description": "Jetpack ComposeおよびMVIアーキテクチャで構築された商用Android遠隔診療アプリ。低遅延のAgoraビデオ診療、Spectra Care 6-in-1健康モニター用のリアクティブなデバイスドライバ、安全なSOAP EHRデータ同期機能を搭載。",
+                "ctaText": "Google Playで見る",
+                "altText": "Spectra Care — ムハンマド・アワイスが構築した、Agoraビデオ通話およびSpectra IoT健康モニター連携を備えたネイティブAndroid遠隔診療アプリ",
+                "highlights": [
+                    "Agora SDKによるリアルタイムビデオ診療",
+                    "Spectra Care 6-in-1 IoT健康モニター同期",
+                    "Jetpack Composeを用いたMVIアーキテクチャ"
+                ]
+            },
+            "zouris": {
+                "title": "Zouris: ホリスティックウェルネスプラットフォーム",
+                "category": "ヘルス & ウェルネス",
+                "summary": "ガイドセッション、音声配信、アファメーションを提供するクロスプラットフォーム向けウェルネスアプリ。",
+                "description": "ZourisはFlutterを用いて構築されたホリスティックウェルネスプラットフォームで、認定コーチやプラクティショナーがAndroidおよびiOS上でネイティブ並みのパフォーマンスを発揮し、ガイド付きセッション、メディテーション、リアルタイム音声配信を提供します。",
+                "ctaText": "Google Play",
+                "iosCtaText": "App Store",
+                "altText": "Zouris ウェルネスコーチングアプリ — ムハンマド・アワイスが構築したクロスプラットフォーム対応の瞑想・音声ストリーミングプラットフォーム",
+                "highlights": [
+                    "クロスプラットフォームFlutterアーキテクチャ",
+                    "低遅延のリアルタイム音声ストリーミング",
+                    "BLoCによるクリーンな状態管理"
+                ]
+            },
+            "egora-b2b": {
+                "title": "Egora B2B: レストランパートナープラットフォーム",
+                "category": "B2Bソリューション",
+                "summary": "飲食店オーナーが注文、テイクアウト、ライブ予約を管理できるホワイトレーベルのパートナーダッシュボード。",
+                "description": "Flutter、Dio、GetItを用いて開発されたホワイトレーベルのパートナープラットフォーム。飲食店オーナーが店内飲食、テイクアウト、QRコード注文、感熱紙領収書印刷を信頼性の高い決済連携とともに独立して管理できるようにサポート。",
+                "ctaText": "プロジェクトの詳細を見る",
+                "altText": "Egora B2B レストランパートナーダッシュボード — ムハンマド・アワイスが構築した注文・予約・QR管理システム",
+                "highlights": [
+                    "Flutter、Dio、GetItアーキテクチャ",
+                    "独立したマルチマーチャントダッシュボード",
+                    "リアルタイム注文同期＆通知エンジン"
+                ]
+            },
+            "egora": {
+                "title": "Egora: スマートレストランエコシステム",
+                "category": "フード & ドリンク",
+                "summary": "QR注文、予約管理、Bluetooth機器連携を備えた大規模レストランエコシステム。",
+                "description": "FlutterおよびJetpack Composeで構築された拡張性の高い予約・飲食店システム。QRコード注文、統合されたXStax決済処理（月間1万件以上の取引）、100%の信頼性を達成したカスタムBluetooth感熱プリンタードライバを搭載。",
+                "ctaText": "プロジェクトの詳細を見る",
+                "altText": "Egora レストランアプリ — ムハンマド・アワイスが構築したQR注文・予約システム・Bluetooth感熱プリンター連携",
+                "highlights": [
+                    "顧客利用率30%向上を達成",
+                    "レイテンシを50%削減したBluetooth感熱プリンター連携",
+                    "月間1万件以上の取引を処理するXStax決済ゲートウェイ"
+                ]
+            },
+            "makernote": {
+                "title": "Makernote: インタラクティブEdTech",
+                "category": "教育アプリ",
+                "summary": "リアルタイムコラボレーションとオフライン同期を備えた教育プラットフォーム。",
+                "description": "教師と生徒のための高性能教育プラットフォーム — リアルタイムのコラボレーション、即時のノート同期、シームレスなオフラインデータ保持を実現するクリーンアーキテクチャで構築。",
+                "ctaText": "App Storeで見る",
+                "altText": "Makernote EdTechアプリ — ムハンマド・アワイスが構築したリアルタイムコラボレーションおよびオフライン同期機能",
+                "highlights": [
+                    "リアルタイムの複数ユーザーコラボレーション",
+                    "オフラインファーストのローカルストレージ",
+                    "クリーンなMVVMアーキテクチャ"
+                ]
+            },
+            "eco-grocery": {
+                "title": "Eco Grocery: スマート在庫トラッカー",
+                "category": "スマートユーティリティ",
+                "summary": "バーコードスキャン、レシピ提案、賞味期限アラートを備えたスマート食料品トラッキングアプリ。",
+                "description": "レシピ提案エンジンと連携した動的な買い物リストに加え、即時のアイテムカタログ化と賞味期限管理のためのカメラバーコードスキャン機能を備えたインテリジェントなAndroidユーティリティアプリ。",
+                "ctaText": "プロジェクトの詳細を見る",
+                "altText": "Eco Grocery Androidアプリ — ムハンマド・アワイスが構築したバーコードスキャン食料品トラッカー",
+                "highlights": [
+                    "カメラバーコードスキャナー連携",
+                    "スマート通知 & 賞味期限管理システム",
+                    "リアクティブなUI状態管理"
+                ]
+            },
+            "hcloud": {
+                "title": "HCloud: クリニック管理スイート",
+                "category": "医師向けアプリ",
+                "summary": "予約および処方箋同期機能を備えた医療従事者向けエンタープライズ運用ポータル。",
+                "description": "医師向けに開発されたエンタープライズグレードのクリニック管理アプリケーション。MVVM、Hilt、Room DBで構築され、リアルタイムの処方箋作成、患者記録管理、オフラインファーストの予約管理を実現。",
+                "ctaText": "Google Playで見る",
+                "altText": "HCloud クリニック管理スイート — ムハンマド・アワイスが構築したリアルタイム処方箋同期および予約スケジュール管理",
+                "highlights": [
+                    "デュアルアプリアーキテクチャコア",
+                    "Room DBを使用したオフラインファーストの同期キュー",
+                    "レスポンシブな医師用臨床UI"
+                ]
+            },
+            "healthwire": {
+                "title": "Healthwire: ヘルスケアエコシステム",
+                "category": "遠隔診療プラットフォーム",
+                "summary": "200万以上のダウンロード実績を持つ主要ヘルスケアアプリ。遠隔医療、検査予約、安全な決済連携を完備。",
+                "description": "パキスタン有数のヘルスケアプラットフォームのアーキテクチャを設計 — 99%以上のクラッシュフリーセッション率で、薬局ロジスティクス、検査予約、Twilioビデオ診療、ローカル決済ゲートウェイ（Meezan、JazzCash、Foree）を運用。",
+                "ctaText": "Google Playで見る",
+                "altText": "Healthwire ヘルスケアアプリ — ムハンマド・アワイスが構築した薬局ロジスティクス、検査予約、Twilio遠隔診療機能",
+                "highlights": [
+                    "Google Playストアで200万以上のダウンロード実績",
+                    "Twilioリアルタイムビデオ診療（エンゲージメント+15%）",
+                    "100%安全な決済処理（Meezan、JazzCash、Foree）"
+                ]
+            },
+            "dongamers": {
+                "title": "DonGamers: eスポーツプラットフォーム",
+                "category": "eゲームプラットフォーム",
+                "summary": "リアルタイムPusherチャット、トーナメント表、最適化されたマネタイズを備えたグローバルゲームプラットフォーム。",
+                "description": "ネイティブAndroid上に国際的なeスポーツプラットフォームを構築。コードベースをJavaからKotlinに移行し、Pusherを用いた拡張性の高いリアルタイムチャットを設計（エンゲージメント+15%）、アプリ内課金とGoogle AdMobを最適化。",
+                "ctaText": "Google Playで見る",
+                "altText": "DonGamers eスポーツプラットフォーム — ムハンマド・アワイスが構築したリアルタイムチャットおよびトーナメント追跡機能",
+                "highlights": [
+                    "グローバル展開で99%のクラッシュフリー率を実現",
+                    "Pusherを使用したリアルタイムチャット基盤",
+                    "マネタイズの最適化により売上を10%向上"
+                ]
+            }
+        }
+    },
+    "services": {
+        "title": "サービス & ソリューション",
+        "headerTitle": "拡張性、パフォーマンス、安定性を追求したカスタムモバイルエンジニアリング",
+        "headerDesc": "マルチプラットフォームのシステムアーキテクチャやKMP/CMPによるロジック共有から、エンドツーエンドのネイティブAndroidおよびFlutterアプリの開発・リリースまで対応します。",
+        "items": {
+            "android-native": {
+                "title": "ネイティブAndroid & ハードウェア連携",
+                "description": "Jetpack Compose、Kotlin、MVI/MVVMパターンを用いて構築された高品質なネイティブAndroidアプリ。IoT医療機器ドライバ、Agora/TwilioビデオSDK、Android TV、安全な決済処理に特化。"
+            },
+            "kmp": {
+                "title": "Kotlin & Compose Multiplatform (KMP/CMP)",
+                "description": "Kotlin Multiplatform (KMP) と Compose Multiplatform (CMP) を活用し、AndroidとiOSの間でビジネスロジックとリアクティブUIを共有。100%ネイティブの実行速度を維持しながら、コードベースの重複を削減します。"
+            },
+            "flutter": {
+                "title": "Flutter クロスプラットフォームエンジニアリング",
+                "description": "Flutter、BLoC/Riverpod、Dioで構築された、拡張性が高く忠実度の高いクロスプラットフォームアプリ。迅速な市場投入、複雑なREST/SOAP連携、高コンバージョンなUI/UXを実現設計。"
+            },
+            "architecture": {
+                "title": "モバイルアーキテクチャ & コードベースモダン化",
+                "description": "モノリシックなコードベースをモジュール化されたクリーンアーキテクチャへリファクタリングし、JavaからKotlinへの移行を推進。アプリの安定性をチューニングし、99%以上のクラッシュフリー率を達成します。"
+            }
+        }
+    },
+    "testimonials": {
+        "title": "クライアントの評価・推薦文",
+        "headerTitle": "エンジニアリングリーダー、ファウンダー、プロダクトチームからの信頼",
+        "headerDesc": "拡張性の高いAndroid、Kotlin Multiplatform、Flutterアプリケーションのリリースにおいて、技術ファウンダー、プロダクトリード、医療分野のパートナーから寄せられた本物のフィードバック。",
+        "items": {
+            "louis-wong": {
+                "name": "Louis Wong",
+                "role": "プロダクトリード & エンジニアリングパートナー",
+                "project": "モバイルパフォーマンス最適化",
+                "message": "Awais氏との仕事は素晴らしい体験でした。彼は私たちのアプリケーションを最適化し、RAM使用量を削減してパフォーマンスを30%向上させてくれました。コード最適化と共有アーキテクチャに関する彼の専門知識は、製品の品質に顕著なインパクトをもたらしました。"
+            },
+            "nasir": {
+                "name": "Nasir",
+                "role": "ソフトウェアアーキテクト & クライアント",
+                "project": "Android & KMP アーキテクチャ",
+                "message": "Awais氏は私たちのアプリで素晴らしい仕事をしてくれました。細部へのこだわり、クリーンアーキテクチャ、そして堅牢で保守性の高いコードへの集中により、開発プロセス全体が最初から最後までスムーズに進みました。本格的なAndroidやKotlin Multiplatformのプロジェクトに非常に強くお勧めします。"
+            },
+            "ahsan": {
+                "name": "Ahsan",
+                "role": "プロダクトファウンダー",
+                "project": "Eco Grocery アプリ",
+                "message": "Awais氏は、バーコードスキャナーからレシピ提案エンジンに至るまで、私たちのEco Groceryアプリをエンドツーエンドで構築してくれました。アプリはスムーズに動作し、アーキテクチャもクリーンで、ユーザーの食料品管理や賞味期限トラッキングの利便性を大きく向上させてくれました。"
+            },
+            "spectra-care": {
+                "name": "Spectra Care エンジニアリングチーム",
+                "role": "ヘルスケア & 遠隔診療パートナー",
+                "project": "Spectra Care 遠隔診療 & IoTプラットフォーム",
+                "message": "Awais氏は私たちの病院向けに、ビデオ診療とIoT健康モニターのデータを確実に連携させた優れた遠隔診療アプリを提供してくれました。患者様と医師の双方が毎日このアプリを頼りにしており、実際の臨床現場においても完璧に動作しています。"
+            }
+        }
+    },
+    "cta": {
+        "bookedStatus": "現在 2026年第3四半期 の案件を受付中",
+        "title": "大規模なモバイルアプリのアイデアやマルチプラットフォームプロジェクトをお持ちですか？",
+        "description": "プロダクトの目標、アーキテクチャのニーズ、KMP/Flutterへの移行についてお気軽にご相談ください。1営業日以内に明確な技術ロードマップをご提案します。",
+        "startProject": "プロジェクトを開始する",
+        "seeWork": "ポートフォリオを見る"
+    },
+    "footer": {
+        "copyright": "© {year} Muhammad Awais. All rights reserved.",
+        "poweredBy": "Built with Next.js & Tailwind CSS",
+        "navigate": "ナビゲーション",
+        "specialties": "専門分野",
+        "getInTouch": "お問い合わせ",
+        "specialtiesList": [
+            "ネイティブAndroid (Kotlin & Java)",
+            "Kotlin Multiplatform (KMP)",
+            "Compose Multiplatform (CMP)",
+            "Flutter クロスプラットフォーム"
+        ]
+    },
+    "notfound": {
+        "eyebrow": "404 エラー",
+        "title": "お探しのページは見つかりませんでした。",
+        "button": "ホームに戻る"
+    }
+}

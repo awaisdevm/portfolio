@@ -1,0 +1,30 @@
+{
+    "name": "Muhammad Awais",
+    "shortName": "Awais",
+    "socialBaseUrls": {
+        "github": "https://github.com/",
+        "linkedin": "https://linkedin.com/in/",
+        "twitter": "https://twitter.com/",
+        "medium": "https://medium.com/@",
+        "stackoverflow": "https://stackoverflow.com/users/",
+        "fiverr": "https://www.fiverr.com/",
+    "upwork": "https://www.upwork.com/freelancers/",
+    "whatsapp": "https://wa.me/"
+       
+    },
+    "usernames": {
+        "github": "devawais-official",
+        "linkedin": "devawais",
+        "twitter": "awaisdevm",
+        "medium": "devawais",
+        "stackoverflow": "15903692/devawais",
+        "fiverr": "mughal963",
+        "upwork": "your_username",
+        "whatsapp": "+923010789555" 
+    },
+    "contact": {
+        "email": "mughal963@gmail.com",
+        "phone": "+923010789555",
+        "whatsapp": "+923010789555"
+    }
+}

@@ -1,0 +1,433 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "about": "À propos",
+        "projects": "Projets",
+        "blog": "Blog",
+        "contact": "Contact",
+        "services": "Services",
+        "testimonials": "Témoignages"
+    },
+    "seo": {
+        "home": {
+            "title": "Muhammad Awais | Développeur Mobile Senior & Architecte Multiplateforme",
+            "description": "Ingénieur mobile senior avec plus de 6 ans d'expérience dans la conception d'applications en production sur Android natif, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP) et Flutter.",
+            "keywords": "Développeur mobile senior, Développeur Android natif, Ingénieur Kotlin Multiplatform, Compose Multiplatform, Développeur Flutter, Architecte mobile, Clean Architecture, Développeur Lahore"
+        },
+        "projects": {
+            "title": "Portefeuille de Projets | Apps Android natif, KMP & Flutter par Muhammad Awais",
+            "description": "Découvrez des applications de production déployées dans la santé (HealthTech), la fintech et l'intégration matérielle IoT, conçues avec Jetpack Compose, Flutter et une architecture mobile évolutive.",
+            "keywords": "Portefeuille d'applications mobiles, Études de cas Android, Vitrine apps Flutter, Projets Jetpack Compose, Apps de télésanté, Intégrations IoT mobiles, Apps mobiles déployées"
+        },
+        "about": {
+            "title": "À propos | Muhammad Awais - Développeur Mobile Senior (6+ ans d'exp)",
+            "description": "Découvrez Muhammad Awais, ingénieur mobile senior avec plus de 6 ans d'expérience en Android, KMP, CMP, Flutter, MVI/MVVM et systèmes à haute échelle maintenant un taux sans crash de 99 % et plus.",
+            "keywords": "À propos de Muhammad Awais, Ingénieur Android senior, Architecte de systèmes mobiles, Spécialiste KMP, Développeur Flutter Pakistan, Expert Clean Architecture, Profil dev mobile"
+        },
+        "contact": {
+            "title": "Contact | Embaucher un Développeur Senior Android, KMP & Flutter - Muhammad Awais",
+            "description": "Démarrez votre projet d'application mobile ou consultez un expert en ingénierie multiplateforme. Contactez directement pour du développement senior Android, KMP ou Flutter.",
+            "keywords": "Embaucher développeur mobile senior, Embaucher expert Android, Consultant KMP, Ingénieur Flutter freelance, Services de développement d'applications mobiles, Contacter Muhammad Awais"
+        },
+        "testimonials": {
+            "title": "Avis & Témoignages Clients | Développeur Mobile Senior - Muhammad Awais",
+            "description": "Lisez les avis et témoignages de fondateurs et de responsables techniques concernant des projets mobiles Android natif, Kotlin Multiplatform et Flutter.",
+            "keywords": "Témoignages clients, avis devawais, recommandations développeur mobile, retours consultant Android, avis développeur Flutter, retours clients logiciels"
+        },
+        "services": {
+            "title": "Services d'Ingénierie Mobile | Conseil Android natif, KMP & Flutter",
+            "description": "Services de développement mobile de bout en bout : Android natif (Kotlin), ingénierie multiplateforme KMP/CMP, intégrations matérielles IoT et modernisation de code legacy.",
+            "keywords": "Services de développement d'applications mobiles, Conseil Android, Développement Kotlin Multiplatform, Services de développement Flutter, Conseil Clean Architecture, Intégration IoT mobile"
+        },
+        "blog": {
+            "title": "Blog Technique | Architecture Mobile, KMP, CMP & Perspectives Android",
+            "description": "Articles techniques approfondis sur l'Android natif, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP), Jetpack Compose et la conception de systèmes mobiles propres.",
+            "keywords": "Blog de développement mobile, Tutoriels Kotlin Multiplatform, Bonnes pratiques Jetpack Compose, Perspectives d'architecture mobile, Clean Architecture mobile, KMP vs Flutter"
+        }
+    },
+    "profile": {
+        "title": "Développeur d'applications mobiles senior & Architecte",
+        "subtitle": "Native Android • Kotlin Multiplatform (KMP) • Compose Multiplatform (CMP) • Flutter",
+        "bio": "Développeur d'applications mobiles senior avec plus de 6 ans d'expérience dans la création d'applications de production évolutives pour la santé, la fintech, l'IoT et le e-commerce. Spécialisé en Android natif, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP) et Flutter avec Clean Architecture et les design patterns MVI/MVVM.",
+        "location": "Lahore, Pakistan (Disponible mondialement)",
+        "availability": "Ouvert aux rôles senior et au conseil stratégique"
+    },
+    "skills": {
+        "title": "Arsenal technique",
+        "subtitle": "Mon écosystème d'outils professionnels pour le natif et le multiplateforme",
+        "languages": "Langages (Kotlin, Dart, Java)",
+        "android": "Android natif (Jetpack Compose, TV, Custom UI)",
+        "multiplatform": "Multiplateforme (KMP & CMP)",
+        "flutter": "Flutter (BLoC, Riverpod, GetIt)",
+        "architecture": "Architecture & Asynchrone (Clean, MVI, MVVM, Coroutines)",
+        "tools": "IoT, Paiements & DevOps (Agora, SDK matériels, CI/CD)"
+    },
+    "home": {
+        "availability": "Disponible pour des contrats et du développement complet",
+        "heading1": "Conception de solutions",
+        "heading2": "Mobiles et Multiplateformes évolutives",
+        "description": "Développeur mobile senior et architecte avec plus de 6 ans d'expérience en Android natif (Jetpack Compose), KMP, CMP et Flutter. Spécialiste en Clean Architecture et applications haute performance.",
+        "buttonStart": "Démarrer un projet",
+        "buttonView": "Voir les travaux sélectionnés",
+        "portraitAlt": "Muhammad Awais — Développeur d'applications mobiles senior & Architecte multiplateforme à Lahore, Pakistan",
+        "skillsEyebrow": "Stack technique",
+        "skillsTitle": "Compétences techniques",
+        "stats": {
+            "experience": "6+ ans d'expérience",
+            "completed": "25+ Projets déployés",
+            "stores": "Apps sur les stores"
+        },
+        "selectedWork": "Travaux sélectionnés",
+        "recentProjects": "Projets de production en vedette",
+        "allProjectsLink": "Voir tous les projets",
+        "processTitle": "Déroulement d'une collaboration",
+        "processSubtitle": "Un processus pragmatique axé sur la livraison de code résilient et évolutif",
+        "processSteps": {
+            "01": {
+                "title": "Découverte & Cadrage",
+                "body": "Une analyse approfondie du périmètre, des exigences clés de la plateforme (Android, iOS, KMP ou Flutter) et des jalons techniques clairs."
+            },
+            "02": {
+                "title": "L'architecture d'abord",
+                "body": "Conception d'une Clean Architecture modulaire — logique métier KMP partagée, gestion d'état MVI/MVVM prévisible et UI découplée."
+            },
+            "03": {
+                "title": "Développement itératif",
+                "body": "Builds de production hebdomadaires installables et testables sur des appareils physiques, soutenus par l'automatisation CI/CD."
+            },
+            "04": {
+                "title": "Lancement & Passage à l'échelle",
+                "body": "Publication sur les stores, configuration des pipelines de release, suivi des crashs et passation technique complète pour une évolutivité à long terme."
+            }
+        },
+        "feedbackTitle": "Avis clients",
+        "feedbackSubtitle": "Ce que disent les responsables techniques et fondateurs",
+        "allTestimonialsLink": "Lire tous les témoignages"
+    },
+    "about": {
+        "title": "À propos",
+        "headerTitle": "Bonjour, je suis Muhammad Awais — Développeur Mobile Senior & Architecte Multiplateforme.",
+        "headerDesc": "Ingénieur mobile senior avec plus de 6 ans d'expérience dans la création de systèmes hautement performants et évolutifs en Android natif (Kotlin/Java), Kotlin Multiplatform (KMP), Compose Multiplatform (CMP) et Flutter — propulsés par Clean Architecture et les design patterns MVI/MVVM.",
+        "expertiseTitle": "Expertise clé",
+        "expertiseSubtitle": "Architecture mobile à fort impact, ingénierie multiplateforme et conception de systèmes réactifs",
+        "experienceTitle": "Parcours professionnel",
+        "experienceSubtitle": "Conception d'applications résilientes dans la santé, la fintech, le matériel IoT et les plateformes temps réel",
+        "infoTitle": "Basé à",
+        "infoLocation": "Lahore, Pakistan",
+        "infoFocus": "Spécialisation principale",
+        "infoFocusVal": "Android • KMP • CMP • Flutter",
+        "role": "Rôle actuel",
+        "roleVal": "Développeur d'applications mobiles senior",
+        "availability": "Ouvert aux opportunités",
+        "githubFollowers": "Communauté GitHub",
+        "githubStars": "Étoiles des dépôts",
+        "linkedinConnections": "Réseau professionnel",
+        "downloadCv": "Télécharger le CV",
+        "stats": {
+            "experience": "6+ ans d'expérience",
+            "completed": "Apps en production",
+            "satisfied": "Clients satisfaits",
+            "stores": "Apps publiées"
+        }
+    },
+    "blog": {
+        "title": "Articles techniques et perspectives d'ingénierie",
+        "headerTitle": "Architecture mobile et visions techniques",
+        "headerDesc": "Analyses approfondies sur Android natif, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP), Flutter et la Clean Architecture de production.",
+        "minRead": "min de lecture",
+        "readArticle": "Lire l'article complet",
+        "emptyState": "Les articles sur KMP, Compose Multiplatform et l'architecture mobile arrivent bientôt. En attendant, découvrez mes projets de production en vedette !"
+    },
+    "experiences": {
+        "items": {
+            "quickgem": {
+                "role": "Développeur d'applications mobiles senior",
+                "description": "Conception d'un écosystème HealthTech multi-tenant à grande échelle en regroupant des applications héritées de médecins et de patients en une seule base de code unifiée avec Jetpack Compose et l'architecture MVI. Intégration de fonctionnalités de télésanté Agora SDK à faible latence et de pilotes matériels réactifs pour moniteurs médicaux 6-en-1.",
+                "achievements": [
+                    "Unification des applications legacy de médecins et patients en une seule base de code Jetpack Compose & MVI",
+                    "Intégration d'Agora SDK pour des appels vidéo à faible latence et du chat en temps réel",
+                    "Architecture d'intégrations réactives pour le matériel médical Spectra Care 6-en-1 et les API SOAP EHR"
+                ]
+            },
+            "egora": {
+                "role": "Développeur d'applications mobiles senior",
+                "description": "Développement de modules de réservation à grande échelle avec Flutter, Dio et GetIt, entraînant une hausse de 30 % de l'adoption par les clients. Conception d'applications Jetpack Compose pour l'impression thermique Bluetooth et intégration de passerelles de paiement à haut débit.",
+                "achievements": [
+                    "Conception du système de réservation principal sous Flutter, stimulant de 30 % l'adoption client",
+                    "Architecture d'une intégration d'imprimante thermique Bluetooth (fiabilité 100 %, réduction de 50 % de la latence)",
+                    "Intégration de la passerelle de paiement XStax traitant plus de 10k transactions mensuelles avec 99 % d'uptime"
+                ]
+            },
+            "healthwire": {
+                "role": "Ingénieur logiciel, Développeur Android",
+                "description": "Développement d'un écosystème double application Patient/Médecin utilisant MVVM, Hilt/Dagger, Coroutines et Flow. Extension des capacités de télésanté via Twilio video, sécurisation des passerelles de paiement locales et migration de l'UI legacy vers Jetpack Compose.",
+                "achievements": [
+                    "Augmentation de l'engagement utilisateur de 15 % via les consultations vidéo Twilio et la navigation deep-link",
+                    "Maintien d'un taux sans crash supérieur à 99 % sur les deux apps via Firebase Crashlytics et Room DB",
+                    "Intégration des passerelles de paiement Meezan, JazzCash et Foree avec une conformité de sécurité à 100 %"
+                ]
+            },
+            "dongamers": {
+                "role": "Développeur Android senior",
+                "description": "Direction de l'ingénierie mobile pour une plateforme de jeu internationale. Migration du code Java vers Kotlin, architecture d'une infrastructure de chat temps réel avec Pusher et optimisation des frameworks de monétisation.",
+                "achievements": [
+                    "Élévation de la stabilité à 99 % de sessions sans crash et réduction des bugs de production de 20 %",
+                    "Migration de l'application de Java vers Kotlin avec une disponibilité mondiale (couverture 99 %)",
+                    "Architecture du chat temps réel avec Pusher (+15 % d'engagement) et hausse des ventes de 10 % via AdMob/IAP"
+                ]
+            },
+            "freelance": {
+                "role": "Développeur mobile freelance",
+                "description": "Conception et livraison d'applications mobiles multiplateformes réactives en Flutter et Dart pour des clients internationaux, gérant tout le cycle de vie du prototypage UI à l'intégration d'API.",
+                "achievements": [
+                    "Livraison de solutions Flutter multiplateformes haute fidélité, accélérant le time-to-market",
+                    "Gestion de cycles de vie de développement complets et conseil technique auprès des parties prenantes"
+                ]
+            },
+            "netroots": {
+                "role": "Stagiaire Développeur Android",
+                "description": "Développement d'applications d'entreprise en Java, incluant un système de pointage GPS avec validation par image et automatisation des flux RH administratifs.",
+                "achievements": [
+                    "Conception d'un système de pointage GPS en Java avec validation photo, augmentant la précision de 40 %",
+                    "Automatisation des workflows de profilage RH, réduisant la charge administrative manuelle de 50 %"
+                ]
+            }
+        }
+    },
+    "projects": {
+        "title": "Projets",
+        "headerTitle": "Applications déployées dans les écosystèmes Android natif et Flutter.",
+        "headerDesc": "Filtrez par plateforme pour voir comment l'architecture et la stack technique s'adaptent pour offrir des performances optimales, de la sécurité et une connectivité temps réel.",
+        "noProjectsFound": "Aucun projet trouvé pour cette catégorie.",
+        "backToProjects": "Tous les projets",
+        "techStack": "Stack technique",
+        "filters": {
+            "all": "Tous",
+            "android": "Android",
+            "flutter": "Flutter",
+            "ios": "iOS",
+            "kmp": "KMP",
+            "cmp": "CMP"
+        },
+        "ctas": {
+            "playStore": "Google Play",
+            "appStore": "App Store",
+            "details": "Voir les détails"
+        },
+        "items": {
+            "spectra-care": {
+                "title": "Spectra Care : Télésanté & Plateforme Matérielle",
+                "category": "Télésanté & IoT",
+                "summary": "Plateforme de télésanté d'entreprise avec Jetpack Compose, appels vidéo Agora et intégration de moniteurs médicaux 6-en-1.",
+                "description": "App Android de télésanté en production construite avec Jetpack Compose et l'architecture MVI. Intègre des consultations vidéo Agora à faible latence, des pilotes d'appareils réactifs pour les moniteurs de santé Spectra Care 6-en-1 et une synchronisation sécurisée des données SOAP EHR.",
+                "ctaText": "Voir sur Google Play",
+                "altText": "Spectra Care — App Android native de télésanté avec appels vidéo Agora et intégration IoT par Muhammad Awais",
+                "highlights": [
+                    "Consultations vidéo temps réel via Agora SDK",
+                    "Synchro moniteur de santé IoT Spectra Care 6-en-1",
+                    "Architecture MVI avec Jetpack Compose"
+                ]
+            },
+            "zouris": {
+                "title": "Zouris : Plateforme de Bien-être Holistique",
+                "category": "Santé & Bien-être",
+                "summary": "Application de bien-être multiplateforme offrant des séances guidées, des flux audio et des affirmations.",
+                "description": "Zouris est une plateforme de bien-être holistique conçue sous Flutter où des coachs et praticiens certifiés partagent des sessions guidées, des méditations et des flux audio en temps réel avec des performances UX natives sur Android et iOS.",
+                "ctaText": "Google Play",
+                "iosCtaText": "App Store",
+                "altText": "Zouris app de bien-être — plateforme multiplateforme de méditation et streaming audio par Muhammad Awais",
+                "highlights": [
+                    "Architecture multiplateforme Flutter",
+                    "Streaming audio temps réel à faible latence",
+                    "Gestion d'état propre avec BLoC"
+                ]
+            },
+            "egora-b2b": {
+                "title": "Egora B2B : Plateforme Partenaires Restaurants",
+                "category": "Solutions B2B",
+                "summary": "Tableau de bord partenaire en marque blanche permettant aux restaurateurs de gérer commandes, retraits et réservations en direct.",
+                "description": "Plateforme partenaire en marque blanche conçue avec Flutter, Dio et GetIt. Permet aux restaurateurs de gérer de façon autonome la restauration sur place, à emporter, les commandes par QR code et l'impression thermique de reçus avec des paiements sécurisés.",
+                "ctaText": "Voir les détails du projet",
+                "altText": "Egora B2B dashboard partenaire — commandes, réservations et gestion QR par Muhammad Awais",
+                "highlights": [
+                    "Architecture Flutter, Dio et GetIt",
+                    "Tableaux de bord multi-marchands indépendants",
+                    "Moteur de notification et synchro des commandes en temps réel"
+                ]
+            },
+            "egora": {
+                "title": "Egora : Écosystème Restaurant Intelligent",
+                "category": "Alimentation & Boissons",
+                "summary": "Écosystème de restaurant à grande échelle avec commande par QR code, gestion des réservations et intégrations matérielles Bluetooth.",
+                "description": "Système de réservation et de restauration évolutif construit avec Flutter et Jetpack Compose. Intègre la commande par QR code, le traitement des paiements XStax (+10k transactions/mois) et des pilotes d'imprimante thermique Bluetooth sur mesure (fiabilité 100 %).",
+                "ctaText": "Voir les détails du projet",
+                "altText": "Egora app restaurant — commandes QR, système de réservation et imprimante Bluetooth par Muhammad Awais",
+                "highlights": [
+                    "Hausse de 30 % de l'adoption client",
+                    "Intégration d'imprimante thermique Bluetooth (latence réduite de 50 %)",
+                    "Passerelle XStax traitant 10k+ transactions mensuelles"
+                ]
+            },
+            "makernote": {
+                "title": "Makernote : EdTech Interactive",
+                "category": "Application Éducative",
+                "summary": "Plateforme éducative avec collaboration en temps réel et synchronisation hors ligne.",
+                "description": "Plateforme éducative haute performance pour professeurs et étudiants — conçue en Clean Architecture pour la collaboration multi-utilisateurs en temps réel, la synchronisation instantanée des notes et une persistance hors ligne transparente.",
+                "ctaText": "Voir sur l'App Store",
+                "altText": "Makernote EdTech app — collaboration temps réel et mode hors ligne par Muhammad Awais",
+                "highlights": [
+                    "Collaboration multi-utilisateurs en temps réel",
+                    "Stockage local axé sur le hors-ligne (Offline-first)",
+                    "Architecture MVVM propre"
+                ]
+            },
+            "eco-grocery": {
+                "title": "Eco Grocery : Suivi d'Inventaire Intelligent",
+                "category": "Utilitaire Intelligent",
+                "summary": "Application intelligente de suivi de courses avec scanner de codes-barres, recommandations de recettes et alertes de péremption.",
+                "description": "Application utilitaire Android intelligente proposant une liste de courses dynamique liée à un moteur de recettes, couplée à un scanner de codes-barres par caméra pour un catalogage instantané et une gestion des dates de péremption.",
+                "ctaText": "Voir les détails du projet",
+                "altText": "Eco Grocery app Android — tracker de courses avec scanner de codes-barres par Muhammad Awais",
+                "highlights": [
+                    "Intégration du scanner de codes-barres par caméra",
+                    "Système intelligent de notifications de péremption",
+                    "Gestion réactive de l'état de l'UI"
+                ]
+            },
+            "hcloud": {
+                "title": "HCloud : Suite de Gestion de Clinique",
+                "category": "Application Médecins",
+                "summary": "Portail d'exploitation d'entreprise pour professionnels de santé avec synchronisation des rendez-vous et des ordonnances.",
+                "description": "Application de gestion de clinique de niveau entreprise conçue pour les médecins. Bâtie avec MVVM, Hilt et Room DB pour permettre la création d'ordonnances en temps réel, la gestion des dossiers patients et la prise de rendez-vous offline-first.",
+                "ctaText": "Voir sur Google Play",
+                "altText": "HCloud suite de gestion de clinique — synchronisation des ordonnances par Muhammad Awais",
+                "highlights": [
+                    "Cœur d'architecture à double application",
+                    "File de synchro offline-first avec Room DB",
+                    "UI clinique réactive pour médecins"
+                ]
+            },
+            "healthwire": {
+                "title": "Healthwire : Écosystème HealthTech",
+                "category": "Plateforme de Télésanté",
+                "summary": "Application de santé majeure avec 2M+ de téléchargements, télémédecine, réservation de labos et paiements sécurisés.",
+                "description": "Conception de l'une des principales plateformes de santé du Pakistan — pilotant la logistique pharmaceutique, les réservations de tests de labo, les consultations vidéo Twilio et les passerelles de paiement locales (Meezan, JazzCash, Foree) avec plus de 99 % de sessions sans crash.",
+                "ctaText": "Voir sur Google Play",
+                "altText": "Healthwire app de santé — logistique pharma, labos et télémédecine Twilio par Muhammad Awais",
+                "highlights": [
+                    "2M+ téléchargements sur Google Play Store",
+                    "Consultations vidéo en temps réel Twilio (+15 % d'engagement)",
+                    "Paiements 100 % sécurisés (Meezan, JazzCash, Foree)"
+                ]
+            },
+            "dongamers": {
+                "title": "DonGamers : Plateforme e-Sports",
+                "category": "Plateforme e-Gaming",
+                "summary": "Plateforme de jeux mondiale avec chat temps réel Pusher, brackets de tournois et monétisation optimisée.",
+                "description": "Développement d'une plateforme e-sports internationale sur Android natif. Migration de Java vers Kotlin, architecture d'un chat temps réel évolutif via Pusher (+15 % d'engagement) et optimisation des achats in-app et de Google AdMob.",
+                "ctaText": "Voir sur Google Play",
+                "altText": "DonGamers plateforme e-sports — chat temps réel et suivi de tournois par Muhammad Awais",
+                "highlights": [
+                    "Taux sans crash de 99 % sur une disponibilité mondiale",
+                    "Infrastructure de chat temps réel avec Pusher",
+                    "Optimisation de la monétisation boostant les ventes de 10 %"
+                ]
+            }
+        }
+    },
+    "services": {
+        "title": "Services et Solutions",
+        "headerTitle": "Ingénierie mobile sur mesure conçue pour la performance, la stabilité et l'évolutivité.",
+        "headerDesc": "De l'architecture système multiplateforme et la logique partagée KMP/CMP aux lancements d'applications de production Android natif et Flutter de bout en bout.",
+        "items": {
+            "android-native": {
+                "title": "Android Natif et Intégration Matérielle",
+                "description": "Applications Android natives haute performance conçues avec Jetpack Compose, Kotlin et les patterns MVI/MVVM. Spécialisé dans les pilotes de matériel médical IoT, les SDK vidéo Agora/Twilio, Android TV et le traitement de paiements sécurisés."
+            },
+            "kmp": {
+                "title": "Kotlin & Compose Multiplatform (KMP/CMP)",
+                "description": "Logique métier partagée et UI réactive entre Android et iOS grâce à Kotlin Multiplatform (KMP) et Compose Multiplatform (CMP) — réduisant la duplication de code tout en conservant une vitesse d'exécution 100 % native."
+            },
+            "flutter": {
+                "title": "Ingénierie Multiplateforme Flutter",
+                "description": "Applications multiplateformes évolutives et haute fidélité construites avec Flutter, BLoC/Riverpod et Dio. Conçues pour un time-to-market rapide, des intégrations REST/SOAP complexes et une UI/UX à forte conversion."
+            },
+            "architecture": {
+                "title": "Architecture Mobile et Modernisation de Codebase",
+                "description": "Refactoring de bases de code monolithiques vers une Clean Architecture modulaire, migration de Java vers Kotlin et optimisation de la stabilité pour atteindre plus de 99 % de sessions sans crash."
+            }
+        }
+    },
+    "testimonials": {
+        "title": "Avis & Témoignages clients",
+        "headerTitle": "La confiance des leaders techniques, fondateurs & équipes produit",
+        "headerDesc": "Retours authentiques de fondateurs techniques, chefs de produit et partenaires de santé sur le déploiement d'applications Android, Kotlin Multiplatform et Flutter évolutives.",
+        "items": {
+            "louis-wong": {
+                "name": "Louis Wong",
+                "role": "Product Lead & Partenaire Ingénierie",
+                "project": "Optimisation des performances mobiles",
+                "message": "Travailler avec Awais a été une excellente expérience. Il a optimisé notre application, réduit son utilisation de RAM et amélioré les performances de 30 %. Son expertise en optimisation de code et en architectures partagées a eu un impact remarquable sur la qualité de notre produit."
+            },
+            "nasir": {
+                "name": "Nasir",
+                "role": "Architecte Logiciel & Client",
+                "project": "Architecture Android & KMP",
+                "message": "Awais a fait un travail formidable sur notre application. Son souci du détail, son architecture propre et son accent sur du code solide et maintenable ont rendu tout le processus de développement fluide du début à la fin. Hautement recommandé pour tout projet sérieux sous Android ou Kotlin Multiplatform."
+            },
+            "ahsan": {
+                "name": "Ahsan",
+                "role": "Fondateur de produit",
+                "project": "App Eco Grocery",
+                "message": "Awais a développé notre application Eco Grocery de bout en bout, du scanner de codes-barres au moteur de recommandation de recettes. L'application tourne sans accroc, l'architecture est propre et cela a véritablement amélioré la façon dont nos utilisateurs gèrent leurs courses et le suivi des péremptions."
+            },
+            "spectra-care": {
+                "name": "Équipe d'ingénierie Spectra Care",
+                "role": "Partenaire Santé & Télésanté",
+                "project": "Plateforme Télésanté & IoT Spectra Care",
+                "message": "Awais a livré une application de télésanté remarquable pour notre hôpital, intégrant de manière fiable les consultations vidéo et les données de moniteurs de santé IoT. Nos patients et médecins comptent quotidiennement sur l'application, et elle s'est avérée irréprochable en usage clinique réel."
+            }
+        }
+    },
+    "contact": {
+        "title": "Contact",
+        "headerTitle": "Concevons ensemble votre prochain jalon mobile.",
+        "headerDesc": "Contactez-moi directement par e-mail ou via les réseaux professionnels — je réponds en un jour ouvrable.",
+        "locationTitle": "Localisation",
+        "form": {
+            "nameLabel": "Nom",
+            "emailLabel": "E-mail",
+            "platformLabel": "Plateforme (Android / KMP / CMP / Flutter)",
+            "budgetLabel": "Fourchette budgétaire",
+            "detailsLabel": "Détails du projet ou rôle recherché",
+            "buttonSend": "Envoyer le message",
+            "successTitle": "Message envoyé avec succès",
+            "successMessage": "Merci pour votre message — je lis et réponds à chaque demande rapidement."
+        }
+    },
+    "cta": {
+        "bookedStatus": "Réservations actuellement ouvertes pour le T3 2026",
+        "title": "Vous avez un projet d'application mobile à grande échelle ou multiplateforme ?",
+        "description": "Parlez-moi de vos objectifs produit, de vos besoins en architecture ou de votre migration KMP/Flutter — je vous répondrai sous un jour ouvrable avec une feuille de route technique claire.",
+        "startProject": "Démarrer un projet",
+        "seeWork": "Explorer le portfolio"
+    },
+    "footer": {
+        "copyright": "© {year} Muhammad Awais. Tous droits réservés.",
+        "poweredBy": "Développé avec Next.js & Tailwind CSS",
+        "navigate": "Navigation",
+        "specialties": "Spécialités",
+        "getInTouch": "Restons en contact",
+        "specialtiesList": [
+            "Android natif (Kotlin & Java)",
+            "Kotlin Multiplatform (KMP)",
+            "Compose Multiplatform (CMP)",
+            "Flutter Multiplateforme"
+        ]
+    },
+    "notfound": {
+        "eyebrow": "Erreur 404",
+        "title": "Cet écran n'existe pas.",
+        "button": "Retour à l'accueil"
+    }
+}

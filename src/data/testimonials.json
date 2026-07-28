@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "slug": "louis-wong",
+        "clientName": "Louis Wong",
+        "clientRole": "CEO @ Tackle Education ltd",
+        "clientImage": "",
+        "rating": 5,
+        "verified": true,
+        "appUrl": "https://apps.apple.com/hk/app/makernote/id6475201417?l=en-GB"
+    },
+    {
+        "id": 2,
+        "slug": "nasir",
+        "clientName": "Nasir",
+        "clientRole": "Founder @ Status200",
+        "clientImage": "",
+        "rating": 5,
+        "verified": true,
+        "appUrl": "https://apps.apple.com/hk/app/makernote/id6475201417?l=en-GB"
+    },
+    {
+        "id": 3,
+        "slug": "ahsan",
+        "clientName": "Ahsan",
+        "clientRole": "Product Lead @ Techcreatix",
+        "clientImage": "",
+        "rating": 5,
+        "verified": true,
+        "appUrl": "#"
+    },
+    {
+        "id": 4,
+        "slug": "spectra-care",
+        "clientName": "Spectra Care",
+        "clientRole": "Healthcare Technology Partner, Nigeria",
+        "clientImage": "",
+        "rating": 5,
+        "verified": true,
+        "appUrl": "https://play.google.com/store/apps/details?id=com.spectra.care"
+    }
+]
