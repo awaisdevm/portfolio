@@ -14,10 +14,10 @@ function decodeHTMLEntities(text: string): string {
 
 function extractExcerpt(htmlContent: string, maxLength = 160): string {
     if (!htmlContent) return "";
+
     let cleanText = htmlContent.replace(/<(style|script|svg)[^>]*>[\s\S]*?<\/\1>/gi, "");
     cleanText = cleanText.replace(/<\/?[^>]+(>|$)/g, " ");
     cleanText = decodeHTMLEntities(cleanText).replace(/\s+/g, " ").trim();
-
     return cleanText.length > maxLength
         ? `${cleanText.substring(0, maxLength).trim()}...`
         : cleanText;
@@ -27,11 +27,15 @@ function extractExcerpt(htmlContent: string, maxLength = 160): string {
  * Optimizes Medium CDN images by requesting scaled 800px width images instead of 4K originals
  */
 function optimizeMediumImage(url: string): string {
-    if (!url) return "/images/placeholder.svg";
+
+    if (!url) return "/placeholder.svg";
     // Replace raw medium CDN URLs with responsive optimized size
     if (url.includes("cdn-images-1.medium.com")) {
+
         return url.replace(/\/max\/\d+\//, "/max/800/");
+        
     }
+
     return url;
 }
 
@@ -77,6 +81,7 @@ export async function fetchMediumBlogs(username: string): Promise<BlogPost[]> {
             const rawThumb = item.thumbnail || extractThumbnail(content);
 
             return {
+                
                 id: item.guid || item.link,
                 title: decodeHTMLEntities(item.title),
                 publishDate: item.pubDate,

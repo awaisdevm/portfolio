@@ -115,6 +115,29 @@ CONTACT_FROM_EMAIL=onboarding@resend.dev
 
 ---
 
+## 📊 Google Analytics & Performance Tracking
+
+The portfolio features a fully integrated Google Analytics (gtag.js) setup combined with native Next.js Core Web Vitals telemetry tracking.
+
+### Configuration
+Provide your Google Analytics measurement ID (G-XXXXXX) as a public environment variable in `.env.local` or your hosting dashboard:
+```env
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+```
+
+### Metrics Tracked Automatically
+*   **Page Views & Navigation:** Listens to client-side path and search query parameters inside localized paths to fire GA page views.
+*   **Core Web Vitals:** Automatically reports runtime performance data directly to Google Analytics:
+    *   `LCP` (Largest Contentful Paint)
+    *   `FID` / `INP` (First Input Delay / Interaction to Next Paint)
+    *   `CLS` (Cumulative Layout Shift)
+    *   `FCP` (First Contentful Paint)
+    *   `TTFB` (Time to First Byte)
+*   **Performance Ratings:** Categorizes each metrics rating (`good`, `needs-improvement`, or `poor`) and sends them along with standard numerical tags.
+*   **Development Console Logging:** Displays live Web Vitals telemetry in the console when running in local development mode (`NODE_ENV === "development"`).
+
+---
+
 ## ⚙️ Content Editing & Data Management
 
 To change the bio, projects, testimonials, or other content, edit the configuration files inside `src/data/` or `src/lib/site-config.ts` without modifying the core TSX layout elements:

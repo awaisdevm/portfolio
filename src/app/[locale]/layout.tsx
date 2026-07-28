@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
+import Analytics from "@/components/seo/Analytics";
 import Header from "@/components/layout/Header";
 
 import dynamic from "next/dynamic";
@@ -76,6 +77,9 @@ export default async function RootLayout({
         <I18nProvider initialLocale={locale} pageDictionary={pageDictionary}>
           {/* 2. Wrap app with FramerMotionProvider */}
           <FramerMotionProvider>
+            {/* Google Analytics & Performance Telemetry */}
+            <Analytics />
+
             {/* Ambient Radial Backdrop Glow */}
             <div
               aria-hidden="true"

@@ -14,7 +14,7 @@ interface BlogCardProps {
 
 export default function BlogCard({ post, priority = false }: BlogCardProps) {
   const { translate } = useI18n();
-  const fallbackImage = "/images/placeholder.svg";
+  const fallbackImage = "/placeholder.svg";
   const [imgSrc, setImgSrc] = useState(post.thumbnailUrl || fallbackImage);
 
   return (
@@ -36,7 +36,6 @@ export default function BlogCard({ post, priority = false }: BlogCardProps) {
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             onError={() => setImgSrc(fallbackImage)}
             priority={priority}
-            unoptimized={imgSrc.includes("cdn-images-1.medium.com")} // Bypasses slow proxy re-compression for Medium CDN
           />
 
           {/* Read Time Badge */}
