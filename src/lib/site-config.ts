@@ -1,6 +1,6 @@
 import { SiteConfig, NavLink } from "@/types/site";
 import data from "@/data/personal-data.json";
-import { FiverrIcon, GithubIcon, LinkedinIcon, MediumIcon, StackOverflowIcon, UpworkIcon, XIcon } from "@/components/icons";
+import { FiverrIcon, GithubIcon, LinkedinIcon, MediumIcon, StackOverflowIcon, UpworkIcon, WhatsappIcon, XIcon } from "@/components/icons";
 
 const SITE_URL = "https://devawais.com";
 
@@ -56,21 +56,14 @@ export const socialLinks = [
     label: "LinkedIn",
     isEmail: false
   },
-  // ...(personalData.usernames.twitter ? [{
-  //   id: "twitter",
-  //   href: `${personalData.socialBaseUrls.twitter}${personalData.usernames.twitter}`,
-  //   displayValue: `@${personalData.usernames.twitter}`,
-  //   icon: XIcon,
-  //   label: "Twitter",
-  //   isEmail: false
-  // }] : []),
-  ...(personalData.usernames.stackoverflow ? [{
-    id: "stackoverflow",
-    href: `${personalData.socialBaseUrls.stackoverflow}${personalData.usernames.stackoverflow}`,
-    displayValue: `@${personalData.usernames.stackoverflow}`,
-    icon: StackOverflowIcon,
-    label: "Stack Overflow",
-    isEmail: false
+  // NEW: Add WhatsApp (Special Case: uses phone number from contact object)
+  ...(personalData.contact?.whatsapp ? [{
+    id: "whatsapp",
+    href: `${personalData.socialBaseUrls.whatsapp}${personalData.contact.whatsapp}`,
+    displayValue: personalData.contact.whatsapp,
+    icon: WhatsappIcon,
+    label: "WhatsApp",
+    isEmail: true // This triggers the ObfuscatedContact component you already have!
   }] : []),
   ...(personalData.usernames.medium ? [{
     id: "medium",
@@ -80,6 +73,15 @@ export const socialLinks = [
     label: "Medium",
     isEmail: false
   }] : []),
+  ...(personalData.usernames.stackoverflow ? [{
+    id: "stackoverflow",
+    href: `${personalData.socialBaseUrls.stackoverflow}${personalData.usernames.stackoverflow}`,
+    displayValue: `@${personalData.usernames.stackoverflow}`,
+    icon: StackOverflowIcon,
+    label: "Stack Overflow",
+    isEmail: false
+  }] : []),
+
 
   ...(personalData.usernames.fiverr ? [{
     id: "fiverr",
@@ -95,20 +97,11 @@ export const socialLinks = [
     id: "upwork",
     href: `${personalData.socialBaseUrls.upwork}${personalData.usernames.upwork}`,
     displayValue: `@${personalData.usernames.upwork}`,
-    icon: UpworkIcon, 
+    icon: UpworkIcon,
     label: "Upwork",
     isEmail: false
   }] : []),
 
-  // NEW: Add WhatsApp (Special Case: uses phone number from contact object)
-  ...(personalData.contact?.whatsapp ? [{
-    id: "whatsapp",
-    href: `${personalData.socialBaseUrls.whatsapp}${personalData.contact.whatsapp}`,
-    displayValue: personalData.contact.whatsapp,
-    icon: MediumIcon,
-    label: "WhatsApp",
-    isEmail: true // This triggers the ObfuscatedContact component you already have!
-  }] : [])
 ];
 
 export const navLinks = [
