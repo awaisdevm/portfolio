@@ -11,6 +11,7 @@ import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import DesktopNavbar from "./DesktopNavbar";
 import MobileDrawer from "./MobileDrawer";
+import LanguageSwitcher from "./LanguageSwitcher";
 import { MenuIcon, XIcon } from "../icons";
 import { Locale, locales } from "@/i18n/config";
 
@@ -84,21 +85,25 @@ const getLocalizedHref = useMemo(() => {
           translate={translate}
         />
 
-        {/* MOBILE TOGGLE BUTTON */}
-        <Button
-          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={mobileMenuOpen}
-          variant="ghost"
-          size="icon"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-border/30 bg-surface/60 text-muted backdrop-blur-md transition-colors hover:border-primary/40 hover:bg-surface hover:text-heading md:hidden"
-          onClick={() => setMobileMenuOpen((prev) => !prev)}
-        >
-          {mobileMenuOpen ? (
-            <XIcon className="h-5 w-5" aria-hidden="true" />
-          ) : (
-            <MenuIcon className="h-5 w-5" aria-hidden="true" />
-          )}
-        </Button>
+        {/* MOBILE CONTROLS */}
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher />
+
+          <Button
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+            variant="ghost"
+            size="icon"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border/30 bg-surface/60 text-muted backdrop-blur-md transition-colors hover:border-primary/40 hover:bg-surface hover:text-heading"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
+          >
+            {mobileMenuOpen ? (
+              <XIcon className="h-5 w-5" aria-hidden="true" />
+            ) : (
+              <MenuIcon className="h-5 w-5" aria-hidden="true" />
+            )}
+          </Button>
+        </div>
       </div>
 
       {/* MOBILE DRAWER */}

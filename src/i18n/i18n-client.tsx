@@ -36,6 +36,17 @@ export function I18nProvider({ children, initialLocale, pageDictionary }: {
         if (newLocale === locale) return;
         document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=Lax`;
         setLocale(newLocale);
+        
+        if (typeof window !== "undefined") {
+            const pathname = window.location.pathname;
+            const segments = pathname.split("/");
+            if (segments.length >= 2 && isLocale(segments[1])) {
+                segments[1] = newLocale;
+                const newPath = segments.join("/") || `/${newLocale}`;
+                router.push(newPath);
+                return;
+            }
+        }
         startTransition(() => { router.refresh(); });
     }
 

@@ -9,6 +9,7 @@ import { Magnetic } from "../ui/Magnetic";
 import { ObfuscatedContact } from "../ui/ObfuscatedContact";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 interface DesktopNavbarProps {
   getLocalizedHref: (href: string) => string;
@@ -93,6 +94,9 @@ export default function DesktopNavbar({
               )}
             </Magnetic>
           ))}
+          <div className="ml-1 border-l border-border-subtle pl-1.5 lg:ml-2 lg:pl-2">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </nav>

@@ -9,6 +9,7 @@ import { m, AnimatePresence, Variants } from "framer-motion";
 import { navLinks } from "@/lib/site-config";
 import { useSocialLinks } from "@/hooks/useSocialLinks";
 import { ObfuscatedContact } from "../ui/ObfuscatedContact";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 // ============================================================================
 // TYPES & PROPS
@@ -152,32 +153,36 @@ export default function MobileDrawer({
 
               <m.div
                 variants={itemVariants}
-                className="flex items-center justify-center gap-4 py-4"
+                className="flex flex-col items-center gap-4 py-4"
               >
-                {socialLinks.map((social) =>
-                  social.isEmail ? (
-                    <ObfuscatedContact
-                      key={social.label}
-                      type="email"
-                      value={social.href}
-                      className="flex h-11 w-11 items-center justify-center rounded-full border border-border/30 bg-surface/60 text-muted transition-all duration-200 hover:border-accent/40 hover:bg-surface hover:text-accent-light"
-                    >
-                      <social.icon className="h-5 w-5" aria-hidden="true" />
-                    </ObfuscatedContact>
-                  ) : (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Visit my ${social.label} profile`}
-                      className="flex h-11 w-11 items-center justify-center rounded-full border border-border/30 bg-surface/60 text-muted transition-all duration-200 hover:border-accent/40 hover:bg-surface hover:text-accent-light"
-                      onClick={onClose}
-                    >
-                      <social.icon className="h-5 w-5" aria-hidden="true" />
-                    </a>
-                  )
-                )}
+                <LanguageSwitcher />
+
+                <div className="flex items-center justify-center gap-4">
+                  {socialLinks.map((social) =>
+                    social.isEmail ? (
+                      <ObfuscatedContact
+                        key={social.label}
+                        type="email"
+                        value={social.href}
+                        className="flex h-11 w-11 items-center justify-center rounded-full border border-border/30 bg-surface/60 text-muted transition-all duration-200 hover:border-accent/40 hover:bg-surface hover:text-accent-light"
+                      >
+                        <social.icon className="h-5 w-5" aria-hidden="true" />
+                      </ObfuscatedContact>
+                    ) : (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit my ${social.label} profile`}
+                        className="flex h-11 w-11 items-center justify-center rounded-full border border-border/30 bg-surface/60 text-muted transition-all duration-200 hover:border-accent/40 hover:bg-surface hover:text-accent-light"
+                        onClick={onClose}
+                      >
+                        <social.icon className="h-5 w-5" aria-hidden="true" />
+                      </a>
+                    )
+                  )}
+                </div>
               </m.div>
             </div>
           </m.div>
