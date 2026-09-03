@@ -2,17 +2,21 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { locales, getLocaleFromHeaders } from "./i18n/config";
 
+// Default fallback locale define karein (e.g., 'en')
+const DEFAULT_LOCALE = locales[0] || "en";
+
 export function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
     const hostname = request.headers.get("host") || request.nextUrl.hostname;
 
     // ── SEO: Redirect www → non-www (permanent 301) ──
     if (hostname.startsWith("www.")) {
-        const nonWwwUrl = request.nextUrl.clone();
+        const nonWwwUrl = new URL(request.url);
         nonWwwUrl.hostname = hostname.replace(/^www\./, "");
         return NextResponse.redirect(nonWwwUrl, 301);
     }
 
+    // Static assets aur APIs ko bypass karein
     if (
         pathname.startsWith("/_next") ||
         pathname.startsWith("/api") ||
@@ -27,28 +31,39 @@ export function proxy(request: NextRequest) {
 
     const hasLocale = (locales as readonly string[]).includes(currentLocale);
 
+    // ── LOCALE REDIRECT LOGIC ──
     if (!hasLocale) {
         let targetLocale = request.cookies.get("NEXT_LOCALE")?.value;
 
-        if (!targetLocale) {
+        // Validating targetLocale from cookies
+        if (!targetLocale || !(locales as readonly string[]).includes(targetLocale)) {
             const acceptLanguage = request.headers.get("accept-language");
-            targetLocale = getLocaleFromHeaders(acceptLanguage);
+            targetLocale = getLocaleFromHeaders(acceptLanguage) || DEFAULT_LOCALE;
         }
 
-        const url = request.nextUrl.clone();
-        url.pathname = pathname === "/" ? `/${targetLocale}` : `/${targetLocale}${pathname}`;
+        const redirectPath = pathname === "/" ? `/${targetLocale}` : `/${targetLocale}${pathname}`;
 
-        const response = NextResponse.redirect(url);
+        const redirectUrl = new URL(redirectPath, request.url);
 
+        // Safety Check: Agar target URL same hai, toh loop break karne ke liye next() chalayein
+        if (redirectUrl.pathname === pathname) {
+            return NextResponse.next();
+        }
+
+        const response = NextResponse.redirect(redirectUrl);
+
+        // Cookie flags fix: Secure add karein agar production hai
         response.cookies.set("NEXT_LOCALE", targetLocale, {
             path: "/",
             maxAge: 31536000, // 1 year
             sameSite: "lax",
+            secure: process.env.NODE_ENV === "production",
         });
 
         return response;
     }
 
+    // ── NONCE & CSP HEADERS ──
     const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
 
     const cspHeader = `
