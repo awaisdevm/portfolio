@@ -2,13 +2,13 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { locales, getLocaleFromHeaders } from "./i18n/config";
 
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
     const hostname = request.headers.get("host") || request.nextUrl.hostname;
 
     // ── SEO: Redirect www → non-www (permanent 301) ──
     if (hostname.startsWith("www.")) {
-        const nonWwwUrl = new URL(request.url);
+        const nonWwwUrl = request.nextUrl.clone();
         nonWwwUrl.hostname = hostname.replace(/^www\./, "");
         return NextResponse.redirect(nonWwwUrl, 301);
     }
@@ -35,9 +35,10 @@ export function proxy(request: NextRequest) {
             targetLocale = getLocaleFromHeaders(acceptLanguage);
         }
 
-        const redirectPath = pathname === "/" ? `/${targetLocale}` : `/${targetLocale}${pathname}`;
+        const url = request.nextUrl.clone();
+        url.pathname = pathname === "/" ? `/${targetLocale}` : `/${targetLocale}${pathname}`;
 
-        const response = NextResponse.redirect(new URL(redirectPath, request.url));
+        const response = NextResponse.redirect(url);
 
         response.cookies.set("NEXT_LOCALE", targetLocale, {
             path: "/",
