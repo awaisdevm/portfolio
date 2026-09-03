@@ -1,4 +1,14 @@
-import { BlogPost, MediumRawFeed } from "../types";
+import Parser from "rss-parser";
+import { BlogPost } from "../types";
+
+const parser = new Parser({
+    customFields: {
+        item: [
+            ["content:encoded", "contentEncoded"],
+            ["dc:creator", "creator"],
+        ],
+    },
+});
 
 function decodeHTMLEntities(text: string): string {
     if (!text) return "";
@@ -23,19 +33,11 @@ function extractExcerpt(htmlContent: string, maxLength = 160): string {
         : cleanText;
 }
 
-/**
- * Optimizes Medium CDN images by requesting scaled 800px width images instead of 4K originals
- */
 function optimizeMediumImage(url: string): string {
-
     if (!url) return "/placeholder.svg";
-    // Replace raw medium CDN URLs with responsive optimized size
     if (url.includes("cdn-images-1.medium.com")) {
-
         return url.replace(/\/max\/\d+\//, "/max/800/");
-        
     }
-
     return url;
 }
 
@@ -56,45 +58,40 @@ function calculateReadTime(htmlContent: string): number {
 }
 
 export async function fetchMediumBlogs(username: string): Promise<BlogPost[]> {
+    if (!username) return [];
     const feedUrl = `https://medium.com/feed/@${username}`;
-    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`;
 
     try {
-        const response = await fetch(apiUrl, {
-            next: { revalidate: 3600 },
-        });
+        const res = await fetch(feedUrl, { next: { revalidate: 3600 } });
+        if (!res.ok) return [];
 
-        if (!response.ok) {
-            console.warn(`Medium API returned status ${response.status}`);
-            return [];
-        }
+        const xmlText = await res.text();
+        // 1. Use parseString instead of parseStringPromise
+        const feed = await parser.parseString(xmlText);
 
-        const data: MediumRawFeed = await response.json();
-        if (data.status !== "ok" || !data.items) return [];
+        if (!feed || !feed.items) return [];
 
-        return data.items.map((item) => {
-            const content = item.content || item.description || "";
-            const rawCategory = item.categories && item.categories.length > 0
-                ? item.categories[0]
-                : "Android";
-
-            const rawThumb = item.thumbnail || extractThumbnail(content);
+        // 2. Add explicit type for item
+        return feed.items.map((item: Parser.Item & { contentEncoded?: string }) => {
+            const content = item.contentEncoded || item.content || item.summary || "";
+            const categories = item.categories || [];
+            const rawCategory = categories.length > 0 ? categories[0] : "Android";
+            const rawThumb = extractThumbnail(content);
 
             return {
-                
-                id: item.guid || item.link,
-                title: decodeHTMLEntities(item.title),
-                publishDate: item.pubDate,
-                link: item.link,
+                id: item.guid || item.link || String(Math.random()),
+                title: decodeHTMLEntities(item.title || ""),
+                publishDate: item.isoDate || item.pubDate || "",
+                link: item.link || "",
                 thumbnailUrl: optimizeMediumImage(rawThumb),
-                categories: item.categories || [],
+                categories,
                 category: rawCategory.charAt(0).toUpperCase() + rawCategory.slice(1),
                 excerpt: extractExcerpt(content),
                 readTime: calculateReadTime(content),
             };
         });
     } catch (error) {
-        console.error("Medium Service Error:", error);
+        console.error("Medium Service RSS Parser Error:", error);
         return [];
     }
 }

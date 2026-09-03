@@ -1,6 +1,11 @@
 {
     "name": "Muhammad Awais",
     "shortName": "Awais",
+    "location": "Lahore, Pakistan",
+    "subtitle": "Building Clean & Performant Apps",
+    "availability": "Available for freelance",
+    "title": "Mobile App Developer",
+    "bio": "",
     "socialBaseUrls": {
         "github": "https://github.com/",
         "linkedin": "https://linkedin.com/in/",
@@ -8,9 +13,8 @@
         "medium": "https://medium.com/@",
         "stackoverflow": "https://stackoverflow.com/users/",
         "fiverr": "https://www.fiverr.com/",
-    "upwork": "https://www.upwork.com/freelancers/",
-    "whatsapp": "https://wa.me/"
-       
+        "upwork": "https://www.upwork.com/freelancers/",
+        "whatsapp": "https://wa.me/"
     },
     "usernames": {
         "github": "devawais-official",
@@ -20,7 +24,7 @@
         "stackoverflow": "15903692/devawais",
         "fiverr": "mughal963",
         "upwork": "~0144b9431f6bfcad3c",
-        "whatsapp": "+923010789555" 
+        "whatsapp": "+923010789555"
     },
     "contact": {
         "email": "mughal963@gmail.com",

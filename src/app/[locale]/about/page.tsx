@@ -1,6 +1,4 @@
-
-
-import { getTranslationServer } from "@/i18n/i18n-server";
+import { getTranslations } from "next-intl/server";
 import { getAboutData } from "@/features/about/data";
 import { generatePageMetadata } from "@/lib/metadata";
 import { getStandardPageLabels } from "@/lib/utils";
@@ -19,8 +17,9 @@ export async function generateMetadata({ params }: AboutPageProps): Promise<Meta
 
 export default async function AboutPage({ params }: AboutPageProps) {
   const { locale } = await params;
-  const translate = await getTranslationServer(locale);
-  const data =  await getAboutData(locale);
+  const t = await getTranslations({ locale });
+  const translate = (key: string, options?: any) => t(key, options);
+  const data = await getAboutData(locale);
 
   const labels = getStandardPageLabels(translate, "about");
   const tagline = translate("about.roleVal");

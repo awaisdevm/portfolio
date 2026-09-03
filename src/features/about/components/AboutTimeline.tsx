@@ -1,7 +1,7 @@
 "use client";
 
 import SectionHeader from "@/components/ui/SectionHeader";
-import { useI18n } from "@/i18n/i18n-client";
+import { useTranslations } from "next-intl";
 import type { Experience } from "../types";
 import { AnimatedSection } from "@/components/layout/AnimatedSection";
 
@@ -10,14 +10,14 @@ interface AboutTimelineProps {
 }
 
 export default function AboutTimeline({ experiences }: AboutTimelineProps) {
-  const { translate } = useI18n();
+  const t = useTranslations();
 
   return (
     <section className="section-pad border-t border-white/10">
       <div className="container-page">
         <SectionHeader
-          eyebrow={translate("about.experienceTitle")}
-          title={translate("about.experienceSubtitle")}
+          eyebrow={t("about.experienceTitle")}
+          title={t("about.experienceSubtitle")}
           className="mb-12 max-w-xl"
         />
 
@@ -34,13 +34,11 @@ export default function AboutTimeline({ experiences }: AboutTimelineProps) {
                            hover:border-primary/50 hover:from-white/[0.12] hover:to-white/[0.04] 
                            md:grid-cols-4 md:gap-10 [content-visibility:auto]"
               >
-                {/* Top Corner Glow */}
                 <div
                   className="pointer-events-none absolute -left-20 -top-20 h-40 w-40 rounded-full bg-primary/10 blur-2xl opacity-40 transition-opacity duration-500 group-hover:opacity-80"
                   aria-hidden="true"
                 />
 
-                {/* Left Column */}
                 <div className="relative z-10 flex flex-col gap-1 md:col-span-1">
                   <span className="mb-2 w-fit rounded-md border border-primary/30 bg-primary/10 px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-primary-light backdrop-blur-md">
                     {renderDurationWithTime(exp.duration)}
@@ -53,7 +51,6 @@ export default function AboutTimeline({ experiences }: AboutTimelineProps) {
                   </p>
                 </div>
 
-                {/* Right Column */}
                 <div className="relative z-10 flex flex-col gap-4 md:col-span-3">
                   <p className="text-sm leading-relaxed text-foreground/90">
                     {exp.description}

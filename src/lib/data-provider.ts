@@ -1,6 +1,6 @@
-import { getTranslationServer } from "@/i18n/i18n-server";
+import { getTranslations } from "next-intl/server";
 import { Locale } from "@/i18n/config";
-import { withTranslatedList, withTranslatedFields } from "@/i18n/data-mapper";
+import { withTranslatedList } from "@/i18n/data-mapper";
 
 import rawProjects from "@/data/projects.json";
 import rawTestimonials from "@/data/testimonials.json";
@@ -8,10 +8,11 @@ import rawExperiences from "@/data/experiences.json";
 import rawServices from "@/data/services.json";
 
 export async function getLocalizedPortfolioData(locale: Locale) {
-    const translate= await  getTranslationServer(locale);
+    const t = await getTranslations({ locale });
+    const translate = (key: string, options?: any) => t(key, options);
 
     // 1. Projects: Using List + Field mapping
-     const projects = withTranslatedList(rawProjects, "projectsData.items", translate, (scopedT, project) => ({
+    const projects = withTranslatedList(rawProjects, "projectsData.items", translate, (scopedT) => ({
         title: scopedT("title"),
         category: scopedT("category"),
         summary: scopedT("summary"),
@@ -22,20 +23,19 @@ export async function getLocalizedPortfolioData(locale: Locale) {
     }));
 
     // 2. Testimonials: Simple Mapping
-    const testimonials = withTranslatedList(rawTestimonials, "testimonialsData.items", translate, (scopedT, item) => ({
+    const testimonials = withTranslatedList(rawTestimonials, "testimonialsData.items", translate, (scopedT) => ({
         message: scopedT("message"),
     }));
 
     // 3. Experiences: Using List + Field mapping
-    const experiences = withTranslatedList(rawExperiences, "experiencesData", translate, (scopedT, exp) => ({
+    const experiences = withTranslatedList(rawExperiences, "experiencesData", translate, (scopedT) => ({
         role: scopedT("role"),
         description: scopedT("description"),
         achievements: [0, 1, 2].map((id) => scopedT(`achievements.${id}`)),
     }));
 
     // 4. Services: Simple Mapping
-    
-    const services = withTranslatedList(rawServices, "servicesData.items", translate, (scopedT, service) => ({
+    const services = withTranslatedList(rawServices, "servicesData.items", translate, (scopedT) => ({
         title: scopedT("title"),
         description: scopedT("description"),
     }));

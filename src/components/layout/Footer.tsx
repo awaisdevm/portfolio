@@ -3,12 +3,10 @@
 
 import React from "react";
 import Link from "next/link";
-import { useI18n } from "@/i18n/i18n-client";
+import { useTranslations } from "next-intl";
 import { siteConfig, socialLinks } from "@/lib/site-config";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-// ============================================================================
-// TYPES
-// ============================================================================
 interface FooterBrandProps {
   name: string;
   tagline: string;
@@ -27,24 +25,28 @@ interface FooterMetaProps {
   copyright: string;
 }
 
-// ============================================================================
-// MAIN COMPONENT
-// ============================================================================
 export default function Footer() {
-  const { translate } = useI18n();
+  const t = useTranslations();
 
-  // Clean key lookups mapped directly from ui.json
-  const tagline = translate("profile.title");
-  const location = translate("profile.location");
-  const availability = translate("profile.availability");
+  const tagline = t("profile.title");
+  const location = t("profile.location");
+  const availability = t("profile.availability");
 
-  const rawSpecialties = translate("footer.specialtiesList", { returnObjects: true });
-  const specialties: string[] = Array.isArray(rawSpecialties)
-    ? (rawSpecialties as string[])
-    : [];
+  let specialties: string[] = [];
+  try {
+    const raw = t.raw("footer.specialtiesList");
+    if (Array.isArray(raw)) specialties = raw;
+  } catch {
+    specialties = [];
+  }
 
   const currentYear = new Date().getFullYear().toString();
-  const copyrightText = translate("footer.copyright", { params: { year: currentYear }, });
+  let copyrightText = "";
+  try {
+    copyrightText = t("footer.copyright", { year: currentYear });
+  } catch {
+    copyrightText = `© ${currentYear} ${siteConfig.name}. All rights reserved.`;
+  }
 
   return (
     <footer className="w-full border-t border-border/30 bg-surface/40 py-12 backdrop-blur-md">
@@ -55,7 +57,7 @@ export default function Footer() {
 
           {/* 2. Specialties Column */}
           {specialties.length > 0 && (
-            <FooterCol title={translate("footer.specialties")}>
+            <FooterCol title={t("footer.specialties")}>
               {specialties.map((specialty) => (
                 <li key={specialty} className="leading-relaxed text-muted">
                   {specialty}
@@ -65,14 +67,18 @@ export default function Footer() {
           )}
 
           {/* 3. Contact & Social Column */}
-          <FooterCol title={translate("footer.getInTouch")}>
+          <FooterCol title={t("footer.getInTouch")}>
             <li className="mb-1">
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="inline-flex min-h-[32px] items-center text-sm text-foreground transition-colors hover:text-accent-light focus-visible:underline focus-visible:outline-none"
-                aria-label={`Send an email to ${siteConfig.email}`}
+                className="inline-flex min-h-[32px] items-center gap-2 text-sm text-foreground transition-colors hover:text-accent-light focus-visible:underline focus-visible:outline-none"
+                aria-label="Send an email"
               >
-                {siteConfig.email}
+                <svg className="h-4 w-4 shrink-0 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                Get in touch via email
               </a>
             </li>
 
@@ -93,11 +99,6 @@ export default function Footer() {
   );
 }
 
-// ============================================================================
-// SUB-COMPONENTS
-// ============================================================================
-
-/* 🏢 Brand Block */
 function FooterBrand({ name, tagline }: FooterBrandProps) {
   return (
     <div className="flex flex-col items-start gap-2">
@@ -132,7 +133,6 @@ function FooterBrand({ name, tagline }: FooterBrandProps) {
   );
 }
 
-/* 📦 Reusable Footer Column Wrapper */
 function FooterCol({ title, children }: FooterColProps) {
   return (
     <div>
@@ -142,7 +142,6 @@ function FooterCol({ title, children }: FooterColProps) {
   );
 }
 
-/* 🌐 Clean Social Links */
 function FooterSocials({ links }: FooterSocialsProps) {
   return (
     <div className="mt-3 flex flex-wrap items-center justify-start gap-2.5">
@@ -162,7 +161,6 @@ function FooterSocials({ links }: FooterSocialsProps) {
   );
 }
 
-/* 📝 Meta copyrights footer */
 function FooterMeta({ copyright }: FooterMetaProps) {
   return (
     <div className="mt-10 w-full border-t border-border/20 pt-6 text-xs text-muted">
@@ -170,6 +168,9 @@ function FooterMeta({ copyright }: FooterMetaProps) {
         <p className="text-left text-xs tracking-wide text-muted">
           {copyright}
         </p>
+        <div className="flex items-center">
+          <LanguageSwitcher direction="up" align="left" />
+        </div>
       </div>
     </div>
   );

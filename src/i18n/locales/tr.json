@@ -398,6 +398,7 @@
             "nameLabel": "Adınız",
             "emailLabel": "E-posta Adresiniz",
             "platformLabel": "Platform (Android / KMP / CMP / Flutter)",
+            "messageLabel": "Mesaj",
             "budgetLabel": "Bütçe Aralığı",
             "detailsLabel": "Proje Detayları veya Rol Kapsamı",
             "buttonSend": "Mesaj Gönder",
@@ -428,6 +429,7 @@
     "notfound": {
         "eyebrow": "404 Hatası",
         "title": "Bu ekran mevcut değil.",
+        "desc": "Aradığınız sayfa mevcut değil veya taşınmış olabilir.",
         "button": "Ana Sayfaya Dön"
     }
 }

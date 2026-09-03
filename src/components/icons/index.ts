@@ -38,3 +38,4 @@ export { XIcon } from "./XIcon";
 export { XCodeIcon } from "./XCodeIcon";
 export {LinkedinOutlinedIcon} from "./LinkedinOutlinedIcon";
 export {WhatsappIcon} from "./WhatsappIcon";
+export { HomeIcon } from "./HomeIcon";

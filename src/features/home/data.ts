@@ -1,19 +1,19 @@
 import { stats, testimonials, rawProjects } from "@/data/index";
-import { getTranslationServer } from "@/i18n/i18n-server";
+import { getTranslations } from "next-intl/server";
 import { Locale } from "@/i18n/config";
 import { withTranslatedList } from "@/i18n/data-mapper";
 
 export const getHomeData = async (locale: Locale) => {
-    const translate = await getTranslationServer(locale);
+    const t = await getTranslations({ locale });
+    const translate = (key: string, options?: any) => t(key, options);
 
-    // 1. Automatic Dynamic Project Mapping (No manual fields!)
+    // 1. Automatic Dynamic Project Mapping
     const featuredProjects = withTranslatedList(
         rawProjects.slice(0, 3),
         "projects.items",
         translate,
         (scopedT, raw) => ({
             ...raw,
-            // scopedT automatic slug resolution kar leta hai
             title: scopedT("title"),
             category: scopedT("category"),
             summary: scopedT("summary"),

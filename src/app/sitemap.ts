@@ -1,8 +1,7 @@
 import { rawProjects } from "@/data";
 import { siteConfig } from "@/lib/site-config";
+import { locales } from "@/i18n/config";
 import type { MetadataRoute } from "next";
-
-const locales = ["en", "ur"] as const;
 
 const staticPaths = [
   "",

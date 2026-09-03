@@ -1,6 +1,6 @@
 
 import React, { forwardRef } from "react";
-import { Slot } from "./slot";
+import { Slot } from "./Slot";
 import { cn } from "@/lib/utils";
 
 type Variant = "ghost" | "solid" | "outline";

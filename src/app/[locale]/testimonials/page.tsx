@@ -1,6 +1,4 @@
-
-
-import { getTranslationServer } from "@/i18n/i18n-server";
+import { getTranslations } from "next-intl/server";
 import { generatePageMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 import { testimonials as rawTestimonials } from "@/data";
@@ -22,9 +20,9 @@ export default async function TestimonialsPage({ params }: TestimonialsPageProps
   const { locale: rawLocale } = await params;
   const locale = resolveLocale(rawLocale);
 
-  const translate = await  getTranslationServer(locale);
+  const t = await getTranslations({ locale });
+  const translate = (key: string, options?: any) => t(key, options);
   const labels = getStandardPageLabels(translate, "testimonials");
-
 
   const testimonials: Testimonial[] = (rawTestimonials as RawTestimonial[]).map((item) => ({
     ...item,

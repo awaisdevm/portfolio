@@ -34,9 +34,7 @@ interface HomeViewProps {
     homeData: MappedHomeData;
     processSteps: ProcessStep[];
 }
-const TechMarquee = dynamic(() => import('@/components/sections/TechMarquee'), {
-  ssr: true,
-});
+import TechMarquee from "./TechMarquee";
 // ============================================================================
 // COMPONENT
 // ============================================================================
@@ -50,7 +48,7 @@ export default function HomeView({
     processSteps,
 }: HomeViewProps) {
     return (
-        <main className="flex flex-col gap-16 md:gap-24">
+        <div className="flex flex-col gap-16 md:gap-24">
             {/* 1. Hero Landing Area */}
             <HeroSection translate={translate} homeData={homeData} />
             <TechMarquee />
@@ -62,6 +60,6 @@ export default function HomeView({
 
             {/* 4. Client Feedbacks */}
             <TestimonialsSection translate={translate} homeData={homeData} />
-        </main>
+        </div>
     );
 }

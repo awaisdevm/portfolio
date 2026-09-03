@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -6,10 +5,9 @@ import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { m, AnimatePresence, Variants } from "framer-motion";
-import { navLinks } from "@/lib/site-config";
-import { useSocialLinks } from "@/hooks/useSocialLinks";
-import { ObfuscatedContact } from "../ui/ObfuscatedContact";
+import { navLinks, headerSocialLinks } from "@/lib/site-config";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { ArrowUpRightIcon, HomeIcon } from "../icons";
 
 // ============================================================================
 // TYPES & PROPS
@@ -70,7 +68,6 @@ export default function MobileDrawer({
   onClose,
 }: MobileDrawerProps) {
   const pathname = usePathname();
-  const socialLinks = useSocialLinks();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -98,6 +95,8 @@ export default function MobileDrawer({
     return pathname === localized; 
   };
 
+  const buttonText = translate("home.buttonStart") || "Start a Project";
+
   return createPortal(
     <AnimatePresence mode="wait">
       {isOpen && (
@@ -122,6 +121,25 @@ export default function MobileDrawer({
           >
             {/* NAVIGATION LINKS GRID */}
             <div className="grid grid-cols-1 gap-3 py-6">
+              {/* 1. Home Link with Home Icon */}
+              <m.div variants={itemVariants}>
+                <Link
+                  href={getLocalizedHref("/")}
+                  onClick={onClose}
+                  className={
+                    isActive("/")
+                      ? "flex items-center gap-3 rounded-xl border border-primary/30 bg-primary/15 p-4 font-semibold text-heading transition-all duration-200"
+                      : "flex items-center gap-3 rounded-xl p-4 text-muted transition-all duration-200 hover:bg-surface/60 hover:text-heading"
+                  }
+                >
+                  <HomeIcon size={18} className="text-primary" aria-hidden="true" />
+                  <span className="text-base font-semibold uppercase tracking-wide">
+                    {translate("nav.home") || "Home"}
+                  </span>
+                </Link>
+              </m.div>
+
+              {/* 2. Other Core Links (Services, About) */}
               {navLinks.map((link) => {
                 const active = isActive(link.href);
                 return (
@@ -135,7 +153,7 @@ export default function MobileDrawer({
                           : "flex items-center justify-between rounded-xl p-4 text-muted transition-all duration-200 hover:bg-surface/60 hover:text-heading"
                       }
                     >
-                      <span className="text-sm font-semibold uppercase tracking-wide">
+                      <span className="text-base font-semibold uppercase tracking-wide">
                         {translate(`nav.${link.label.toLowerCase()}`)}
                       </span>
                     </Link>
@@ -144,8 +162,8 @@ export default function MobileDrawer({
               })}
             </div>
 
-            {/* SEPARATOR & SOCIAL LINKS */}
-            <div className="mt-auto flex flex-col gap-6">
+            {/* SEPARATOR, DEVELOPER ICONS, LANGUAGE SWITCHER & CTA BUTTON */}
+            <div className="mt-auto flex flex-col gap-5 pb-6">
               <m.div
                 variants={itemVariants}
                 className="border-t border-border/20"
@@ -153,36 +171,39 @@ export default function MobileDrawer({
 
               <m.div
                 variants={itemVariants}
-                className="flex flex-col items-center gap-4 py-4"
+                className="flex items-center justify-between gap-4"
               >
-                <LanguageSwitcher />
-
-                <div className="flex items-center justify-center gap-4">
-                  {socialLinks.map((social) =>
-                    social.isEmail ? (
-                      <ObfuscatedContact
-                        key={social.label}
-                        type="email"
-                        value={social.href}
-                        className="flex h-11 w-11 items-center justify-center rounded-full border border-border/30 bg-surface/60 text-muted transition-all duration-200 hover:border-accent/40 hover:bg-surface hover:text-accent-light"
-                      >
-                        <social.icon className="h-5 w-5" aria-hidden="true" />
-                      </ObfuscatedContact>
-                    ) : (
-                      <a
-                        key={social.label}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Visit my ${social.label} profile`}
-                        className="flex h-11 w-11 items-center justify-center rounded-full border border-border/30 bg-surface/60 text-muted transition-all duration-200 hover:border-accent/40 hover:bg-surface hover:text-accent-light"
-                        onClick={onClose}
-                      >
-                        <social.icon className="h-5 w-5" aria-hidden="true" />
-                      </a>
-                    )
-                  )}
+                {/* Developer Icons (GitHub, LinkedIn) */}
+                <div className="flex items-center gap-3">
+                  {headerSocialLinks.map((social) => (
+                    <a
+                      key={social.id}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit my ${social.label} profile`}
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-border/30 bg-surface/60 text-muted transition-all duration-200 hover:border-primary/40 hover:bg-surface hover:text-primary-light"
+                      onClick={onClose}
+                    >
+                      <social.icon className="h-5 w-5" aria-hidden="true" />
+                    </a>
+                  ))}
                 </div>
+
+                {/* Language Switcher */}
+                <LanguageSwitcher direction="up" align="right" />
+              </m.div>
+
+              {/* Standout Primary CTA Button */}
+              <m.div variants={itemVariants} className="w-full">
+                <Link
+                  href={getLocalizedHref("/contact")}
+                  onClick={onClose}
+                  className="flex w-full min-h-[48px] items-center justify-center gap-2 rounded-full bg-primary py-3.5 font-mono text-xs font-bold uppercase tracking-wider text-[#151828] shadow-lg shadow-primary/25 hover:bg-primary-light hover:shadow-xl active:scale-95"
+                >
+                  <span className="font-bold text-[#151828]">{buttonText}</span>
+                  <ArrowUpRightIcon size={16} className="stroke-[2.5] text-[#151828]" aria-hidden="true" />
+                </Link>
               </m.div>
             </div>
           </m.div>

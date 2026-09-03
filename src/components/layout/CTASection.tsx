@@ -1,16 +1,12 @@
-
 "use client";
 
 import Link from "next/link";
-import { Button } from "../ui/button";
-import { useI18n } from "@/i18n/i18n-client";
+import { Button } from "../ui/Button";
+import { useTranslations } from "next-intl";
 import { ArrowUpRightIcon } from "../icons";
 import { MappedHomeData } from "@/features/home/components/HomeView";
-import { AnimatedSection } from "../layout/AnimatedSection";
+import { AnimatedSection } from "./AnimatedSection";
 
-// ============================================================================
-// STYLING CONFIGURATION (Aligned with globals.css Design Tokens)
-// ============================================================================
 const ctaStyles = {
   sectionPadding: "relative overflow-hidden pb-24",
   boxWrapper:
@@ -29,44 +25,41 @@ const btnStyles = {
 } as const;
 
 interface CTASectionProps {
-  homeData: MappedHomeData;
+  homeData: Pick<MappedHomeData, "contactPath" | "projectsPath">;
 }
 
 export default function CTASection({ homeData }: CTASectionProps) {
-  const { translate } = useI18n();
+  const t = useTranslations();
   const { contactPath, projectsPath } = homeData;
 
   return (
     <section className={ctaStyles.sectionPadding}>
       <div className="container-page relative">
         <AnimatedSection className={ctaStyles.boxWrapper}>
-          {/* Ambient background accent tint */}
           <div className="pointer-events-none absolute inset-0 bg-primary/5 mix-blend-overlay" />
 
-          <p className={ctaStyles.eyebrow}>{translate("cta.bookedStatus")}</p>
+          <p className={ctaStyles.eyebrow}>{t("cta.bookedStatus")}</p>
 
-          <h2 className={ctaStyles.title}>{translate("cta.title")}</h2>
+          <h2 className={ctaStyles.title}>{t("cta.title")}</h2>
 
-          <p className={ctaStyles.description}>{translate("cta.description")}</p>
+          <p className={ctaStyles.description}>{t("cta.description")}</p>
 
           <div className={ctaStyles.buttonContainer}>
-            {/* Primary "Start Project" Button */}
             <Button asChild className={btnStyles.solid}>
               <Link
                 href={contactPath}
                 className="flex min-h-[44px] items-center justify-center gap-2"
               >
-                {translate("home.buttonStart")} <ArrowUpRightIcon size={16} />
+                {t("home.buttonStart")} <ArrowUpRightIcon size={16} />
               </Link>
             </Button>
 
-            {/* Secondary "View Projects" Button */}
             <Button asChild variant="outline" className={btnStyles.outline}>
               <Link
                 href={projectsPath}
                 className="flex min-h-[44px] items-center justify-center"
               >
-                {translate("home.buttonView")}
+                {t("home.buttonView")}
               </Link>
             </Button>
           </div>

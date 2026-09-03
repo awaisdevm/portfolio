@@ -1,9 +1,10 @@
-import { getTranslationServer } from "@/i18n/i18n-server";
+import { getTranslations } from "next-intl/server";
 import HomeView from "@/features/home/components/HomeView";
 import { getHomeData } from "@/features/home/data";
 import { siteRoutes } from "@/lib/site-config";
 import { getLocalizedPath } from "@/lib/utils";
 import { Locale, locales } from "@/i18n/config";
+import { TranslateFn } from "@/i18n/data-mapper";
 
 export const revalidate = 3600;
 
@@ -20,7 +21,8 @@ interface HomeProps {
 export default async function HomePage({ params }: HomeProps) {
   const { locale } = await params;
 
-  const translate = await getTranslationServer(locale);
+  const t = await getTranslations({ locale });
+  const translate: TranslateFn = (key: string, options?: any) => t(key, options) as string;
   const homeData = await getHomeData(locale);
 
   // Path resolution & static texts

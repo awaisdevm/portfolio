@@ -12,7 +12,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   const rating = Math.min(Math.max(testimonial.rating || 5, 1), 5);
 
   return (
-    <article 
+    <article
       className="group relative flex flex-col justify-between overflow-hidden rounded-2xl 
                  border border-white/10 border-t-white/25 
                  bg-gradient-to-b from-white/[0.08] to-white/[0.02] 
@@ -23,9 +23,9 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
                  [content-visibility:auto]"
     >
       {/* Top Glass Inner Glow/Highlight Effect */}
-      <div 
-        className="pointer-events-none absolute -top-24 -left-24 h-48 w-48 rounded-full bg-primary/10 blur-2xl transition-opacity duration-500 group-hover:opacity-100 opacity-50" 
-        aria-hidden="true" 
+      <div
+        className="pointer-events-none absolute -top-24 -left-24 h-48 w-48 rounded-full bg-primary/10 blur-2xl transition-opacity duration-500 group-hover:opacity-100 opacity-50"
+        aria-hidden="true"
       />
 
       {/* Top Bar: Quote Icon + Rating Stars */}

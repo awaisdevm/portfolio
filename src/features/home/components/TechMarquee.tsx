@@ -15,7 +15,7 @@ import {
   SwiftIcon,
   VSCodeIcon,
 
-} from "../icons/";
+} from "@/components/icons";
 
 export default function TechMarquee() {
   // expertise.json se selected key skills & tools

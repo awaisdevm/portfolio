@@ -1,25 +1,17 @@
-// SystemStatusPanel.tsx
 "use client";
 
 import { MapPinIcon } from "@/components/icons";
-import { useI18n } from "@/i18n/i18n-client";
+import { useTranslations } from "next-intl";
 
-// ============================================================================
-// TYPES & PROPS
-// ============================================================================
 interface SystemStatusPanelProps {
   location: string;
 }
 
-// ============================================================================
-// MAIN COMPONENT
-// ============================================================================
 export default function SystemStatusPanel({ location }: SystemStatusPanelProps) {
-  const { translate } = useI18n();
+  const t = useTranslations();
 
   return (
     <section className="card-surface relative flex h-full min-h-[420px] w-full flex-col justify-between overflow-hidden p-0">
-      {/* Corner HUD brackets — signature framing device */}
       {[
         "top-4 left-4 border-t border-l",
         "top-4 right-4 border-t border-r",
@@ -33,7 +25,6 @@ export default function SystemStatusPanel({ location }: SystemStatusPanelProps) 
         />
       ))}
 
-      {/* Scanline texture */}
       <div
         className="pointer-events-none absolute inset-0 z-0 opacity-[0.06]"
         style={{
@@ -43,10 +34,8 @@ export default function SystemStatusPanel({ location }: SystemStatusPanelProps) 
         aria-hidden="true"
       />
 
-      {/* Radar sweep */}
       <div className="relative flex flex-1 items-center justify-center py-12">
         <div className="relative flex h-52 w-52 items-center justify-center">
-          {/* Concentric rings */}
           {[100, 68, 36].map((size) => (
             <span
               key={size}
@@ -56,7 +45,6 @@ export default function SystemStatusPanel({ location }: SystemStatusPanelProps) 
             />
           ))}
 
-          {/* Rotating sweep */}
           <div
             className="absolute inset-0 animate-[spin_6s_linear_infinite] rounded-full opacity-70"
             style={{
@@ -66,7 +54,6 @@ export default function SystemStatusPanel({ location }: SystemStatusPanelProps) 
             aria-hidden="true"
           />
 
-          {/* Center pulse */}
           <span className="relative flex h-3 w-3 items-center justify-center">
             <span className="absolute h-3 w-3 animate-ping rounded-full bg-primary/60" />
             <span className="relative h-1.5 w-1.5 rounded-full bg-primary" />
@@ -74,7 +61,6 @@ export default function SystemStatusPanel({ location }: SystemStatusPanelProps) 
         </div>
       </div>
 
-      {/* Location Readout Footer */}
       <div className="relative z-10 w-full border-t border-border/20 bg-surface-sunken/60 p-6 backdrop-blur-sm sm:p-8">
         <div className="mb-3 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
@@ -83,7 +69,7 @@ export default function SystemStatusPanel({ location }: SystemStatusPanelProps) 
               aria-hidden="true"
             />
             <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.25em] text-heading">
-              {translate("contact.locationTitle")}
+              {t("contact.locationTitle")}
             </h3>
           </div>
           <div className="flex items-center gap-1.5">

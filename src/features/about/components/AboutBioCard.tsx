@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { siteConfig } from "@/lib/site-config";
-import { useI18n } from "@/i18n/i18n-client";
+import { useTranslations } from "next-intl";
 import data from "@/data/personal-data.json";
 import { DownloadIcon, GithubIcon, LinkedinIcon } from "@/components/icons";
 import { getGitHubStatsAction, type GitHubStats } from "../services/githubService";
@@ -16,7 +16,7 @@ interface AboutBioCardProps {
 }
 
 export default function AboutBioCard({ stats, tagline, availability }: AboutBioCardProps) {
-  const { translate } = useI18n();
+  const t = useTranslations();
 
   const [githubStats, setGithubStats] = useState<GitHubStats & { loading: boolean }>({
     followers: 0,
@@ -40,19 +40,19 @@ export default function AboutBioCard({ stats, tagline, availability }: AboutBioC
 
   const finalTagline =
     !tagline || tagline === "about.roleVal" || tagline === "about.role"
-      ? translate("about.roleVal") || "Mobile App Developer"
+      ? t("about.roleVal") || "Mobile App Developer"
       : tagline;
 
   const finalAvailability =
     !availability || availability === "about.availability"
-      ? translate("about.availability") || "Available for freelance"
+      ? t("about.availability") || "Available for freelance"
       : availability;
 
   const statEntries = [
-    { label: translate("about.stats.experience"), value: stats.yearsExperience },
-    { label: translate("about.stats.completed"), value: stats.projectsCompleted },
-    { label: translate("about.stats.satisfied"), value: stats.clientsSatisfied },
-    { label: translate("about.stats.stores"), value: stats.appsOnStores },
+    { label: t("about.stats.experience"), value: stats.yearsExperience },
+    { label: t("about.stats.completed"), value: stats.projectsCompleted },
+    { label: t("about.stats.satisfied"), value: stats.clientsSatisfied },
+    { label: t("about.stats.stores"), value: stats.appsOnStores },
   ];
 
   const resumeHref = "/resume.pdf";
@@ -68,13 +68,11 @@ export default function AboutBioCard({ stats, tagline, availability }: AboutBioC
                  hover:from-white/[0.12] hover:to-white/[0.04] 
                  [content-visibility:auto]"
     >
-      {/* Liquid Glass Ambient Glow */}
       <div
         className="pointer-events-none absolute -left-20 -top-20 h-48 w-48 rounded-full bg-primary/15 blur-2xl opacity-60 transition-opacity duration-500 group-hover:opacity-100"
         aria-hidden="true"
       />
 
-      {/* Top Section: Avatar & Role */}
       <div className="relative z-10">
         <div className="mb-6 flex items-center justify-between">
           <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-inner backdrop-blur-md">
@@ -100,21 +98,20 @@ export default function AboutBioCard({ stats, tagline, availability }: AboutBioC
 
         <dl className="mt-5 flex flex-col gap-2.5 text-sm">
           <div className="flex justify-between gap-4 border-b border-white/5 pb-2">
-            <dt className="text-muted">{translate("about.infoTitle")}</dt>
+            <dt className="text-muted">{t("about.infoTitle")}</dt>
             <dd className="font-medium text-heading">
-              {translate("about.infoLocation")}
+              {t("about.infoLocation")}
             </dd>
           </div>
           <div className="flex justify-between gap-4 pt-1">
-            <dt className="text-muted">{translate("about.infoFocus")}</dt>
+            <dt className="text-muted">{t("about.infoFocus")}</dt>
             <dd className="font-medium text-heading">
-              {translate("about.infoFocusVal")}
+              {t("about.infoFocusVal")}
             </dd>
           </div>
         </dl>
       </div>
 
-      {/* Middle Grid Stats */}
       <div className="relative z-10 grid grid-cols-2 gap-3 border-t border-white/10 pt-6">
         {statEntries.map((s) => (
           <div
@@ -127,7 +124,6 @@ export default function AboutBioCard({ stats, tagline, availability }: AboutBioC
         ))}
       </div>
 
-      {/* Bottom Section: Socials & Action */}
       <div className="relative z-10 mt-auto flex w-full flex-col pt-6">
         <div className="grid grid-cols-2 gap-3 border-t border-white/10 pt-5">
           <div className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
@@ -139,7 +135,7 @@ export default function AboutBioCard({ stats, tagline, availability }: AboutBioC
                     {githubStats.loading ? "..." : githubStats.followers}
                   </p>
                   <p className="mt-1 font-mono text-[9px] uppercase tracking-wider text-muted">
-                    {translate("about.githubFollowers") || "Followers"}
+                    {t("about.githubFollowers") || "Followers"}
                   </p>
                 </div>
                 <span className="font-mono text-xs text-muted/40">·</span>
@@ -148,7 +144,7 @@ export default function AboutBioCard({ stats, tagline, availability }: AboutBioC
                     {githubStats.loading ? "..." : `${githubStats.stars}★`}
                   </p>
                   <p className="mt-1 font-mono text-[9px] uppercase tracking-wider text-muted">
-                    {translate("about.githubStars") || "Stars"}
+                    {t("about.githubStars") || "Stars"}
                   </p>
                 </div>
               </div>
@@ -162,7 +158,7 @@ export default function AboutBioCard({ stats, tagline, availability }: AboutBioC
                {stats.followers}
               </p>
               <p className="mt-1 font-mono text-[9px] uppercase tracking-wider text-muted">
-                {translate("about.linkedinConnections") || "Connections"}
+                {t("about.linkedinConnections") || "Connections"}
               </p>
             </div>
           </div>
@@ -178,7 +174,7 @@ export default function AboutBioCard({ stats, tagline, availability }: AboutBioC
             size={14}
             className="transition-transform duration-300 group-hover:-translate-y-0.5"
           />
-          {translate("about.downloadCv") || "Download CV / Resume"}
+          {t("about.downloadCv") || "Download CV / Resume"}
         </a>
       </div>
     </div>

@@ -32,7 +32,7 @@ const eslintConfig = defineConfig([
             'no-console': ['warn', { allow: ['warn', 'error'] }],
             'prefer-const': 'error',
             'eqeqeq': ['error', 'always'],
-            '@typescript-eslint/no-explicit-any': 'off',
+            '@typescript-eslint/no-explicit-any': 'warn',
         },
     },
     globalIgnores([
