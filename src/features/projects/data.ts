@@ -1,8 +1,7 @@
 import { rawProjects } from "@/data";
-import { getTranslationServer } from "@/i18n/i18n-server";
+import { getTranslations } from "next-intl/server";
 import type { Locale } from "@/i18n/config";
 import { withTranslatedFields } from "@/i18n/data-mapper";
-import { TranslateFn } from "@/i18n/types";
 
 export interface RawProject {
     id: number;
@@ -19,7 +18,6 @@ export interface RawProject {
     updatedAt?: string;
 }
 
-
 export interface Project extends RawProject {
     title: string;
     summary: string;
@@ -27,16 +25,20 @@ export interface Project extends RawProject {
     altText: string;
 }
 
-
 export function mapToLocalizedProject(
     raw: RawProject,
-    translate: TranslateFn
+    translate: (key: string, options?: any) => any
 ): Project {
     return withTranslatedFields(raw, "projects.items", translate, (st) => {
         const title = (st("title") ?? "") as string;
         const summary = (st("summary") ?? "") as string;
         const category = (st("category") ?? "") as string;
-        const fetchedAlt = st("altText");
+        let fetchedAlt: any = "";
+        try {
+            fetchedAlt = st("altText");
+        } catch {
+            fetchedAlt = "";
+        }
         const altText = (fetchedAlt && typeof fetchedAlt === "string" && fetchedAlt.length > 0)
             ? fetchedAlt
             : `${title || "Project"} preview by Muhammad Awais`;
@@ -47,12 +49,11 @@ export function mapToLocalizedProject(
             altText,
         };
     }) as Project;
-
 }
 
-
 export async function getProjectData(locale: Locale): Promise<Project[]> {
-    const translate = await  getTranslationServer(locale);
+    const t = await getTranslations({ locale });
+    const translate = (key: string, options?: any) => t(key, options);
     return (rawProjects as RawProject[]).map((raw) =>
         mapToLocalizedProject(raw, translate)
     );

@@ -1,11 +1,18 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { locales,  getLocaleFromHeaders } from "./i18n/config";
+import { locales, getLocaleFromHeaders } from "./i18n/config";
 
 export function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
+    const hostname = request.headers.get("host") || request.nextUrl.hostname;
 
-    // 1. STATIC ASSETS & IMAGES BYPASS
+    // ── SEO: Redirect www → non-www (permanent 301) ──
+    if (hostname.startsWith("www.")) {
+        const nonWwwUrl = new URL(request.url);
+        nonWwwUrl.hostname = hostname.replace(/^www\./, "");
+        return NextResponse.redirect(nonWwwUrl, 301);
+    }
+
     if (
         pathname.startsWith("/_next") ||
         pathname.startsWith("/api") ||
@@ -20,23 +27,18 @@ export function proxy(request: NextRequest) {
 
     const hasLocale = (locales as readonly string[]).includes(currentLocale);
 
-    // 2. AUTOMATIC BROWSER LOCALE DETECTION LOGIC
     if (!hasLocale) {
-        // Step A: Pehle dekho ke user ne pehle koi language select karke cookie mein save ki hai?
         let targetLocale = request.cookies.get("NEXT_LOCALE")?.value;
 
-        // Step B: Agar cookie nahi mili, toh browser ki Accept-Language header se language detect karo
         if (!targetLocale) {
             const acceptLanguage = request.headers.get("accept-language");
             targetLocale = getLocaleFromHeaders(acceptLanguage);
         }
 
-        // Redirect Path Banayein
         const redirectPath = pathname === "/" ? `/${targetLocale}` : `/${targetLocale}${pathname}`;
 
         const response = NextResponse.redirect(new URL(redirectPath, request.url));
 
-        // Cookie set kar dein taaki agli baar detection fast ho
         response.cookies.set("NEXT_LOCALE", targetLocale, {
             path: "/",
             maxAge: 31536000, // 1 year
@@ -46,7 +48,6 @@ export function proxy(request: NextRequest) {
         return response;
     }
 
-    // 3. SECURITY & CSP HEADERS (Aapka existing logic)
     const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
 
     const cspHeader = `

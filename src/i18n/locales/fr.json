@@ -398,6 +398,7 @@
             "nameLabel": "Nom",
             "emailLabel": "E-mail",
             "platformLabel": "Plateforme (Android / KMP / CMP / Flutter)",
+            "messageLabel": "Message",
             "budgetLabel": "Fourchette budgétaire",
             "detailsLabel": "Détails du projet ou rôle recherché",
             "buttonSend": "Envoyer le message",
@@ -428,6 +429,7 @@
     "notfound": {
         "eyebrow": "Erreur 404",
         "title": "Cet écran n'existe pas.",
+        "desc": "La page que vous recherchez n'existe pas ou a peut-être été déplacée.",
         "button": "Retour à l'accueil"
     }
 }

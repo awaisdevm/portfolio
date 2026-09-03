@@ -1,6 +1,6 @@
-import { getLocaleServer, getTranslationServer } from "@/i18n/i18n-server";
+import { getTranslations, getLocale } from "next-intl/server";
 import Link from "next/link";
-import { getLocalizedPath } from "@/lib/utils"; // 👈 Dynamic routing utility
+import { getLocalizedPath } from "@/lib/utils";
 
 const notFoundStyles = {
   container: "container-page flex min-h-[60vh] flex-col items-center justify-center text-center",
@@ -11,10 +11,10 @@ const notFoundStyles = {
 };
 
 export default async function NotFound() {
-  const locale = await getLocaleServer();
-  const translate = await  getTranslationServer(locale); // 👈 Correct descriptive naming
+  const locale = await getLocale();
+  const t = await getTranslations({ locale });
+  const translate = (key: string, options?: any) => t(key, options);
 
-  // 1. Resolve active dynamic home path instead of hardcoding '/'
   const homePath = getLocalizedPath("/", locale);
 
   return (

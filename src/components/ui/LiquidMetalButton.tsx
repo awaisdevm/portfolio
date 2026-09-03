@@ -30,10 +30,20 @@ export function LiquidMetalButton({
     const rippleId = useRef(0);
 
     const dim = useMemo(() => {
-        return viewMode === "icon"
-            ? { w: 46, h: 46, innerW: 42, innerH: 42, shaderW: 46, shaderH: 46 }
-            : { w: 142, h: 46, innerW: 138, innerH: 42, shaderW: 142, shaderH: 46 };
-    }, [viewMode]);
+        if (viewMode === "icon") {
+            return { w: 46, h: 46, innerW: 42, innerH: 42, shaderW: 46, shaderH: 46 };
+        }
+        // Dynamically calculate button width based on label length to support internationalized text
+        const calculatedW = Math.max(142, label.length * 9 + 48);
+        return {
+            w: calculatedW,
+            h: 46,
+            innerW: calculatedW - 4,
+            innerH: 42,
+            shaderW: calculatedW,
+            shaderH: 46,
+        };
+    }, [viewMode, label]);
 
     useEffect(() => {
         let isMounted = true;
@@ -72,14 +82,33 @@ export function LiquidMetalButton({
             }
         };
 
-        loadShader();
-
-        return () => {
-            isMounted = false;
+        const cleanupShader = () => {
             if (shaderMount.current?.destroy) {
                 shaderMount.current.destroy();
                 shaderMount.current = null;
             }
+        };
+
+        // Pause WebGL rendering when element is outside viewport
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    loadShader();
+                } else {
+                    cleanupShader();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (shaderRef.current) {
+            observer.observe(shaderRef.current);
+        }
+
+        return () => {
+            isMounted = false;
+            observer.disconnect();
+            cleanupShader();
         };
     }, [dim.w, dim.h]);
 

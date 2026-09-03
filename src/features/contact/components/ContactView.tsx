@@ -45,17 +45,19 @@ export default function ContactView({ labels, location, formLabels }: ContactVie
     {
       id: "email",
       label: formLabels.emailLabel || "Email",
-      value: siteConfig.email,
+      value: "Tap to send an email",
       icon: MailIcon,
-      isObfuscated: true,
-      obfuscateType: "email" as const,
+      isObfuscated: false,
+      href: `mailto:${siteConfig.email}`,
     },
     ...(whatsappOption
       ? [
           {
             ...whatsappOption,
             id: "whatsapp",
-            obfuscateType: "whatsapp" as const,
+            meta: undefined,
+            value: "Tap to chat on WhatsApp",
+            isObfuscated: false,
           },
         ]
       : []),

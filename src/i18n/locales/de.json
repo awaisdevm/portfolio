@@ -127,7 +127,7 @@
             "experience": "6+ Jahre Erfahrung",
             "completed": "Production Apps",
             "satisfied": "Zufriedene Kunden",
-            "stats": "Veröffentlichte Apps"
+            "stores": "Veröffentlichte Apps"
         }
     },
     "blog": {
@@ -398,6 +398,7 @@
             "nameLabel": "Name",
             "emailLabel": "E-Mail-Adresse",
             "platformLabel": "Plattform (Android / KMP / CMP / Flutter)",
+            "messageLabel": "Nachricht",
             "budgetLabel": "Budgetrahmen",
             "detailsLabel": "Projektdetails oder Rollenbeschreibung",
             "buttonSend": "Nachricht senden",
@@ -428,6 +429,7 @@
     "notfound": {
         "eyebrow": "404 Fehler",
         "title": "Diese Seite existiert nicht.",
+        "desc": "Die Seite, die Sie suchen, existiert nicht oder wurde möglicherweise verschoben.",
         "button": "Zurück zur Startseite"
     }
 }

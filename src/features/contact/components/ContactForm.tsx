@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import { m, type Variants } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { ContactFormLabels } from "../types";
 import { ContactService, ContactFormValues } from "../services/contact-service";
+import { useTranslations } from "next-intl";
 
 interface ContactFormProps {
   labels: ContactFormLabels;
@@ -16,6 +17,7 @@ const cardVariants: Variants = {
 };
 
 export default function ContactForm({ labels }: ContactFormProps) {
+  const t = useTranslations();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<{ type: "success" | "error"; msg: string } | null>(null);
 
@@ -39,7 +41,10 @@ export default function ContactForm({ labels }: ContactFormProps) {
       const result = await ContactService.sendInquiry(formData);
 
       if (result.ok) {
-        setStatus({ type: "success", msg: "Message sent successfully! I'll get back to you soon." });
+        setStatus({
+          type: "success",
+          msg: t("contact.form.successMsg") || "Message sent successfully! I'll get back to you soon.",
+        });
         setFormData({
           name: "",
           email: "",
@@ -49,11 +54,14 @@ export default function ContactForm({ labels }: ContactFormProps) {
       } else {
         setStatus({
           type: "error",
-          msg: result.error || "Validation failed. Please check your input.",
+          msg: result.error || t("contact.form.errorMsg") || "Validation failed. Please check your input.",
         });
       }
     } catch {
-      setStatus({ type: "error", msg: "A connection error occurred. Please try again." });
+      setStatus({
+        type: "error",
+        msg: t("contact.form.connectionError") || "A connection error occurred. Please try again.",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -66,6 +74,7 @@ export default function ContactForm({ labels }: ContactFormProps) {
         <input
           type="text"
           name="company"
+          id="contact-company-hp"
           value={formData.company}
           onChange={handleChange}
           className="hidden"
@@ -74,10 +83,11 @@ export default function ContactForm({ labels }: ContactFormProps) {
         />
 
         <div className="space-y-1.5">
-          <label className="ml-1 font-mono text-xs uppercase tracking-widest text-muted">
+          <label htmlFor="contact-name" className="ml-1 font-mono text-xs uppercase tracking-widest text-muted">
             {labels.nameLabel}
           </label>
           <input
+            id="contact-name"
             name="name"
             type="text"
             required
@@ -89,10 +99,11 @@ export default function ContactForm({ labels }: ContactFormProps) {
         </div>
 
         <div className="space-y-1.5">
-          <label className="ml-1 font-mono text-xs uppercase tracking-widest text-muted">
+          <label htmlFor="contact-email" className="ml-1 font-mono text-xs uppercase tracking-widest text-muted">
             {labels.emailLabel}
           </label>
           <input
+            id="contact-email"
             name="email"
             type="email"
             required
@@ -104,10 +115,11 @@ export default function ContactForm({ labels }: ContactFormProps) {
         </div>
 
         <div className="space-y-1.5">
-          <label className="ml-1 font-mono text-xs uppercase tracking-widest text-muted">
+          <label htmlFor="contact-message" className="ml-1 font-mono text-xs uppercase tracking-widest text-muted">
             {labels.messageLabel}
           </label>
           <textarea
+            id="contact-message"
             name="message"
             required
             value={formData.message}
@@ -136,7 +148,7 @@ export default function ContactForm({ labels }: ContactFormProps) {
           disabled={isSubmitting}
           className="btn-primary w-full py-6 text-sm uppercase tracking-widest disabled:opacity-50"
         >
-          {isSubmitting ? "Sending..." : labels.buttonSend}
+          {isSubmitting ? (t("contact.form.sending") || "Sending...") : labels.buttonSend}
         </Button>
       </form>
     </m.div>

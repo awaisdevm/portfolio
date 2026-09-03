@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   TAILWIND CSS V4 - GLOBAL DESIGN SYSTEM TOKENS (JUNGLE GREEN & BEIGE)
+   TAILWIND CSS V4 - GLOBAL DESIGN SYSTEM TOKENS
    ========================================================================== */
 :root {
-  /* Deep Navy & Slate Blue Base (from UI palette) */
+  /* Deep Navy & Slate Blue Base */
   --background: #151828;
   --surface: #2d3250;
   --surface-elevated: #424769;
@@ -85,10 +85,8 @@
   --radius-3xl: 32px;
   --radius-full: 9999px;
 
-  /* ⚡ Tailwind v4 Theme Keyframe & Animation Registration */
   --animate-marquee: marquee 70s linear infinite;
   --animate-marquee-rtl: marquee-rtl 70s linear infinite;
-
   --animate-liquid: liquid 12s ease-in-out infinite;
   --animate-float: float 6s ease-in-out infinite;
   --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -119,7 +117,8 @@ h6 {
   @apply font-display font-bold text-heading;
 }
 
-a {
+/* ⚡ FIX: :where(a) ensures zero-specificity so buttons override link color */
+:where(a) {
   @apply text-link transition-colors hover:text-accent-light;
 }
 
@@ -175,9 +174,7 @@ a {
   @apply flex flex-grow flex-col pt-24 sm:pt-28;
 }
 
-/* ==========================================================================
-   KEYFRAME ANIMATIONS & MARQUEE BEHAVIOR
-   ========================================================================== */
+/* Keyframes */
 @keyframes liquid {
   0% {
     transform: translate(0, 0) scale(1) rotate(0deg);
@@ -221,6 +218,7 @@ a {
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -230,12 +228,12 @@ a {
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(50%);
   }
 }
 
-/* Marquee Utility & RTL/Hover handling */
 .animate-marquee {
   display: flex;
   width: max-content;

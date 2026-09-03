@@ -427,6 +427,7 @@
     "notfound": {
         "eyebrow": "404 Error",
         "title": "This screen doesn't exist.",
+        "desc": "The page you're looking for doesn't exist or may have been moved.",
         "button": "Back to Home"
     }
 }

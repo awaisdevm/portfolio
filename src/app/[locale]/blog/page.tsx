@@ -1,10 +1,8 @@
-
-
 import { fetchMediumBlogs } from "@/features/blog/services/medium-service";
 import BlogView from "@/features/blog/components/BlogView";
 import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/metadata";
-import { getTranslationServer } from "@/i18n/i18n-server";
+import { getTranslations } from "next-intl/server";
 import { getStandardPageLabels } from "@/lib/utils";
 import type { Locale } from "@/i18n/config";
 import personalData from "@/data/personal-data.json";
@@ -20,9 +18,9 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 
 export default async function BlogPage({ params }: BlogPageProps) {
   const { locale } = await params;
-  const translate = await  getTranslationServer(locale);
+  const t = await getTranslations({ locale });
+  const translate = (key: string, options?: any) => t(key, options);
   const labels = getStandardPageLabels(translate, "blog");
-
 
   const mediumUsername = personalData.usernames?.medium;
   const posts = await fetchMediumBlogs(mediumUsername);

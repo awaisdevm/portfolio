@@ -1,34 +1,24 @@
+import { NextIntlClientProvider } from "next-intl";
 import "@/styles/globals.css";
 
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import Header from "@/components/layout/Header";
-
-import dynamic from "next/dynamic";
+import CTASection from "@/components/layout/CTASection";
+import Footer from "@/components/layout/Footer";
 
 import type { Metadata } from "next";
 import { fontClasses } from "@/lib/fonts";
 import { getMetadata, getCombinedSchemaData, rtlLocales } from "@/lib/seo";
-import { I18nProvider } from "@/i18n/i18n-client";
-import { getDictionaryServer } from "@/i18n/i18n-server";
 import { Locale, locales, defaultLocale } from "@/i18n/config";
-// 1. Import FramerMotionProvider
 import { FramerMotionProvider } from "@/components/providers/FramerMotionProvider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-
-// Dynamically imported footer sections with SSR preserved
-const CTASection = dynamic(() => import("@/components/sections/CTASection"), {
-  ssr: true,
-});
-const Footer = dynamic(() => import("@/components/layout/Footer"), {
-  ssr: true,
-});
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+}) {
   const { locale } = await params;
   return getMetadata(locale);
 }
@@ -42,14 +32,9 @@ export default async function RootLayout({
   children,
   params,
 }: RootLayoutProps) {
-  const { locale: rawLocale } = await params;
-  const locale: Locale = locales.includes(rawLocale as Locale)
-    ? (rawLocale as Locale)
-    : defaultLocale;
-
-  const pageDictionary = await getDictionaryServer(locale);
-  const dir = rtlLocales.includes(locale) ? "rtl" : "ltr";
-  const schemaData = getCombinedSchemaData();
+  const { locale } = await params;
+  const messages = await import("next-intl/server").then(mod => mod.getMessages({ locale }));
+  const isRtl = rtlLocales.includes(locale as Locale);
 
   const homeDataMock = {
     contactPath: `/${locale}/contact`,
@@ -59,48 +44,25 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      dir={dir}
+      dir={isRtl ? "rtl" : "ltr"}
       className={`${fontClasses} scroll-smooth`}
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
       <head>
-        <link
-          rel="preload"
-          as="image"
-          href="/brand/dev-pic.webp"
-          type="image/webp"
-          fetchPriority="high"
-        />
-        <SchemaMarkup type="Person" data={schemaData} />
+        <SchemaMarkup type="Person" data={getCombinedSchemaData()} />
       </head>
-      <body className="relative flex min-h-screen flex-col bg-background font-sans text-foreground antialiased selection:bg-primary/20 selection:text-primary">
-        <I18nProvider initialLocale={locale} pageDictionary={pageDictionary}>
-          {/* 2. Wrap app with FramerMotionProvider */}
+      <body className="relative flex min-h-screen flex-col bg-background font-sans text-foreground antialiased">
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <FramerMotionProvider>
-            {/* Google Analytics & Performance Telemetry */}
             <Analytics />
-
-            {/* Ambient Radial Backdrop Glow */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none fixed inset-0 -z-10 bg-radial-glow opacity-30"
-            />
-
-            {/* Primary Header Navigation */}
+            <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 bg-radial-glow opacity-30" />
             <Header />
-
-            {/* Main Content Area */}
             <main className="flex-grow">{children}</main>
-
-            {/* Global Call to Action */}
-            <CTASection homeData={homeDataMock as any} />
-
-            {/* Global Footer */}
+            <CTASection homeData={homeDataMock} />
             <Footer />
           </FramerMotionProvider>
-        </I18nProvider>
-        <Analytics />
+        </NextIntlClientProvider>
         <SpeedInsights />
       </body>
     </html>

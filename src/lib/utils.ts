@@ -1,4 +1,4 @@
-import { clsx, type ClassValue }  from "clsx";
+import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 /**
@@ -6,7 +6,7 @@ import { twMerge } from "tailwind-merge";
  * Essential for Tailwind CSS v4 dynamic classes.
  */
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+    return twMerge(clsx(inputs));
 }
 
 /**
@@ -15,10 +15,12 @@ export function cn(...inputs: ClassValue[]) {
  */
 export function formatFullDateTime(dateStr?: string): string {
     if (!dateStr) return "";
+    let date = new Date(dateStr);
 
-    const date = new Date(dateStr.replace(" ", "T"));
-    
-    // Check if the date is valid before attempting to format
+    if (isNaN(date.getTime())) {
+        date = new Date(dateStr.replace(" ", "T"));
+    }
+
     if (isNaN(date.getTime())) {
         console.warn(`[utils] Invalid date string provided: ${dateStr}`);
         return "";
@@ -55,7 +57,7 @@ export function getStandardPageLabels(
         // Ensure we don't add an extra dot if pageKey is empty or already ends with one.
         const path = pageKey ? `${pageKey}.${subKey}` : subKey;
         const val = translate(path);
-        return val || ""; 
+        return val || "";
     };
 
     return {

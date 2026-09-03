@@ -398,6 +398,7 @@
             "nameLabel": "نام",
             "emailLabel": "ای میل",
             "platformLabel": "پلیٹ فارم (Android / KMP / CMP / Flutter)",
+            "messageLabel": "پیغام",
             "budgetLabel": "بجٹ کی حد",
             "detailsLabel": "پروجیکٹ کی تفصیلات یا عہدے کا اسکوپ",
             "buttonSend": "پیغام بھیجیں",
@@ -428,6 +429,7 @@
     "notfound": {
         "eyebrow": "404 غلطی",
         "title": "یہ صفحہ موجود نہیں ہے۔",
+        "desc": "یہ صفحہ موجود نہیں ہے یا اسے displcement کر دیا گیا ہو سکتا ہے۔",
         "button": "ہوم پیج پر واپس جائیں"
     }
 }

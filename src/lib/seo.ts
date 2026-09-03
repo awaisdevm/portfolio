@@ -156,7 +156,11 @@ export const getCombinedSchemaData = () => {
             "alternateName": ["Devawais", "awaisdevm", "Awais", "devawais-official"],
             "jobTitle": "Senior Mobile App Developer & Architect",
             "url": siteConfig.url,
-            "email": siteConfig.email,
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "url": `${siteConfig.url}/en/contact`
+            },
             "image": `${siteConfig.url}/profile.jpg`,
             "gender": "Male",
             "description": "Senior Mobile App Developer with 6+ years of engineering experience specializing in Native Android, Kotlin Multiplatform (KMP), Compose Multiplatform (CMP), Flutter, and Clean Architecture.",

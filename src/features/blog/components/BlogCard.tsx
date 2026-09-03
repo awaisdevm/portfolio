@@ -5,7 +5,7 @@ import Image from "next/image";
 import type { BlogPost } from "../types";
 import { formatFullDateTime } from "@/lib/utils";
 import { ArrowUpRightIcon, ClockIcon } from "@/components/icons";
-import { useI18n } from "@/i18n/i18n-client";
+import { useTranslations } from "next-intl";
 
 interface BlogCardProps {
   post: BlogPost;
@@ -13,7 +13,7 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ post, priority = false }: BlogCardProps) {
-  const { translate } = useI18n();
+  const t = useTranslations();
   const fallbackImage = "/placeholder.svg";
   const [imgSrc, setImgSrc] = useState(post.thumbnailUrl || fallbackImage);
 
@@ -23,10 +23,9 @@ export default function BlogCard({ post, priority = false }: BlogCardProps) {
         href={post.link || "#"}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`${post.title} - ${translate("blog.readArticle") || "Read article"}`}
+        aria-label={`${post.title} - ${t("blog.readArticle") || "Read article"}`}
         className="flex h-full flex-col focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-2xl"
       >
-        {/* Thumbnail Wrapper with fixed Aspect Ratio for LCP */}
         <div className="relative aspect-[16/9] w-full overflow-hidden bg-surface-sunken">
           <Image
             src={imgSrc}
@@ -38,20 +37,17 @@ export default function BlogCard({ post, priority = false }: BlogCardProps) {
             priority={priority}
           />
 
-          {/* Read Time Badge */}
           {post.readTime && (
             <div className="absolute top-3 left-3 flex items-center gap-1.5 rounded-full border border-border/30 bg-surface-sunken/90 px-3 py-1 text-[11px] font-medium text-foreground backdrop-blur-md shadow-sm">
               <ClockIcon size={12} className="text-primary-light" aria-hidden="true" />
               <span>
-                {post.readTime} {translate("blog.minRead") || "min read"}
+                {post.readTime} {t("blog.minRead") || "min read"}
               </span>
             </div>
           )}
         </div>
 
-        {/* Content Wrapper */}
         <div className="flex flex-1 flex-col p-5">
-          {/* Date & Category Row */}
           <div className="mb-3 flex items-center justify-between gap-2">
             <time
               dateTime={post.publishDate ? new Date(post.publishDate).toISOString() : undefined}
@@ -67,20 +63,17 @@ export default function BlogCard({ post, priority = false }: BlogCardProps) {
             )}
           </div>
 
-          {/* Title: Changed h3 -> h2 for proper Sequential Heading Order */}
           <h2 className="mb-2 font-display text-base font-bold leading-snug text-heading transition-colors group-hover:text-primary-light">
             {post.title}
           </h2>
 
-          {/* Excerpt */}
           <p className="mb-4 line-clamp-2 text-xs leading-relaxed text-muted">
             {post.excerpt}
           </p>
 
-          {/* Footer Action */}
           <div className="mt-auto flex items-center justify-between border-t border-border/15 pt-3">
             <span className="relative font-mono text-xs font-bold text-primary-light">
-              {translate("blog.readArticle") || "Read article"}
+              {t("blog.readArticle") || "Read article"}
               <span className="absolute -bottom-1 left-0 h-[1px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
             </span>
             <ArrowUpRightIcon

@@ -1,7 +1,7 @@
 "use client";
 
 import SectionHeader from "@/components/ui/SectionHeader";
-import { useI18n } from "@/i18n/i18n-client";
+import { useTranslations } from "next-intl";
 import {
   AndroidIcon,
   FlutterIcon,
@@ -42,14 +42,14 @@ const getGroupIcon = (label: string) => {
 };
 
 export default function AboutExpertise({ expertiseGroups }: AboutExpertiseProps) {
-  const { translate } = useI18n();
+  const t = useTranslations();
 
   return (
     <div className="flex h-full flex-col justify-between pt-1">
       <div className="mb-6">
         <SectionHeader
-          eyebrow={translate("about.expertiseTitle")}
-          title={translate("about.expertiseSubtitle")}
+          eyebrow={t("about.expertiseTitle")}
+          title={t("about.expertiseSubtitle")}
         />
       </div>
 
@@ -66,13 +66,11 @@ export default function AboutExpertise({ expertiseGroups }: AboutExpertiseProps)
                        hover:border-primary/50 hover:from-white/[0.12] hover:to-white/[0.04] 
                        [content-visibility:auto]"
           >
-            {/* Liquid Glow Accent */}
             <div
               className="pointer-events-none absolute -right-6 -top-6 h-20 w-20 rounded-full bg-primary/10 blur-xl opacity-50 transition-opacity duration-300 group-hover:opacity-100"
               aria-hidden="true"
             />
 
-            {/* Header: Icon + Category */}
             <div className="relative z-10 flex items-center gap-2 border-b border-white/10 pb-2.5">
               {getGroupIcon(group.label)}
               <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-accent">
@@ -80,7 +78,6 @@ export default function AboutExpertise({ expertiseGroups }: AboutExpertiseProps)
               </h3>
             </div>
 
-            {/* Tag Pills */}
             <div className="relative z-10 mt-4 flex flex-wrap gap-1.5">
               {group.items.map((item, itemIdx) => (
                 <span

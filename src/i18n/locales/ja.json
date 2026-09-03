@@ -113,6 +113,7 @@
             "nameLabel": "お名前",
             "emailLabel": "メールアドレス",
             "platformLabel": "プラットフォーム (Android / KMP / CMP / Flutter)",
+            "messageLabel": "メッセージ",
             "budgetLabel": "ご予算",
             "detailsLabel": "プロジェクトの詳細または役割の範囲",
             "buttonSend": "メッセージを送信",
@@ -428,6 +429,7 @@
     "notfound": {
         "eyebrow": "404 エラー",
         "title": "お探しのページは見つかりませんでした。",
+        "desc": "お探しのページは存在しないか、移動されている可能性があります。",
         "button": "ホームに戻る"
     }
 }
